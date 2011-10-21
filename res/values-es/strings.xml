@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">pulWifi</string>
+    <string name="scanMode">Buscar redes</string>
+    <string name="manualMode">Modo manual</string>
+    
+	<!--  Manual Mode -->
+
+    <string name="hello">Generador de claves JAZZTEL_XXXX y WLAN_XXXX, por Javi Pulido</string>    
+	<string name="mm_OK">Aceptar</string>
+	<string name="introduceNombre">Introduce el nombre de la red</string>
+	<string name="introduceMAC">Introduce la MAC</string>
+	<string name="manualHeader">Introduce el nombre y la dirección MAC de la red. Puedes ver la lista de
+	redes soportadas pulsando la tecla MENU</string>
+	<string name="manual_ESSID_hint">Nombre de la red</string>
+	<string name="manual_BSSID_hint">Dirección MAC</string>
+	<string name="manual_inputerror">Red no soportada. Vea la lista completa en el menú</string>
+	
+	<!-- Wi-Fi State checker (at init) -->
+	
+    <string name="splash_loading">Cargando...</string>
+    <string name="splash_failed_dialog_error">Error...</string>
+    <string name="splash_failed_dialog_msg">No se ha podido habilitar el wifi. Saliendo...</string>
+    <string name="splash_failed_dialog_ok_button">Aceptar</string>
+    <string name="splash_ask_dialog_title">¿Habilitar wifi?</string>
+    <string name="splash_ask_dialog_msg">Esta aplicación requiere tener el wifi habilitado. ¿Te gustaría habilitarlo ahora?</string>
+    <string name="splash_ask_dialog_yes_button">Si</string>
+    <string name="splash_ask_dialog_no_button">No</string>
+    <string name="splash_ask_dialog_ok_button">OK</string>
+    
+    
+    <!-- Select Wireless Network -->
+    <string name="select_wireless_network_dialog_show_pass">Mostrar contraseña</string>
+    <string name="select_wireless_network_dialog_copy_clipboard">Copiar clave al portapapeles</string>
+    <string name="select_wireless_network_dialog_reject">No</string>
+    <string name="select_wireless_network_dialog_not_valid">Red no soportada. Las redes soportadas están marcadas con un indicador verde.</string>
+    <string name="select_wireless_network_update">Refrescar lista</string>
+    <string name="network_wpawpa2">WPA/WPA2</string>
+    <string name="network_wep">WEP</string>
+    <string name="network_open">ABIERTA</string>
+    <string name="select_wireless_network_list_empty">Ninguna red al alcance :(</string>    
+
+	<!-- Menu -->
+	<string name="menu_quit">Salir</string>
+	<string name="menu_settings">Ajustes</string>
+	<string name="menu_networks">Redes soportadas</string>
+	<string name="menu_preferences">Ajustes</string>
+	<string name="menu_about">Acerca de...</string>
+	<string name="acerca_de">Aplicación para calcular las claves predefinidas de algunas redes wifi.
+				"\n\nCopyright 2011, Javi Pulido\nMail: pulimento@gmail.com
+				\nPor favor, acceda al Léeme más abajo para más información\n\nVersión 1.5.5</string>
+	
+	<!-- Show pass -->
+	<string name="showpass_network_name">Nombre de la red</string>
+	<string name="showpass_network_mac">Dirección MAC</string>
+	<string name="showpass_button_showpass">Mostrar la clave</string>
+	<string name="showpass_button_clipboard">Copiar clave al portapapeles</string>
+	<string name="showpass_button_back">Atrás</string>
+	<string name="showpass_network_nopass_toast">Esta red está abierta, conéctate!</string>
+	<string name="showpass_null_password">Oops! Algo no ha ido bien. Por favor, inténtalo de nuevo</string>
+	<string name="showpass_multiple_passwords">Pulse en una de las contraseñas para copiarla al portapapeles</string>
+	
+	
+	<!-- Preferences -->
+	<string name="preferences_autoupdate_title">Actualiz. automática</string>
+	<string name="preferences_autoupdate_summary">Actualizar la lista de redes automáticamente</string>
+	<string name="preferences_vibrateupdate_title">Aviso de actualización</string>
+	<string name="preferences_vibrateupdate_summary">Vibrar cada vez que se refresque la lista de redes</string>
+	<string name="preferences_vibratefound_title">Aviso de red soportada</string>
+	<string name="preferences_vibratefound_summary">Vibrar cuando haya una red soportada al alcance</string>
+	<string name="preferences_updateinterval_title">Tasa de refresco</string>
+	<string name="preferences_updateinterval_summary">Actualizar lista de redes cada...</string>
+	<string name="preferences_updateinterval_fast">Rápido</string>
+	<string name="preferences_updateinterval_normal">Normal</string>
+	<string name="preferences_updateinterval_slow">Lento</string>
+	
+	<!-- Information -->
+	<string name="showpass_popup_title">Esta es tu clave</string>
+	<string name="showpass_popup_title_many">Una de estas es tu clave</string>
+	<string name="showpass_toclipboard">Contraseña copiada al portapapeles\n</string>
+	
+	<!--About -->
+	<string name="about_title">Acerca de pulWifi</string>
+	<string name="about_readme">Léeme</string>
+	<string name="about_gpl">Licencia GPLv3</string>
+	<string name="about_readme_url">"file:///android_asset/README.htm"</string>
+	<string name="supported_networks_title">Redes soportadas:</string>
+	<string name="supported_networks">\n - WLAN_XXXX \n
+	- JAZZTEL_XXXX \n
+	- WLANXXXXXX \n
+	- YACOMXXXXXX \n
+	- WIFIXXXXXX \n
+	- Algunos routers D-Link \n
+	- Algunos routers Huawei \n</string>		
+	
+</resources>

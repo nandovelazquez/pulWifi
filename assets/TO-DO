@@ -1,0 +1,8 @@
+Planes de futuro :D
+ 
+- Integrar número de versión en los strings (PackageManager) 
+- eliminar macs huawei obvias -- HECHO, filtro WEP
+- auto-conexión (farproc?¿?)
+- poner dato numérico de la intensidad de señal
+- marcar la red a la que se está conectado
+- MAC 00:1A:2B ... 2 posibilidades? Investigar

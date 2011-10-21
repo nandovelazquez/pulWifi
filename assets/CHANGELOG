@@ -1,0 +1,210 @@
+CHANGELOG pulWifi
+
+v0.1 - Primera versión. Capaz de generar la clave de las WLAN_XXXX y JAZZTEL_XXXX a partir del BSSID
+y del ESSID, introducidos ambos en cuadros de texto. Febrero 2011
+
+v0.2 - Ya no está todo concentrado en la misma actividad, hay distintas clases. Adherido a la licencia GNU
+GPL v3. Añadidos iconos en el menú. Añadido LEGAL y README, se pueden ver desde Acerca de. Limpieza de
+código. Ahora todo es mucho más genérico. 07/03/11
+
+v0.3 - Ahora LEGAL y README están en HTML, para que se vean mejor en el navegador del móvil.
+
+v0.4 - Añadido tabView e iconos (aunque sólo una tab tenga contenido) 20/03/2011
+
+v0.5 - Se cambian los iconos de las tabs, ahora quedan mucho mejor. En modo manual, se han cambiado
+algo de las TextView, y ahora permite copiar la clave al portapapeles y muestra WirelessSettings.
+Eliminado permiso de Internet (realmente nunca se ha usado para nada...) 28/03/2011
+
+v0.6 - mejor ni hablar de ella...
+
+v0.7 - versión más estable hasta la fecha (aún teniendo grandes cambios :D) ahora aparece un splashscreen,
+aunque hay que trabajar más en él. Implementados correctamente el WifiManager, podemos preguntar y cambiar
+el estado del wifi. ahora la primera pestaña también tiene menú. Optimizada para funcionar en todas
+las resoluciones de pantalla. Iconos universal-dpi (currados), Splashscreens universal-dpi. Arreglado
+el bug en el lifecycle, ahora el onFinish() se debe comportar correctamente. Yippee!! :D 30/03/2011
+
+v0.8 - esta versión es más inestable que la anterior, pero trae bastantes cambios:
+* arreglado el bug con universal_dpi, ahora todo va perfecto (incluso los drawables)
+* incorpora en estado experimental el SCAN_MODE, aunque aún le faltan muchos detalles por pulir
+* ha habido cambios en el MANUAL_MODE, ahora el layout es bastante más simple (tiene hints :D)
+* Creada una actividad ShowPass que, una vez seleccionada una red (sea en el modo que sea) te muestra la
+info de la red, y te da opciones para qué hacer con ella
+* prácticamente todos los strings son ahora resources (esto ayudará al poner otro idioma,
+a la vez que organiza)
+* arreglado el bug de las MAC cuando se introducían con los puntos (:), ahora da igual el input
+* limpieza de código(sobre todo,morralla de log)
+* Ahora el tipo WirelessNetwork tiene como atributo la red con la que se está trabajando (current)
+* Añadidos Patterns,a partir de un input (scan o manual) se sabe si está soportada
+* arreglos menores
+----- Fecha de versíon : 21/04/2001 (Jueves santo :D)
+
+v0.8.1 - actualización menor : 25/04/2011
+* se actualizan los textos legales, el "acerca de..." y el Readme (ya se muestra la versión :D)
+* limpieza de código
+* modificado el pattern de la MAC de los routers Comtrend (fallo heredado de WirelessCracker)
+* eliminados iconos por defecto
+
+v0.9 - 26/04/2011
+* añadido SharedPreferences
+	- La actualización automática de redes se puede desactivar o activar a placer
+	- Añadida la feature de vibrar cuando hay alguna red vulnerable al alcance
+* se vuelve a actualizar el README
+* el SCAN MODE tiene ahora un menú diferente al resto
+* cambios en el layout de showpass	
+
+v1.0_RC1 - 14/05/2011
+* corregido el fallo en las SharedPreferences
+* Cambios varios en los layouts
+* Limpieza de código y optimización de procesos
+* La versión 1.0 que va a salir al market ya no va a tener más funcionalidades, voy a estar yo mismo
+haciendo de betatester e intentaré ver si queda algun bug feo por ahí :P
+
+v1.0_RC2 - 30/05/2011
+SALIMOS AL MERCADO HOY DOMINGO POR LA NOCHE!! a ver qué pasa...ya tenemos la segunda app el mercado!!
+* está libre de fallos (al menos bajo mi juicio), es una versión preparada para salir, se verá en los
+comentarios de la gente
+* cambiados iconos
+* cambiado la versión a 101
+* traducida al inglés!!
+* arreglado el bug de onCloseOptionsMenu()
+* layouts variables para todos los tamaños de pantallas, incluido landscape
+* en breves instantes vamos a tener AdMob trabajando aquí también ;)
+* En este momento, Router MAC Locator lleva unas 600 descargas, algo menos de 300 instalaciones, 4 valoraciones
+(todas con cinco estrellas ;) y un comentario de un americano satisfecho!! haha
+
+--- Publicada en el Android Market el Domingo 30/05/2011 1:38
+
+v1.1.0 - 01/06/2011 
+apenas 48horas en el Market...913 instalaciones!!
+* añadido soporte para YACOMXXXXXX, WLANXXXXXX, WIFIXXXXXXX y algunos routers Huawei (Vodafone)
+* pequeños cambios en la interfaz
+* grandes cambios en el CrackerFramework, ahora más genérico
+* Arreglado el problema de los Matchers
+
+v1.1.2 - 15/06/2011
+5800 instalaciones, 37 puntuaciones :D
+* se añade Google AdSense (apoyado en AdMob)
+* Primera versión del algoritmo WLAN2X Beta
+
+v1.1.4 - 20/06/2011
+9700 instalaciones, 64 puntuaciones
+* pequeños retoques de código
+* añadido soporte de las WLAN_XXXX de Comtrend, nuevo algoritmo
+* cambiados algunos Strings
+* añadidos 8 modelos más de WLAN_XXXX
+* cambios en la interfaz
+
+v1.2.0 - 25/06/2011
+* quitados los uppercases
+* quitado el botón de estafao
+* pequeños cambios en la interfaz
+
+v1.2.1 - 25/07/2011
+* actualizado el sdk de adMob a 4.1.1
+* ajustes en el readme
+* ajustado el layout de ShowPassword() para que ESSID admita sólo singleLine
+
+v1.2.2 - 26/07/2011
+* ajustados de nuevo TODOS los layouts de TODAS las configuraciones
+* añadido medidor de señal en ScanMode
+
+v1.3.0 - 01/08/2011
+* cambiado el formato de las tabWidgets, ahora no tiene imagen
+* ahora se muestra debajo del nivel de señal la seguridad de la red
+* ajustado el layout_default de manualMode
+* ajustados algunos strings
+* ahora los edittexts de manualMode son focusables, hasta en touchmode
+* primer intento de arreglar el NPE en ShowPass.onCreate();
+* ahora las redes abiertas pasan el isCrackeable()
+
+v1.3.1 - 04/08/11
+41509 descargas, 414+ valoraciones :)
+* el anuncio adMob de ScanMode ahora tiene wrap_content, es decir, sólo se muestra cuando está disponible
+* se reduce en 50kb el tamaño del APK (quitando morralla)
+* listItemSelector -> orange
+* traducción al catalán
+
+v1.3.2 - 07/08/11
+* solucionado el pequeño fallo con la traducción al catalán
+* agregadas varias macs huawei y zyxel
+* limpieza del código
+
+v1.4.0 - 14/08/11
+* revisadas las macs Huawei
+* añadido un HashMap<String,Boolean>(BSSID,crackeable) en SelectWirelessNetwork
+
+v1.4.1 - 15/08/11
+56200+ descargas, 607+ valoraciones :)
+* Arreglado el NPE en ShowPass??!?? (Comprueba si != null, y si eso mostrar toast, además de comprobar en el
+BroadcastReceiver que el resultado tiene ESSID y BSSID != null)
+* Cambiado el AlertDialog del acerca de... para que reconozca el link del mail
+* moveToSD (auto)
+
+v1.4.2 - 22/08/11
+* Eliminadas varias macs Huawei y añadida una Zyxel
+* Reorganizado el Matcher de crack4()
+* Descubrimiento : el que manda el NullPointerException es el crack_wlan2x_beta en el else
+* Eliminado algo de log en el SelectWirelessNetwork (las macs de las que iba encontrando). 
+* Añadido ScanResults.size()
+* Arreglado el molesto bug en el que el onClick() no tenía coherencia con la posición de la 
+lista. Simplemente
+cambiando cuándo se usaba el comparator en el ListViewAdapter
+* Se dejan de soportar las WLAN_XX (se ha probado que el algoritmo que tenía no era eficaz para nada)
+
+v1.4.3 - 22/08/11
+* arreglado fallo debido al nuevo reordenamiento del matcher de zyxel
+
+v1.4.4 - 25/08/11
+* El matcher de Zyxel vuelve a estar ordenado como antes, para evitarnos excepciones raras
+* eliminado el System.currentTimeMillis para el log del Delta
+* Revisados los layouts, sobre todo los de ldpi
+* Añadido finish() a la acción del clipboard
+
+v1.4.5 - 29/08/11
+* No ha servido de nada hacer limpieza en todos los matchers de Huawei, la gente se queja,
+pues nada, se deja tal y como estaba
+* Soportada Andared
+
+v1.5.0 - 01/09/11
+* Añadido soporte para routers D-Link
+* Eliminado el System.runFinalizersOnExit() y el System.exit(0) cuando se salía desde el menú
+(ahora simplemente está finish())
+* Quitada toda la morralla de las Preferences, ahora todo es mucho más limpio, creando otro objeto
+ en el onResume()
+* Añadida otra preferencia, la del intervalo de refresco de las redes (Valores:2,4,8, default:2)
+* Limpieza de log
+
+v1.5.1 - 08/09/11
+101k+ instalaciones, 1397 reviews 
+* añadida comtrend 38:72:c0
+* eliminado 00:19:15 que supuestamente era ZyXel, pero es Tecom y con WPA2
+* vuelve a estar ordenada la lista de redes, pero ahora bien :)
+* arreglado DLink :)
+* eliminado el null de la lista de pass de YaCom
+* añadido soporte para copiar al portapapeles cuando hay varias contraseñas
+
+v1.5.2 - 19/09/11
+115k+ instalaciones, 1293 reviews
+* añadida una mac y quitada dos del algoritmo de Comtrend
+* retocado el compareTo() de WirelessNetwork, ahora también ordena las crackeables entre ellas
+* arreglada la compatibilidad con WLAN6X, gracias a linchu
+
+v1.5.3 - 01/10/11
+230k+ instalaciones
+* añadidas el uppercase para los routers de YaCom
+* ajustadas algunas MACs
+* ajustado el botón del manualmode en hdpi
+
+v1.5.4 - 16/10/11
+290k+ instalaciones, 2.2k+ reviews
+* arreglado el NPE en procesarListaClaves()
+* intento de arreglar el NPE en el onCreate()
+* añadido al isCrackeable() de matcher_huawei la condición de que tiene que ser WEP (deja de dar falsos
+positivos con las redes VodafoneXXXX)
+* Se muestra un mensaje en la lista cuando no hay ninguna red al alcance
+* arreglado el problema con el tamaño de los ads, la mitad de las veces no los estaba mostrando por
+falta de espacio en los layouts (sólo los mostraba en mdpi...) :(
+
+v1.5.5 - 21/10/11
+313k+ instalaciones, 2.5k+ reviews
+* Añadidos más routers Huawei

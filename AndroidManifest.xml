@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="es.pulimento.wifi"
+      android:versionName="1.5.5" 
+      android:versionCode="128"
+      android:installLocation="auto">
+
+<application 
+android:icon="@drawable/icon" 
+android:label="@string/app_name"
+android:theme="@android:style/Theme.NoTitleBar">
+    
+	<activity 
+    android:name=".pulWifi"
+    android:configChanges="keyboardHidden|orientation"
+    android:label="@string/app_name">
+        <intent-filter>
+         	<action android:name="android.intent.action.MAIN" />
+           	<category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+
+	<activity 
+	android:name=".WebViewActivity"
+    android:label="@string/app_name">
+ 		<intent-filter android:label="android.intent.action.MAIN">
+    		<action android:name="android.intent.action.VIEW" />
+    		<action android:name="android.intent.action.EDIT" />
+    		<category android:name="android.intent.category.DEFAULT" />
+    	</intent-filter>
+ 	</activity> 
+ 
+	<activity 
+	android:name=".Preferences"
+	android:label="@string/app_name">
+ 		<intent-filter android:label="android.intent.action.MAIN">
+    		<action android:name="android.intent.action.VIEW" />
+     		<action android:name="android.intent.action.EDIT" />
+     		<category android:name="android.intent.category.PREFERENCE" />
+    	</intent-filter>
+	</activity>
+
+	<activity 
+	android:name=".ManualCrack"
+	android:label="@string/app_name">
+ 		<intent-filter android:label="android.intent.action.MAIN">
+    		<action android:name="android.intent.action.VIEW" />
+     		<action android:name="android.intent.action.EDIT" />
+     		<category android:name="android.intent.category.DEFAULT" />
+     	</intent-filter>
+	</activity>
+
+	<activity 
+	android:name=".ShowPass"
+	android:label="@string/app_name">
+ 		<intent-filter android:label="android.intent.action.MAIN">
+    		<action android:name="android.intent.action.VIEW" />     	
+    		<category android:name="android.intent.category.DEFAULT" />
+	     </intent-filter>
+	</activity>
+
+	<activity 
+	android:name=".SelectWirelessNetwork"
+	android:label="@string/app_name">
+ 		<intent-filter android:label="android.intent.action.MAIN">
+    		<action android:name="android.intent.action.VIEW" />
+     		<action android:name="android.intent.action.EDIT" />
+     		<category android:name="android.intent.category.DEFAULT" />
+     	</intent-filter>
+	</activity>
+
+	<activity android:name=".ActividadPestanias">
+		<intent-filter android:label="android.intent.action.MAIN">
+			<action android:name="android.intent.action.VIEW" />
+     		<action android:name="android.intent.action.EDIT" />
+     		<category android:name="android.intent.category.DEFAULT" />
+     	</intent-filter>
+	</activity>	
+
+	<receiver android:name=".WifiManager">
+		<intent-filter>
+			<action android:name="android.intent.action.PHONE_STATE"/>
+		</intent-filter>
+	</receiver>
+	 
+         <activity android:name="com.google.ads.AdActivity"
+              android:configChanges="keyboard|keyboardHidden|orientation"/>
+   
+ </application>
+    
+    <uses-sdk android:minSdkVersion="4"/>
+    <uses-permission  android:name="android.permission.ACCESS_NETWORK_STATE" /><!-- ADMOB -->
+    <uses-permission  android:name="android.permission.INTERNET" /><!-- ADMOB -->
+    <uses-permission  android:name="android.permission.ACCESS_WIFI_STATE" /><!-- STARTUP -->
+    <uses-permission  android:name="android.permission.CHANGE_WIFI_STATE" /><!-- STARTUP -->
+    <uses-permission  android:name="android.permission.VIBRATE" /><!-- BEEP -->
+    
+      
+	<supports-screens
+			android:resizeable="true" 
+			android:anyDensity="true" 
+			android:smallScreens="true" 
+			android:normalScreens="true"
+			android:largeScreens="true">
+	</supports-screens>
+</manifest> 

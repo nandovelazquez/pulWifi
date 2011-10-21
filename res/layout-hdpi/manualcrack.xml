@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:id="@+id/rl_manualcrack">  
+<LinearLayout android:id="@+id/manualcrack"
+		android:orientation="vertical"
+		android:layout_width="fill_parent" 
+		android:layout_height="fill_parent">  
+<TextView  
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="@string/manualHeader"
+    android:typeface="sans"
+    android:textSize="20dip"
+    android:layout_marginTop="4dip" 
+    android:layout_marginBottom="18dip"
+    android:layout_marginLeft="4dip">
+    <!-- android:textStyle="bold"> -->
+    </TextView>
+<EditText 
+android:text="@+id/EditText01" 
+android:id="@+id/inputESSID"
+android:singleLine="true" 
+android:layout_height="wrap_content"
+android:layout_width="fill_parent"
+android:hint="@string/manual_ESSID_hint" android:layout_marginBottom="16dip">
+</EditText>
+<EditText 
+android:text="@+id/EditText02"
+android:id="@+id/inputMAC" 
+android:layout_height="wrap_content" 
+android:layout_width="fill_parent"
+android:maxLength="17"
+android:singleLine="true"
+android:hint="@string/manual_BSSID_hint" android:layout_marginBottom="26dip">
+</EditText>
+<Button 
+android:text="@string/mm_OK" 
+android:id="@+id/Button01" 
+android:typeface="sans"
+android:textSize="32dp"
+android:gravity="center"
+android:textStyle="bold"
+android:layout_width="fill_parent" android:layout_height="80dip" android:layout_marginLeft="60dip" android:layout_marginRight="60dip" android:layout_marginTop="18dip">
+</Button>
+</LinearLayout>
+<LinearLayout android:id="@+id/ads"
+		android:orientation="vertical"
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"/>	
+</RelativeLayout>

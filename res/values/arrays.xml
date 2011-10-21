@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="updateIntervals">
+        <item name="2000">@string/preferences_updateinterval_fast</item>
+        <item name="5000">@string/preferences_updateinterval_normal</item>
+        <item name="10000">@string/preferences_updateinterval_slow</item>
+    </string-array>
+    
+    <string-array name="updateIntervalValues">
+        <item name="2000">2000</item>
+        <item name="5000">4000</item>
+        <item name="10000">8000</item>
+    </string-array>
+        
+</resources>
