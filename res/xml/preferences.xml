@@ -1,29 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen
-  xmlns:android="http://schemas.android.com/apk/res/android">
-   <PreferenceCategory android:title="Modo SCAN">
-                <CheckBoxPreference
-                        android:title="@string/preferences_autoupdate_title"
-                        android:defaultValue="true"
-                        android:summary="@string/preferences_autoupdate_summary"
-                        android:key="autoupdate" />
-                 <CheckBoxPreference
-                        android:title="@string/preferences_vibrateupdate_title"
-                        android:summary="@string/preferences_vibrateupdate_summary"
-                        android:defaultValue="false"
-                        android:dependency="autoupdate"                   
-                        android:key="vibrateUPDATE" />                             
-                 <CheckBoxPreference
-                        android:title="@string/preferences_vibratefound_title"
-                        android:summary="@string/preferences_vibratefound_summary"
-                        android:defaultValue="false"
-                        android:key="vibrateFOUND" />
-                 <ListPreference
-                 		android:key="ui"  
- 						android:title="@string/preferences_updateinterval_title"
- 						android:summary="@string/preferences_updateinterval_summary" 
- 						android:entries="@array/updateIntervals"
- 						android:entryValues="@array/updateIntervalValues" 						
- 						android:defaultValue="2000" />            	
-	</PreferenceCategory>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="Modo SCAN" >
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="autoupdate"
+            android:summary="@string/preferences_autoupdate_summary"
+            android:title="@string/preferences_autoupdate_title" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:dependency="autoupdate"
+            android:key="vibrateUPDATE"
+            android:summary="@string/preferences_vibrateupdate_summary"
+            android:title="@string/preferences_vibrateupdate_title" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="vibrateFOUND"
+            android:summary="@string/preferences_vibratefound_summary"
+            android:title="@string/preferences_vibratefound_title" />
+
+        <ListPreference
+            android:defaultValue="2000"
+            android:entries="@array/updateIntervals"
+            android:entryValues="@array/updateIntervalValues"
+            android:key="ui"
+            android:summary="@string/preferences_updateinterval_summary"
+            android:title="@string/preferences_updateinterval_title" />
+    </PreferenceCategory>
+
 </PreferenceScreen>

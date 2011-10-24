@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:id="@+id/tabsLayout" android:layout_width="fill_parent"
-	android:layout_height="30dip" android:background="@drawable/tab_bg_selector"
-	android:padding="6dip" android:gravity="center" android:orientation="horizontal">
-	
-	<!--  <ImageView android:id="@+id/imageview_tabs" android:layout_width="wrap_content"
-		android:layout_height="wrap_content"></ImageView> -->
+    android:id="@+id/tabsLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="30dip"
+    android:background="@drawable/tab_bg_selector"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:padding="6dip" >
 
-	<TextView android:id="@+id/tv_tabs" android:layout_width="wrap_content"
-		android:layout_height="wrap_content" android:text="Title"
-		android:textSize="16dip" android:textColor="@drawable/tab_text_selector" />
+    <!--
+          <ImageView android:id="@+id/imageview_tabs" android:layout_width="wrap_content"
+		android:layout_height="wrap_content"></ImageView>
+    -->
+
+    <TextView
+        android:id="@+id/tv_tabs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Title"
+        android:textColor="@drawable/tab_text_selector"
+        android:textSize="16dip" />
+
 </LinearLayout>
