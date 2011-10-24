@@ -24,7 +24,7 @@ public class ListViewAdapter extends ArrayAdapter<WirelessNetwork>{
 		super(context, textViewResourceId, items);
 		mItems = items;
 		mContext = context;
-		Resources res = ActividadPestanias.res;
+		Resources res = context.getResources();
 		locked = res.getDrawable(R.drawable.locked);
 		unlocked = res.getDrawable(R.drawable.unlocked);
 	}	
