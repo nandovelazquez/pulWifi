@@ -10,7 +10,7 @@ import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
 import android.widget.TextView;
 
-public class ActividadPestanias extends TabActivity{
+public class MainTabHost extends TabActivity{
 
 	/* Tab host to be populated. */
 	private TabHost mTabHost;

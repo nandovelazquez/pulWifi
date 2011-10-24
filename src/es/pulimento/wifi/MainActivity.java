@@ -1,6 +1,6 @@
 package es.pulimento.wifi;
 
-import es.pulimento.wifi.ActividadPestanias;
+import es.pulimento.wifi.MainTabHost;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
@@ -14,7 +14,7 @@ import android.net.wifi.WifiManager;
 import android.os.Bundle;
 
 /* Main activity. */
-public class pulWifi extends Activity {
+public class MainActivity extends Activity {
 
 	/* Application context. */
 	private Context mContext;
@@ -76,7 +76,7 @@ public class pulWifi extends Activity {
 					mFailedDialog.show();
 					break;
 				case WifiManager.WIFI_STATE_ENABLED:
-					Intent intent = new Intent(mContext, ActividadPestanias.class);
+					Intent intent = new Intent(mContext, MainTabHost.class);
 					intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 					startActivity(intent);
 					mActivity.finish();
