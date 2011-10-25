@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
+
+    <com.google.ads.AdView
+        android:id="@+id/select_wireless_ad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        ads:adSize="BANNER"
+        ads:adUnitId="a14de2ce2207597"
+        ads:loadAdOnCreate="true" />
 
     <LinearLayout
         android:id="@+id/ads"
@@ -18,8 +27,7 @@
         android:layout_height="fill_parent"
         android:layout_alignParentTop="true"
         android:layout_weight="1.0"
-        android:listSelector="@drawable/tab_bg_selected" >
-    </ListView>
+        android:listSelector="@drawable/tab_bg_selected" />
 
     <TextView
         android:id="@+id/list_empty"
@@ -41,8 +49,7 @@
             android:id="@+id/button_refresh_network"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="@string/select_wireless_network_update" >
-        </Button>
+            android:text="@string/select_wireless_network_update" />
     </LinearLayout>
 
 </LinearLayout>
