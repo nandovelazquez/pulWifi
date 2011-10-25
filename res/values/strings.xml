@@ -73,6 +73,16 @@
     <string name="preferences_updateinterval_normal">Normal</string>
     <string name="preferences_updateinterval_slow">Slow</string>
 
+    <!-- Preference keys and defaults -->
+    <string name="preferences_autoupdate_key">autoupdate</string>
+    <string name="preferences_autoupdate_default">true</string>
+    <string name="preferences_vibrateupdate_key">vibrateUPDATE</string>
+    <string name="preferences_vibrateupdate_default">false</string>
+    <string name="preferences_vibratefound_key">vibrateFOUND</string>
+    <string name="preferences_vibratefound_default">false</string>
+    <string name="preferences_updateinterval_key">ui</string>
+    <string name="preferences_updateinterval_default">2000</string>
+
     <!-- Information -->
     <string name="showpass_popup_title_many">One of those is your password</string>
     <string name="showpass_popup_title">This is your password</string>

@@ -4,29 +4,29 @@
     <PreferenceCategory android:title="Modo SCAN" >
 
         <CheckBoxPreference
-            android:defaultValue="true"
-            android:key="autoupdate"
+            android:defaultValue="@string/preferences_autoupdate_default"
+            android:key="@string/preferences_autoupdate_key"
             android:summary="@string/preferences_autoupdate_summary"
             android:title="@string/preferences_autoupdate_title" />
 
         <CheckBoxPreference
-            android:defaultValue="false"
-            android:dependency="autoupdate"
-            android:key="vibrateUPDATE"
+            android:defaultValue="@string/preferences_vibrateupdate_default"
+            android:dependency="@string/preferences_autoupdate_key"
+            android:key="@string/preferences_vibrateupdate_key"
             android:summary="@string/preferences_vibrateupdate_summary"
             android:title="@string/preferences_vibrateupdate_title" />
 
         <CheckBoxPreference
-            android:defaultValue="false"
-            android:key="vibrateFOUND"
+            android:defaultValue="@string/preferences_vibratefound_default"
+            android:key="@string/preferences_vibratefound_key"
             android:summary="@string/preferences_vibratefound_summary"
             android:title="@string/preferences_vibratefound_title" />
 
         <ListPreference
-            android:defaultValue="2000"
+            android:defaultValue="@string/preferences_updateinterval_default"
             android:entries="@array/updateIntervals"
             android:entryValues="@array/updateIntervalValues"
-            android:key="ui"
+            android:key="@string/preferences_updateinterval_key"
             android:summary="@string/preferences_updateinterval_summary"
             android:title="@string/preferences_updateinterval_title" />
     </PreferenceCategory>
