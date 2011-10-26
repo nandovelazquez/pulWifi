@@ -38,7 +38,7 @@ public class Preferences extends PreferenceActivity implements OnPreferenceChang
 	/* Class constructor for getting preferences. */
 	Preferences(Context ctx) {
 		mContext = ctx;
-		mPreferences = getSharedPreferences(PREFERENCES_NAME, MODE_PRIVATE);
+		mPreferences = mContext.getSharedPreferences(PREFERENCES_NAME, MODE_PRIVATE);
 		PREFERENCES_AUTOUPDATE_KEY = mContext.getString(R.string.preferences_autoupdate_key);
 		PREFERENCES_AUTOUPDATE_DEFAULT = Boolean.parseBoolean(mContext.getString(R.string.preferences_autoupdate_default));
 		PREFERENCES_VIBRATEUPDATE_KEY = mContext.getString(R.string.preferences_vibrateupdate_key);
@@ -46,7 +46,7 @@ public class Preferences extends PreferenceActivity implements OnPreferenceChang
 		PREFERENCES_VIBRATEFOUND_KEY = mContext.getString(R.string.preferences_vibratefound_key);
 		PREFERENCES_VIBRATEFOUND_DEFAULT = Boolean.parseBoolean(mContext.getString(R.string.preferences_vibratefound_default));
 		PREFERENCES_UPDATEINTERVAL_KEY = mContext.getString(R.string.preferences_updateinterval_key);
-		PREFERENCES_UPDATEINTERVAL_DEFAULT = Integer.parseInt(mContext.getString(R.string.preferences_vibratefound_default));
+		PREFERENCES_UPDATEINTERVAL_DEFAULT = Integer.parseInt(mContext.getString(R.string.preferences_updateinterval_default));
 	}
 
 	@Override
