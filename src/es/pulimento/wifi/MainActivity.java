@@ -32,17 +32,17 @@ public class MainActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-        setContentView(R.layout.splashscreen);
+		setContentView(R.layout.splashscreen);
 
-        /* Define elements. */
-        mContext = getApplicationContext();
-        mWifiManager = (WifiManager)getSystemService(Context.WIFI_SERVICE);
-        mActivity = this;
-        mIntentFilter = new IntentFilter();
+		/* Define elements. */
+		mContext = getApplicationContext();
+		mWifiManager = (WifiManager)getSystemService(Context.WIFI_SERVICE);
+		mActivity = this;
+		mIntentFilter = new IntentFilter();
 
-        Builder fDialog = new AlertDialog.Builder(mActivity);
-        fDialog.setTitle(R.string.splash_failed_dialog_error);
-        fDialog.setMessage(R.string.splash_failed_dialog_msg);
+		Builder fDialog = new AlertDialog.Builder(mActivity);
+		fDialog.setTitle(R.string.splash_failed_dialog_error);
+		fDialog.setMessage(R.string.splash_failed_dialog_msg);
 		fDialog.setNeutralButton(R.string.splash_failed_dialog_ok_button, new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int which) {
 				//Exit...
@@ -62,7 +62,7 @@ public class MainActivity extends Activity {
 		});
 		aDialog.setNegativeButton(R.string.splash_ask_dialog_no_button, new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int which) {
-				mActivity.finish();			
+				mActivity.finish();
 			}
 		});
 		mAskDialog = aDialog.create();
@@ -82,7 +82,7 @@ public class MainActivity extends Activity {
 					mActivity.finish();
 					break;
 				case WifiManager.WIFI_STATE_DISABLED:
-					mAskDialog.show();					
+					mAskDialog.show();
 					break;
 				}
 			}
@@ -93,7 +93,7 @@ public class MainActivity extends Activity {
 	}
 
 	@Override
-	public void onResume(){
+	public void onResume() {
 		super.onResume();
 
 		/* Check wifi state. */
@@ -106,7 +106,7 @@ public class MainActivity extends Activity {
 	}
 
 	@Override
-	public void onPause(){
+	public void onPause() {
 		super.onPause();
 
 		/* Unregister receivers. */
