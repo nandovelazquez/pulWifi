@@ -54,6 +54,7 @@ public class Preferences extends PreferenceActivity implements OnPreferenceChang
 		super.onCreate(savedInstanceState);
 		addPreferencesFromResource(R.xml.preferences);
 
+		/* Set on preference listeners for updating variables. */
 		PreferenceScreen prefScreen = this.getPreferenceScreen();
 		prefScreen.findPreference(PREFERENCES_AUTOUPDATE_KEY).setOnPreferenceChangeListener(this);
 		prefScreen.findPreference(PREFERENCES_UPDATEINTERVAL_KEY).setOnPreferenceChangeListener(this);
@@ -63,11 +64,11 @@ public class Preferences extends PreferenceActivity implements OnPreferenceChang
 
 	@Override
 	public boolean onPreferenceChange(Preference preference, Object newValue) {
+		/* Update current preference variables any time a preference is changed. */
 		PREFERENCES_AUTOUPDATE_CURRENT = mPreferences.getBoolean(PREFERENCES_AUTOUPDATE_KEY, PREFERENCES_AUTOUPDATE_DEFAULT);
 		PREFERENCES_VIBRATEUPDATE_CURRENT = mPreferences.getBoolean(PREFERENCES_VIBRATEUPDATE_KEY, PREFERENCES_VIBRATEUPDATE_DEFAULT);
 		PREFERENCES_VIBRATEFOUND_CURRENT = mPreferences.getBoolean(PREFERENCES_VIBRATEFOUND_KEY, PREFERENCES_VIBRATEFOUND_DEFAULT);
 		PREFERENCES_UPDATEINTERVAL_CURRENT = Integer.parseInt(mPreferences.getString(PREFERENCES_UPDATEINTERVAL_KEY, String.valueOf(PREFERENCES_UPDATEINTERVAL_DEFAULT)));
 		return true;
-    }
-
+	}
 }
