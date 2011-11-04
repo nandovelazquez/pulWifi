@@ -1,7 +1,7 @@
 package es.pulimento.wifi;
 
 import java.util.ArrayList;
-import java.util.Comparator;
+import java.util.Collections;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -14,65 +14,75 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class ListViewAdapter extends ArrayAdapter<WirelessNetwork>{
+public class ListViewAdapter extends ArrayAdapter<WirelessNetwork> {
 
+	/* Variables. */
 	private ArrayList<WirelessNetwork> mItems;
-	private Context mContext;
-	private Drawable locked, unlocked;
-	
+	private Drawable mDrawLocked, mDrawUnlocked;
+	private Drawable mSignalLevel1, mSignalLevel2, mSignalLevel3, mSignalLevel4;
+	private LayoutInflater mLayoutInflater;
+
 	public ListViewAdapter(Context context, int textViewResourceId, ArrayList<WirelessNetwork> items) {
 		super(context, textViewResourceId, items);
-		mItems = items;
-		mContext = context;
+
 		Resources res = context.getResources();
-		locked = res.getDrawable(R.drawable.locked);
-		unlocked = res.getDrawable(R.drawable.unlocked);
-	}	
+
+		/* Initialize all variables. */
+		mItems = items;
+		mLayoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		mDrawLocked = res.getDrawable(R.drawable.locked);
+		mDrawUnlocked = res.getDrawable(R.drawable.unlocked);
+		mSignalLevel1 = res.getDrawable(R.drawable.signal_1);
+		mSignalLevel2 = res.getDrawable(R.drawable.signal_2);
+		mSignalLevel3 = res.getDrawable(R.drawable.signal_3);
+		mSignalLevel4 = res.getDrawable(R.drawable.signal_4);
+	}
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
-		//Collections.sort(mItems, new CrackeableComparator());
-		View v = convertView;
-		if (v == null) {
-			v = ((LayoutInflater)mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.listview_item, null);
-		}
+
+		/* Sort items before showing them. */
+		Collections.sort(mItems);
+
+		if (convertView == null)
+			convertView = mLayoutInflater.inflate(R.layout.listview_item, null);
+
 		WirelessNetwork item = mItems.get(position);
 		if (item != null) {
-			TextView crackeable = (TextView) v.findViewById(R.id.listview_item_crackeable);
+			TextView crackeable = (TextView) convertView.findViewById(R.id.listview_item_crackeable);
 			if (crackeable != null)
-				//crackeable.setBackgroundColor((item.getCrackeable())?android.graphics.Color.GREEN:android.graphics.Color.RED);//REVIEW
-				crackeable.setBackgroundDrawable((item.getCrackeable())?unlocked:locked);
-			TextView essid = (TextView) v.findViewById(R.id.listview_item_essid);
+				crackeable.setBackgroundDrawable((item.getCrackeable()) ? mDrawUnlocked : mDrawLocked);
+
+			TextView essid = (TextView) convertView.findViewById(R.id.listview_item_essid);
 			if (essid != null)
 				essid.setText(item.getEssid());
-			TextView bssid = (TextView) v.findViewById(R.id.listview_item_bssid);
+
+			TextView bssid = (TextView) convertView.findViewById(R.id.listview_item_bssid);
 			if (bssid != null)
 				bssid.setText(item.getBssid());
-			ImageView signal = (ImageView) v.findViewById(R.id.listview_item_signal_strength);
-			signal.setImageDrawable(mContext.getResources().getDrawable((WifiManager.calculateSignalLevel(item.getSignal(), 4)==0)?R.drawable.signal_1:((WifiManager.calculateSignalLevel(item.getSignal(), 4)==1)?R.drawable.signal_2:((WifiManager.calculateSignalLevel(item.getSignal(), 4)==2)?R.drawable.signal_3:R.drawable.signal_4))));
-			TextView s = (TextView) v.findViewById(R.id.tv_listitem_security);
-			//s.setText(item.getCapabilities());
-			if(item.getCapabilities().contains("WPA"))s.setText(R.string.network_wpawpa2);
-			else if(item.getCapabilities().contains("WEP"))s.setText(R.string.network_wep);
-			if(item.getCapabilities().equals("") || item.getCapabilities() == null)s.setText(R.string.network_open);
+
+			ImageView signal = (ImageView) convertView.findViewById(R.id.listview_item_signal_strength);
+			if (signal != null) {
+				int signalLevel = WifiManager.calculateSignalLevel(item.getSignal(), 4);
+				signal.setImageDrawable((signalLevel==0) ? mSignalLevel1 : (signalLevel==1) ? mSignalLevel2 : (signalLevel==2) ? mSignalLevel3 : mSignalLevel4);
 			}
-		//Collections.sort(mItems, new CrackeableComparator());
-		return v;
+
+			/* TODO: This needs to be implemented in WirelessNetwork.java. */
+			TextView capabilities = (TextView) convertView.findViewById(R.id.tv_listitem_security);
+			if(capabilities != null)
+			{
+				if(item.getCapabilities().contains("WPA"))
+					capabilities.setText(R.string.network_wpawpa2);
+				else if(item.getCapabilities().contains("WEP"))
+					capabilities.setText(R.string.network_wep);
+				if(item.getCapabilities().equals("") || item.getCapabilities() == null)
+					capabilities.setText(R.string.network_open);
+			}
+		}
+		return convertView;
 	}
 
 	public WirelessNetwork getItemAtPosition(int position) {
 		return mItems.get(position);
-	}
-
-	class CrackeableComparator implements Comparator<WirelessNetwork>{
-
-		//@Override
-		public int compare(WirelessNetwork o1, WirelessNetwork o2) {
-			if(o1.getCrackeable())
-				return -1;
-			else if(o2.getCrackeable())
-				return 1;
-			return 0;
-		}
 	}
 }
