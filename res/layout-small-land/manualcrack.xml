@@ -41,8 +41,7 @@ android:layout_height="wrap_content">
             android:layout_weight="0.1"
             android:hint="@string/manual_ESSID_hint"
             android:singleLine="true"
-            android:text="@+id/EditText01" >
-        </EditText>
+            android:text="" />
         <!--
 <TextView 
 android:text="@string/introduceMAC" 

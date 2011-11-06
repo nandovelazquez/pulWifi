@@ -40,8 +40,7 @@ android:layout_height="wrap_content">
             android:layout_marginBottom="10dip"
             android:hint="@string/manual_ESSID_hint"
             android:singleLine="true"
-            android:text="@+id/EditText01" >
-        </EditText>
+            android:text="" />
         <!--
 <TextView 
 android:text="@string/introduceMAC" 
@@ -61,8 +60,7 @@ android:layout_height="wrap_content">
             android:hint="@string/manual_BSSID_hint"
             android:maxLength="17"
             android:singleLine="true"
-            android:text="@+id/EditText02" >
-        </EditText>
+            android:text="@+id/EditText02" />
 
         <Button
             android:id="@+id/Button01"

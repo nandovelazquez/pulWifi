@@ -11,22 +11,131 @@ import java.util.regex.Pattern;
 import android.util.Log;
 
 public class CrackNetwork {
-	
-	//andared = 6b629f4c299371737494c61b5a101693a2d4e9e1f3e1320f3ebf9ae379cecf32
-	
-	private String mCapabilities;
+
+	private String mCapabilities, mESSID, mBSSID;
+
+	// TODO: Review.
 	private Matcher[] matcher_md5C, matcher_hawei, matcher_wlan4xx, matcher_md5Z;
-	private Matcher matcher_andared,matcher_dlink;
-//	private Matcher[] matcher_thomson, matcher_wlan2X;
-	String mESSID,mBSSID;
+	private Matcher matcher_andared, matcher_dlink;
+	//private Matcher[] matcher_thomson, matcher_wlan2X;
 
 	public CrackNetwork(/*Context context, */String ESSID, String BSSID, String capabilities){
 		mCapabilities = capabilities;
 		mESSID = ESSID;
-		mBSSID = BSSID;
-		initFramework(ESSID, BSSID);
+		mBSSID = BSSID.toUpperCase();
+		initFramework(mESSID, mBSSID);
 	}
-	
+
+	private void initFramework(String essid, String bssidU) {
+
+		// TODO: Thomson algorithm is disabled.
+		//matcher_thomson = new Matcher[9]; //Thomson algorithm...
+		//matcher_thomson[0] = Pattern.compile("DLink-([0-9A-Fa-f]{6})").matcher(essid);
+		//matcher_thomson[1] = Pattern.compile("SpeedTouch([0-9A-Fa-f]{6})").matcher(essid);
+		//matcher_thomson[2] = Pattern.compile("Thomson([0-9A-Fa-f]{6})").matcher(essid);
+		//matcher_thomson[3] = Pattern.compile("Bbox-([0-9A-Fa-f]{6})").matcher(essid);
+		//matcher_thomson[4] = Pattern.compile("privat([0-9A-Fa-f]{6})").matcher(essid);
+		//matcher_thomson[5] = Pattern.compile("DMAX([0-9A-Fa-f]{6})").matcher(essid);
+		//matcher_thomson[6] = Pattern.compile("INFINITUM([0-9A-Fa-f]{6})").matcher(essid);
+		//matcher_thomson[7] = Pattern.compile("Orange-([0-9A-Fa-f]{6})").matcher(essid);
+		//matcher_thomson[8] = Pattern.compile("Discus--([0-9A-Fa-f]{6})").matcher(essid);
+
+		/* For WLAN_XXXX and JAZZTEL_XXXX networks. Processed by crack1() COMTREND */
+		matcher_md5C = new Matcher[12];
+		matcher_md5C[0] = Pattern.compile("WLAN_([0-9a-fA-F]{4})").matcher(essid);	// WLAN_XXXX 64:68:0C:XX:XX:XX
+		matcher_md5C[1] = Pattern.compile("(64:68:0C:[0-9A-Fa-f:]{8})").matcher(bssidU);
+		matcher_md5C[2] = Pattern.compile("JAZZTEL_([0-9a-fA-F]{4})").matcher(essid);	// JAZZTEL_XXXX 64:68:0C:XX:XX:XX
+		matcher_md5C[3] = Pattern.compile("(64:68:0C:[0-9A-Fa-f:]{8})").matcher(bssidU);
+		matcher_md5C[4] = Pattern.compile("WLAN_([0-9a-fA-F]{4})").matcher(essid);	// WLAN_XXXX 00:1B:20:XX:XX:XX
+		matcher_md5C[5] = Pattern.compile("(00:1B:20:[0-9A-Fa-f:]{8})").matcher(bssidU);
+		matcher_md5C[6] = Pattern.compile("JAZZTEL_([0-9a-fA-F]{4})").matcher(essid);	// JAZZTEL_XXXX 00:1B:20:XX:XX:XX
+		matcher_md5C[7] = Pattern.compile("(00:1B:20:[0-9A-Fa-f:]{8})").matcher(bssidU);
+		matcher_md5C[8] = Pattern.compile("WLAN_([0-9a-fA-F]{4})").matcher(essid);	// WLAN_XXXX 00:1D:20:XX:XX:XX
+		matcher_md5C[9] = Pattern.compile("(00:1D:20:[0-9A-Fa-f:]{8})").matcher(bssidU);
+		matcher_md5C[10] = Pattern.compile("JAZZTEL_([0-9a-fA-F]{4})").matcher(essid);	// JAZZTEL_XXXX 00:1D:20:XX:XX:XX
+		matcher_md5C[11] = Pattern.compile("(00:1D:20:[0-9A-Fa-f:]{8})").matcher(bssidU);
+		//matcher_md5C[4] = Pattern.compile("JAZZTEL_([0-9a-fA-F]{4})").matcher(essid);	//Por lo visto hay 256 claves
+		//matcher_md5C[5] = Pattern.compile("(00:1A:2B:[0-9A-Fa-f:]{8})").matcher(bssidU);
+		//matcher_md5C[6] = Pattern.compile("WLAN_([0-9a-fA-F]{4})").matcher(essid);
+		//matcher_md5C[7] = Pattern.compile("(00:1A:2B:[0-9A-Fa-f:]{8})").matcher(bssidU);
+		//matcher_md5C[12] = Pattern.compile("JAZZTEL_([0-9a-fA-F]{4})").matcher(essid);//No est‡ comprobado
+		//matcher_md5C[13] = Pattern.compile("(38:72:C0:[0-9A-Fa-f:]{8})").matcher(bssidU);
+		//matcher_md5C[14] = Pattern.compile("WLAN_([0-9a-fA-F]{4})").matcher(essid);
+		//matcher_md5C[15] = Pattern.compile("(38:72:C0:[0-9A-Fa-f:]{8})").matcher(bssidU);
+
+		matcher_md5Z = new Matcher[20]; //WLAN_XXXX -- crack4() ZYXEL
+		matcher_md5Z[0] = Pattern.compile("WLAN_([0-9a-fA-F]{4})").matcher(essid); //WLAN_XXXX
+		matcher_md5Z[1] = Pattern.compile("(00:1F:A4:[0-9A-Fa-f:]{8})").matcher(bssidU);
+		matcher_md5Z[2] = Pattern.compile("JAZZTEL_([0-9a-fA-F]{4})").matcher(essid); //JAZZTEL_XXXX
+		matcher_md5Z[3] = Pattern.compile("(00:1F:A4:[0-9A-Fa-f:]{8})").matcher(bssidU);
+		//matcher_md5Z[4] = Pattern.compile("WLAN_([0-9a-fA-F]{4})").matcher(essid); //WLAN_XXXX //Son TECOM, no vale
+		//matcher_md5Z[5] = Pattern.compile("(00:19:15:[0-9A-Fa-f:]{8})").matcher(bssidU);
+		//matcher_md5Z[6] = Pattern.compile("JAZZTEL_([0-9a-fA-F]{4})").matcher(essid); //JAZZTEL_XXXX
+		//matcher_md5Z[7] = Pattern.compile("(00:19:15:[0-9A-Fa-f:]{8})").matcher(bssidU);
+		matcher_md5Z[4] = Pattern.compile("WLAN_([0-9a-fA-F]{4})").matcher(essid); //WLAN_XXXX
+		matcher_md5Z[5] = Pattern.compile("(00:23:F8:[0-9A-Fa-f:]{8})").matcher(bssidU);
+		matcher_md5Z[6] = Pattern.compile("JAZZTEL_([0-9a-fA-F]{4})").matcher(essid); //JAZZTEL_XXXX
+		matcher_md5Z[7] = Pattern.compile("(00:23:F8:[0-9A-Fa-f:]{8})").matcher(bssidU);
+		matcher_md5Z[8] = Pattern.compile("WLAN_([0-9a-fA-F]{4})").matcher(essid); //WLAN_XXXX
+		matcher_md5Z[9] = Pattern.compile("(40:4A:03:[0-9A-Fa-f:]{8})").matcher(bssidU);
+		matcher_md5Z[10] = Pattern.compile("JAZZTEL_([0-9a-fA-F]{4})").matcher(essid); //JAZZTEL_XXXX
+		matcher_md5Z[11] = Pattern.compile("(40:4A:03:[0-9A-Fa-f:]{8})").matcher(bssidU);
+		matcher_md5Z[12] = Pattern.compile("WLAN_([0-9a-fA-F]{4})").matcher(essid); //WLAN_XXXX
+		matcher_md5Z[13] = Pattern.compile("(98:F5:37:[0-9A-Fa-f:]{8})").matcher(bssidU);
+		matcher_md5Z[14] = Pattern.compile("JAZZTEL_([0-9a-fA-F]{4})").matcher(essid); //JAZZTEL_XXXX
+		matcher_md5Z[15] = Pattern.compile("(98:F5:37:[0-9A-Fa-f:]{8})").matcher(bssidU);
+		matcher_md5Z[16] = Pattern.compile("WLAN_([0-9a-fA-F]{4})").matcher(essid); //WLAN_XXXX
+		matcher_md5Z[17] = Pattern.compile("(F4:3E:61:[0-9A-Fa-f:]{8})").matcher(bssidU);//GongJin Electronics Co.
+		matcher_md5Z[18] = Pattern.compile("JAZZTEL_([0-9a-fA-F]{4})").matcher(essid); //JAZZTEL_XXXX
+		matcher_md5Z[19] = Pattern.compile("(F4:3E:61:[0-9A-Fa-f:]{8})").matcher(bssidU);//GongJin Electronics Co.
+
+		matcher_hawei = new Matcher[29]; //HAWEI (macs only) -- crack3()
+		// Los que tienen un simple comentario están verificados, los que tienen DOBLE comentario
+		// NO FUNCIONAN, pero como la gente se queja...pues hala...
+		matcher_hawei[0] = Pattern.compile("(00:1E:10:[0-9A-Fa-f:]{8})").matcher(bssidU);//Huawei HG520c, debe de ser compatible!
+		matcher_hawei[1] = Pattern.compile("(00:22:A1:[0-9A-Fa-f:]{8})").matcher(bssidU);//Visto en routerkeygen
+		matcher_hawei[2] = Pattern.compile("(00:25:68:[0-9A-Fa-f:]{8})").matcher(bssidU);//Visto en HG520 español
+		matcher_hawei[3] = Pattern.compile("(00:25:9E:[0-9A-Fa-f:]{8})").matcher(bssidU);//Visto en routerkeygen		
+		matcher_hawei[4] = Pattern.compile("(04:C0:6F:[0-9A-Fa-f:]{8})").matcher(bssidU);
+		matcher_hawei[5] = Pattern.compile("(08:19:A6:[0-9A-Fa-f:]{8})").matcher(bssidU);
+		matcher_hawei[6] = Pattern.compile("(0C:37:DC:[0-9A-Fa-f:]{8})").matcher(bssidU);
+		matcher_hawei[7] = Pattern.compile("(10:C6:1F:[0-9A-Fa-f:]{8})").matcher(bssidU);
+		matcher_hawei[8] = Pattern.compile("(1C:1D:67:[0-9A-Fa-f:]{8})").matcher(bssidU);
+		matcher_hawei[9] = Pattern.compile("(20:2B:C1:[0-9A-Fa-f:]{8})").matcher(bssidU);//Visto en routerkeygen
+		matcher_hawei[10] = Pattern.compile("(20:F3:A3:[0-9A-Fa-f:]{8})").matcher(bssidU);
+		matcher_hawei[11] = Pattern.compile("(24:DB:AC:[0-9A-Fa-f:]{8})").matcher(bssidU);
+		matcher_hawei[12] = Pattern.compile("(28:5F:DB:[0-9A-Fa-f:]{8})").matcher(bssidU);
+		matcher_hawei[13] = Pattern.compile("(28:6E:D4:[0-9A-Fa-f:]{8})").matcher(bssidU);		
+		matcher_hawei[14] = Pattern.compile("(30:87:30:[0-9A-Fa-f:]{8})").matcher(bssidU);/////HG265
+		matcher_hawei[15] = Pattern.compile("(40:4D:8E:[0-9A-Fa-f:]{8})").matcher(bssidU);
+		matcher_hawei[16] = Pattern.compile("(4C:54:99:[0-9A-Fa-f:]{8})").matcher(bssidU);//Visto en Telmex, HG530 (pero en vodafone no funciona!!!!!)
+		matcher_hawei[17] = Pattern.compile("(4C:1F:CC:[0-9A-Fa-f:]{8})").matcher(bssidU);
+		matcher_hawei[18] = Pattern.compile("(54:A5:1B:[0-9A-Fa-f:]{8})").matcher(bssidU);
+		matcher_hawei[19] = Pattern.compile("(54:89:98:[0-9A-Fa-f:]{8})").matcher(bssidU);		
+		matcher_hawei[20] = Pattern.compile("(64:16:F0:[0-9A-Fa-f:]{8})").matcher(bssidU);//Visto a varias VodafoneXXXX
+		matcher_hawei[21] = Pattern.compile("(00:E0:FC:[0-9A-Fa-f:]{8})").matcher(bssidU);//////Huawei wa1003A
+		matcher_hawei[22] = Pattern.compile("(00:18:82:[0-9A-Fa-f:]{8})").matcher(bssidU);/////Por lo visto es el que tiene el Huawei U8100/8150, y otros routers
+		//matcher_hawei[23] = Pattern.compile("(30:87:30:[0-9A-Fa-f:]{8})").matcher(bssidU);/////Visto en algunas Vodafone, pero tb en Orange
+		matcher_hawei[23] = Pattern.compile("(24:DB:AC:[0-9A-Fa-f:]{8})").matcher(bssidU);/////
+		matcher_hawei[24] = Pattern.compile("(00:0F:E2:[0-9A-Fa-f:]{8})").matcher(bssidU);/////
+		matcher_hawei[25] = Pattern.compile("(28:6E:D4:[0-9A-Fa-f:]{8})").matcher(bssidU);/////
+		matcher_hawei[26] = Pattern.compile("(00:11:F5:[0-9A-Fa-f:]{8})").matcher(bssidU);/////
+		matcher_hawei[27] = Pattern.compile("(F4:C7:14:[0-9A-Fa-f:]{8})").matcher(bssidU);/////Es de Orange, no comercializa ese router
+		//matcher_hawei[29] = Pattern.compile("(78:1D:BA:[0-9A-Fa-f:]{8})").matcher(bssidU);/////VodafoneInternetMovil
+		matcher_hawei[28] = Pattern.compile("(5C:4C:A9:[0-9A-Fa-f:]{8})").matcher(bssidU);/////Es de Orange, no comercializa ese router
+		matcher_wlan4xx = new Matcher[6]; //WLANXXXXXX, YACOMXXXXXX, WIFIXXXXXX -- crack2()
+		matcher_wlan4xx[0] = Pattern.compile("WLAN([0-9a-fA-F]{6})").matcher(essid.toUpperCase());
+		matcher_wlan4xx[1] = Pattern.compile("([0-9A-Fa-f:]{17})").matcher(bssidU);
+		matcher_wlan4xx[2] = Pattern.compile("WIFI([0-9a-fA-F]{6})").matcher(essid.toUpperCase());
+		matcher_wlan4xx[3] = Pattern.compile("([0-9A-Fa-f:]{17})").matcher(bssidU);
+		matcher_wlan4xx[4] = Pattern.compile("YACOM([0-9a-fA-F]{6})").matcher(essid.toUpperCase());
+		matcher_wlan4xx[5] = Pattern.compile("([0-9A-Fa-f:]{17})").matcher(bssidU);
+//		matcher_wlan2X = new Matcher[2]; //WLAN2X, experimental, sólo funciona en un modelo
+//		matcher_wlan2X[0] = Pattern.compile("WLAN_([0-9a-fA-F]{2})").matcher(essid);
+//		matcher_wlan2X[1] = Pattern.compile("(40:4A:03:[0-9A-Fa-f:]{8})").matcher(bssidU);
+		matcher_andared = Pattern.compile("Andared").matcher(essid);
+		matcher_dlink = Pattern.compile("DLink-[0-9a-fA-F]{6}").matcher(essid);
+	}
 	
 	public static String crack1(String iESSID,String iBSSID){//WLAN_XXXX,JAZZTEL_XXXX
 		String fijo = "bcgbghgg";
@@ -306,25 +415,25 @@ public class CrackNetwork {
 		return a.toString();
 	}
 	
-//	public static String crack_wlan2X_beta(String MAC){//Ojo a esto!!
-////		String BSSID = "";
-////    	//Tratamos la MAC, para diferenciarla de cuando se intruduce con ':', y la pasamos a mayúsculas
-////    	String[] aux = MAC.split(":");
-////    	for(String s:aux)BSSID+=s.toUpperCase();
-//		//Log.d("pulWifi","Usando algoritmo Wlan2X (aún está en pruebas)");
-//		//Log.d("pulWifi","Cadena que se le ha pasado ->"+ MAC);
-//		String s = "Z"+MAC;
-//		if(s.length() == 13){
-//			String res = s.toUpperCase();
-//			//Log.d("pulWifi","CLAVE -> "+res);
-//			ShowPass.current.setClave(res);
-//			ShowPass.current.setCrackeable(true);
-//			return res;
-//		}else{
-//			//Log.e("pulWifi","Error en el algoritmo...fallo en el parámetro de entrada");
-//			return null;
-//		}
-//	}
+//public static String crack_wlan2X_beta(String MAC){//Ojo a esto!!
+//String BSSID = "";
+//Tratamos la MAC, para diferenciarla de cuando se intruduce con ':', y la pasamos a mayúsculas
+//String[] aux = MAC.split(":");
+//for(String s:aux)BSSID+=s.toUpperCase();
+//Log.d("pulWifi","Usando algoritmo Wlan2X (aún está en pruebas)");
+//Log.d("pulWifi","Cadena que se le ha pasado ->"+ MAC);
+//String s = "Z"+MAC;
+//if(s.length() == 13) {
+//String res = s.toUpperCase();
+//Log.d("pulWifi","CLAVE -> "+res);
+//ShowPass.current.setClave(res);
+//ShowPass.current.setCrackeable(true);
+//return res;
+//} else {
+//Log.e("pulWifi","Error en el algoritmo...fallo en el parámetro de entrada");
+//return null;
+//}
+//}
 	
 	public static String crack4(String iESSID, String iBSSID){
 		//String fijo = "bcgbghgg";
@@ -344,10 +453,10 @@ public class CrackNetwork {
    		//w.setClave(clave);
   		//Log.d("pulWifi", "CLAVE -> "+clave);
    		return clave.toUpperCase();	
-   		}
+   	}
 	
 	public static String crackDLink(String BSSID){
-		char hash[] =  { 'X', 'r', 'q', 'a', 'H', 'N',
+		char hash[] = { 'X', 'r', 'q', 'a', 'H', 'N',
 	 			'p', 'd', 'S', 'Y', 'w', 
 	 			'8', '6', '2', '1', '5'};
 		//Log.e("pulWifi","Bssid pasado por parámetro -> "+BSSID);
@@ -381,7 +490,8 @@ public class CrackNetwork {
 			if ((t >= '0') && (t <= '9'))index = t-'0';
 			else{
 				t=Character.toUpperCase(t);
-				if ((t >= 'A') && (t <= 'F'))index = t-'A'+10;
+				if ((t >= 'A') && (t <= 'F'))
+					index = t-'A'+10;
 				else{
 					Log.e("pulWifi","Mierda pa mi (crack_dLink)");
 					//return null;
@@ -391,119 +501,13 @@ public class CrackNetwork {
 		}
 		return String.valueOf(newkey, 0, 20);
 	}
-	
-	private void initFramework(String essid, String bssid) {
-		String bssidU = bssid.toUpperCase();
-//		matcher_thomson = new Matcher[9]; //Thomson algorithm...
-//		matcher_thomson[0] = Pattern.compile("DLink-([0-9A-Fa-f]{6})").matcher(essid);
-//		matcher_thomson[1] = Pattern.compile("SpeedTouch([0-9A-Fa-f]{6})").matcher(essid);
-//		matcher_thomson[2] = Pattern.compile("Thomson([0-9A-Fa-f]{6})").matcher(essid);
-//		matcher_thomson[3] = Pattern.compile("Bbox-([0-9A-Fa-f]{6})").matcher(essid);
-//		matcher_thomson[4] = Pattern.compile("privat([0-9A-Fa-f]{6})").matcher(essid);
-//		matcher_thomson[5] = Pattern.compile("DMAX([0-9A-Fa-f]{6})").matcher(essid);
-//		matcher_thomson[6] = Pattern.compile("INFINITUM([0-9A-Fa-f]{6})").matcher(essid);
-//		matcher_thomson[7] = Pattern.compile("Orange-([0-9A-Fa-f]{6})").matcher(essid);
-//		matcher_thomson[8] = Pattern.compile("Discus--([0-9A-Fa-f]{6})").matcher(essid);
-		matcher_md5C = new Matcher[12]; //WLAN_XXXX, JAZZTEL_XXXX -- crack1() COMTREND
-		matcher_md5C[0] = Pattern.compile("WLAN_([0-9a-fA-F]{4})").matcher(essid); //WLAN_XXXX 64:68:0C:XX:XX:XX
-		matcher_md5C[1] = Pattern.compile("(64:68:0C:[0-9A-Fa-f:]{8})").matcher(bssidU);
-		matcher_md5C[2] = Pattern.compile("JAZZTEL_([0-9a-fA-F]{4})").matcher(essid); //JAZZTEL_XXXX 64:68:0C:XX:XX:XX
-		matcher_md5C[3] = Pattern.compile("(64:68:0C:[0-9A-Fa-f:]{8})").matcher(bssidU);
-		matcher_md5C[4] = Pattern.compile("WLAN_([0-9a-fA-F]{4})").matcher(essid);
-		matcher_md5C[5] = Pattern.compile("(00:1B:20:[0-9A-Fa-f:]{8})").matcher(bssidU);
-		matcher_md5C[6] = Pattern.compile("JAZZTEL_([0-9a-fA-F]{4})").matcher(essid);
-		matcher_md5C[7] = Pattern.compile("(00:1B:20:[0-9A-Fa-f:]{8})").matcher(bssidU);		
-		//matcher_md5C[4] = Pattern.compile("JAZZTEL_([0-9a-fA-F]{4})").matcher(essid); //Por lo visto hay 256 claves
-		//matcher_md5C[5] = Pattern.compile("(00:1A:2B:[0-9A-Fa-f:]{8})").matcher(bssidU);
-		//matcher_md5C[6] = Pattern.compile("WLAN_([0-9a-fA-F]{4})").matcher(essid);
-		//matcher_md5C[7] = Pattern.compile("(00:1A:2B:[0-9A-Fa-f:]{8})").matcher(bssidU);
-		matcher_md5C[8] = Pattern.compile("WLAN_([0-9a-fA-F]{4})").matcher(essid);
-		matcher_md5C[9] = Pattern.compile("(00:1D:20:[0-9A-Fa-f:]{8})").matcher(bssidU);
-		matcher_md5C[10] = Pattern.compile("JAZZTEL_([0-9a-fA-F]{4})").matcher(essid);
-		matcher_md5C[11] = Pattern.compile("(00:1D:20:[0-9A-Fa-f:]{8})").matcher(bssidU);
-		//matcher_md5C[12] = Pattern.compile("JAZZTEL_([0-9a-fA-F]{4})").matcher(essid);//No está comprobado
-		//matcher_md5C[13] = Pattern.compile("(38:72:C0:[0-9A-Fa-f:]{8})").matcher(bssidU);
-		//matcher_md5C[14] = Pattern.compile("WLAN_([0-9a-fA-F]{4})").matcher(essid);
-		//matcher_md5C[15] = Pattern.compile("(38:72:C0:[0-9A-Fa-f:]{8})").matcher(bssidU);
-		matcher_md5Z = new Matcher[20]; //WLAN_XXXX -- crack4() ZYXEL
-		matcher_md5Z[0] = Pattern.compile("WLAN_([0-9a-fA-F]{4})").matcher(essid); //WLAN_XXXX
-		matcher_md5Z[1] = Pattern.compile("(00:1F:A4:[0-9A-Fa-f:]{8})").matcher(bssidU);
-		matcher_md5Z[2] = Pattern.compile("JAZZTEL_([0-9a-fA-F]{4})").matcher(essid); //JAZZTEL_XXXX
-		matcher_md5Z[3] = Pattern.compile("(00:1F:A4:[0-9A-Fa-f:]{8})").matcher(bssidU);
-//		matcher_md5Z[4] = Pattern.compile("WLAN_([0-9a-fA-F]{4})").matcher(essid); //WLAN_XXXX //Son TECOM, no vale
-//		matcher_md5Z[5] = Pattern.compile("(00:19:15:[0-9A-Fa-f:]{8})").matcher(bssidU);
-//		matcher_md5Z[6] = Pattern.compile("JAZZTEL_([0-9a-fA-F]{4})").matcher(essid); //JAZZTEL_XXXX
-//		matcher_md5Z[7] = Pattern.compile("(00:19:15:[0-9A-Fa-f:]{8})").matcher(bssidU);
-		matcher_md5Z[4] = Pattern.compile("WLAN_([0-9a-fA-F]{4})").matcher(essid); //WLAN_XXXX
-		matcher_md5Z[5] = Pattern.compile("(00:23:F8:[0-9A-Fa-f:]{8})").matcher(bssidU);
-		matcher_md5Z[6] = Pattern.compile("JAZZTEL_([0-9a-fA-F]{4})").matcher(essid); //JAZZTEL_XXXX
-		matcher_md5Z[7] = Pattern.compile("(00:23:F8:[0-9A-Fa-f:]{8})").matcher(bssidU);
-		matcher_md5Z[8] = Pattern.compile("WLAN_([0-9a-fA-F]{4})").matcher(essid); //WLAN_XXXX
-		matcher_md5Z[9] = Pattern.compile("(40:4A:03:[0-9A-Fa-f:]{8})").matcher(bssidU);
-		matcher_md5Z[10] = Pattern.compile("JAZZTEL_([0-9a-fA-F]{4})").matcher(essid); //JAZZTEL_XXXX
-		matcher_md5Z[11] = Pattern.compile("(40:4A:03:[0-9A-Fa-f:]{8})").matcher(bssidU);
-		matcher_md5Z[12] = Pattern.compile("WLAN_([0-9a-fA-F]{4})").matcher(essid); //WLAN_XXXX
-		matcher_md5Z[13] = Pattern.compile("(98:F5:37:[0-9A-Fa-f:]{8})").matcher(bssidU);
-		matcher_md5Z[14] = Pattern.compile("JAZZTEL_([0-9a-fA-F]{4})").matcher(essid); //JAZZTEL_XXXX
-		matcher_md5Z[15] = Pattern.compile("(98:F5:37:[0-9A-Fa-f:]{8})").matcher(bssidU);
-		matcher_md5Z[16] = Pattern.compile("WLAN_([0-9a-fA-F]{4})").matcher(essid); //WLAN_XXXX
-		matcher_md5Z[17] = Pattern.compile("(F4:3E:61:[0-9A-Fa-f:]{8})").matcher(bssidU);//GongJin Electronics Co.
-		matcher_md5Z[18] = Pattern.compile("JAZZTEL_([0-9a-fA-F]{4})").matcher(essid); //JAZZTEL_XXXX
-		matcher_md5Z[19] = Pattern.compile("(F4:3E:61:[0-9A-Fa-f:]{8})").matcher(bssidU);//GongJin Electronics Co.
-		matcher_hawei = new Matcher[29]; //HAWEI (macs only) -- crack3()
-		// Los que tienen un simple comentario están verificados, los que tienen DOBLE comentario
-		// NO FUNCIONAN, pero como la gente se queja...pues hala...
-		matcher_hawei[0] = Pattern.compile("(00:1E:10:[0-9A-Fa-f:]{8})").matcher(bssidU);//Huawei HG520c, debe de ser compatible!
-		matcher_hawei[1] = Pattern.compile("(00:22:A1:[0-9A-Fa-f:]{8})").matcher(bssidU);//Visto en routerkeygen
-		matcher_hawei[2] = Pattern.compile("(00:25:68:[0-9A-Fa-f:]{8})").matcher(bssidU);//Visto en HG520 español
-		matcher_hawei[3] = Pattern.compile("(00:25:9E:[0-9A-Fa-f:]{8})").matcher(bssidU);//Visto en routerkeygen		
-		matcher_hawei[4] = Pattern.compile("(04:C0:6F:[0-9A-Fa-f:]{8})").matcher(bssidU);
-		matcher_hawei[5] = Pattern.compile("(08:19:A6:[0-9A-Fa-f:]{8})").matcher(bssidU);
-		matcher_hawei[6] = Pattern.compile("(0C:37:DC:[0-9A-Fa-f:]{8})").matcher(bssidU);
-		matcher_hawei[7] = Pattern.compile("(10:C6:1F:[0-9A-Fa-f:]{8})").matcher(bssidU);
-		matcher_hawei[8] = Pattern.compile("(1C:1D:67:[0-9A-Fa-f:]{8})").matcher(bssidU);
-		matcher_hawei[9] = Pattern.compile("(20:2B:C1:[0-9A-Fa-f:]{8})").matcher(bssidU);//Visto en routerkeygen
-		matcher_hawei[10] = Pattern.compile("(20:F3:A3:[0-9A-Fa-f:]{8})").matcher(bssidU);
-		matcher_hawei[11] = Pattern.compile("(24:DB:AC:[0-9A-Fa-f:]{8})").matcher(bssidU);
-		matcher_hawei[12] = Pattern.compile("(28:5F:DB:[0-9A-Fa-f:]{8})").matcher(bssidU);
-		matcher_hawei[13] = Pattern.compile("(28:6E:D4:[0-9A-Fa-f:]{8})").matcher(bssidU);		
-		matcher_hawei[14] = Pattern.compile("(30:87:30:[0-9A-Fa-f:]{8})").matcher(bssidU);/////HG265
-		matcher_hawei[15] = Pattern.compile("(40:4D:8E:[0-9A-Fa-f:]{8})").matcher(bssidU);
-		matcher_hawei[16] = Pattern.compile("(4C:54:99:[0-9A-Fa-f:]{8})").matcher(bssidU);//Visto en Telmex, HG530 (pero en vodafone no funciona!!!!!)
-		matcher_hawei[17] = Pattern.compile("(4C:1F:CC:[0-9A-Fa-f:]{8})").matcher(bssidU);
-		matcher_hawei[18] = Pattern.compile("(54:A5:1B:[0-9A-Fa-f:]{8})").matcher(bssidU);
-		matcher_hawei[19] = Pattern.compile("(54:89:98:[0-9A-Fa-f:]{8})").matcher(bssidU);		
-		matcher_hawei[20] = Pattern.compile("(64:16:F0:[0-9A-Fa-f:]{8})").matcher(bssidU);//Visto a varias VodafoneXXXX
-		matcher_hawei[21] = Pattern.compile("(00:E0:FC:[0-9A-Fa-f:]{8})").matcher(bssidU);//////Huawei wa1003A
-		matcher_hawei[22] = Pattern.compile("(00:18:82:[0-9A-Fa-f:]{8})").matcher(bssidU);/////Por lo visto es el que tiene el Huawei U8100/8150, y otros routers
-		//matcher_hawei[23] = Pattern.compile("(30:87:30:[0-9A-Fa-f:]{8})").matcher(bssidU);/////Visto en algunas Vodafone, pero tb en Orange
-		matcher_hawei[23] = Pattern.compile("(24:DB:AC:[0-9A-Fa-f:]{8})").matcher(bssidU);/////
-		matcher_hawei[24] = Pattern.compile("(00:0F:E2:[0-9A-Fa-f:]{8})").matcher(bssidU);/////
-		matcher_hawei[25] = Pattern.compile("(28:6E:D4:[0-9A-Fa-f:]{8})").matcher(bssidU);/////
-		matcher_hawei[26] = Pattern.compile("(00:11:F5:[0-9A-Fa-f:]{8})").matcher(bssidU);/////
-		matcher_hawei[27] = Pattern.compile("(F4:C7:14:[0-9A-Fa-f:]{8})").matcher(bssidU);/////Es de Orange, no comercializa ese router
-		//matcher_hawei[29] = Pattern.compile("(78:1D:BA:[0-9A-Fa-f:]{8})").matcher(bssidU);/////VodafoneInternetMovil
-		matcher_hawei[28] = Pattern.compile("(5C:4C:A9:[0-9A-Fa-f:]{8})").matcher(bssidU);/////Es de Orange, no comercializa ese router
-		matcher_wlan4xx = new Matcher[6]; //WLANXXXXXX, YACOMXXXXXX, WIFIXXXXXX -- crack2()
-		matcher_wlan4xx[0] = Pattern.compile("WLAN([0-9a-fA-F]{6})").matcher(essid.toUpperCase());
-		matcher_wlan4xx[1] = Pattern.compile("([0-9A-Fa-f:]{17})").matcher(bssidU);
-		matcher_wlan4xx[2] = Pattern.compile("WIFI([0-9a-fA-F]{6})").matcher(essid.toUpperCase());
-		matcher_wlan4xx[3] = Pattern.compile("([0-9A-Fa-f:]{17})").matcher(bssidU);
-		matcher_wlan4xx[4] = Pattern.compile("YACOM([0-9a-fA-F]{6})").matcher(essid.toUpperCase());
-		matcher_wlan4xx[5] = Pattern.compile("([0-9A-Fa-f:]{17})").matcher(bssidU);
-//		matcher_wlan2X = new Matcher[2]; //WLAN2X, experimental, sólo funciona en un modelo
-//		matcher_wlan2X[0] = Pattern.compile("WLAN_([0-9a-fA-F]{2})").matcher(essid);
-//		matcher_wlan2X[1] = Pattern.compile("(40:4A:03:[0-9A-Fa-f:]{8})").matcher(bssidU);
-		matcher_andared = Pattern.compile("Andared").matcher(essid);
-		matcher_dlink = Pattern.compile("DLink-[0-9a-fA-F]{6}").matcher(essid);
-	}
 
 	public boolean isCrackeable() {
 		if(mCapabilities.equals("") || mCapabilities == null)
 			return true;
-//		for(Matcher match : matcher_thomson)
-//			if(match.find())
-//				return true;
+		//for(Matcher match : matcher_thomson)
+			//if(match.find())
+				//return true;
 		for(int x = 0; x < matcher_md5C.length; x+=2)
 			if(matcher_md5C[x].find() && matcher_md5C[x+1].find())
 				return true;
@@ -516,9 +520,9 @@ public class CrackNetwork {
 		for(int x = 0; x < matcher_wlan4xx.length; x+=2)
 			if(matcher_wlan4xx[x].find() && matcher_wlan4xx[x+1].find())
 				return true;
-//		for(int x = 0; x < matcher_wlan2X.length; x+=2)			
-//			if(matcher_wlan2X[x].find() && matcher_wlan2X[x+1].find())
-//				return true;
+		//for(int x = 0; x < matcher_wlan2X.length; x+=2)			
+			//if(matcher_wlan2X[x].find() && matcher_wlan2X[x+1].find())
+				//return true;
 		if(matcher_andared.find())return true;
 		if(matcher_dlink.find())return true;
 		return false;
@@ -526,10 +530,11 @@ public class CrackNetwork {
 
 	public String crackNetwork(){
 		if(mCapabilities.equals("") || mCapabilities == null)
-			return "NOPASSNOPASSNOPASSNOPASS";
+			return "NOPASSNOPASSNOPASSNOPASS";	// TODO: Change this to empty string.
+		// TODO: Thomson algorithm is disabled.
 		//for(Matcher match : matcher_thomson)
-		//	if(match.find()) //El algoritmo Thompson no está habilitado actualmente
-		//		return THOMSON.method1(match.group(1), initial_year, final_year);
+			//if(match.find())
+				//return THOMSON.method1(match.group(1), initial_year, final_year);
 		for(int x = 0; x < matcher_md5C.length; x+=2) 
 			if(matcher_md5C[x].find() && matcher_md5C[x+1].find())
 				return crack1(matcher_md5C[x].group(1), matcher_md5C[x+1].group(1).replace(":", "").toUpperCase());
@@ -543,13 +548,15 @@ public class CrackNetwork {
 			if(matcher_wlan4xx[x].find() && matcher_wlan4xx[x+1].find())
 				return crack2(matcher_wlan4xx[x].group(1),
 						matcher_wlan4xx[x+1].group(1).toUpperCase());
-//		for(int x = 0; x < matcher_wlan2X.length; x+=2)
-//			if(matcher_wlan2X[x].find() && matcher_wlan2X[x+1].find()){
-//				//Log.d("pulWifi","Nos disponemos a usar el algoritmo WLAN2X");
-//				return crack_wlan2X_beta(matcher_wlan2X[x+1].group(1).replace(":", "").toUpperCase());
-//			}
-		if(matcher_andared.find()) return "6b629f4c299371737494c61b5a101693a2d4e9e1f3e1320f3ebf9ae379cecf32";
-		if(matcher_dlink.find())return crackDLink(mBSSID.replace(":","").toUpperCase());
+		//for(int x = 0; x < matcher_wlan2X.length; x+=2)
+			//if(matcher_wlan2X[x].find() && matcher_wlan2X[x+1].find()) {
+				//Log.d("pulWifi","Nos disponemos a usar el algoritmo WLAN2X");
+				//return crack_wlan2X_beta(matcher_wlan2X[x+1].group(1).replace(":", "").toUpperCase());
+		//}
+		if(matcher_andared.find())
+			return "6b629f4c299371737494c61b5a101693a2d4e9e1f3e1320f3ebf9ae379cecf32";
+		if(matcher_dlink.find())
+			return crackDLink(mBSSID.replace(":","").toUpperCase());
 		return null;
 	}
 }
