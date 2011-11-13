@@ -97,9 +97,8 @@ public class MainActivity extends Activity {
 		super.onResume();
 
 		/* Check wifi state. */
-		if(mWifiManager.getWifiState() == WifiManager.WIFI_STATE_DISABLED) {
+		if(mWifiManager.getWifiState() == WifiManager.WIFI_STATE_DISABLED)
 			mAskDialog.show();
-		}
 
 		/* Register receivers. */
 		registerReceiver(mBroadcastReceiver, mIntentFilter);
