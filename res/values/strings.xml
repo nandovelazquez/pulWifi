@@ -10,7 +10,7 @@
     <string name="dialog_about_gpl">License</string>
 
 	<!-- License dialog -->
-	<string name="dialog_license_file_url">file:///android_asset/LEGAL.htm</string>
+	<string name="dialog_license_file_url">file:///android_asset/legal-en.html</string>
 
 	<!-- Suported networks dialog -->
     <string name="supported_networks_title">Supported networks : </string>
