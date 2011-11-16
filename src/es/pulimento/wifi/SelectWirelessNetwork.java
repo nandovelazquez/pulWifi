@@ -16,10 +16,6 @@ import android.net.wifi.ScanResult;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.os.Vibrator;
-import android.text.SpannableString;
-import android.text.method.LinkMovementMethod;
-import android.text.util.Linkify;
-import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -28,9 +24,8 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.ScrollView;
-import android.widget.TextView;
 import android.widget.Toast;
+import es.pulimento.wifi.dialogs.AboutDialog;
 
 public class SelectWirelessNetwork extends Activity implements OnItemClickListener {
 
@@ -53,7 +48,7 @@ public class SelectWirelessNetwork extends Activity implements OnItemClickListen
 		setContentView(R.layout.select_wireless_network);
 
 		/* Define objects. */
-		mContext = getApplicationContext();
+		mContext = this;
 		mPreferences = new Preferences(mContext);
 		mWirelessNetListView = (ListView) findViewById(R.id.list);
 		mWirelessNetList = new ArrayList<WirelessNetwork>();
@@ -188,7 +183,7 @@ public class SelectWirelessNetwork extends Activity implements OnItemClickListen
 	public boolean onOptionsItemSelected(MenuItem item) {
 	    switch (item.getItemId()) {
 	    case R.id.ACERCA_DE:
-	    	sobre();
+	    	(new AboutDialog(mContext)).show();
 	        return true;
 	    case R.id.SALIR:
 	    	this.finish();
@@ -210,46 +205,5 @@ public class SelectWirelessNetwork extends Activity implements OnItemClickListen
 	    	 return true;
 	    }
 	    return false;
-	}
-
-	public void sobre(){
-
-	    ScrollView svMessage = new ScrollView(this); 
-	    TextView tvMessage = new TextView(this);
-	    SpannableString spanText = new SpannableString(mContext.getText(R.string.acerca_de));
-	    Linkify.addLinks(spanText, Linkify.ALL);
-	    tvMessage.setText(spanText);
-	    tvMessage.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 18);
-	    tvMessage.setMovementMethod(LinkMovementMethod.getInstance());
-	    svMessage.setPadding(10, 0, 6, 0);
-	    svMessage.addView(tvMessage);
-
-    	AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		builder.setView(svMessage)
-			.setTitle(getString(R.string.about_title))
-		    .setNeutralButton("OK", new DialogInterface.OnClickListener() {
-		           public void onClick(DialogInterface dialog, int id) {
-		                dialog.cancel();}
-		           })
-		       .setNegativeButton(getString(R.string.about_gpl), new DialogInterface.OnClickListener() {
-				public void onClick(DialogInterface dialog, int which) {
-					WebViewActivity.readme = false;
-					abrirNavegador();
-				}
-			})
-			.setNeutralButton(getString(R.string.about_readme), new DialogInterface.OnClickListener() {
-				public void onClick(DialogInterface dialog, int which) {
-					WebViewActivity.readme = true;
-					abrirNavegador();
-				}
-			});
-		AlertDialog alert = builder.create();
-		alert.show();
-	}
-
-	public void abrirNavegador() {
-		Intent i = new Intent(getApplicationContext(),WebViewActivity.class);
-		i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-		mContext.startActivity(i);
 	}
 }
