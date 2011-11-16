@@ -83,14 +83,13 @@ public class ManualCrack extends Activity implements OnClickListener {
 		// OJO!!
 		boolean crackeable = (new CrackNetwork(ESSID,BSSID,"WPA2")).isCrackeable();
 		if(crackeable) {
-			WirelessNetwork w = new WirelessNetwork(ESSID, BSSID, true, 1, "wawawa");
-			String clave = (new CrackNetwork(w.getEssid(),w.getBssid(),"WPA2")).crackNetwork();
-			w.setClave(clave);
+			WirelessNetwork w = new WirelessNetwork(ESSID, BSSID, 1, "wawawa");
+			w.crack();
 			ShowPass.current = w;
 			Intent intent = new Intent(mContext, ShowPass.class);
 			intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 			startActivity(intent);
-			return clave;
+			return w.getPassword();
 		} else {
 			Toast.makeText(mContext, R.string.manual_inputerror, Toast.LENGTH_LONG).show();
 			return null;

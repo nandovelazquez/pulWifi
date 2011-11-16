@@ -43,7 +43,7 @@ public class ShowPass extends Activity {
 	private Button back;
 	private TextView mESSID;
 	private TextView mBSSID;
-	static WirelessNetwork current = new WirelessNetwork("CURRENT", "CURRENT", false, 1, "wawawa");
+	static WirelessNetwork current = new WirelessNetwork("CURRENT", "CURRENT", 1, "wawawa");
 	static List<String> claves = new ArrayList<String>();
 
 	@Override
@@ -54,7 +54,7 @@ public class ShowPass extends Activity {
 		mContext = this;
 		mClipboardManager = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
 
-		procesarListaClaves(ShowPass.current.getClave());		
+		procesarListaClaves(ShowPass.current.getPassword());		
 		mESSID = (TextView) findViewById(R.id.showpass_ESSID);
 		mESSID.setText(ShowPass.current.getEssid());
 		mBSSID = (TextView) findViewById(R.id.showpass_BSSID);
@@ -112,13 +112,13 @@ public class ShowPass extends Activity {
 			}
 		});
 		    
-	        if(ShowPass.current.getClave()==null){
+	        if(ShowPass.current.getPassword()==null){
 	        	Toast t = Toast.makeText(mContext, getString(R.string.showpass_null_password), Toast.LENGTH_LONG);
 	        	t.show();
 	        	finish();
 	        }
 	        
-	        if(ShowPass.current.getClave()!=null && ShowPass.current.getClave().equals("NOPASSNOPASSNOPASSNOPASS")){
+	        if(ShowPass.current.getPassword()!=null && ShowPass.current.getPassword().equals("NOPASSNOPASSNOPASSNOPASS")){
 				Toast.makeText(mContext, R.string.showpass_network_nopass_toast, Toast.LENGTH_LONG).show();
 				Intent i = new Intent(Settings.ACTION_WIFI_SETTINGS);
 				i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -128,7 +128,7 @@ public class ShowPass extends Activity {
 	}
 	
 	public void showpass(){
-		String clave = ShowPass.current.getClave();
+		String clave = ShowPass.current.getPassword();
    		AlertDialog.Builder builder = new AlertDialog.Builder(this);
 		builder.setMessage(clave)
 		       .setNegativeButton("OK", new DialogInterface.OnClickListener() {
@@ -136,7 +136,7 @@ public class ShowPass extends Activity {
 		                dialog.cancel();
 		           }
 		       });
-        if(ShowPass.current.getClave().length() > 21) {
+        if(ShowPass.current.getPassword().length() > 21) {
         	builder.setTitle(R.string.showpass_popup_title_many);
         } else {
 			 builder.setTitle(getString(R.string.showpass_popup_title));

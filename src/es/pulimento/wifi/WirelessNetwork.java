@@ -1,23 +1,34 @@
 package es.pulimento.wifi;
 
+import java.util.HashMap;
+
 import android.os.Parcel;
 import android.os.Parcelable;
 
 public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> {
 	// TODO: Be able of processing capabilities.
-	// TODO: There should be a crack function that updates password variable.
+
+	static HashMap<String, Boolean> mDatabase = new HashMap<String, Boolean>();
 
 	private String mEssid, mBssid, mCapabilities, mPassword;
 	private boolean mCrackeable;
 	private int mSignal;
 
-	public WirelessNetwork(String ESSID, String BSSID, boolean crackeable, int signal, String capabilities) {
+	public WirelessNetwork(String ESSID, String BSSID, int signal, String capabilities) {
 		mEssid = ESSID;
 		mBssid = BSSID;
-		mCrackeable = crackeable;
 		mPassword = null;
 		mSignal = signal;
 		mCapabilities = capabilities;
+		if(mDatabase.containsKey(mEssid))
+		{
+			mCrackeable = mDatabase.get(mEssid);
+		}
+		else
+		{
+			mCrackeable = (new CrackNetwork(mEssid,  mBssid, mCapabilities)).isCrackeable();
+			mDatabase.put(mEssid, mCrackeable);
+		}
 	}
 
 	public WirelessNetwork(Parcel in) {
@@ -63,10 +74,6 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 		return mEssid;
 	}
 
-	public void setEssid(String ESSID) {
-		mEssid = ESSID;
-	}
-
 	public int getSignal() {
 		return mSignal;
 	}
@@ -75,24 +82,17 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 		return mBssid;
 	}
 
-	public void setBssid(String BSSID) {
-		mBssid = BSSID;
-	}
-
-	public String getClave() {
+	public String getPassword() {
 		return mPassword;
 	}
 
-	public void setClave(String clave) {
-		mPassword = clave;
+	public void crack() {
+		// TODO: Change this when able to process capabilities.
+		mPassword = (new CrackNetwork(mEssid, mBssid, "WPA2")).crackNetwork();
 	}
 
 	public boolean getCrackeable() {
 		return mCrackeable;
-	}
-
-	public void setCrackeable(boolean crackeable) {
-		mCrackeable = crackeable;
 	}
 
 	public String getCapabilities() {

@@ -1,7 +1,6 @@
 package es.pulimento.wifi;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -47,7 +46,6 @@ public class SelectWirelessNetwork extends Activity implements OnItemClickListen
 	private BroadcastReceiver mBroadcastReceiver;
 	private IntentFilter mIntentFilter;
 	private Button mRefreshNetworks;
-	private HashMap<String,Boolean> mDb;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState){
@@ -78,8 +76,6 @@ public class SelectWirelessNetwork extends Activity implements OnItemClickListen
 
 
 
-		mDb = new HashMap<String, Boolean>();
-
 		mRefreshNetworks = (Button) findViewById(R.id.button_refresh_network);
 		mRefreshNetworks.setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
@@ -98,20 +94,11 @@ public class SelectWirelessNetwork extends Activity implements OnItemClickListen
 					//wirelessNetList.clear();
 
 					for(ScanResult wifi : mWifiManager.getScanResults()) {
-						boolean crackeable;
 
-						if(wifi.BSSID!=null && mDb.containsKey(wifi.BSSID)) {
-							crackeable = mDb.get(wifi.BSSID);
-						} else {
-							crackeable = (new CrackNetwork(wifi.SSID,  wifi.BSSID, wifi.capabilities)).isCrackeable();
-							mDb.put(wifi.BSSID, crackeable);
-						}
+						mWirelessNetList.add(new WirelessNetwork(wifi.SSID, wifi.BSSID ,wifi.level,wifi.capabilities));
 
-						if(wifi.SSID!=null && wifi.BSSID!=null)
-							mWirelessNetList.add(new WirelessNetwork(wifi.SSID, wifi.BSSID,crackeable,wifi.level,wifi.capabilities));
-
-						if(mPreferences.PREFERENCES_VIBRATEFOUND_CURRENT && crackeable)
-							mVibrator.vibrate(150);
+						/*if(mPreferences.PREFERENCES_VIBRATEFOUND_CURRENT && crackeable)
+							mVibrator.vibrate(150);*/
 					}
 
 					//wirelessNetList.add(new WirelessNetwork("WLAN4DC866","00:22:2D:04:DC:E8",true,-80,"[WPA]"));
@@ -162,10 +149,9 @@ public class SelectWirelessNetwork extends Activity implements OnItemClickListen
 	}
 
 	public void onItemClick(AdapterView<?> adapter, View view, int position, long id) {
-		final WirelessNetwork w = (WirelessNetwork) adapter.getItemAtPosition(position);
+		WirelessNetwork w = (WirelessNetwork) adapter.getItemAtPosition(position);
 		if(w.getCrackeable()){
-	    	String clave = 	(new CrackNetwork(w.getEssid(),w.getBssid(),w.getCapabilities())).crackNetwork();
-	    	w.setClave(clave);
+	    	w.crack();
 	    	ShowPass.current = w;
 	    	Intent intent = new Intent(mContext, ShowPass.class);
 			intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK); 
