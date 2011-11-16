@@ -25,6 +25,7 @@ public class AboutDialog extends Dialog implements OnClickListener {
 
 		// Set the content for our dialog...
 		this.setContentView(R.layout.dialog_about);
+		this.setTitle(R.string.dialog_about_title);
 
 		// Make links clickable.
 		((TextView) findViewById(R.id.dialog_about_text_id)).setMovementMethod(LinkMovementMethod.getInstance());

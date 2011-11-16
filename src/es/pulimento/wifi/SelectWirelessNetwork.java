@@ -5,11 +5,8 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.AlertDialog.Builder;
 import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.wifi.ScanResult;
@@ -26,6 +23,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 import es.pulimento.wifi.dialogs.AboutDialog;
+import es.pulimento.wifi.dialogs.SupportedNetworksDialog;
 
 public class SelectWirelessNetwork extends Activity implements OnItemClickListener {
 
@@ -189,16 +187,7 @@ public class SelectWirelessNetwork extends Activity implements OnItemClickListen
 	    	this.finish();
 	    	return true;
 	    case R.id.NETWORKS:
-	    	Builder aDialog = new AlertDialog.Builder(this);
-			aDialog.setTitle(R.string.supported_networks_title);
-			aDialog.setMessage(R.string.supported_networks);
-			aDialog.setPositiveButton(R.string.splash_ask_dialog_ok_button, new DialogInterface.OnClickListener() {
-			   public void onClick(DialogInterface dialog, int which) {
-				   dialog.cancel();
-			   }
-			});
-			AlertDialog a = aDialog.create();
-			a.show();
+	    	(new SupportedNetworksDialog(mContext)).show();
 	        return true;    
 	    case R.id.AJUSTES:
 	    	 startActivity(new Intent(mContext, Preferences.class));

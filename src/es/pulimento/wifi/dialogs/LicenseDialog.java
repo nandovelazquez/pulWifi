@@ -21,6 +21,7 @@ public class LicenseDialog extends Dialog {
 		super.onCreate(savedInstanceState);
 
 		this.setContentView(R.layout.dialog_license);
+		this.setTitle(R.string.dialog_license_title);
 
 		((WebView)findViewById(R.id.dialog_license_webview)).loadUrl(mContext.getString(R.string.dialog_license_file_url));
 	}
