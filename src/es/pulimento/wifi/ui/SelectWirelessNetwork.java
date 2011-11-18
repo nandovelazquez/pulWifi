@@ -48,11 +48,11 @@ public class SelectWirelessNetwork extends Activity implements OnItemClickListen
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.select_wireless_network);
+		setContentView(R.layout.layout_selectwireless);
 
 		/* Define objects. */
 		mContext = this;
-		mWirelessNetListView = (ListView) findViewById(R.id.list);
+		mWirelessNetListView = (ListView) findViewById(R.id.layout_selectwireless_list_id);
 		mWirelessNetList = new ArrayList<WirelessNetwork>();
 		mListViewAdapter = new ListViewAdapter(this, R.layout.listview_item, mWirelessNetList);
 		mWifiManager = (WifiManager)getSystemService(Context.WIFI_SERVICE);
@@ -62,11 +62,11 @@ public class SelectWirelessNetwork extends Activity implements OnItemClickListen
 		mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(mContext);
 
 		/* Set object properties. */
-		mWirelessNetListView.setEmptyView(findViewById(R.id.list_empty));
+		mWirelessNetListView.setEmptyView(findViewById(R.id.layout_selectwireless_list_empty_id));
 		mWirelessNetListView.setAdapter(mListViewAdapter);
 		mWirelessNetListView.setClickable(true);
 		mWirelessNetListView.setOnItemClickListener(this);
-		((Button) findViewById(R.id.button_refresh_network)).setOnClickListener(this);
+		((Button) findViewById(R.id.button_refresh_network_id)).setOnClickListener(this);
 
 		// Intent filters...
 		mIntentFilter = new IntentFilter();
@@ -176,7 +176,7 @@ public class SelectWirelessNetwork extends Activity implements OnItemClickListen
 	@Override
 	public void onClick(View v) {
 		switch(v.getId()) {
-		case R.id.button_refresh_network:
+		case R.id.button_refresh_network_id:
 			mWifiManager.startScan();
 			break;
 		}

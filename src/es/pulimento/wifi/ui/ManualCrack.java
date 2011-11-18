@@ -78,7 +78,6 @@ public class ManualCrack extends Activity implements OnClickListener {
 			return null;
 		}
 
-		// OJO!!
 		boolean crackeable = (new CrackNetwork(ESSID,BSSID,"WPA2")).isCrackeable();
 		if(crackeable) {
 			WirelessNetwork w = new WirelessNetwork(ESSID, BSSID, 1, "wawawa");

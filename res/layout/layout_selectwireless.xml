@@ -13,19 +13,18 @@
         ads:loadAdOnCreate="true" />
 
     <ListView
-        android:id="@+id/list"
+        android:id="@+id/layout_selectwireless_list_id"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_alignParentTop="true"
         android:layout_weight="1"
         android:listSelector="@drawable/tab_bg_selected" />
 
     <TextView
-        android:id="@+id/list_empty"
+        android:id="@+id/layout_selectwireless_list_empty_id"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_gravity="center"
-        android:layout_weight="1.0"
+        android:layout_weight="1"
         android:gravity="center"
         android:text="@string/select_wireless_network_list_empty"
         android:textSize="16dip"
@@ -38,7 +37,7 @@
         android:id="@+id/layout_selectwireless_refreshsection_id" >
 
         <Button
-            android:id="@+id/button_refresh_network"
+            android:id="@+id/button_refresh_network_id"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:text="@string/select_wireless_network_update" />
