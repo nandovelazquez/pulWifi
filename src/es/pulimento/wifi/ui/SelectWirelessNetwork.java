@@ -141,8 +141,7 @@ public class SelectWirelessNetwork extends Activity implements OnItemClickListen
 	    	w.crack();
 	    	Intent i = new Intent(mContext, ShowPass.class);
 			i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-			// TODO: Change name.
-			i.putExtra("", w);
+			i.putExtra(ShowPass.EXTRA_NETWORK, w);
 			startActivity(i);
 		}else{
 			Toast t = Toast.makeText(mContext, getString(R.string.select_wireless_network_dialog_not_valid), Toast.LENGTH_SHORT);

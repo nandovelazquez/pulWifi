@@ -31,8 +31,11 @@ import es.pulimento.wifi.dialogs.AboutDialog;
 
 public class ShowPass extends Activity {
 
+	public static final String EXTRA_NETWORK = "EXTRA_WIRELESS_NETWORK";
+
 	private Context mContext;
 	private ClipboardManager mClipboardManager;
+	private WirelessNetwork mWirelessNetwork;
 	
 
 
@@ -41,7 +44,6 @@ public class ShowPass extends Activity {
 	private Button back;
 	private TextView mESSID;
 	private TextView mBSSID;
-	public static WirelessNetwork current = new WirelessNetwork("CURRENT", "CURRENT", 1, "wawawa");
 	static List<String> claves = new ArrayList<String>();
 
 	@Override
@@ -51,12 +53,13 @@ public class ShowPass extends Activity {
 
 		mContext = this;
 		mClipboardManager = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+		mWirelessNetwork = this.getIntent().getExtras().getParcelable(EXTRA_NETWORK);
 
-		procesarListaClaves(ShowPass.current.getPassword());		
+		procesarListaClaves(mWirelessNetwork.getPassword());		
 		mESSID = (TextView) findViewById(R.id.showpass_ESSID);
-		mESSID.setText(ShowPass.current.getEssid());
+		mESSID.setText(mWirelessNetwork.getEssid());
 		mBSSID = (TextView) findViewById(R.id.showpass_BSSID);
-		mBSSID.setText(ShowPass.current.getBssid());
+		mBSSID.setText(mWirelessNetwork.getBssid());
 		showpass = (Button) findViewById(R.id.button_showpass);
 		showpass.setOnClickListener(new View.OnClickListener() {			
 			public void onClick(View arg0) {
@@ -110,13 +113,13 @@ public class ShowPass extends Activity {
 			}
 		});
 		    
-	        if(ShowPass.current.getPassword()==null){
+	        if(mWirelessNetwork.getPassword()==null){
 	        	Toast t = Toast.makeText(mContext, getString(R.string.showpass_null_password), Toast.LENGTH_LONG);
 	        	t.show();
 	        	finish();
 	        }
 	        
-	        if(ShowPass.current.getPassword()!=null && ShowPass.current.getPassword().equals("NOPASSNOPASSNOPASSNOPASS")){
+	        if(mWirelessNetwork.getPassword()!=null && mWirelessNetwork.getPassword().equals("NOPASSNOPASSNOPASSNOPASS")){
 				Toast.makeText(mContext, R.string.showpass_network_nopass_toast, Toast.LENGTH_LONG).show();
 				Intent i = new Intent(Settings.ACTION_WIFI_SETTINGS);
 				i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -126,7 +129,7 @@ public class ShowPass extends Activity {
 	}
 	
 	public void showpass(){
-		String clave = ShowPass.current.getPassword();
+		String clave = mWirelessNetwork.getPassword();
    		AlertDialog.Builder builder = new AlertDialog.Builder(this);
 		builder.setMessage(clave)
 		       .setNegativeButton("OK", new DialogInterface.OnClickListener() {
@@ -134,7 +137,7 @@ public class ShowPass extends Activity {
 		                dialog.cancel();
 		           }
 		       });
-        if(ShowPass.current.getPassword().length() > 21) {
+        if(mWirelessNetwork.getPassword().length() > 21) {
         	builder.setTitle(R.string.showpass_popup_title_many);
         } else {
 			 builder.setTitle(getString(R.string.showpass_popup_title));
