@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
 
-    <PreferenceCategory android:title="Modo SCAN" >
+    <PreferenceCategory android:title="@string/preferences_category_scanmode" >
 
         <CheckBoxPreference
             android:defaultValue="@string/preferences_autoupdate_default"
@@ -16,16 +16,10 @@
             android:summary="@string/preferences_vibrateupdate_summary"
             android:title="@string/preferences_vibrateupdate_title" />
 
-        <CheckBoxPreference
-            android:defaultValue="@string/preferences_vibratefound_default"
-            android:key="@string/preferences_vibratefound_key"
-            android:summary="@string/preferences_vibratefound_summary"
-            android:title="@string/preferences_vibratefound_title" />
-
         <ListPreference
             android:defaultValue="@string/preferences_updateinterval_default"
-            android:entries="@array/updateIntervals"
-            android:entryValues="@array/updateIntervalValues"
+            android:entries="@array/preferences_updateintervals_names"
+            android:entryValues="@array/preferences_updateintervals_values"
             android:key="@string/preferences_updateinterval_key"
             android:summary="@string/preferences_updateinterval_summary"
             android:title="@string/preferences_updateinterval_title" />

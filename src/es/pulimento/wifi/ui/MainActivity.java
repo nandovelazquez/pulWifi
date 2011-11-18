@@ -40,9 +40,6 @@ public class MainActivity extends Activity {
 		mActivity = this;
 		mIntentFilter = new IntentFilter();
 
-		/* Initialize preferences. They will autoupdate them after this. */
-		Preferences.initPefs(mContext);
-
 		Builder fDialog = new AlertDialog.Builder(mActivity);
 		fDialog.setTitle(R.string.splash_failed_dialog_error);
 		fDialog.setMessage(R.string.splash_failed_dialog_msg);

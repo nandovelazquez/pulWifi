@@ -18,6 +18,29 @@
     <string name="dialog_supportednetworks_title">Supported networks:</string>
     <string name="dialog_supportednetworks_list">- WLAN_XXXX\n- JAZZTEL_XXXX\n- WLANXXXXXX\n- YACOMXXXXXX\n- WIFIXXXXXX\n- Some D-Link routers\n- Some Huawei routers\n</string>
 
+	<!-- Preference keys and defaults -->
+    <string name="preferences_autoupdate_key">prefs_key_autoupdate</string>
+    <string name="preferences_autoupdate_default">true</string>
+    <string name="preferences_vibrateupdate_key">prefs_key_vibrateupdate</string>
+    <string name="preferences_vibrateupdate_default">true</string>
+    <string name="preferences_updateinterval_key">prefs_key_updateinterval</string>
+    <string name="preferences_updateinterval_default">2000</string>
+
+	<!-- Preferences -->
+	<string name="preferences_category_scanmode">Scan mode:</string>
+    <string name="preferences_autoupdate_title">Auto-refresh</string>
+    <string name="preferences_autoupdate_summary">Refresh network\'s list automatically</string>
+    <string name="preferences_vibrateupdate_title">Vibrate on refreshing</string>
+    <string name="preferences_vibrateupdate_summary">Vibrate each time the list is refreshed</string>
+    <string name="preferences_updateinterval_title">Refresh rate</string>
+    <string name="preferences_updateinterval_summary">Choose the refresh rate of the list</string>
+    <string name="preferences_updateinterval_fast">Fast</string>
+    <string name="preferences_updateinterval_normal">Normal</string>
+    <string name="preferences_updateinterval_slow">Slow</string>
+    
+    
+    
+   
 
 
 
@@ -77,29 +100,6 @@
     <string name="showpass_network_nopass_toast">This network is open, connect to it!</string>
     <string name="showpass_null_password">Oops! Something is going bad here. Please try again</string>
     <string name="showpass_multiple_passwords">Press on the password to copy it to the clipboard</string>
-
-    <!-- Preferences -->
-    <string name="preferences_autoupdate_title">Auto-refresh</string>
-    <string name="preferences_autoupdate_summary">Refresh network\'s list automatically</string>
-    <string name="preferences_vibrateupdate_title">Vibrate on refreshing</string>
-    <string name="preferences_vibrateupdate_summary">Vibrate each time the list is refreshed</string>
-    <string name="preferences_vibratefound_title">Vibrate on supported</string>
-    <string name="preferences_vibratefound_summary">Vibrate when a supported network is on range</string>
-    <string name="preferences_updateinterval_title">Refresh rate</string>
-    <string name="preferences_updateinterval_summary">Choose the refresh rate of the list</string>
-    <string name="preferences_updateinterval_fast">Fast</string>
-    <string name="preferences_updateinterval_normal">Normal</string>
-    <string name="preferences_updateinterval_slow">Slow</string>
-
-    <!-- Preference keys and defaults -->
-    <string name="preferences_autoupdate_key">autoupdate</string>
-    <string name="preferences_autoupdate_default">true</string>
-    <string name="preferences_vibrateupdate_key">vibrateUPDATE</string>
-    <string name="preferences_vibrateupdate_default">false</string>
-    <string name="preferences_vibratefound_key">vibrateFOUND</string>
-    <string name="preferences_vibratefound_default">false</string>
-    <string name="preferences_updateinterval_key">ui</string>
-    <string name="preferences_updateinterval_default">2000</string>
 
     <!-- Information -->
     <string name="showpass_popup_title_many">One of those is your password</string>

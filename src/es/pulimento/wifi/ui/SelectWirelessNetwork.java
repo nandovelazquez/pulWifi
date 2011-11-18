@@ -9,11 +9,12 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.net.wifi.ScanResult;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.os.Vibrator;
-import android.util.Log;
+import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,6 +22,7 @@ import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 import es.pulimento.wifi.R;
@@ -40,9 +42,11 @@ public class SelectWirelessNetwork extends Activity implements OnItemClickListen
 	private Vibrator mVibrator;
 	private BroadcastReceiver mBroadcastReceiver;
 	private IntentFilter mIntentFilter;
+	private SharedPreferences mSharedPreferences;
+	private LinearLayout mRefreshSection;
 
 	@Override
-	public void onCreate(Bundle savedInstanceState){
+	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.select_wireless_network);
 
@@ -53,7 +57,9 @@ public class SelectWirelessNetwork extends Activity implements OnItemClickListen
 		mListViewAdapter = new ListViewAdapter(this, R.layout.listview_item, mWirelessNetList);
 		mWifiManager = (WifiManager)getSystemService(Context.WIFI_SERVICE);
 		mVibrator = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
+		mRefreshSection = (LinearLayout) findViewById(R.id.layout_selectwireless_refreshsection_id);
 		mTimer = new Timer();
+		mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(mContext);
 
 		/* Set object properties. */
 		mWirelessNetListView.setEmptyView(findViewById(R.id.list_empty));
@@ -62,7 +68,7 @@ public class SelectWirelessNetwork extends Activity implements OnItemClickListen
 		mWirelessNetListView.setOnItemClickListener(this);
 		((Button) findViewById(R.id.button_refresh_network)).setOnClickListener(this);
 
-		//Intent filters...
+		// Intent filters...
 		mIntentFilter = new IntentFilter();
 		mIntentFilter.addAction(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION);
 		mBroadcastReceiver = new BroadcastReceiver() {
@@ -72,13 +78,8 @@ public class SelectWirelessNetwork extends Activity implements OnItemClickListen
 
 				mWirelessNetList.clear();
 
-				for(ScanResult wifi : mWifiManager.getScanResults()) {
+				for(ScanResult wifi : mWifiManager.getScanResults())
 					mWirelessNetList.add(new WirelessNetwork(wifi));
-					/* TODO: Think if this is deletable.
-					 * if(mPreferences.PREFERENCES_VIBRATEFOUND_CURRENT && crackeable)
-					 *     mVibrator.vibrate(150);
-					 */
-				}
 
 				//mWirelessNetList.add(new WirelessNetwork("WLAN4DC866", "00:22:2D:04:DC:E8", -80, "[WPA]"));
 				//mWirelessNetList.add(new WirelessNetwork("WLAN_1234", "64:68:0c:AA:AA:AA", -100, "[WPA]"));
@@ -92,17 +93,17 @@ public class SelectWirelessNetwork extends Activity implements OnItemClickListen
 
 				mListViewAdapter.notifyDataSetChanged();
 
-				if(Preferences.PREFERENCES_VIBRATEUPDATE_CURRENT)
+				if(mSharedPreferences.getBoolean(Preferences.PREFERENCES_VIBRATEUPDATE_KEY, Preferences.PREFERENCES_VIBRATEUPDATE_DEFAULT))
 					mVibrator.vibrate(150);
 
-				if(Preferences.PREFERENCES_AUTOUPDATE_CURRENT) {
+				if(mSharedPreferences.getBoolean(Preferences.PREFERENCES_AUTOUPDATE_KEY, Preferences.PREFERENCES_AUTOUPDATE_DEFAULT)) {
 					mStartScanTask = new TimerTask() {
 						@Override
 						public void run() {
 							mWifiManager.startScan();
 						}
 					};
-					mTimer.schedule(mStartScanTask, Preferences.PREFERENCES_UPDATEINTERVAL_CURRENT);
+					mTimer.schedule(mStartScanTask, Integer.parseInt(mSharedPreferences.getString(Preferences.PREFERENCES_UPDATEINTERVAL_KEY, Preferences.PREFERENCES_UPDATEINTERVAL_DEFAULT)));
 				}
 			}
 		};
@@ -112,14 +113,11 @@ public class SelectWirelessNetwork extends Activity implements OnItemClickListen
 	public void onResume(){
 		super.onResume();
 
-		if(Preferences.PREFERENCES_AUTOUPDATE_CURRENT) {
-			//mRefreshNetworks.setVisibility(Button.GONE);
+		if(mSharedPreferences.getBoolean(Preferences.PREFERENCES_AUTOUPDATE_KEY, Preferences.PREFERENCES_AUTOUPDATE_DEFAULT)) {
+			mRefreshSection.setVisibility(View.GONE);
 			mWifiManager.startScan();
-			Log.v("PULW", "AutoScan");
 		} else {
-			//mRefreshNetworks.setVisibility(Button.VISIBLE);
-			//mRefreshNetworks.setEnabled(true);
-			Log.v("PULW", "NO AutoScan");
+			mRefreshSection.setVisibility(View.VISIBLE);
 		}
 
 		// Register receivers...
@@ -144,8 +142,7 @@ public class SelectWirelessNetwork extends Activity implements OnItemClickListen
 			i.putExtra(ShowPass.EXTRA_NETWORK, w);
 			startActivity(i);
 		}else{
-			Toast t = Toast.makeText(mContext, getString(R.string.select_wireless_network_dialog_not_valid), Toast.LENGTH_SHORT);
-    		t.show();
+			Toast.makeText(mContext, getString(R.string.select_wireless_network_dialog_not_valid), Toast.LENGTH_SHORT).show();
 		}
 	}
 

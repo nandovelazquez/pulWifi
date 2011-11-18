@@ -35,7 +35,7 @@
         android:layout_width="fill_parent"
         android:layout_height="45dip"
         android:background="@android:drawable/bottom_bar"
-        android:id="@+id/a" >
+        android:id="@+id/layout_selectwireless_refreshsection_id" >
 
         <Button
             android:id="@+id/button_refresh_network"
