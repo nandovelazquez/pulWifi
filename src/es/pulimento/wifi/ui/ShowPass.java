@@ -1,4 +1,4 @@
-package es.pulimento.wifi;
+package es.pulimento.wifi.ui;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +25,8 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import es.pulimento.wifi.R;
+import es.pulimento.wifi.core.WirelessNetwork;
 import es.pulimento.wifi.dialogs.AboutDialog;
 
 public class ShowPass extends Activity {
@@ -39,7 +41,7 @@ public class ShowPass extends Activity {
 	private Button back;
 	private TextView mESSID;
 	private TextView mBSSID;
-	static WirelessNetwork current = new WirelessNetwork("CURRENT", "CURRENT", 1, "wawawa");
+	public static WirelessNetwork current = new WirelessNetwork("CURRENT", "CURRENT", 1, "wawawa");
 	static List<String> claves = new ArrayList<String>();
 
 	@Override

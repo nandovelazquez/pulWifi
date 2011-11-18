@@ -1,6 +1,5 @@
-package es.pulimento.wifi;
+package es.pulimento.wifi.ui;
 
-import es.pulimento.wifi.MainTabHost;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
@@ -12,6 +11,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
+import es.pulimento.wifi.R;
 
 /* Main activity. */
 public class MainActivity extends Activity {
@@ -32,13 +32,16 @@ public class MainActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.splashscreen);
+		setContentView(R.layout.layout_mainactivity);
 
 		/* Define elements. */
 		mContext = getApplicationContext();
 		mWifiManager = (WifiManager)getSystemService(Context.WIFI_SERVICE);
 		mActivity = this;
 		mIntentFilter = new IntentFilter();
+
+		/* Initialize preferences. They will autoupdate them after this. */
+		Preferences.initPefs(mContext);
 
 		Builder fDialog = new AlertDialog.Builder(mActivity);
 		fDialog.setTitle(R.string.splash_failed_dialog_error);

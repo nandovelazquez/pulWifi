@@ -1,4 +1,4 @@
-package es.pulimento.wifi;
+package es.pulimento.wifi.ui;
 
 import android.app.TabActivity;
 import android.content.Context;
@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
 import android.widget.TextView;
+import es.pulimento.wifi.R;
 
 public class MainTabHost extends TabActivity{
 
@@ -23,13 +24,14 @@ public class MainTabHost extends TabActivity{
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-		/* TODO: Simplify this by using resources instead of code for tab tittle setting. */
+		// TODO: Simplify this by using resources instead of code for tab tittle setting.
+		// TODO: Fragments+Pager: http://developer.android.com/resources/samples/Support4Demos/src/com/example/android/supportv4/app/FragmentTabsPager.html
 
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.main);
+		setContentView(R.layout.layout_maintabhost);
 
-		mTabHost = this.getTabHost();
-		mContext = this.getApplicationContext();
+		mContext = this;
+		mTabHost = ((TabHost) findViewById(android.R.id.tabhost));
 
 		/* Tab host properties. */
 		mTabHost.getTabWidget().setDividerDrawable(R.drawable.tab_divider);

@@ -1,7 +1,8 @@
-package es.pulimento.wifi;
+package es.pulimento.wifi.core;
 
 import java.util.HashMap;
 
+import android.net.wifi.ScanResult;
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -14,9 +15,26 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 	private boolean mCrackeable;
 	private int mSignal;
 
+	public WirelessNetwork(ScanResult s) {
+		mEssid = s.SSID;
+		mBssid = s.BSSID.toUpperCase();
+		mPassword = null;
+		mSignal = s.level;
+		mCapabilities = s.capabilities;
+		if(mDatabase.containsKey(mEssid))
+		{
+			mCrackeable = mDatabase.get(mEssid);
+		}
+		else
+		{
+			mCrackeable = (new CrackNetwork(this)).isCrackeable();
+			mDatabase.put(mEssid, mCrackeable);
+		}
+	}
+
 	public WirelessNetwork(String ESSID, String BSSID, int signal, String capabilities) {
 		mEssid = ESSID;
-		mBssid = BSSID;
+		mBssid = BSSID.toUpperCase();
 		mPassword = null;
 		mSignal = signal;
 		mCapabilities = capabilities;
@@ -26,7 +44,7 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 		}
 		else
 		{
-			mCrackeable = (new CrackNetwork(mEssid,  mBssid, mCapabilities)).isCrackeable();
+			mCrackeable = (new CrackNetwork(this)).isCrackeable();
 			mDatabase.put(mEssid, mCrackeable);
 		}
 	}
@@ -88,7 +106,7 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 
 	public void crack() {
 		// TODO: Change this when able to process capabilities.
-		mPassword = (new CrackNetwork(mEssid, mBssid, "WPA2")).crackNetwork();
+		mPassword = (new CrackNetwork(this)).crackNetwork();
 	}
 
 	public boolean getCrackeable() {

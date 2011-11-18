@@ -1,4 +1,4 @@
-package es.pulimento.wifi;
+package es.pulimento.wifi.core;
 
 import java.math.BigInteger;
 import java.security.MessageDigest;
@@ -11,6 +11,7 @@ import java.util.regex.Pattern;
 import android.util.Log;
 
 public class CrackNetwork {
+	// TODO: Constructor based on WirelessNetwork object.
 
 	private String mCapabilities, mESSID, mBSSID;
 
@@ -19,10 +20,17 @@ public class CrackNetwork {
 	private Matcher matcher_andared, matcher_dlink;
 	//private Matcher[] matcher_thomson, matcher_wlan2X;
 
-	public CrackNetwork(/*Context context, */String ESSID, String BSSID, String capabilities){
+	public CrackNetwork(String ESSID, String BSSID, String capabilities) {
 		mCapabilities = capabilities;
 		mESSID = ESSID;
 		mBSSID = BSSID.toUpperCase();
+		initFramework(mESSID, mBSSID);
+	}
+
+	public CrackNetwork(WirelessNetwork w) {
+		mCapabilities = w.getCapabilities();
+		mESSID = w.getEssid();
+		mBSSID = w.getBssid();
 		initFramework(mESSID, mBSSID);
 	}
 

@@ -1,4 +1,4 @@
-package es.pulimento.wifi;
+package es.pulimento.wifi.ui;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -14,6 +14,9 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import es.pulimento.wifi.R;
+import es.pulimento.wifi.core.CrackNetwork;
+import es.pulimento.wifi.core.WirelessNetwork;
 import es.pulimento.wifi.dialogs.AboutDialog;
 
 public class ManualCrack extends Activity implements OnClickListener {

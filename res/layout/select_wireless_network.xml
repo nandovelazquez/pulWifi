@@ -6,27 +6,18 @@
     android:orientation="vertical" >
 
     <com.google.ads.AdView
-        android:id="@+id/select_wireless_ad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         ads:adSize="BANNER"
         ads:adUnitId="a14de2ce2207597"
         ads:loadAdOnCreate="true" />
 
-    <LinearLayout
-        android:id="@+id/ads"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="#555555"
-        android:orientation="vertical" />
-
     <ListView
         android:id="@+id/list"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_alignParentTop="true"
-        android:layout_weight="1.0"
+        android:layout_weight="1"
         android:listSelector="@drawable/tab_bg_selected" />
 
     <TextView
@@ -37,18 +28,19 @@
         android:layout_weight="1.0"
         android:gravity="center"
         android:text="@string/select_wireless_network_list_empty"
-        android:textSize="16dp"
+        android:textSize="16dip"
         android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true" >
+        android:layout_height="45dip"
+        android:background="@android:drawable/bottom_bar"
+        android:id="@+id/a" >
 
         <Button
             android:id="@+id/button_refresh_network"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:text="@string/select_wireless_network_update" />
     </LinearLayout>
 

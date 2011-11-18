@@ -1,4 +1,4 @@
-package es.pulimento.wifi;
+package es.pulimento.wifi.ui;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import es.pulimento.wifi.R;
+import es.pulimento.wifi.core.WirelessNetwork;
 
 public class ListViewAdapter extends ArrayAdapter<WirelessNetwork> {
 
