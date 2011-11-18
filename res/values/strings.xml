@@ -52,7 +52,6 @@
 
     <!-- Manual Mode -->
 
-    <string name="hello">Password Generator for JAZZTEL_XXXX ,WLAN_XXXX networks, by Javi Pulido</string>
     <string name="mm_OK">OK</string>
     <string name="introduceNombre">Input the name of the network</string>
     <string name="introduceMAC">Input the MAC Adress</string>
