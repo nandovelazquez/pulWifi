@@ -110,18 +110,20 @@ public class SelectWirelessNetwork extends Activity implements OnItemClickListen
 	}
 	
 	@Override
-	public void onResume(){
+	public void onResume() {
 		super.onResume();
+
+		// Register receivers...
+		registerReceiver(mBroadcastReceiver, mIntentFilter);
 
 		if(mSharedPreferences.getBoolean(Preferences.PREFERENCES_AUTOUPDATE_KEY, Preferences.PREFERENCES_AUTOUPDATE_DEFAULT)) {
 			mRefreshSection.setVisibility(View.GONE);
-			mWifiManager.startScan();
 		} else {
 			mRefreshSection.setVisibility(View.VISIBLE);
 		}
 
-		// Register receivers...
-		registerReceiver(mBroadcastReceiver, mIntentFilter);
+		// Scan for the first time...
+		mWifiManager.startScan();
 	}
 
 	@Override
