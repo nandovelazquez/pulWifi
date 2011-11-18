@@ -26,7 +26,7 @@ public class ManualCrack extends Activity implements OnClickListener {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.manualcrack);
+		setContentView(R.layout.layout_manualcrack);
 
 		mContext = this;
 		mEditTextEssid = (EditText) findViewById(R.id.layout_manualcrack_essid);
