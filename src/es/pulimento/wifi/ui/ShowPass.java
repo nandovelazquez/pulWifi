@@ -1,6 +1,5 @@
 package es.pulimento.wifi.ui;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
@@ -8,7 +7,6 @@ import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.app.Dialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
@@ -17,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -28,23 +27,15 @@ import android.widget.Toast;
 import es.pulimento.wifi.R;
 import es.pulimento.wifi.core.WirelessNetwork;
 import es.pulimento.wifi.dialogs.AboutDialog;
+import es.pulimento.wifi.dialogs.ShowPasswordsDialog;
 
-public class ShowPass extends Activity {
+public class ShowPass extends Activity implements OnClickListener {
 
 	public static final String EXTRA_NETWORK = "EXTRA_WIRELESS_NETWORK";
 
 	private Context mContext;
 	private ClipboardManager mClipboardManager;
 	private WirelessNetwork mWirelessNetwork;
-	
-
-
-	private Button showpass;
-	private Button clipboard;
-	private Button back;
-	private TextView mESSID;
-	private TextView mBSSID;
-	static List<String> claves = new ArrayList<String>();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -55,95 +46,18 @@ public class ShowPass extends Activity {
 		mClipboardManager = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
 		mWirelessNetwork = this.getIntent().getExtras().getParcelable(EXTRA_NETWORK);
 
-		procesarListaClaves(mWirelessNetwork.getPassword());		
-		mESSID = (TextView) findViewById(R.id.showpass_ESSID);
-		mESSID.setText(mWirelessNetwork.getEssid());
-		mBSSID = (TextView) findViewById(R.id.showpass_BSSID);
-		mBSSID.setText(mWirelessNetwork.getBssid());
-		showpass = (Button) findViewById(R.id.button_showpass);
-		showpass.setOnClickListener(new View.OnClickListener() {			
-			public void onClick(View arg0) {
-				showpass();
-			}
-		});
-		clipboard = (Button) findViewById(R.id.button_clipboard);
-		clipboard.setOnClickListener(new View.OnClickListener() {			
-			public void onClick(View arg0) {
-				if(claves.size()==1)clipboard(claves.get(0));
-				else{
-					
-					
-					//aquí hay que poner la paarafernalia del nuevo diálogo de escoger clave, sacado de RouterKeygen
-					//.onCreateDialog, case 2 creo
-					
-					AlertDialog.Builder builder = new Builder(ShowPass.this);
-					builder.setTitle(mESSID.getText());
-				    LayoutInflater inflater = (LayoutInflater) ShowPass.this.getSystemService(LAYOUT_INFLATER_SERVICE);
-				    View layout = inflater.inflate(R.layout.results,
-				                                   (ViewGroup) findViewById(R.id.layout_root));
-				    ListView list = (ListView) layout.findViewById(R.id.list_keys);
-					list.setOnItemClickListener(new OnItemClickListener() {
-						public void onItemClick(AdapterView<?> parent, View view,
-								int position, long id) {
-							String key = ((TextView)view).getText().toString();
-							clipboard(key);
-//							Toast.makeText(getApplicationContext(), key + " " 							
-//									+ getString(R.string.msg_copied),
-//									Toast.LENGTH_SHORT).show();
-//							ClipboardManager clipboard = 
-//								(ClipboardManager) getSystemService(CLIPBOARD_SERVICE); 
-//		
-//							clipboard.setText(key);
-//							startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));
-						}
-					});
-					
-					list.setAdapter(new ArrayAdapter<String>(ShowPass.this, android.R.layout.simple_list_item_1, claves));
-					builder.setView(layout);
-					Dialog d = builder.create();
-					d.show();
-					
-				}
-			}
-		});
-		back = (Button) findViewById(R.id.button_back);
-		back.setOnClickListener(new View.OnClickListener() {			
-			public void onClick(View arg0) {
-				back();
-			}
-		});
-		    
-	        if(mWirelessNetwork.getPassword()==null){
-	        	Toast t = Toast.makeText(mContext, getString(R.string.showpass_null_password), Toast.LENGTH_LONG);
-	        	t.show();
-	        	finish();
-	        }
-	        
-	        if(mWirelessNetwork.getPassword()!=null && mWirelessNetwork.getPassword().equals("NOPASSNOPASSNOPASSNOPASS")){
-				Toast.makeText(mContext, R.string.showpass_network_nopass_toast, Toast.LENGTH_LONG).show();
-				Intent i = new Intent(Settings.ACTION_WIFI_SETTINGS);
-				i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-				startActivity(i);
-				this.finish();
-			}
-	}
-	
-	public void showpass(){
-		String clave = mWirelessNetwork.getPassword();
-   		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		builder.setMessage(clave)
-		       .setNegativeButton("OK", new DialogInterface.OnClickListener() {
-		           public void onClick(DialogInterface dialog, int id) {
-		                dialog.cancel();
-		           }
-		       });
-        if(mWirelessNetwork.getPassword().length() > 21) {
-        	builder.setTitle(R.string.showpass_popup_title_many);
-        } else {
-			 builder.setTitle(getString(R.string.showpass_popup_title));
-        }
-		AlertDialog alert = builder.create();
-		alert.show();
+		((TextView) findViewById(R.id.layout_showpass_essid)).setText(mWirelessNetwork.getEssid());
+		((TextView) findViewById(R.id.layout_showpass_bssid)).setText(mWirelessNetwork.getBssid());
+
+		((Button) findViewById(R.id.layout_showpass_back)).setOnClickListener(this);
+		((Button) findViewById(R.id.layout_showpass_clipboard)).setOnClickListener(this);
+		((Button) findViewById(R.id.layout_showpass_show)).setOnClickListener(this);
+
+		if(mWirelessNetwork.getPasswords().get(0).equals("NOPASSNOPASSNOPASSNOPASS")) {
+			Toast.makeText(mContext, R.string.showpass_network_nopass_toast, Toast.LENGTH_LONG).show();
+			startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));
+			this.finish();
+		}
 	}
 	
 	public void clipboard(String clave){
@@ -154,24 +68,44 @@ public class ShowPass extends Activity {
 		mContext.startActivity(i);
 		this.finish();
 	}
-	
-	public void back(){
-		this.finish();
-	}
-	
-	public void procesarListaClaves(String clave) {
-		if (clave == null) {
-			Toast.makeText(mContext, R.string.showpass_null_password , Toast.LENGTH_LONG).show();
+
+	@Override
+	public void onClick(View v) {
+		switch(v.getId()) {
+		case R.id.layout_showpass_back:
 			this.finish();
-		}
-		claves.clear();
-		if(clave.length() < 21)
-			ShowPass.claves.add(clave);
-		else {
-			String[] temp = clave.split("\n");
-			for(String tmp : temp)
-				if(!tmp.contains("null"))
-					claves.add(tmp);
+			break;
+		case R.id.layout_showpass_show:
+			(new ShowPasswordsDialog(mContext, mWirelessNetwork.getPasswords())).show();
+			break;
+		case R.id.layout_showpass_clipboard:
+			List<String> claves = mWirelessNetwork.getPasswords();
+			if(claves.size() == 1)
+				mClipboardManager.setText(claves.get(0));
+			else{
+				AlertDialog.Builder builder = new Builder(ShowPass.this);
+				builder.setTitle(mWirelessNetwork.getEssid());
+			    LayoutInflater inflater = (LayoutInflater) ShowPass.this.getSystemService(LAYOUT_INFLATER_SERVICE);
+			    View layout = inflater.inflate(R.layout.results,
+			                                   (ViewGroup) findViewById(R.id.layout_root));
+			    ListView list = (ListView) layout.findViewById(R.id.list_keys);
+				list.setOnItemClickListener(new OnItemClickListener() {
+					public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+						String key = ((TextView)view).getText().toString();
+						clipboard(key);
+						//Toast.makeText(getApplicationContext(), key + " " + getString(R.string.msg_copied), Toast.LENGTH_SHORT).show();
+						//clipboard.setText(key);
+						//startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));
+					}
+				});
+				
+				list.setAdapter(new ArrayAdapter<String>(ShowPass.this, android.R.layout.simple_list_item_1, claves));
+				builder.setView(layout);
+				Dialog d = builder.create();
+				d.show();
+				
+			}
+			break;
 		}
 	}
 

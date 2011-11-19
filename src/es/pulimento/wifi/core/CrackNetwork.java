@@ -28,6 +28,7 @@ public class CrackNetwork {
 	}
 
 	public CrackNetwork(WirelessNetwork w) {
+		// TODO: Change this when WirelessNetwork is able to process capabilities.
 		mCapabilities = w.getCapabilities();
 		mESSID = w.getEssid();
 		mBSSID = w.getBssid();
@@ -536,13 +537,10 @@ public class CrackNetwork {
 		return false;
 	}
 
-	public String crackNetwork(){
+	public String crackNetwork() {
 		if(mCapabilities.equals("") || mCapabilities == null)
 			return "NOPASSNOPASSNOPASSNOPASS";	// TODO: Change this to empty string.
-		// TODO: Thomson algorithm is disabled.
-		//for(Matcher match : matcher_thomson)
-			//if(match.find())
-				//return THOMSON.method1(match.group(1), initial_year, final_year);
+		
 		for(int x = 0; x < matcher_md5C.length; x+=2) 
 			if(matcher_md5C[x].find() && matcher_md5C[x+1].find())
 				return crack1(matcher_md5C[x].group(1), matcher_md5C[x+1].group(1).replace(":", "").toUpperCase());
@@ -556,15 +554,21 @@ public class CrackNetwork {
 			if(matcher_wlan4xx[x].find() && matcher_wlan4xx[x+1].find())
 				return crack2(matcher_wlan4xx[x].group(1),
 						matcher_wlan4xx[x+1].group(1).toUpperCase());
-		//for(int x = 0; x < matcher_wlan2X.length; x+=2)
-			//if(matcher_wlan2X[x].find() && matcher_wlan2X[x+1].find()) {
-				//Log.d("pulWifi","Nos disponemos a usar el algoritmo WLAN2X");
-				//return crack_wlan2X_beta(matcher_wlan2X[x+1].group(1).replace(":", "").toUpperCase());
-		//}
+		
 		if(matcher_andared.find())
 			return "6b629f4c299371737494c61b5a101693a2d4e9e1f3e1320f3ebf9ae379cecf32";
 		if(matcher_dlink.find())
 			return crackDLink(mBSSID.replace(":","").toUpperCase());
+
+		//for(int x = 0; x < matcher_wlan2X.length; x+=2)
+		//if(matcher_wlan2X[x].find() && matcher_wlan2X[x+1].find()) {
+			//Log.d("pulWifi","Nos disponemos a usar el algoritmo WLAN2X");
+			//return crack_wlan2X_beta(matcher_wlan2X[x+1].group(1).replace(":", "").toUpperCase());
+		//}
+		// TODO: Thomson algorithm is disabled.
+				//for(Matcher match : matcher_thomson)
+					//if(match.find())
+						//return THOMSON.method1(match.group(1), initial_year, final_year);
 		return null;
 	}
 }

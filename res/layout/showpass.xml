@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+    xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent" >
 
@@ -11,80 +11,69 @@ xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
         android:orientation="vertical" >
 
         <TextView
-            android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="@string/showpass_network_name"
             android:textColor="#FF0000"
-            android:textSize="36dp" >
-        </TextView>
+            android:textSize="36dp" />
 
         <TextView
-            android:id="@+id/showpass_ESSID"
+            android:id="@+id/layout_showpass_essid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
-            android:text="XXXXXX"
             android:textSize="28dp"
-            android:color="#0000FF" >
-        </TextView>
+            android:color="#0000FF" />
 
         <TextView
-            android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="@string/showpass_network_mac"
             android:textColor="#FF0000"
-            android:textSize="36dp" >
-        </TextView>
+            android:textSize="36dp" />
 
         <TextView
-            android:id="@+id/showpass_BSSID"
+            android:id="@+id/layout_showpass_bssid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="10dip"
             android:gravity="center"
-            android:text="XXXXXX"
             android:textSize="28dp"
-            android:color="#0000FF" >
-        </TextView>
+            android:color="#0000FF" />
 
         <Button
-            android:id="@+id/button_showpass"
+            android:id="@+id/layout_showpass_show"
             android:layout_width="fill_parent"
             android:layout_height="60dip"
             android:layout_marginTop="10dip"
             android:text="@string/showpass_button_showpass"
             android:textSize="24dp"
-            android:textStyle="bold" >
-        </Button>
+            android:textStyle="bold" />
 
         <Button
-            android:id="@+id/button_clipboard"
+            android:id="@+id/layout_showpass_clipboard"
             android:layout_width="fill_parent"
             android:layout_height="60dip"
             android:layout_marginTop="7dip"
             android:text="@string/showpass_button_clipboard"
             android:textSize="21dp"
-            android:textStyle="bold" >
-        </Button>
+            android:textStyle="bold" />
 
         <Button
-            android:id="@+id/button_back"
+            android:id="@+id/layout_showpass_back"
             android:layout_width="fill_parent"
             android:layout_height="60dip"
             android:layout_marginTop="7dip"
             android:text="@string/showpass_button_back"
             android:textSize="24dp"
-            android:textStyle="bold" >
-        </Button>
+            android:textStyle="bold" />
     </LinearLayout>
 
-<com.google.ads.AdView
+    <com.google.ads.AdView
         android:id="@+id/select_wireless_ad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

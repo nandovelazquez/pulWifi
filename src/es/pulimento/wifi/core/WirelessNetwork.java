@@ -1,6 +1,8 @@
 package es.pulimento.wifi.core;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import android.net.wifi.ScanResult;
 import android.os.Parcel;
@@ -11,14 +13,15 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 
 	static HashMap<String, Boolean> mDatabase = new HashMap<String, Boolean>();
 
-	private String mEssid, mBssid, mCapabilities, mPassword;
+	private String mEssid, mBssid, mCapabilities;
 	private boolean mCrackeable;
 	private int mSignal;
+	private List<String> mPasswords;
 
 	public WirelessNetwork(ScanResult s) {
 		mEssid = s.SSID;
 		mBssid = s.BSSID.toUpperCase();
-		mPassword = null;
+		mPasswords = new ArrayList<String>();
 		mSignal = s.level;
 		mCapabilities = s.capabilities;
 		if(mDatabase.containsKey(mEssid))
@@ -35,7 +38,7 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 	public WirelessNetwork(String ESSID, String BSSID, int signal, String capabilities) {
 		mEssid = ESSID;
 		mBssid = BSSID.toUpperCase();
-		mPassword = null;
+		mPasswords = new ArrayList<String>();
 		mSignal = signal;
 		mCapabilities = capabilities;
 		if(mDatabase.containsKey(mEssid))
@@ -56,7 +59,9 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 		boolean c[] = new boolean[1];
 		in.readBooleanArray(c);
 		mCrackeable = c[0];
-		mPassword = in.readString();
+		if(mPasswords == null)
+			mPasswords = new ArrayList<String>();
+		in.readStringList(mPasswords);
 		mSignal = in.readInt();
 		mCapabilities = in.readString();
 	}
@@ -68,7 +73,7 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 		dest.writeString(mEssid);
 		dest.writeString(mBssid);
 		dest.writeBooleanArray(new boolean[]{ mCrackeable });
-		dest.writeString(mPassword);
+		dest.writeStringList(mPasswords);
 		dest.writeInt(mSignal);
 		dest.writeString(mCapabilities);
 	}
@@ -100,13 +105,16 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 		return mBssid;
 	}
 
-	public String getPassword() {
-		return mPassword;
+	public List<String> getPasswords() {
+		return mPasswords;
 	}
 
 	public void crack() {
-		// TODO: Change this when able to process capabilities.
-		mPassword = (new CrackNetwork(this)).crackNetwork();
+		String[] passwds = (new CrackNetwork(this)).crackNetwork().split("\n");
+		mPasswords.clear();
+		for(String tmp : passwds)
+			if(!tmp.contains("null"))
+				mPasswords.add(tmp);
 	}
 
 	public boolean getCrackeable() {
