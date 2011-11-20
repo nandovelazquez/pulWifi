@@ -2,7 +2,6 @@ package es.pulimento.wifi.core;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 import android.net.wifi.ScanResult;
 import android.os.Parcel;
@@ -16,7 +15,7 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 	private String mEssid, mBssid, mCapabilities;
 	private boolean mCrackeable;
 	private int mSignal;
-	private List<String> mPasswords;
+	private ArrayList<String> mPasswords;
 
 	public WirelessNetwork(ScanResult s) {
 		mEssid = s.SSID;
@@ -105,7 +104,7 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 		return mBssid;
 	}
 
-	public List<String> getPasswords() {
+	public ArrayList<String> getPasswords() {
 		return mPasswords;
 	}
 

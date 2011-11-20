@@ -22,6 +22,9 @@
     <string name="dialog_showpass_title_one">This is your password:</string>
     <string name="dialog_showpass_title_many">One of those is your password:</string>
 
+	<!-- Copy to clipboard dialog -->
+	<string name="dialog_cipboardcopy_title">Passwords:</string>
+
     <!-- Preference keys and defaults -->
     <string name="preferences_autoupdate_key">prefs_key_autoupdate</string>
     <string name="preferences_autoupdate_default">true</string>
