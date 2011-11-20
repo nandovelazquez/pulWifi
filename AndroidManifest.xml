@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="es.pulimento.wifi"
-    android:versionCode="128"
+    android:versionCode="129"
     android:versionName="@string/app_version" >
 
     <application
