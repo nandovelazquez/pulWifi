@@ -1,70 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  android:layout_width="fill_parent"
-  android:layout_height="fill_parent"
-  android:id="@+id/rl_manualcrack"
-  >
-  
-<LinearLayout android:id="@+id/manualcrack"
-		android:orientation="vertical"
-		android:layout_width="fill_parent" android:layout_height="wrap_content">
-  
- <TextView  
-    android:layout_width="fill_parent" 
-    android:text="@string/manualHeader"
-    android:typeface="sans"
-    android:textSize="6pt"
-    android:layout_weight="0.1" android:layout_height="wrap_content" android:layout_marginBottom="2dip">
-    <!-- android:textStyle="bold"> -->
-    </TextView>
-<!-- <TextView 
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+    android:id="@+id/rl_manualcrack"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        android:id="@+id/manualcrack"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dip"
+            android:layout_weight="0.1"
+            android:text="@string/manualHeader"
+            android:textSize="6pt"
+            android:typeface="sans" >
+
+            <!-- android:textStyle="bold"> -->
+        </TextView>
+        <!--
+<TextView 
 android:text="@string/introduceNombre" 
 android:id="@+id/TextView01" 
 android:layout_width="wrap_content" 
 android:layout_marginTop="5px"
 android:typeface="sans"
 android:layout_height="wrap_content">
-</TextView> -->
-<EditText 
-android:text="@+id/EditText01" 
-android:id="@+id/inputESSID" 
-android:layout_marginBottom="0dip" 
-android:layout_width="fill_parent"
-android:singleLine="true"
-android:hint="@string/manual_ESSID_hint" android:layout_weight="0.1" android:layout_height="60dip">
-</EditText>
-<!-- <TextView 
+</TextView>
+        -->
+
+        <EditText
+            android:id="@+id/inputESSID"
+            android:layout_width="fill_parent"
+            android:layout_height="60dip"
+            android:layout_marginBottom="0dip"
+            android:layout_weight="0.1"
+            android:hint="@string/manual_ESSID_hint"
+            android:singleLine="true"
+            android:text="" />
+        <!--
+<TextView 
 android:text="@string/introduceMAC" 
 android:id="@+id/TextView02" 
 android:layout_width="wrap_content" 
 android:layout_marginTop="5px"
 android:typeface="sans"
 android:layout_height="wrap_content">
-</TextView> -->
-<EditText 
-android:text="@+id/EditText02"
-android:layout_marginBottom="0dip"
-android:id="@+id/inputMAC" 
-android:layout_width="fill_parent"
-android:maxLength="17"
-android:singleLine="true"
-android:hint="@string/manual_BSSID_hint" android:layout_weight="0.1" android:layout_height="60dip">
-</EditText>
-<Button 
-android:text="@string/mm_OK" 
-android:id="@+id/Button01" 
-android:layout_marginTop="0px"
-android:typeface="sans"
-android:textSize="8pt"
-android:layout_marginLeft="50dip"
-android:layout_marginRight="50dip"
-android:gravity="center"
-android:textStyle="bold"
-android:layout_width="fill_parent" android:layout_weight="0.1" android:layout_height="60dip">
-</Button>
+</TextView>
+        -->
 
-<!-- <Button 
+        <EditText
+            android:id="@+id/inputMAC"
+            android:layout_width="fill_parent"
+            android:layout_height="60dip"
+            android:layout_marginBottom="0dip"
+            android:layout_weight="0.1"
+            android:hint="@string/manual_BSSID_hint"
+            android:maxLength="17"
+            android:singleLine="true"
+            android:text="@+id/EditText02" >
+        </EditText>
+
+        <Button
+            android:id="@+id/Button01"
+            android:layout_width="fill_parent"
+            android:layout_height="60dip"
+            android:layout_marginLeft="50dip"
+            android:layout_marginRight="50dip"
+            android:layout_marginTop="0px"
+            android:layout_weight="0.1"
+            android:gravity="center"
+            android:text="@string/mm_OK"
+            android:textSize="8pt"
+            android:textStyle="bold"
+            android:typeface="sans" >
+        </Button>
+
+        <!--
+<Button 
 android:text="@string/toClipboard" 
 android:id="@+id/Button02" 
 android:layout_height="wrap_content" 
@@ -74,13 +91,16 @@ android:gravity="center"
 android:textStyle="bold"
 android:layout_width="fill_parent">
 </Button>
--->
-  
-</LinearLayout>
-<LinearLayout android:id="@+id/ads"
-		android:orientation="vertical"
-		android:layout_width="wrap_content" 
-		android:layout_height="wrap_content"
-		android:layout_alignParentBottom="true"/>
-	
+        -->
+
+    </LinearLayout>
+
+    <com.google.ads.AdView
+        android:id="@+id/manualcrack_ad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        ads:adSize="BANNER"
+        ads:adUnitId="a14de2ce2207597"
+        ads:loadAdOnCreate="true" />
+
 </RelativeLayout>

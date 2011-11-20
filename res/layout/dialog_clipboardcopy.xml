@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="8dp" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dip"
+        android:text="@string/showpass_multiple_passwords" />
+
+    <ListView
+        android:id="@+id/dialog_clipboardcopy_list"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:cacheColorHint="#00000000"
+        android:footerDividersEnabled="false"
+        android:gravity="center"
+        android:headerDividersEnabled="false" />
+
+</LinearLayout>

@@ -4,20 +4,20 @@
     <string name="app_name">pulWifi</string>
     <string name="scanMode">Buscar Xarxes</string>
     <string name="manualMode">Mode manual</string>
-    
-	<!--  Manual Mode -->
 
-    <string name="hello">Generador de claus JAZZTEL_XXXX i WLAN_XXXX, per Javi Pulido</string>    
-	<string name="mm_OK">Acceptar</string>
-	<string name="IntrodueixNom">Introdueix el nom de la xarxa</string>
-	<string name="IntrodueixMAC">Introdueix la MAC</string>
-	<string name="manualHeader">Introdueix el nom i la direcció MAC de la xarxa. Pots veure la llista de xarxes suportades polsant la tecla MENÚ</string>
-	<string name="manual_ESSID_hint">Nom de la xarxa</string>
-	<string name="manual_BSSID_hint">Direcció MAC</string>
-	<string name="manual_inputerror">Xarxa no suportada . Vegi la llista completa en el menú</string>
-	
-	<!-- Wi-Fi State checker (at init) -->
-	
+    <!-- Manual Mode -->
+
+    <string name="hello">Generador de claus JAZZTEL_XXXX i WLAN_XXXX, per Javi Pulido</string>
+    <string name="mm_OK">Acceptar</string>
+    <string name="IntrodueixNom">Introdueix el nom de la xarxa</string>
+    <string name="IntrodueixMAC">Introdueix la MAC</string>
+    <string name="manualHeader">Introdueix el nom i la direcció MAC de la xarxa. Pots veure la llista de xarxes suportades polsant la tecla MENÚ</string>
+    <string name="manual_ESSID_hint">Nom de la xarxa</string>
+    <string name="manual_BSSID_hint">Direcció MAC</string>
+    <string name="manual_inputerror">Xarxa no suportada . Vegi la llista completa en el menú</string>
+
+    <!-- Wi-Fi State checker (at init) -->
+
     <string name="splash_loading">Carregant...</string>
     <string name="splash_failed_dialog_error">Error...</string>
     <string name="splash_failed_dialog_msg">No se ha pogut habilitar el wifi. Sortint...</string>
@@ -27,8 +27,7 @@
     <string name="splash_ask_dialog_yes_button">Si</string>
     <string name="splash_ask_dialog_no_button">No</string>
     <string name="splash_ask_dialog_ok_button">OK</string>
-    
-    
+
     <!-- Select Wireless Network -->
     <string name="select_wireless_network_dialog_show_pass">Mostrar contrasenya</string>
     <string name="select_wireless_network_dialog_copy_clipboard">Copiar clau al portapapers</string>
@@ -38,60 +37,59 @@
     <string name="network_wpawpa2">WPA/WPA2</string>
     <string name="network_wep">WEP</string>
     <string name="network_open">OBERTA</string>
-    <string name="select_wireless_network_list_empty">Cap xarxa a l\'abast :(</string>     
+    <string name="select_wireless_network_list_empty">Cap xarxa a l\'abast :(</string>
 
-	<!-- Menu -->
-	<string name="menu_quit">Sortir</string>
-	<string name="menu_settings">Paràmetres</string>
-	<string name="menu_networks">Xarxes suportades</string>
-	<string name="menu_preferences">Paràmetres</string>
-	<string name="menu_about">Quant a...</string>
-	<string name="acerca_de">Aplicació per calcular les claus predefinides de algunes xarxes.
+    <!-- Menu -->
+    <string name="menu_quit">Sortir</string>
+    <string name="menu_settings">Paràmetres</string>
+    <string name="menu_networks">Xarxes suportades</string>
+    <string name="menu_preferences">Paràmetres</string>
+    <string name="menu_about">Quant a...</string>
+    <string name="acerca_de">Aplicació per calcular les claus predefinides de algunes xarxes.
 				"\n\nCopyright 2011, Javi Pulido\nMail: pulimento@gmail.com
 				\nTrad. al catalá : Roger Mon\nPer favor,accedeix al Llegeix-me de més avall per
 				 a més informació\n\nVersió 1.5.5</string>
-	
-	<!-- Show pass -->
-	<string name="showpass_network_name">Nom de la xarxa </string>
-	<string name="showpass_network_mac">Direcció MAC</string>
-	<string name="showpass_button_showpass">Mostrar la clau</string>
-	<string name="showpass_button_clipboard">Copiar clau al portapapers</string>
-	<string name="showpass_button_back">Enrere</string>
-	<string name="showpass_network_nopass_toast">Aquesta xarxa esta oberta</string>
-	<string name="showpass_null_password">Oops! Alguna cosa no ha anat bé. Si us plau-ho a provar</string>
-	<string name="showpass_multiple_passwords">Premeu en una de les claus per copiar al portapapers</string>
-	
-	
-	<!-- Preferences -->
-	<string name="preferences_autoupdate_title">Actualització automàtica</string>
-	<string name="preferences_autoupdate_summary">Actualitzar la llista de xarxes automàticament</string>
-	<string name="preferences_vibrateupdate_title">Avís de actualització</string>
-	<string name="preferences_vibrateupdate_summary">Vibrar cada vegada que es refresquin la llista de xarxes</string>
-	<string name="preferences_vibratefound_title">Avís de xarxa suportada</string>
-	<string name="preferences_vibratefound_summary">Vibrar quan hagi una xarxa suportada al abast</string>
-	<string name="preferences_updateinterval_title">Velocitat de refresc</string>
-	<string name="preferences_updateinterval_summary">Actualitzar llista cada ...</string>
-	<string name="preferences_updateinterval_fast">Ràpid</string>
-	<string name="preferences_updateinterval_normal">Normal</string>
-	<string name="preferences_updateinterval_slow">Lent</string>
-	
-	<!-- Information -->
-	<string name="showpass_popup_title">Aquesta és la teva clau</string>
-	<string name="showpass_popup_title_many">Una d\'aquestes és la teva clau</string>
-	<string name="showpass_toclipboard">Contrasenya copiada al portapapers\n</string>
-	
-	<!--About -->
-	<string name="about_title">Quant a pulWifi</string>
-	<string name="about_readme">Llegeix-me</string>
-	<string name="about_gpl">Llicència GPLv3</string>
-	<string name="about_readme_url">"file:///android_asset/README.htm"</string>
-	<string name="supported_networks_title">Xarxes suportades:</string>
-	<string name="supported_networks">\n - WLAN_XXXX \n
+
+    <!-- Show pass -->
+    <string name="showpass_network_name">Nom de la xarxa </string>
+    <string name="showpass_network_mac">Direcció MAC</string>
+    <string name="showpass_button_showpass">Mostrar la clau</string>
+    <string name="showpass_button_clipboard">Copiar clau al portapapers</string>
+    <string name="showpass_button_back">Enrere</string>
+    <string name="showpass_network_nopass_toast">Aquesta xarxa esta oberta</string>
+    <string name="showpass_null_password">Oops! Alguna cosa no ha anat bé. Si us plau-ho a provar</string>
+    <string name="showpass_multiple_passwords">Premeu en una de les claus per copiar al portapapers</string>
+
+    <!-- Preferences -->
+    <string name="preferences_autoupdate_title">Actualització automàtica</string>
+    <string name="preferences_autoupdate_summary">Actualitzar la llista de xarxes automàticament</string>
+    <string name="preferences_vibrateupdate_title">Avís de actualització</string>
+    <string name="preferences_vibrateupdate_summary">Vibrar cada vegada que es refresquin la llista de xarxes</string>
+    <string name="preferences_vibratefound_title">Avís de xarxa suportada</string>
+    <string name="preferences_vibratefound_summary">Vibrar quan hagi una xarxa suportada al abast</string>
+    <string name="preferences_updateinterval_title">Velocitat de refresc</string>
+    <string name="preferences_updateinterval_summary">Actualitzar llista cada ...</string>
+    <string name="preferences_updateinterval_fast">Ràpid</string>
+    <string name="preferences_updateinterval_normal">Normal</string>
+    <string name="preferences_updateinterval_slow">Lent</string>
+
+    <!-- Information -->
+    <string name="showpass_popup_title">Aquesta és la teva clau</string>
+    <string name="showpass_popup_title_many">Una d\'aquestes és la teva clau</string>
+    <string name="showpass_toclipboard">Contrasenya copiada al portapapers\n</string>
+
+    <!-- About -->
+    <string name="about_title">Quant a pulWifi</string>
+    <string name="about_readme">Llegeix-me</string>
+    <string name="about_gpl">Llicència GPLv3</string>
+    <string name="about_readme_url">"file:///android_asset/README.htm"</string>
+    <string name="supported_networks_title">Xarxes suportades:</string>
+    <string name="supported_networks">\n - WLAN_XXXX \n
 	- JAZZTEL_XXXX \n
 	- WLANXXXXXX \n
 	- YACOMXXXXXX \n
 	- WIFIXXXXXX \n
 	- Alguns routers D-Link \n
-	- Alguns routers Huawei \n</string>		
-	
+	- Alguns routers Huawei \n</string>
+
 </resources>

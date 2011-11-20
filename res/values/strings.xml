@@ -1,25 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- Application -->
     <string name="app_name">pulWifi</string>
+    <string name="app_version">1.5.5</string>
+
+    <!-- About dialog -->
+    <string name="dialog_about_text">This is a simple application that shows default passwords of some wifi spots.\n\nCopyright 2011, Javier Pulido and Antonio Vázquez Blanco.\nContact: <a href="mailto:pulwifi@gmail.com">pulwifi@gmail.com</a>\n\nLEGAL NOTE : The very only intention of this application is to demonstrate the insecurity of your own routers, and warn of the danger of using default passwords. The author of this application is not responsible for the end user use made of this. When using this application with a wireless network, make sure that is your own or have permission from the owner / administrator of the network. Remember that using the broadband connection of others is a crime. Please do not use this application in an ilegal way. Use below your own responsability.\n\nThis program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.\n\nThis program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.</string>
+    <string name="dialog_about_gpl">License</string>
+    <string name="dialog_about_title">About:</string>
+
+    <!-- License dialog -->
+    <string name="dialog_license_file_url">file:///android_asset/legal-en.html</string>
+    <string name="dialog_license_title">License:</string>
+
+    <!-- Supported networks dialog -->
+    <string name="dialog_supportednetworks_title">Supported networks:</string>
+    <string name="dialog_supportednetworks_list">- WLAN_XXXX\n- JAZZTEL_XXXX\n- WLANXXXXXX\n- YACOMXXXXXX\n- WIFIXXXXXX\n- Some D-Link routers\n- Some Huawei routers\n</string>
+
+    <!-- Show passwords dialog -->
+    <string name="dialog_showpass_title_one">This is your password:</string>
+    <string name="dialog_showpass_title_many">One of those is your password:</string>
+
+	<!-- Copy to clipboard dialog -->
+	<string name="dialog_cipboardcopy_title">Passwords:</string>
+
+    <!-- Preference keys and defaults -->
+    <string name="preferences_autoupdate_key">prefs_key_autoupdate</string>
+    <string name="preferences_autoupdate_default">true</string>
+    <string name="preferences_vibrateupdate_key">prefs_key_vibrateupdate</string>
+    <string name="preferences_vibrateupdate_default">true</string>
+    <string name="preferences_updateinterval_key">prefs_key_updateinterval</string>
+    <string name="preferences_updateinterval_default">2000</string>
+
+    <!-- Preferences -->
+    <string name="preferences_category_scanmode">Scan mode:</string>
+    <string name="preferences_autoupdate_title">Auto-refresh</string>
+    <string name="preferences_autoupdate_summary">Refresh network\'s list automatically</string>
+    <string name="preferences_vibrateupdate_title">Vibrate on refreshing</string>
+    <string name="preferences_vibrateupdate_summary">Vibrate each time the list is refreshed</string>
+    <string name="preferences_updateinterval_title">Refresh rate</string>
+    <string name="preferences_updateinterval_summary">Choose the refresh rate of the list</string>
+    <string name="preferences_updateinterval_fast">Fast</string>
+    <string name="preferences_updateinterval_normal">Normal</string>
+    <string name="preferences_updateinterval_slow">Slow</string>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Modes -->
     <string name="scanMode">Scan Mode</string>
     <string name="manualMode">Manual Mode</string>
 
-	<!--  Manual Mode -->
+    <!-- Manual Mode -->
+    <string name="mm_OK">OK</string>
+    <string name="introduceNombre">Input the name of the network</string>
+    <string name="introduceMAC">Input the MAC Adress</string>
+    <string name="manualHeader">Enter the network name and MAC Adress below. You can view a list of supported networks by pressing MENU</string>
+    <string name="manual_ESSID_hint">Network Name</string>
+    <string name="manual_BSSID_hint">MAC Adress</string>
+    <string name="manual_inputerror">Bad input. Please see a complete list of supported networks pressing MENU key</string>
 
-    <string name="hello">Password Generator for JAZZTEL_XXXX ,WLAN_XXXX networks, by Javi Pulido</string>    
-	<string name="mm_OK">OK</string>
-	<string name="introduceNombre">Input the name of the network</string>
-	<string name="introduceMAC">Input the MAC Adress</string>
-	<string name="manualHeader">Enter the network name and MAC Adress below.
-	You can view a list of supported networks by pressing MENU</string>
-	<string name="manual_ESSID_hint">Network Name</string>
-	<string name="manual_BSSID_hint">MAC Adress</string>
-	<string name="manual_inputerror">Bad input. Please see a complete list of supported networks pressing MENU key</string>
-	
-	
-	<!-- Wi-Fi State checker (at init) -->
-	
+    <!-- Wi-Fi State checker (at init) -->
+
     <string name="splash_loading">Loading...</string>
     <string name="splash_failed_dialog_error">Error...</string>
     <string name="splash_failed_dialog_msg">Can\'t turn on wi-fi. Exiting...</string>
@@ -29,70 +83,36 @@
     <string name="splash_ask_dialog_yes_button">Yes</string>
     <string name="splash_ask_dialog_no_button">No</string>
     <string name="splash_ask_dialog_ok_button">OK</string>
-    
-    
+
     <!-- Select Wireless Network -->
     <string name="select_wireless_network_dialog_show_pass">Show Password</string>
     <string name="select_wireless_network_dialog_copy_clipboard">Copy password to clipboard</string>
     <string name="select_wireless_network_dialog_reject">No</string>
     <string name="select_wireless_network_dialog_not_valid">Unsupported network. Supported networks got green marker.</string>
-	<string name="select_wireless_network_update">Update list</string>
-	<string name="network_wpawpa2">WPA/WPA2</string>
+    <string name="select_wireless_network_update">Update list</string>
+    <string name="network_wpawpa2">WPA/WPA2</string>
     <string name="network_wep">WEP</string>
     <string name="network_open">OPEN</string>
-     <string name="select_wireless_network_list_empty">Nothing yet :(</string> 
-	
-	<!-- Menu -->
-	<string name="menu_quit">Exit</string>
-	<string name="menu_networks">Supported networks</string>	
-	<string name="menu_settings">Preferences</string>
-	<string name="menu_preferences">Preferences</string>
-	<string name="menu_about">About...</string>
-	<string name="acerca_de">App that calculates pre-defined passwords of some wi-fi routers.
-				"\n\nCopyright 2011, Javi Pulido\nMail: pulimento@gmail.com
-				\nFor further information, please read 'Readme' below.\n\nVersion 1.5.5</string>
-	
-	<!-- Show pass -->
-	<string name="showpass_network_name">Network Name</string>
-	<string name="showpass_network_mac">MAC Adress</string>
-	<string name="showpass_button_showpass">Show password</string>
-	<string name="showpass_button_clipboard">Copy password to clipboard</string>
-	<string name="showpass_button_back">Back</string>
-	<string name="showpass_network_nopass_toast">This network is open, connect to it!</string>
-	<string name="showpass_null_password">Oops! Something is going bad here. Please try again</string>
-	<string name="showpass_multiple_passwords">Press on the password to copy it to the clipboard</string>
-	
-	
-	<!-- Preferences -->
-	<string name="preferences_autoupdate_title">Auto-refresh</string>
-	<string name="preferences_autoupdate_summary">Refresh network\'s list automatically</string>
-	<string name="preferences_vibrateupdate_title">Vibrate on refreshing</string>
-	<string name="preferences_vibrateupdate_summary">Vibrate each time the list is refreshed</string>
-	<string name="preferences_vibratefound_title">Vibrate on supported</string>
-	<string name="preferences_vibratefound_summary">Vibrate when a supported network is on range</string>
-	<string name="preferences_updateinterval_title">Refresh rate</string>
-	<string name="preferences_updateinterval_summary">Choose the refresh rate of the list</string>
-	<string name="preferences_updateinterval_fast">Fast</string>
-	<string name="preferences_updateinterval_normal">Normal</string>
-	<string name="preferences_updateinterval_slow">Slow</string>
-	
-	<!-- Information -->
-	<string name="showpass_popup_title_many">One of those is your password</string>
-	<string name="showpass_popup_title">This is your password</string>
-	<string name="showpass_toclipboard">Password copied to clipboard\n</string>
-	
-	<!--About -->
-	<string name="about_title">About pulWifi</string>
-	<string name="about_readme">Readme</string>
-	<string name="about_gpl">GPLv3 License</string>
-	<string name="about_readme_url">"file:///android_asset/README-en.htm"</string>
-	<string name="supported_networks_title">Supported networks : </string>
-	<string name="supported_networks"> - WLAN_XXXX \n
-	- JAZZTEL_XXXX \n
-	- WLANXXXXXX \n
-	- YACOMXXXXXX \n
-	- WIFIXXXXXX \n
-	- Some D-Link routers \n
-	- Some Huawei routers \n</string>
-	
+    <string name="select_wireless_network_list_empty">Nothing yet :(</string>
+
+    <!-- Menu -->
+    <string name="menu_quit">Exit</string>
+    <string name="menu_networks">Supported networks</string>
+    <string name="menu_settings">Preferences</string>
+    <string name="menu_preferences">Preferences</string>
+    <string name="menu_about">About...</string>
+
+    <!-- Show pass -->
+    <string name="showpass_network_name">Network Name</string>
+    <string name="showpass_network_mac">MAC Adress</string>
+    <string name="showpass_button_showpass">Show password</string>
+    <string name="showpass_button_clipboard">Copy password to clipboard</string>
+    <string name="showpass_button_back">Back</string>
+    <string name="showpass_network_nopass_toast">This network is open, connect to it!</string>
+    <string name="showpass_null_password">Oops! Something is going bad here. Please try again</string>
+    <string name="showpass_multiple_passwords">Press on the password to copy it to the clipboard</string>
+
+    <!-- Information -->
+    <string name="showpass_toclipboard">Password copied to clipboard\n</string>
+
 </resources>
