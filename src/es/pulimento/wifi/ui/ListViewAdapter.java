@@ -47,38 +47,38 @@ public class ListViewAdapter extends ArrayAdapter<WirelessNetwork> {
 		Collections.sort(mItems);
 
 		if (convertView == null)
-			convertView = mLayoutInflater.inflate(R.layout.listview_item, null);
+			convertView = mLayoutInflater.inflate(R.layout.layout_selectwireless_listitem, null);
 
 		WirelessNetwork item = mItems.get(position);
 		if (item != null) {
-			TextView crackeable = (TextView) convertView.findViewById(R.id.listview_item_crackeable);
+			TextView crackeable = (TextView) convertView.findViewById(R.id.layout_selecwireless_listitem_crackeable);
 			if (crackeable != null)
 				crackeable.setBackgroundDrawable((item.getCrackeable()) ? mDrawUnlocked : mDrawLocked);
 
-			TextView essid = (TextView) convertView.findViewById(R.id.listview_item_essid);
+			TextView essid = (TextView) convertView.findViewById(R.id.layout_selecwireless_listitem_essid);
 			if (essid != null)
 				essid.setText(item.getEssid());
 
-			TextView bssid = (TextView) convertView.findViewById(R.id.listview_item_bssid);
+			TextView bssid = (TextView) convertView.findViewById(R.id.layout_selecwireless_listitem_bssid);
 			if (bssid != null)
 				bssid.setText(item.getBssid());
 
-			ImageView signal = (ImageView) convertView.findViewById(R.id.listview_item_signal_strength);
+			ImageView signal = (ImageView) convertView.findViewById(R.id.layout_selecwireless_listitem_strength);
 			if (signal != null) {
 				int signalLevel = WifiManager.calculateSignalLevel(item.getSignal(), 4);
 				signal.setImageDrawable((signalLevel==0) ? mSignalLevel1 : (signalLevel==1) ? mSignalLevel2 : (signalLevel==2) ? mSignalLevel3 : mSignalLevel4);
 			}
 
 			/* TODO: This needs to be implemented in WirelessNetwork.java. */
-			TextView capabilities = (TextView) convertView.findViewById(R.id.tv_listitem_security);
+			TextView capabilities = (TextView) convertView.findViewById(R.id.layout_selecwireless_listitem_security);
 			if(capabilities != null)
 			{
 				if(item.getCapabilities().contains("WPA"))
-					capabilities.setText(R.string.network_wpawpa2);
+					capabilities.setText(R.string.listadapter_wpa);
 				else if(item.getCapabilities().contains("WEP"))
-					capabilities.setText(R.string.network_wep);
+					capabilities.setText(R.string.listadapter_wep);
 				if(item.getCapabilities().equals("") || item.getCapabilities() == null)
-					capabilities.setText(R.string.network_open);
+					capabilities.setText(R.string.listadapter_open);
 			}
 		}
 		return convertView;

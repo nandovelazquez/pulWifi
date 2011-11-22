@@ -26,7 +26,7 @@
         android:layout_gravity="center"
         android:layout_weight="1"
         android:gravity="center"
-        android:text="@string/select_wireless_network_list_empty"
+        android:text="@string/selectwireless_emptylist"
         android:textSize="16dip"
         android:textStyle="bold" />
 
@@ -40,7 +40,7 @@
             android:id="@+id/button_refresh_network_id"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:text="@string/select_wireless_network_update" />
+            android:text="@string/selectwireless_refresh" />
     </LinearLayout>
 
 </LinearLayout>

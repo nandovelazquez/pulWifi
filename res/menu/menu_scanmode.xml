@@ -2,22 +2,22 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <item
-        android:id="@+id/AJUSTES"
+        android:id="@+id/menu_settings"
         android:icon="@android:drawable/ic_menu_preferences"
         android:title="@string/menu_settings"></item>
 
     <item
-        android:id="@+id/NETWORKS"
+        android:id="@+id/menu_networks"
         android:icon="@android:drawable/ic_menu_agenda"
         android:title="@string/menu_networks"></item>
 
     <item
-        android:id="@+id/ACERCA_DE"
+        android:id="@+id/menu_about"
         android:icon="@android:drawable/ic_menu_info_details"
         android:title="@string/menu_about"></item>
 
     <item
-        android:id="@+id/SALIR"
+        android:id="@+id/menu_quit"
         android:icon="@android:drawable/ic_menu_close_clear_cancel"
         android:title="@string/menu_quit"></item>
 

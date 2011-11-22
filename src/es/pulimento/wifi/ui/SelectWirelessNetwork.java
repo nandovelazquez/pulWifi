@@ -54,7 +54,7 @@ public class SelectWirelessNetwork extends Activity implements OnItemClickListen
 		mContext = this;
 		mWirelessNetListView = (ListView) findViewById(R.id.layout_selectwireless_list_id);
 		mWirelessNetList = new ArrayList<WirelessNetwork>();
-		mListViewAdapter = new ListViewAdapter(this, R.layout.listview_item, mWirelessNetList);
+		mListViewAdapter = new ListViewAdapter(this, R.layout.layout_selectwireless_listitem, mWirelessNetList);
 		mWifiManager = (WifiManager)getSystemService(Context.WIFI_SERVICE);
 		mVibrator = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
 		mRefreshSection = (LinearLayout) findViewById(R.id.layout_selectwireless_refreshsection_id);
@@ -144,7 +144,7 @@ public class SelectWirelessNetwork extends Activity implements OnItemClickListen
 			i.putExtra(ShowPass.EXTRA_NETWORK, w);
 			startActivity(i);
 		}else{
-			Toast.makeText(mContext, getString(R.string.select_wireless_network_dialog_not_valid), Toast.LENGTH_SHORT).show();
+			Toast.makeText(mContext, getString(R.string.selectwireless_unsupported), Toast.LENGTH_SHORT).show();
 		}
 	}
 
@@ -157,16 +157,16 @@ public class SelectWirelessNetwork extends Activity implements OnItemClickListen
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 	    switch (item.getItemId()) {
-	    case R.id.ACERCA_DE:
+	    case R.id.menu_about:
 	    	(new AboutDialog(mContext)).show();
 	        return true;
-	    case R.id.SALIR:
+	    case R.id.menu_quit:
 	    	this.finish();
 	    	return true;
-	    case R.id.NETWORKS:
+	    case R.id.menu_networks:
 	    	(new SupportedNetworksDialog(mContext)).show();
 	        return true;    
-	    case R.id.AJUSTES:
+	    case R.id.menu_settings:
 	    	 startActivity(new Intent(mContext, Preferences.class));
 	    	 return true;
 	    }

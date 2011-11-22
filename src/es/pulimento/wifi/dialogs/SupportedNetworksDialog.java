@@ -15,7 +15,7 @@ public class SupportedNetworksDialog extends Dialog {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		this.setContentView(R.layout.dialogs_supportednetworks);
+		this.setContentView(R.layout.dialog_supportednetworks);
 		this.setTitle(R.string.dialog_supportednetworks_title);
 	}
 }

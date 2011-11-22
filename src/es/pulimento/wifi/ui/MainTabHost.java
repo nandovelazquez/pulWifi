@@ -38,17 +38,17 @@ public class MainTabHost extends TabActivity{
 
 		/* Set tab number 1. */
 		mIntent = new Intent().setClass(this, SelectWirelessNetwork.class);
-		View view = LayoutInflater.from(mContext).inflate(R.layout.tabs_bg, null);
-		TextView title = (TextView)view.findViewById(R.id.tv_tabs);
-		title.setText(getString(R.string.scanMode));
+		View view = LayoutInflater.from(mContext).inflate(R.layout.layout_maintabhost_tabbg, null);
+		TextView title = (TextView)view.findViewById(R.id.layout_maintabhost_tabbg_title);
+		title.setText(getString(R.string.maintabhost_mode_scan));
 		mTabSpec = mTabHost.newTabSpec("ScanModeEnabled").setIndicator(view).setContent(mIntent);
 		mTabHost.addTab(mTabSpec);
 
 		/* Set tab number 2. */
 		mIntent = new Intent().setClass(this, ManualCrack.class);
-		View view2 = LayoutInflater.from(getApplicationContext()).inflate(R.layout.tabs_bg, null);
-		TextView title2 = (TextView)view2.findViewById(R.id.tv_tabs);
-		title2.setText(getString(R.string.manualMode));
+		View view2 = LayoutInflater.from(getApplicationContext()).inflate(R.layout.layout_maintabhost_tabbg, null);
+		TextView title2 = (TextView)view2.findViewById(R.id.layout_maintabhost_tabbg_title);
+		title2.setText(getString(R.string.maintabhost_mode_manual));
 		mTabSpec = mTabHost.newTabSpec("ManualModeEnabled").setIndicator(view2).setContent(mIntent);
 		mTabHost.addTab(mTabSpec);
 

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
-    android:id="@+id/rl_manualcrack"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent" >
 
@@ -14,7 +13,6 @@
         ads:loadAdOnCreate="true" />
 
     <LinearLayout
-        android:id="@+id/manualcrack"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:orientation="vertical" >
@@ -25,7 +23,7 @@
             android:layout_marginBottom="14dip"
             android:layout_marginLeft="4dip"
             android:layout_marginTop="4dip"
-            android:text="@string/manualHeader"
+            android:text="@string/manualcrack_header"
             android:textSize="20dip" />
 
         <EditText
@@ -33,7 +31,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="4dip"
-            android:hint="@string/manual_ESSID_hint"
+            android:hint="@string/manualcrack_essid_hint"
             android:singleLine="true" />
 
         <EditText
@@ -41,7 +39,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="26dip"
-            android:hint="@string/manual_BSSID_hint"
+            android:hint="@string/manualcrack_bssid_hint"
             android:maxLength="17"
             android:singleLine="true" />
 
@@ -52,7 +50,7 @@
             android:layout_marginLeft="100dip"
             android:layout_marginRight="100dip"
             android:gravity="center"
-            android:text="@string/mm_OK"
+            android:text="@string/manualcrack_crackbutton"
             android:textSize="20dp"
             android:textStyle="bold" />
     </LinearLayout>

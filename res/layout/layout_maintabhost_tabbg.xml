@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/tabsLayout"
     android:layout_width="fill_parent"
     android:layout_height="30dip"
     android:background="@drawable/tab_bg_selector"
@@ -8,16 +7,10 @@
     android:orientation="horizontal"
     android:padding="6dip" >
 
-    <!--
-          <ImageView android:id="@+id/imageview_tabs" android:layout_width="wrap_content"
-		android:layout_height="wrap_content"></ImageView>
-    -->
-
     <TextView
-        android:id="@+id/tv_tabs"
+        android:id="@+id/layout_maintabhost_tabbg_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Title"
         android:textColor="@drawable/tab_text_selector"
         android:textSize="16dip" />
 

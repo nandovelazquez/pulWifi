@@ -41,9 +41,9 @@ public class MainActivity extends Activity {
 		mIntentFilter = new IntentFilter();
 
 		Builder fDialog = new AlertDialog.Builder(mActivity);
-		fDialog.setTitle(R.string.splash_failed_dialog_error);
-		fDialog.setMessage(R.string.splash_failed_dialog_msg);
-		fDialog.setNeutralButton(R.string.splash_failed_dialog_ok_button, new DialogInterface.OnClickListener() {
+		fDialog.setTitle(R.string.mainactivity_failed_dialog_error);
+		fDialog.setMessage(R.string.mainactivity_failed_dialog_msg);
+		fDialog.setNeutralButton(R.string.mainactivity_failed_dialog_ok_button, new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int which) {
 				//Exit...
 				mActivity.finish();
@@ -52,15 +52,15 @@ public class MainActivity extends Activity {
 		mFailedDialog = fDialog.create();
 
 		Builder aDialog = new AlertDialog.Builder(mActivity);
-		aDialog.setTitle(R.string.splash_ask_dialog_title);
-		aDialog.setMessage(R.string.splash_ask_dialog_msg);
-		aDialog.setPositiveButton(R.string.splash_ask_dialog_yes_button, new DialogInterface.OnClickListener() {
+		aDialog.setTitle(R.string.mainactivity_ask_dialog_title);
+		aDialog.setMessage(R.string.mainactivity_ask_dialog_msg);
+		aDialog.setPositiveButton(R.string.mainactivity_ask_dialog_yes_button, new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int which) {
 				if(!mWifiManager.setWifiEnabled(true))
 					mFailedDialog.show();
 			}
 		});
-		aDialog.setNegativeButton(R.string.splash_ask_dialog_no_button, new DialogInterface.OnClickListener() {
+		aDialog.setNegativeButton(R.string.mainactivity_ask_dialog_no_button, new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int which) {
 				mActivity.finish();
 			}

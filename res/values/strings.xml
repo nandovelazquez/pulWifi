@@ -45,74 +45,64 @@
     <string name="preferences_updateinterval_normal">Normal</string>
     <string name="preferences_updateinterval_slow">Slow</string>
 
+	<!-- Main activity -->
+	<string name="mainactivity_failed_dialog_error">Error:</string>
+    <string name="mainactivity_failed_dialog_msg">Can\'t turn on wi-fi.</string>
+    <string name="mainactivity_failed_dialog_ok_button">Exit</string>
+    <string name="mainactivity_ask_dialog_title">Enable wifi?</string>
+    <string name="mainactivity_ask_dialog_msg">This app needs wi-fi enabled to work. Turn on now?</string>
+    <string name="mainactivity_ask_dialog_yes_button">Yes</string>
+    <string name="mainactivity_ask_dialog_no_button">No</string>
 
+	<!-- Main tab host activity -->
+	<string name="maintabhost_mode_scan">Scan mode</string>
+    <string name="maintabhost_mode_manual">Manual mode</string>
 
+	<!-- Manual crack activity -->
+	<string name="manualcrack_header">Enter the network name and MAC Adress below. You can view a list of supported networks by pressing menu key.</string>
+    <string name="manualcrack_essid_hint">Network Name</string>
+    <string name="manualcrack_bssid_hint">MAC Adress</string>
+    <string name="manualcrack_crackbutton">Crack</string>
+    <string name="manualcrack_inputerror">Bad input. Please see a complete list of supported networks pressing menu key.</string>
 
+	<!-- Select wireless network activity -->
+	<string name="selectwireless_unsupported">Unsupported network. Supported networks have got green markers.</string>
+    <string name="selectwireless_emptylist">Nothing yet :(</string>
+    <string name="selectwireless_refresh">Update list</string>
 
-
-
-
-
-
-
-
-
-
-
-    <!-- Modes -->
-    <string name="scanMode">Scan Mode</string>
-    <string name="manualMode">Manual Mode</string>
-
-    <!-- Manual Mode -->
-    <string name="mm_OK">OK</string>
-    <string name="introduceNombre">Input the name of the network</string>
-    <string name="introduceMAC">Input the MAC Adress</string>
-    <string name="manualHeader">Enter the network name and MAC Adress below. You can view a list of supported networks by pressing MENU</string>
-    <string name="manual_ESSID_hint">Network Name</string>
-    <string name="manual_BSSID_hint">MAC Adress</string>
-    <string name="manual_inputerror">Bad input. Please see a complete list of supported networks pressing MENU key</string>
-
-    <!-- Wi-Fi State checker (at init) -->
-
-    <string name="splash_loading">Loading...</string>
-    <string name="splash_failed_dialog_error">Error...</string>
-    <string name="splash_failed_dialog_msg">Can\'t turn on wi-fi. Exiting...</string>
-    <string name="splash_failed_dialog_ok_button">OK</string>
-    <string name="splash_ask_dialog_title">Enable wifi?</string>
-    <string name="splash_ask_dialog_msg">This app needs wi-fi enabled to work. Turn on now?</string>
-    <string name="splash_ask_dialog_yes_button">Yes</string>
-    <string name="splash_ask_dialog_no_button">No</string>
-    <string name="splash_ask_dialog_ok_button">OK</string>
-
-    <!-- Select Wireless Network -->
-    <string name="select_wireless_network_dialog_show_pass">Show Password</string>
-    <string name="select_wireless_network_dialog_copy_clipboard">Copy password to clipboard</string>
-    <string name="select_wireless_network_dialog_reject">No</string>
-    <string name="select_wireless_network_dialog_not_valid">Unsupported network. Supported networks got green marker.</string>
-    <string name="select_wireless_network_update">Update list</string>
-    <string name="network_wpawpa2">WPA/WPA2</string>
-    <string name="network_wep">WEP</string>
-    <string name="network_open">OPEN</string>
-    <string name="select_wireless_network_list_empty">Nothing yet :(</string>
-
-    <!-- Menu -->
-    <string name="menu_quit">Exit</string>
-    <string name="menu_networks">Supported networks</string>
-    <string name="menu_settings">Preferences</string>
-    <string name="menu_preferences">Preferences</string>
-    <string name="menu_about">About...</string>
-
-    <!-- Show pass -->
-    <string name="showpass_network_name">Network Name</string>
-    <string name="showpass_network_mac">MAC Adress</string>
+	<!-- Show pass activity -->
+	<string name="showpass_nopass">This network is open. Connect to it!</string>
+	<string name="showpass_network_name">Network name</string>
+	<string name="showpass_network_mac">MAC adress</string>
     <string name="showpass_button_showpass">Show password</string>
     <string name="showpass_button_clipboard">Copy password to clipboard</string>
     <string name="showpass_button_back">Back</string>
-    <string name="showpass_network_nopass_toast">This network is open, connect to it!</string>
+
+	<!-- Menu -->
+    <string name="menu_quit">Exit</string>
+    <string name="menu_networks">Supported networks</string>
+    <string name="menu_settings">Preferences</string>
+    <string name="menu_about">About...</string>
+
+	<!-- List view adapter -->
+	<string name="listadapter_wpa">WPA/WPA2</string>
+    <string name="listadapter_wep">WEP</string>
+    <string name="listadapter_open">OPEN</string>
+
+
+
+    
+
+    <!-- Unused? -->
+    <string name="introduceNombre">Input the name of the network</string>
+    <string name="introduceMAC">Input the MAC Adress</string>
+    <string name="splash_loading">Loading...</string>
+    <string name="splash_ask_dialog_ok_button">OK</string>
+    <string name="select_wireless_network_dialog_show_pass">Show Password</string>
+    <string name="select_wireless_network_dialog_copy_clipboard">Copy password to clipboard</string>
+    <string name="select_wireless_network_dialog_reject">No</string>
     <string name="showpass_null_password">Oops! Something is going bad here. Please try again</string>
     <string name="showpass_multiple_passwords">Press on the password to copy it to the clipboard</string>
-
-    <!-- Information -->
     <string name="showpass_toclipboard">Password copied to clipboard\n</string>
 
 </resources>

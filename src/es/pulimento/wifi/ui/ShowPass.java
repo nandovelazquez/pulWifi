@@ -41,7 +41,7 @@ public class ShowPass extends Activity implements OnClickListener {
 		((Button) findViewById(R.id.layout_showpass_show)).setOnClickListener(this);
 
 		if(mWirelessNetwork.getPasswords().get(0).equals("NOPASSNOPASSNOPASSNOPASS")) {
-			Toast.makeText(mContext, R.string.showpass_network_nopass_toast, Toast.LENGTH_LONG).show();
+			Toast.makeText(mContext, R.string.showpass_nopass, Toast.LENGTH_LONG).show();
 			startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));
 			this.finish();
 		}
@@ -71,10 +71,10 @@ public class ShowPass extends Activity implements OnClickListener {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
-		case R.id.ACERCA_DE:
+		case R.id.menu_about:
 			(new AboutDialog(mContext)).show();
 			return true;
-		case R.id.SALIR:
+		case R.id.menu_quit:
 			this.finish();
 			return true;
 		}
