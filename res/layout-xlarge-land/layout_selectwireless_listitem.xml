@@ -4,42 +4,39 @@
     android:layout_height="fill_parent" >
 
     <TextView
-        android:id="@+id/listview_item_crackeable"
+        android:id="@+id/layout_selecwireless_listitem_crackeable"
         android:layout_width="72dip"
         android:layout_height="72dip"
-        android:layout_alignParentLeft="true" >
-    </TextView>
+        android:layout_alignParentLeft="true" />
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="72dip"
-        android:layout_toRightOf="@id/listview_item_crackeable"
+        android:layout_toRightOf="@id/layout_selecwireless_listitem_crackeable"
         android:gravity="center_vertical"
         android:orientation="vertical"
         android:paddingLeft="10dip"
         android:paddingRight="40dip" >
 
         <TextView
-            android:id="@+id/listview_item_essid"
+            android:id="@+id/layout_selecwireless_listitem_essid"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:singleLine="true"
             android:textSize="24dp"
             android:textStyle="bold"
-            android:typeface="sans" >
-        </TextView>
+            android:typeface="sans" />
 
         <TextView
-            android:id="@+id/listview_item_bssid"
+            android:id="@+id/layout_selecwireless_listitem_bssid"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textColor="#A0A0A0"
-            android:textSize="20dp" >
-        </TextView>
+            android:textSize="20dp" />
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/listview_item_signal_strength"
+        android:id="@+id/layout_selecwireless_listitem_strength"
         android:layout_width="58dip"
         android:layout_height="58dip"
         android:layout_alignParentRight="true"
@@ -47,7 +44,7 @@
         android:paddingRight="10dip" />
 
     <TextView
-        android:id="@+id/tv_listitem_security"
+        android:id="@+id/layout_selecwireless_listitem_security"
         android:layout_width="80dip"
         android:layout_height="24dip"
         android:layout_alignParentBottom="true"
@@ -55,7 +52,6 @@
         android:layout_marginRight="6dip"
         android:gravity="right"
         android:singleLine="true"
-        android:text="ABIERTA"
         android:textSize="16dip" />
 
 </RelativeLayout>

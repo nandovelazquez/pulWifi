@@ -46,7 +46,7 @@
     </RelativeLayout>
 
     <TextView
-        android:id="@+id/dialog_about_text_id"
+        android:id="@+id/dialog_about_text"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_weight="0.5"
@@ -59,7 +59,7 @@
         android:layout_weight="0" >
 
         <Button
-            android:id="@+id/dialog_about_license_button_id"
+            android:id="@+id/dialog_about_license_button"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:text="@string/dialog_about_gpl" />

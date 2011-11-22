@@ -28,16 +28,16 @@ public class AboutDialog extends Dialog implements OnClickListener {
 		this.setTitle(R.string.dialog_about_title);
 
 		// Make links clickable.
-		((TextView) findViewById(R.id.dialog_about_text_id)).setMovementMethod(LinkMovementMethod.getInstance());
+		((TextView) findViewById(R.id.dialog_about_text)).setMovementMethod(LinkMovementMethod.getInstance());
 
 		// Set click listeners...
-		((Button)findViewById(R.id.dialog_about_license_button_id)).setOnClickListener(this);
+		((Button)findViewById(R.id.dialog_about_license_button)).setOnClickListener(this);
 	}
 
 	@Override
 	public void onClick(View v) {
 		switch(v.getId()) {
-		case R.id.dialog_about_license_button_id:
+		case R.id.dialog_about_license_button:
 			(new LicenseDialog(mContext)).show();
 			break;
 		}
