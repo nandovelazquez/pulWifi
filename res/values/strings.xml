@@ -89,20 +89,4 @@
     <string name="listadapter_wep">WEP</string>
     <string name="listadapter_open">OPEN</string>
 
-
-
-    
-
-    <!-- Unused? -->
-    <string name="introduceNombre">Input the name of the network</string>
-    <string name="introduceMAC">Input the MAC Adress</string>
-    <string name="splash_loading">Loading...</string>
-    <string name="splash_ask_dialog_ok_button">OK</string>
-    <string name="select_wireless_network_dialog_show_pass">Show Password</string>
-    <string name="select_wireless_network_dialog_copy_clipboard">Copy password to clipboard</string>
-    <string name="select_wireless_network_dialog_reject">No</string>
-    <string name="showpass_null_password">Oops! Something is going bad here. Please try again</string>
-    <string name="showpass_multiple_passwords">Press on the password to copy it to the clipboard</string>
-    <string name="showpass_toclipboard">Password copied to clipboard\n</string>
-
 </resources>
