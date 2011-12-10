@@ -169,6 +169,9 @@ public class SelectWirelessNetwork extends Activity implements OnItemClickListen
 	    case R.id.menu_settings:
 	    	 startActivity(new Intent(mContext, Preferences.class));
 	    	 return true;
+	    case R.id.menu_updater:
+			startActivity(new Intent(mContext, Updater.class));
+			return true;
 	    }
 	    return false;
 	}

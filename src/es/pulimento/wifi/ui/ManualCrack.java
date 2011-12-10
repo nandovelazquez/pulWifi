@@ -68,6 +68,9 @@ public class ManualCrack extends Activity implements OnClickListener {
 		case R.id.menu_networks:
 			(new SupportedNetworksDialog(mContext)).show();
 			return true;
+		case R.id.menu_updater:
+			startActivity(new Intent(mContext, Updater.class));
+			return true;
 		case R.id.menu_quit:
 			this.finish();
 			return true;

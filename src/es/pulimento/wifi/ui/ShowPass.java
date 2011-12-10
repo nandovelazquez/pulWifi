@@ -74,6 +74,9 @@ public class ShowPass extends Activity implements OnClickListener {
 		case R.id.menu_about:
 			(new AboutDialog(mContext)).show();
 			return true;
+		case R.id.menu_updater:
+			startActivity(new Intent(mContext, Updater.class));
+			return true;
 		case R.id.menu_quit:
 			this.finish();
 			return true;

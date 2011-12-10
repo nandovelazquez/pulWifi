@@ -78,11 +78,19 @@
     <string name="showpass_button_clipboard">Copy password to clipboard</string>
     <string name="showpass_button_back">Back</string>
 
+	<!-- Updater activity -->
+	<string name="updater_current_version">Current version:</string>
+	<string name="updater_latest_version">Latest version:</string>
+	<string name="updater_unknown_version">Unknown</string>
+	<string name="updater_check">Check for updates</string>
+	<string name="updater_error">Error connecting to the internet...</string>
+
 	<!-- Menu -->
     <string name="menu_quit">Exit</string>
     <string name="menu_networks">Supported networks</string>
     <string name="menu_settings">Preferences</string>
     <string name="menu_about">About...</string>
+    <string name="menu_updater">Updater</string>
 
 	<!-- List view adapter -->
 	<string name="listadapter_wpa">WPA/WPA2</string>

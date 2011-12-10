@@ -7,7 +7,8 @@
     <application
         android:icon="@drawable/icon"
         android:label="@string/app_name"
-        android:theme="@android:style/Theme.NoTitleBar" >
+        android:theme="@android:style/Theme.NoTitleBar"
+        android:configChanges="orientation|keyboard|keyboardHidden" >
         <activity
             android:configChanges="keyboardHidden|orientation"
             android:label="@string/app_name"
@@ -18,59 +19,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:label="@string/app_name"
-            android:name=".ui.Preferences" >
-            <intent-filter android:label="android.intent.action.MAIN" >
-                <action android:name="android.intent.action.VIEW" />
-                <action android:name="android.intent.action.EDIT" />
-
-                <category android:name="android.intent.category.PREFERENCE" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:label="@string/app_name"
-            android:name=".ui.ManualCrack" >
-            <intent-filter android:label="android.intent.action.MAIN" >
-                <action android:name="android.intent.action.VIEW" />
-                <action android:name="android.intent.action.EDIT" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:label="@string/app_name"
-            android:name=".ui.ShowPass" >
-            <intent-filter android:label="android.intent.action.MAIN" >
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:label="@string/app_name"
-            android:name=".ui.SelectWirelessNetwork" >
-            <intent-filter android:label="android.intent.action.MAIN" >
-                <action android:name="android.intent.action.VIEW" />
-                <action android:name="android.intent.action.EDIT" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".ui.MainTabHost" >
-            <intent-filter android:label="android.intent.action.MAIN" >
-                <action android:name="android.intent.action.VIEW" />
-                <action android:name="android.intent.action.EDIT" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-
-        <receiver android:name=".WifiManager" >
-            <intent-filter >
-                <action android:name="android.intent.action.PHONE_STATE" />
-            </intent-filter>
-        </receiver>
+        <activity android:name=".ui.Preferences" android:configChanges="orientation|keyboard|keyboardHidden" />
+        <activity android:name=".ui.ManualCrack" android:configChanges="orientation|keyboard|keyboardHidden" />
+        <activity android:name=".ui.ShowPass" android:configChanges="orientation|keyboard|keyboardHidden" />
+        <activity android:name=".ui.SelectWirelessNetwork" android:configChanges="orientation|keyboard|keyboardHidden" />
+        <activity android:name=".ui.MainTabHost" android:configChanges="orientation|keyboard|keyboardHidden" />
+        <activity android:name=".ui.Updater" android:configChanges="orientation|keyboard|keyboardHidden" />
 
         <activity
             android:configChanges="keyboard|keyboardHidden|orientation"
