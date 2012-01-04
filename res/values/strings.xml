@@ -84,6 +84,7 @@
 	<string name="updater_unknown_version">Unknown</string>
 	<string name="updater_check">Check for updates</string>
 	<string name="updater_error">Error connecting to the internet...</string>
+	<string name="updater_update">Update</string>
 
 	<!-- Menu -->
     <string name="menu_quit">Exit</string>

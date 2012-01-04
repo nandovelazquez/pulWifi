@@ -11,7 +11,7 @@ import android.widget.TabHost.TabSpec;
 import android.widget.TextView;
 import es.pulimento.wifi.R;
 
-public class MainTabHost extends TabActivity{
+public class MainTabHost extends TabActivity {
 
 	/* Tab host to be populated. */
 	private TabHost mTabHost;
