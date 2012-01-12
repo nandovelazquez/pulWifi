@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- About dialog -->
+    <string name="dialog_about_text">Esta é unha aplicación que che permite calcular as contraseñas por defecto de algunhas redes wifi.\n\nCopyright 2011, Javier Pulido e Antonio Vázquez Blanco.\nContacto: <a href="mailto:pulwifi@gmail.com?subject=pulWifi">pulwifi@gmail.com</a>\n\nNOTA LEGAL: A única intención desta aplicación é demostrar a inseguridade dos teus propios routers ademáis de advertir do perigo de usar contrasinais por defecto. O autor desta aplicación non é responsable do uso final que o usuario lle da a esta. Cando uses esta aplicación cerciórate de que o fas na túa ou de que tes permiso do dono/administrador da mesma. Recorda que aprovitarse do ancho de banda ou conexión de outros é un crime. Por favor, non faga un uso ilegal de esta aplicación. Úseo baixo a súa propia responsabilidade.\n\nEste programa é software libre; podes redistribuilo e/ou modificalo baixo os térmos da Licencia Xeral Pública GNU acotada por a Free Software Foundation (Fundación de Software Libre); xa ben sexa baixo a versión 3 da licencia, ou (na tua opinión) calquera versión posterior.\n\nEste programa e distribuido coa esperanza de que resulte util, pero SEN NINGUNHA GARANTÍA; sen nin sequera a garantía implícita MERCANTIL ou de APTITUDE PARA UN PROPÓSITO DETERMINADO. Podes mirar a Licencia Xeral Pública de GNU para máis detalle.</string>
+    <string name="dialog_about_gpl">Licencia</string>
+    <string name="dialog_about_title">Acerca de:</string>
+
+    <!-- License dialog -->
+    <string name="dialog_license_file_url">file:///android_asset/legal-en.html</string>
+    <string name="dialog_license_title">Licencia:</string>
+
+    <!-- Supported networks dialog -->
+    <string name="dialog_supportednetworks_title">Redes soportadas:</string>
+    <string name="dialog_supportednetworks_list">- WLAN_XXXX\n- JAZZTEL_XXXX\n- WLANXXXXXX\n- YACOMXXXXXX\n- WIFIXXXXXX\n- Algunhos routers D-Link\n- Algunhos routers Huawei\n</string>
+
+    <!-- Show passwords dialog -->
+    <string name="dialog_showpass_title_one">Esta é o contrasinal:</string>
+    <string name="dialog_showpass_title_many">Unha de estas e o contrasinal:</string>
+
+    <!-- Copy to clipboard dialog -->
+    <string name="dialog_cipboardcopy_title">Contrasinais:</string>
+
+    <!-- Updater dialog -->
+    <string name="dialog_updater_current_version">Versión instalada:</string>
+    <string name="dialog_updater_latest_version">Última versión:</string>
+    <string name="dialog_updater_unknown_version">Descoñecida</string>
+    <string name="dialog_updater_check">Comprobar actualizacións</string>
+    <string name="dialog_updater_error">Error conectándose ao internet...</string>
+    <string name="dialog_updater_update">Descargar</string>
+    <string name="dialog_udpater_title">Actualizar:</string>
+
+    <!-- Preferences -->
+    <string name="preferences_category_scanmode">Modo automático:</string>
+    <string name="preferences_autoupdate_title">Auto refrescar</string>
+    <string name="preferences_autoupdate_summary">Refrescar automáticamente a lista de redes</string>
+    <string name="preferences_vibrateupdate_title">Vibrar ao refrescar</string>
+    <string name="preferences_vibrateupdate_summary">Vibrar cada vez que a lista de redes sexa refrescada</string>
+    <string name="preferences_updateinterval_title">Ratio de refresco</string>
+    <string name="preferences_updateinterval_summary">Escolle a velocidade a que queres que se actualize a lista</string>
+    <string name="preferences_updateinterval_fast">Rápido</string>
+    <string name="preferences_updateinterval_normal">Normal</string>
+    <string name="preferences_updateinterval_slow">Lento</string>
+
+    <!-- Main activity -->
+    <string name="mainactivity_failed_dialog_error">Error:</string>
+    <string name="mainactivity_failed_dialog_msg">Non podo habilitar o wifi.</string>
+    <string name="mainactivity_failed_dialog_ok_button">Salir</string>
+    <string name="mainactivity_ask_dialog_title">Habilitar o wifi?</string>
+    <string name="mainactivity_ask_dialog_msg">Esta aplicación necesita que o wifi esté habilitado para funcionar. Desexa encendelo agora?</string>
+    <string name="mainactivity_ask_dialog_yes_button">Sí</string>
+    <string name="mainactivity_ask_dialog_no_button">Non</string>
+
+    <!-- Main tab host activity -->
+    <string name="maintabhost_mode_scan">Modo automático</string>
+    <string name="maintabhost_mode_manual">Modo manual</string>
+
+    <!-- Manual crack activity -->
+    <string name="manualcrack_header">Introduce o nome de rede e a dirección MAC máis abaixo. Podes ver unha lista de redes compatibles pulsando o botón menú.</string>
+    <string name="manualcrack_essid_hint">Nome de rede</string>
+    <string name="manualcrack_bssid_hint">Dirección MAC</string>
+    <string name="manualcrack_crackbutton">Crackear</string>
+    <string name="manualcrack_inputerror">Rede incompatible. Podes ver unha lista de redes compatibles pulsando o botón menú.</string>
+
+    <!-- Select wireless network activity -->
+    <string name="selectwireless_unsupported">Rede non soportada. As redes compatibles están marcadas ca cor verde.</string>
+    <string name="selectwireless_emptylist">Nada polo momento :(</string>
+    <string name="selectwireless_refresh">Actualizar a lista</string>
+
+    <!-- Show pass activity -->
+    <string name="showpass_nopass">A rede está aberta. Conéctate a ela.</string>
+    <string name="showpass_network_name">Nome da rede</string>
+    <string name="showpass_network_mac">Dirección MAC</string>
+    <string name="showpass_button_showpass">Mostrar contrasinal</string>
+    <string name="showpass_button_clipboard">Copiar o contrasinal ao portapapeis</string>
+    <string name="showpass_button_back">Atrás</string>
+
+    <!-- Menu -->
+    <string name="menu_quit">Saír</string>
+    <string name="menu_networks">Redes soportadas</string>
+    <string name="menu_settings">Axustes</string>
+    <string name="menu_about">Acerca de...</string>
+    <string name="menu_updater">Actualizar</string>
+
+    <!-- List view adapter -->
+    <string name="listadapter_wpa">WPA/WPA2</string>
+    <string name="listadapter_wep">WEP</string>
+    <string name="listadapter_open">ABERTA</string>
+
+</resources>
