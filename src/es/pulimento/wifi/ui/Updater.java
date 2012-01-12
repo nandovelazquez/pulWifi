@@ -26,7 +26,7 @@ public class Updater extends Activity implements OnClickListener {
 	private TextView mLatestVersion;
 	private Button updateButton;
 
-	private final String VERSION_URL = "https://raw.github.com/antoniovazquezblanco/pulWifi/master/version_latest";
+	private final String VERSION_URL = "https://raw.github.com/pulWifi/pulWifi/master/version_latest";
 	private final String APK_URL = "https://github.com/downloads/pulWifi/pulWifi/pulWifi_%s_signed.apk";
 
 	@Override
@@ -93,7 +93,7 @@ public class Updater extends Activity implements OnClickListener {
 			else
 			{
 				mLatestVersion.setText(res);
-				if(res != mContext.getString(R.string.app_version))
+				if(!res.equals(mContext.getString(R.string.app_version)))
 					updateButton.setVisibility(View.VISIBLE);
 			}
 			dialog.dismiss();
