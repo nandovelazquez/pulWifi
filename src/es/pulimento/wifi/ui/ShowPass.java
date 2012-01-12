@@ -17,6 +17,7 @@ import es.pulimento.wifi.core.WirelessNetwork;
 import es.pulimento.wifi.dialogs.AboutDialog;
 import es.pulimento.wifi.dialogs.ClipboardCopyDialog;
 import es.pulimento.wifi.dialogs.ShowPasswordsDialog;
+import es.pulimento.wifi.dialogs.UpdateDialog;
 
 public class ShowPass extends Activity implements OnClickListener {
 
@@ -75,7 +76,7 @@ public class ShowPass extends Activity implements OnClickListener {
 			(new AboutDialog(mContext)).show();
 			return true;
 		case R.id.menu_updater:
-			startActivity(new Intent(mContext, Updater.class));
+			(new UpdateDialog(mContext)).show();
 			return true;
 		case R.id.menu_quit:
 			this.finish();

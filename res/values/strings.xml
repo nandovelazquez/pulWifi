@@ -25,6 +25,15 @@
 	<!-- Copy to clipboard dialog -->
 	<string name="dialog_cipboardcopy_title">Passwords:</string>
 
+	<!-- Updater dialog -->
+	<string name="dialog_updater_current_version">Current version:</string>
+	<string name="dialog_updater_latest_version">Latest version:</string>
+	<string name="dialog_updater_unknown_version">Unknown</string>
+	<string name="dialog_updater_check">Check for updates</string>
+	<string name="dialog_updater_error">Error connecting to the internet...</string>
+	<string name="dialog_updater_update">Update</string>
+	<string name="dialog_udpater_title">Updater:</string>
+
     <!-- Preference keys and defaults -->
     <string name="preferences_autoupdate_key">prefs_key_autoupdate</string>
     <string name="preferences_autoupdate_default">true</string>
@@ -77,14 +86,6 @@
     <string name="showpass_button_showpass">Show password</string>
     <string name="showpass_button_clipboard">Copy password to clipboard</string>
     <string name="showpass_button_back">Back</string>
-
-	<!-- Updater activity -->
-	<string name="updater_current_version">Current version:</string>
-	<string name="updater_latest_version">Latest version:</string>
-	<string name="updater_unknown_version">Unknown</string>
-	<string name="updater_check">Check for updates</string>
-	<string name="updater_error">Error connecting to the internet...</string>
-	<string name="updater_update">Update</string>
 
 	<!-- Menu -->
     <string name="menu_quit">Exit</string>

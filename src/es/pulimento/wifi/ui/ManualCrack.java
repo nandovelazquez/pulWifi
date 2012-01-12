@@ -15,6 +15,7 @@ import es.pulimento.wifi.R;
 import es.pulimento.wifi.core.WirelessNetwork;
 import es.pulimento.wifi.dialogs.AboutDialog;
 import es.pulimento.wifi.dialogs.SupportedNetworksDialog;
+import es.pulimento.wifi.dialogs.UpdateDialog;
 
 public class ManualCrack extends Activity implements OnClickListener {
 
@@ -69,7 +70,7 @@ public class ManualCrack extends Activity implements OnClickListener {
 			(new SupportedNetworksDialog(mContext)).show();
 			return true;
 		case R.id.menu_updater:
-			startActivity(new Intent(mContext, Updater.class));
+			(new UpdateDialog(mContext)).show();
 			return true;
 		case R.id.menu_quit:
 			this.finish();

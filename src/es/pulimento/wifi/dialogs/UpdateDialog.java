@@ -1,12 +1,11 @@
-package es.pulimento.wifi.ui;
-
+package es.pulimento.wifi.dialogs;
 import java.io.DataInputStream;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.UnknownHostException;
 
-import android.app.Activity;
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -20,7 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import es.pulimento.wifi.R;
 
-public class Updater extends Activity implements OnClickListener {
+public class UpdateDialog extends Dialog implements OnClickListener {
 
 	private Context mContext;
 	private TextView mLatestVersion;
@@ -29,13 +28,20 @@ public class Updater extends Activity implements OnClickListener {
 	private final String VERSION_URL = "https://raw.github.com/pulWifi/pulWifi/master/version_latest";
 	private final String APK_URL = "https://github.com/downloads/pulWifi/pulWifi/pulWifi_%s_signed.apk";
 
+	public UpdateDialog(Context context) {
+		super(context);
+
+		mContext = context;
+	}
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		setContentView(R.layout.layout_updater);
+		// Set the content for our dialog...
+		this.setContentView(R.layout.dialog_updater);
+		this.setTitle(R.string.dialog_udpater_title);
 
-		mContext = this;
 		mLatestVersion = (TextView) findViewById(R.id.layout_updater_latest_version);
 		updateButton = (Button) findViewById(R.id.layout_updater_update);
 
@@ -51,7 +57,7 @@ public class Updater extends Activity implements OnClickListener {
 			new GetLatestVersion().execute();
 			break;
 		case R.id.layout_updater_update:
-			startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(String.format(APK_URL, mLatestVersion.getText()))));
+			mContext.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(String.format(APK_URL, mLatestVersion.getText()))));
 			break;
 		}
 	}
