@@ -26,7 +26,7 @@
     <string name="dialog_updater_latest_version">Última versión:</string>
     <string name="dialog_updater_unknown_version">Descoñecida</string>
     <string name="dialog_updater_check">Comprobar actualizacións</string>
-    <string name="dialog_updater_error">Error conectándose ao internet...</string>
+    <string name="dialog_updater_error">Error conectándose ao internet&#8230;</string>
     <string name="dialog_updater_update">Descargar</string>
     <string name="dialog_udpater_title">Actualizar:</string>
 
@@ -79,7 +79,7 @@
     <string name="menu_quit">Saír</string>
     <string name="menu_networks">Redes soportadas</string>
     <string name="menu_settings">Axustes</string>
-    <string name="menu_about">Acerca de...</string>
+    <string name="menu_about">Acerca de&#8230;</string>
     <string name="menu_updater">Actualizar</string>
 
     <!-- List view adapter -->

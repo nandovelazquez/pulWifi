@@ -49,7 +49,7 @@
             android:layout_height="100dip"
             android:layout_marginLeft="400dip"
             android:layout_marginRight="400dip"
-            android:layout_marginTop="30px"
+            android:layout_marginTop="30dip"
             android:gravity="center"
             android:text="@string/manualcrack_crackbutton"
             android:textSize="38dp"

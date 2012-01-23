@@ -18,9 +18,9 @@
 
     <!-- Wi-Fi State checker (at init) -->
 
-    <string name="splash_loading">Carregant...</string>
-    <string name="splash_failed_dialog_error">Error...</string>
-    <string name="splash_failed_dialog_msg">No se ha pogut habilitar el wifi. Sortint...</string>
+    <string name="splash_loading">Carregant&#8230;</string>
+    <string name="splash_failed_dialog_error">Error&#8230;</string>
+    <string name="splash_failed_dialog_msg">No se ha pogut habilitar el wifi. Sortint&#8230;</string>
     <string name="splash_failed_dialog_ok_button">Acceptar</string>
     <string name="splash_ask_dialog_title">Habilitar wifi?</string>
     <string name="splash_ask_dialog_msg">Aquesta aplicació requereix tenir el wifi habilitat.T\'agradaria habilitar-lo ara?</string>
@@ -44,7 +44,7 @@
     <string name="menu_settings">Paràmetres</string>
     <string name="menu_networks">Xarxes suportades</string>
     <string name="menu_preferences">Paràmetres</string>
-    <string name="menu_about">Quant a...</string>
+    <string name="menu_about">Quant a&#8230;</string>
     <string name="acerca_de">Aplicació per calcular les claus predefinides de algunes xarxes.
 				"\n\nCopyright 2011, Javi Pulido\nMail: pulimento@gmail.com
 				\nTrad. al catalá : Roger Mon\nPer favor,accedeix al Llegeix-me de més avall per
@@ -68,7 +68,7 @@
     <string name="preferences_vibratefound_title">Avís de xarxa suportada</string>
     <string name="preferences_vibratefound_summary">Vibrar quan hagi una xarxa suportada al abast</string>
     <string name="preferences_updateinterval_title">Velocitat de refresc</string>
-    <string name="preferences_updateinterval_summary">Actualitzar llista cada ...</string>
+    <string name="preferences_updateinterval_summary">Actualitzar llista cada &#8230;</string>
     <string name="preferences_updateinterval_fast">Ràpid</string>
     <string name="preferences_updateinterval_normal">Normal</string>
     <string name="preferences_updateinterval_slow">Lent</string>

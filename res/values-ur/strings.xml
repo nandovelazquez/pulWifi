@@ -21,7 +21,7 @@
     
     <!-- Wi-Fi State checker (at init) -->
     
-    <string name="splash_loading">loading...</string>
+    <string name="splash_loading">loading&#8230;</string>
     <string name="splash_failed_dialog_error">Galat..</string>
     <string name="splash_failed_dialog_msg"> Wifi on nahi ho raha. Application Band honay laga hai</string>
     <string name="splash_failed_dialog_ok_button">OK</string>

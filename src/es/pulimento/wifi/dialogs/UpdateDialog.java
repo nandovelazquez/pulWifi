@@ -93,7 +93,7 @@ public class UpdateDialog extends Dialog implements OnClickListener {
 		public void onPostExecute(String res) {
 			if(res == "ERR")
 			{
-				Toast.makeText(mContext, R.string.updater_error, Toast.LENGTH_LONG).show();
+				Toast.makeText(mContext, R.string.dialog_updater_error, Toast.LENGTH_LONG).show();
 				updateButton.setVisibility(View.GONE);
 			}
 			else

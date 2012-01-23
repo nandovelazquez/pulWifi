@@ -30,7 +30,7 @@
 	<string name="dialog_updater_latest_version">Latest version:</string>
 	<string name="dialog_updater_unknown_version">Unknown</string>
 	<string name="dialog_updater_check">Check for updates</string>
-	<string name="dialog_updater_error">Error connecting to the internet...</string>
+	<string name="dialog_updater_error">Error connecting to the internet&#8230;</string>
 	<string name="dialog_updater_update">Update</string>
 	<string name="dialog_udpater_title">Updater:</string>
 
@@ -91,7 +91,7 @@
     <string name="menu_quit">Exit</string>
     <string name="menu_networks">Supported networks</string>
     <string name="menu_settings">Preferences</string>
-    <string name="menu_about">About...</string>
+    <string name="menu_about">About&#8230;</string>
     <string name="menu_updater">Updater</string>
 
 	<!-- List view adapter -->

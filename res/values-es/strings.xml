@@ -18,9 +18,9 @@
 
     <!-- Wi-Fi State checker (at init) -->
 
-    <string name="splash_loading">Cargando...</string>
-    <string name="splash_failed_dialog_error">Error...</string>
-    <string name="splash_failed_dialog_msg">No se ha podido habilitar el wifi. Saliendo...</string>
+    <string name="splash_loading">Cargando&#8230;</string>
+    <string name="splash_failed_dialog_error">Error&#8230;</string>
+    <string name="splash_failed_dialog_msg">No se ha podido habilitar el wifi. Saliendo&#8230;</string>
     <string name="splash_failed_dialog_ok_button">Aceptar</string>
     <string name="splash_ask_dialog_title">¿Habilitar wifi?</string>
     <string name="splash_ask_dialog_msg">Esta aplicación requiere tener el wifi habilitado. ¿Te gustaría habilitarlo ahora?</string>
@@ -44,7 +44,7 @@
     <string name="menu_settings">Ajustes</string>
     <string name="menu_networks">Redes soportadas</string>
     <string name="menu_preferences">Ajustes</string>
-    <string name="menu_about">Acerca de...</string>
+    <string name="menu_about">Acerca de&#8230;</string>
     <string name="acerca_de">Aplicación para calcular las claves predefinidas de algunas redes wifi.
 				"\n\nCopyright 2011, Javi Pulido\nMail: pulimento@gmail.com
 				\nPor favor, acceda al Léeme más abajo para más información\n\nVersión 1.5.5</string>
@@ -67,7 +67,7 @@
     <string name="preferences_vibratefound_title">Aviso de red soportada</string>
     <string name="preferences_vibratefound_summary">Vibrar cuando haya una red soportada al alcance</string>
     <string name="preferences_updateinterval_title">Tasa de refresco</string>
-    <string name="preferences_updateinterval_summary">Actualizar lista de redes cada...</string>
+    <string name="preferences_updateinterval_summary">Actualizar lista de redes cada&#8230;</string>
     <string name="preferences_updateinterval_fast">Rápido</string>
     <string name="preferences_updateinterval_normal">Normal</string>
     <string name="preferences_updateinterval_slow">Lento</string>
