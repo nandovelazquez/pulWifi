@@ -62,7 +62,15 @@
             android:id="@+id/dialog_about_license_button"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
+            android:layout_weight="1"
             android:text="@string/dialog_about_gpl" />
+
+        <Button
+            android:id="@+id/dialog_about_changelog_button"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:text="@string/dialog_about_changelog" />
     </LinearLayout>
 
 </LinearLayout>

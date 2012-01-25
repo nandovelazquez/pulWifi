@@ -6,11 +6,11 @@ import android.os.Bundle;
 import android.webkit.WebView;
 import es.pulimento.wifi.R;
 
-public class LicenseDialog extends Dialog {
+public class ChangelogDialog extends Dialog {
 
 	private Context mContext;
 
-	public LicenseDialog(Context context) {
+	public ChangelogDialog(Context context) {
 		super(context);
 		mContext = context;
 	}
@@ -19,8 +19,8 @@ public class LicenseDialog extends Dialog {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.setContentView(R.layout.dialog_generic);
-		this.setTitle(R.string.dialog_license_title);
+		this.setTitle(R.string.dialog_changelog_title);
 		((WebView) findViewById(R.id.dialog_generic_webview)).loadUrl(mContext
-				.getString(R.string.dialog_license_file_url));
+				.getString(R.string.dialog_changelog_file_url));
 	}
 }

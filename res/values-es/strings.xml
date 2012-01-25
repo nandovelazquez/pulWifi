@@ -5,7 +5,7 @@
     <string name="app_name">pulWifi</string>
 
     <!-- About dialog -->
-    <string name="dialog_about_text">Aplicación para calcular las claves predefinidas de algunas redes wifi.\n\nCopyright 2011/12, Javi Pulido y Antonio Vázquez Blanco.\nContact: <a href="mailto:pulwifi@gmail.com?subject=pulWifi">pulwifi@gmail.com</a>\n\nNOTA LEGAL : La única intención de esta aplicación es poner de manifiesto la inseguridad de sus propios routers, y advertir del peligro de usar contraseñas preestablecidas. El autor de esta aplicación no se hace responsable del uso que el usuario final haga de esta.  Siempre que use esta aplicación con una red inalámbrica, asegúrese de que es la suya propia o de que tiene permiso del propietario/responsable de la red. Recuerde que usar la conexión de banda ancha ajena es un delito. Por favor, no use esta aplicación de forma ilegal. Úsese bajo su propia responsabilidad.\n\nEste programa es software libre: usted puede redistribuirlo y/o modificarlo 
+    <string name="dialog_about_text">Aplicación para calcular las claves predefinidas de algunas redes wifi.\n\nCopyright 2011-12, Javi Pulido y Antonio Vázquez Blanco.\nContact: <a href="mailto:pulwifi@gmail.com?subject=pulWifi">pulwifi@gmail.com</a>\n\nNOTA LEGAL : La única intención de esta aplicación es poner de manifiesto la inseguridad de sus propios routers, y advertir del peligro de usar contraseñas preestablecidas. El autor de esta aplicación no se hace responsable del uso que el usuario final haga de esta.  Siempre que use esta aplicación con una red inalámbrica, asegúrese de que es la suya propia o de que tiene permiso del propietario/responsable de la red. Recuerde que usar la conexión de banda ancha ajena es un delito. Por favor, no use esta aplicación de forma ilegal. Úsese bajo su propia responsabilidad.\n\nEste programa es software libre: usted puede redistribuirlo y/o modificarlo 
     bajo los términos de la Licencia Pública General GNU publicada 
     por la Fundación para el Software Libre, ya sea la versión 3 
 	de la Licencia, o (a su elección) cualquier versión posterior..\n\nEste programa se distribuye con la esperanza de que sea útil, pero 
@@ -14,22 +14,27 @@
     Consulte los detalles de la Licencia Pública General GNU para obtener 
     una información más detallada. </string>
     <string name="dialog_about_gpl">Licencia</string>
-    <string name="dialog_about_title">Acerca de:</string>
+    <string name="dialog_about_title">Acerca de</string>
+    <string name="dialog_about_changelog">Cambios</string>
 
     <!-- License dialog -->
     <string name="dialog_license_file_url">file:///android_asset/legal-en.html</string>
-    <string name="dialog_license_title">Licencia GPLv3:</string>
+    <string name="dialog_license_title">Licencia GPLv3</string>
+    
+    <!-- Changelog dialog -->
+    <string name="dialog_changelog_file_url">file:///android_asset/CHANGELOG.txt</string>
+    <string name="dialog_changelog_title">Cambios</string>
 
     <!-- Supported networks dialog -->
     <string name="dialog_supportednetworks_title">Redes soportadas:</string>
     <string name="dialog_supportednetworks_list">- WLAN_XXXX\n- JAZZTEL_XXXX\n- WLANXXXXXX\n- YACOMXXXXXX\n- WIFIXXXXXX\n- Algunos routers D-Link\n- Algunos routers Huawei\n</string>
 
     <!-- Show passwords dialog -->
-    <string name="dialog_showpass_title_one">Esta es tu clave:</string>
-    <string name="dialog_showpass_title_many">Una de estas es tu clave:</string>
+    <string name="dialog_showpass_title_one">Esta es tu clave</string>
+    <string name="dialog_showpass_title_many">Una de estas es tu clave</string>
 
     <!-- Copy to clipboard dialog -->
-    <string name="dialog_cipboardcopy_title">Claves:</string>
+    <string name="dialog_cipboardcopy_title">Claves</string>
 
     <!-- Updater dialog -->
     <string name="dialog_updater_current_version">Versión actual:</string>
