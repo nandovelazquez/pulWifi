@@ -5,14 +5,7 @@
     <string name="app_name">pulWifi</string>
 
     <!-- About dialog -->
-    <string name="dialog_about_text">Aplicación para calcular las claves predefinidas de algunas redes wifi.\n\nCopyright 2011-12, Javi Pulido y Antonio Vázquez Blanco.\nContact: <a href="mailto:pulwifi@gmail.com?subject=pulWifi">pulwifi@gmail.com</a>\n\nNOTA LEGAL : La única intención de esta aplicación es poner de manifiesto la inseguridad de sus propios routers, y advertir del peligro de usar contraseñas preestablecidas. El autor de esta aplicación no se hace responsable del uso que el usuario final haga de esta.  Siempre que use esta aplicación con una red inalámbrica, asegúrese de que es la suya propia o de que tiene permiso del propietario/responsable de la red. Recuerde que usar la conexión de banda ancha ajena es un delito. Por favor, no use esta aplicación de forma ilegal. Úsese bajo su propia responsabilidad.\n\nEste programa es software libre: usted puede redistribuirlo y/o modificarlo 
-    bajo los términos de la Licencia Pública General GNU publicada 
-    por la Fundación para el Software Libre, ya sea la versión 3 
-	de la Licencia, o (a su elección) cualquier versión posterior..\n\nEste programa se distribuye con la esperanza de que sea útil, pero 
-    SIN GARANTÍA ALGUNA; ni siquiera la garantía implícita 
-    MERCANTIL o de APTITUD PARA UN PROPÓSITO DETERMINADO. 
-    Consulte los detalles de la Licencia Pública General GNU para obtener 
-    una información más detallada. </string>
+    <string name="dialog_about_text">Aplicación para calcular las claves predefinidas de algunas redes wifi.\n\nCopyright 2011&#8211;12, Javi Pulido y Antonio Vázquez Blanco.\nContacto: <a href="mailto:pulwifi@gmail.com?subject=pulWifi">pulwifi@gmail.com</a>\n\nNOTA LEGAL : La única intención de esta aplicación es poner de manifiesto la inseguridad de sus propios routers, y advertir del peligro de usar contraseñas preestablecidas. El autor de esta aplicación no se hace responsable del uso que el usuario final haga de esta.  Siempre que use esta aplicación con una red inalámbrica, asegúrese de que es la suya propia o de que tiene permiso del propietario/responsable de la red. Recuerde que usar la conexión de banda ancha ajena es un delito. Por favor, no use esta aplicación de forma ilegal. Úsese bajo su propia responsabilidad.\n\nEste programa es software libre: usted puede redistribuirlo y/o modificarlo bajo los términos de la Licencia Pública General GNU publicada por la Fundación para el Software Libre, ya sea la versión 3 de la Licencia, o (a su elección) cualquier versión posterior..\n\nEste programa se distribuye con la esperanza de que sea útil, pero SIN GARANTÍA ALGUNA; ni siquiera la garantía implícita MERCANTIL o de APTITUD PARA UN PROPÓSITO DETERMINADO. Consulte los detalles de la Licencia Pública General GNU para obtener una información más detallada.</string>
     <string name="dialog_about_gpl">Licencia</string>
     <string name="dialog_about_title">Acerca de</string>
     <string name="dialog_about_changelog">Cambios</string>
