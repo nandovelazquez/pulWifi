@@ -68,7 +68,7 @@ public class UpdateDialog extends Dialog implements OnClickListener {
 
 		@Override
 		public void onPreExecute() {
-			dialog = ProgressDialog.show(mContext, "", "Checking...", true);
+			dialog = ProgressDialog.show(mContext, "", mContext.getString(R.string.dialog_updater_checking), true);
 		}
 
 		@Override

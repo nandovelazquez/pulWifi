@@ -37,6 +37,7 @@
     <string name="dialog_updater_error">Ha habido un problema conectando a Internet, por favor inténtelo más tarde</string>
     <string name="dialog_updater_update">Actualizar</string>
     <string name="dialog_udpater_title">Actualizador:</string>
+    <string name="dialog_updater_checking">Comprobando&#8230;</string>
 
     <!-- Preference keys and defaults -->
     <string name="preferences_autoupdate_key">prefs_key_autoupdate</string>

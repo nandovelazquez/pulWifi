@@ -34,6 +34,7 @@
     <string name="dialog_updater_error">Error conectándose ao internet&#8230;</string>
     <string name="dialog_updater_update">Descargar</string>
     <string name="dialog_udpater_title">Actualizar:</string>
+    <string name="dialog_updater_checking">Comprobando&#8230;</string>
 
     <!-- Preferences -->
     <string name="preferences_category_scanmode">Modo automático:</string>
