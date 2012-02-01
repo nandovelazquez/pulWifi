@@ -11,11 +11,11 @@
     <string name="dialog_about_changelog">Cambios</string>
 
     <!-- License dialog -->
-    <string name="dialog_license_file_url">file:///android_asset/legal-en.html</string>
+    <string name="dialog_license_file_url">file:///android_asset/LICENSE-EN</string>
     <string name="dialog_license_title">Licencia GPLv3</string>
     
     <!-- Changelog dialog -->
-    <string name="dialog_changelog_file_url">file:///android_asset/CHANGELOG.txt</string>
+    <string name="dialog_changelog_file_url">file:///android_asset/CHANGELOG-ES</string>
     <string name="dialog_changelog_title">Cambios</string>
 
     <!-- Supported networks dialog -->

@@ -12,11 +12,11 @@
     <string name="dialog_about_title">About</string>
     
     <!-- Changelog dialog -->
-    <string name="dialog_changelog_file_url">file:///android_asset/CHANGELOG.txt</string>
+    <string name="dialog_changelog_file_url">file:///android_asset/CHANGELOG-EN</string>
     <string name="dialog_changelog_title">Changelog</string>
 
     <!-- License dialog -->
-    <string name="dialog_license_file_url">file:///android_asset/legal-en.html</string>
+    <string name="dialog_license_file_url">file:///android_asset/LICENSE-EN</string>
     <string name="dialog_license_title">License</string>
 
     <!-- Supported networks dialog -->

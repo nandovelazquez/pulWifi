@@ -1,8 +1,0 @@
-pulWifi CHANGELOG
-
-v1.6.0
-
-- Added auto-updater
-- Code refactoring
-- Some menus revamped
-- Updated AdMob library
