@@ -6,15 +6,12 @@
 <body>
 <ul>
 
-<li>v1.6.0<br />
+<li>v??<br />
 	<ul>
-		<li>Added auto-updater</li>
-		<li>Code refactoring</li>
-		<li>Some menus revamped</li>
-		<li>Updated AdMob library</li>
-		<li>Gallegan translation</li>
+		<li>Fixed some broken characters in Spanish and Galician translations</li>
 	</ul>
 </li>
 
+</li><li>v1.6.0<br /><ul><li>Added auto-updater</li><li>Code refactoring</li><li>Some menus revamped</li><li>Updated AdMob library</li><li>Gallegan translation</li></ul></li>
 </ul>
 </body>
