@@ -80,6 +80,7 @@
     <string name="showpass_button_showpass">Mostrar contrasinal</string>
     <string name="showpass_button_clipboard">Copiar o contrasinal ao portapapeis</string>
     <string name="showpass_button_back">Atrás</string>
+    <string name="showpass_toclipboard">Os contrasinais copiados para o portapapeis</string>
 
     <!-- Menu -->
     <string name="menu_quit">Saír</string>

@@ -91,6 +91,7 @@
     <string name="showpass_button_showpass">Mostrar contraseña</string>
     <string name="showpass_button_clipboard">Copiar clave al portapapeles</string>
     <string name="showpass_button_back">Atrás</string>
+    <string name="showpass_toclipboard">Contraseña copiada al portapapeles</string>
 
     <!-- Menu -->
     <string name="menu_quit">Salir</string>
