@@ -50,7 +50,7 @@ public class ClipboardCopyDialog extends Dialog implements OnItemClickListener {
 
 		if(mPasswords.size() == 1) {
 			mClipboardManager.setText(mPasswords.get(0));
-			Toast.makeText(mContext, mContext.getString(R.string.showpass_toclipboard)+"( "+mPasswords.get(0)+" )", Toast.LENGTH_LONG).show();
+			Toast.makeText(mContext, mContext.getString(R.string.showpass_toclipboard)+" ( "+mPasswords.get(0)+" )", Toast.LENGTH_LONG).show();
 			Intent i = new Intent(Settings.ACTION_WIFI_SETTINGS);
 			i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 			mContext.startActivity(i);
