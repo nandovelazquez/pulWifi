@@ -3,7 +3,7 @@
 
     <!-- Application -->
     <string name="app_name">pulWifi</string>
-    <string name="app_version">1.6.0</string>
+    <string name="app_version">1.6.1</string>
 
     <!-- About dialog -->
     <string name="dialog_about_text">This is a simple application that shows default passwords of some wifi spots.\n\nCopyright 2011&#8211;12, Javier Pulido and Antonio Vázquez Blanco.\nContact: <a href="mailto:pulwifi@gmail.com?subject=pulWifi">pulwifi@gmail.com</a>\n\nLEGAL NOTE : The very only intention of this application is to demonstrate the insecurity of your own routers, and warn of the danger of using default passwords. The author of this application is not responsible for the end user use made of this. When using this application with a wireless network, make sure that is your own or have permission from the owner / administrator of the network. Remember that using the broadband connection of others is a crime. Please do not use this application in an ilegal way. Use below your own responsability.\n\nThis program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.\n\nThis program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.</string>
@@ -92,6 +92,7 @@
     <string name="showpass_button_showpass">Show password</string>
     <string name="showpass_button_clipboard">Copy password to clipboard</string>
     <string name="showpass_button_back">Back</string>
+    <string name="showpass_toclipboard">Password copied to clipboard</string>
 
 	<!-- Menu -->
     <string name="menu_quit">Exit</string>

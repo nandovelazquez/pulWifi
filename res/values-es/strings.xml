@@ -36,7 +36,7 @@
     <string name="dialog_updater_check">Buscar actualizaciones</string>
     <string name="dialog_updater_error">Ha habido un problema conectando a Internet, por favor inténtelo más tarde</string>
     <string name="dialog_updater_update">Actualizar</string>
-    <string name="dialog_udpater_title">Actualizador:</string>
+    <string name="dialog_udpater_title">Actualizador</string>
     <string name="dialog_updater_checking">Comprobando&#8230;</string>
 
     <!-- Preference keys and defaults -->
@@ -48,13 +48,13 @@
     <string name="preferences_updateinterval_default">2000</string>
 
     <!-- Preferences -->
-    <string name="preferences_category_scanmode">Modo "Buscar Redes":</string>
+    <string name="preferences_category_scanmode">Buscar Redes</string>
     <string name="preferences_autoupdate_title">Actualizar automáticamente</string>
     <string name="preferences_autoupdate_summary">Refresca la lista de redes automáticamente</string>
     <string name="preferences_vibrateupdate_title">Vibrar en cada actualización</string>
     <string name="preferences_vibrateupdate_summary">El terminal vibrará cada vez que se actualice la lista</string>
     <string name="preferences_updateinterval_title">Tasa de refresco</string>
-    <string name="preferences_updateinterval_summary">Seleccione la tasa de refresco:</string>
+    <string name="preferences_updateinterval_summary">Seleccione la tasa de refresco</string>
     <string name="preferences_updateinterval_fast">Rápida</string>
     <string name="preferences_updateinterval_normal">Normal</string>
     <string name="preferences_updateinterval_slow">Lenta</string>
@@ -91,6 +91,7 @@
     <string name="showpass_button_showpass">Mostrar contraseña</string>
     <string name="showpass_button_clipboard">Copiar clave al portapapeles</string>
     <string name="showpass_button_back">Atrás</string>
+    <string name="showpass_toclipboard">Contraseña copiada al portapapeles</string>
 
     <!-- Menu -->
     <string name="menu_quit">Salir</string>
