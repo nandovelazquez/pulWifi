@@ -1,21 +1,21 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-</head>
-<body>
-<ul>
+<!DOCTYPE html>
+<html lang="gl">
+	<body>
+	
+	<h3>- v1.6.1</h3>
+		<ul>
+			<li>Arranxado o erro ao copiar a clave para o portapapeis</li>
+			<li>Pequenos cambios nalgúns diálogos</li>
+		</ul>
 
-<li>v1.6.0<br />
-	<ul>
-		<li>Engadido un actualizador</li>
-		<li>Programa reescrito case por completo</li>
-		<li>Algœns menœs renovados</li>
-		<li>Actualizada a librer’a de AdMob</li>
-		<li>Traduci—n ao Galego</li>
-	</ul>
-</li>
+	<h3>- v1.6.0</h3>
+		<ul>
+			<li>Engadido un actualizador</li>
+			<li>Programa reescrito case por completo</li>
+			<li>Algœns menœs renovados</li>
+			<li>Actualizada a librería de AdMob</li>
+			<li>Tradución ao Galego</li>
+		</ul>
 
-</ul>
-</body>
-		
+	</body>
+</html>

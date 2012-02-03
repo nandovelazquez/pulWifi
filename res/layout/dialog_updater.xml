@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:padding="8dp"
     android:orientation="vertical" >
 
     <LinearLayout
@@ -11,6 +12,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginRight="4dp"
             android:text="@string/dialog_updater_current_version" />
 
         <TextView
@@ -22,11 +24,13 @@
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp" >
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginRight="4dp"
             android:text="@string/dialog_updater_latest_version" />
 
         <TextView
@@ -36,7 +40,7 @@
             android:text="@string/dialog_updater_unknown_version" />
 
     </LinearLayout>
-
+	
     <Button
         android:id="@+id/layout_updater_check"
         android:layout_width="wrap_content"

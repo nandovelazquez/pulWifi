@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.provider.Settings;
 import android.text.ClipboardManager;
 import android.view.View;
@@ -43,26 +42,27 @@ public class ClipboardCopyDialog extends Dialog implements OnItemClickListener {
 		// Listeners...
 		mListView.setOnItemClickListener(this);
 	}
-
+/*
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
 		if(mPasswords.size() == 1) {
 			mClipboardManager.setText(mPasswords.get(0));
-			Toast.makeText(mContext, mContext.getString(R.string.showpass_toclipboard)+" ( "+mPasswords.get(0)+" )", Toast.LENGTH_LONG).show();
+			Toast.makeText(mContext, mContext.getString(R.string.showpass_toclipboard)+" ("+mPasswords.get(0)+")", Toast.LENGTH_LONG).show();
+			this.cancel();
 			Intent i = new Intent(Settings.ACTION_WIFI_SETTINGS);
 			i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 			mContext.startActivity(i);
-			this.dismiss();
+			this.cancel();
 		}
-	}
+	}*/
 
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int pos, long id) {
 		String key = ((TextView)view).getText().toString();
 		mClipboardManager.setText(key);
-		Toast.makeText(mContext, mContext.getString(R.string.showpass_toclipboard)+"( "+key+" )", Toast.LENGTH_LONG).show();
+		Toast.makeText(mContext, mContext.getString(R.string.showpass_toclipboard)+" ("+key+")", Toast.LENGTH_LONG).show();
 		Intent i = new Intent(Settings.ACTION_WIFI_SETTINGS);
 		i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		mContext.startActivity(i);

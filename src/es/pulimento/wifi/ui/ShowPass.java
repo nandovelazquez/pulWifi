@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.text.ClipboardManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -41,7 +42,7 @@ public class ShowPass extends Activity implements OnClickListener {
 		((Button) findViewById(R.id.layout_showpass_clipboard)).setOnClickListener(this);
 		((Button) findViewById(R.id.layout_showpass_show)).setOnClickListener(this);
 
-		if(mWirelessNetwork.getPasswords().get(0).equals("NOPASSNOPASSNOPASSNOPASS")) {
+		if (mWirelessNetwork.getPasswords().get(0).equals("NOPASSNOPASSNOPASSNOPASS")) {
 			Toast.makeText(mContext, R.string.showpass_nopass, Toast.LENGTH_LONG).show();
 			startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));
 			this.finish();
@@ -50,16 +51,29 @@ public class ShowPass extends Activity implements OnClickListener {
 
 	@Override
 	public void onClick(View v) {
-		switch(v.getId()) {
-		case R.id.layout_showpass_back:
-			this.finish();
-			break;
-		case R.id.layout_showpass_show:
-			(new ShowPasswordsDialog(mContext, mWirelessNetwork.getPasswords())).show();
-			break;
-		case R.id.layout_showpass_clipboard:
-			(new ClipboardCopyDialog(mContext, mWirelessNetwork.getPasswords())).show();
-			break;
+		switch (v.getId()) {
+			case R.id.layout_showpass_back:
+				this.finish();
+				break;
+			case R.id.layout_showpass_show:
+				(new ShowPasswordsDialog(mContext, mWirelessNetwork.getPasswords())).show();
+				break;
+			case R.id.layout_showpass_clipboard:
+				if (mWirelessNetwork.getPasswords().size() > 1) {
+					(new ClipboardCopyDialog(mContext, mWirelessNetwork.getPasswords())).show();
+				} else {
+					ClipboardManager mClipboardManager = (ClipboardManager) mContext
+							.getSystemService(Context.CLIPBOARD_SERVICE);
+					mClipboardManager.setText(mWirelessNetwork.getPasswords().get(0));
+					Toast.makeText(
+							mContext,
+							mContext.getString(R.string.showpass_toclipboard) + " ("
+									+ mWirelessNetwork.getPasswords().get(0) + ")", Toast.LENGTH_LONG).show();
+					Intent i = new Intent(Settings.ACTION_WIFI_SETTINGS);
+					i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+					mContext.startActivity(i);
+				}
+				break;
 		}
 	}
 
@@ -72,15 +86,15 @@ public class ShowPass extends Activity implements OnClickListener {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
-		case R.id.menu_about:
-			(new AboutDialog(mContext)).show();
-			return true;
-		case R.id.menu_updater:
-			(new UpdateDialog(mContext)).show();
-			return true;
-		case R.id.menu_quit:
-			this.finish();
-			return true;
+			case R.id.menu_about:
+				(new AboutDialog(mContext)).show();
+				return true;
+			case R.id.menu_updater:
+				(new UpdateDialog(mContext)).show();
+				return true;
+			case R.id.menu_quit:
+				this.finish();
+				return true;
 		}
 		return false;
 	}
