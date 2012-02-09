@@ -11,7 +11,7 @@
     <string name="dialog_about_changelog">Cambios</string>
 
     <!-- License dialog -->
-    <string name="dialog_license_file_url">file:///android_asset/LICENSE-EN</string>
+    <string name="dialog_license_file_url">file:///android_asset/LICENSE-ES</string>
     <string name="dialog_license_title">Licencia GPLv3</string>
     
     <!-- Changelog dialog -->
