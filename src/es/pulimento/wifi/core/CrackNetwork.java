@@ -20,13 +20,6 @@ public class CrackNetwork {
 	private Matcher matcher_andared, matcher_dlink;
 	//private Matcher[] matcher_thomson, matcher_wlan2X;
 
-	public CrackNetwork(String ESSID, String BSSID, String capabilities) {
-		mCapabilities = capabilities;
-		mESSID = ESSID;
-		mBSSID = BSSID.toUpperCase();
-		initFramework(mESSID, mBSSID);
-	}
-
 	public CrackNetwork(WirelessNetwork w) {
 		// TODO: Change this when WirelessNetwork is able to process capabilities.
 		mCapabilities = w.getCapabilities();
