@@ -11,7 +11,6 @@ import java.util.regex.Pattern;
 import android.util.Log;
 
 public class CrackNetwork {
-	// TODO: Constructor based on WirelessNetwork object.
 
 	private String mCapabilities, mESSID, mBSSID;
 
