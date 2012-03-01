@@ -109,11 +109,13 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 	}
 
 	public void crack() {
-		String[] passwds = (new CrackNetwork(this)).crackNetwork().split("\n");
-		mPasswords.clear();
-		for(String tmp : passwds)
-			if(!tmp.contains("null"))
-				mPasswords.add(tmp);
+		if(mCrackeable) {
+			String[] passwds = (new CrackNetwork(this)).crackNetwork().split("\n");
+			mPasswords.clear();
+			for(String tmp : passwds)
+				if(!tmp.contains("null"))
+					mPasswords.add(tmp);
+		}
 	}
 
 	public boolean getCrackeable() {
