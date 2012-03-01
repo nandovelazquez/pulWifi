@@ -27,8 +27,7 @@ public class CrackNetwork {
 		mESSID = w.getEssid();
 		mBSSID = w.getBssid();
 
-		if(mCapabilities.equals(WirelessEncryption.WPA))
-		{
+		if(mCapabilities.equals(WirelessEncryption.WPA)) {
 			matcher_andared = Pattern.compile("Andared").matcher(mESSID);
 		}
 
@@ -140,7 +139,77 @@ public class CrackNetwork {
 		
 		matcher_dlink = Pattern.compile("DLink-[0-9a-fA-F]{6}").matcher(mESSID);
 	}
-	
+
+	public boolean isCrackeable() {
+		if(mCapabilities.equals(WirelessEncryption.OPEN))
+			return true;
+		else if(mCapabilities.equals(WirelessEncryption.WPA))
+		{
+			if(matcher_andared.find())
+				return true;
+		}
+		//for(Matcher match : matcher_thomson)
+			//if(match.find())
+				//return true;
+		for(int x = 0; x < matcher_md5C.length; x+=2)
+			if(matcher_md5C[x].find() && matcher_md5C[x+1].find())
+				return true;
+		for(int x = 0; x < matcher_md5Z.length; x+=2)
+			if(matcher_md5Z[x].find() && matcher_md5Z[x+1].find())
+				return true;
+		for(Matcher match : matcher_hawei)
+			if(match.find() && mCapabilities!=null /*&& mCapabilities.contains("WEP")*/)
+				return true;
+		for(int x = 0; x < matcher_wlan4xx.length; x+=2)
+			if(matcher_wlan4xx[x].find() && matcher_wlan4xx[x+1].find())
+				return true;
+		//for(int x = 0; x < matcher_wlan2X.length; x+=2)			
+			//if(matcher_wlan2X[x].find() && matcher_wlan2X[x+1].find())
+				//return true;
+		
+		if(matcher_dlink.find())
+			return true;
+		return false;
+	}
+
+	public String crackNetwork() {
+		if(mCapabilities.equals(WirelessEncryption.OPEN))
+			return "NOPASSNOPASSNOPASSNOPASS";	// TODO: Change this to empty string.
+		else if(mCapabilities.equals(WirelessEncryption.WPA))
+		{
+			if(matcher_andared.find())
+				return "6b629f4c299371737494c61b5a101693a2d4e9e1f3e1320f3ebf9ae379cecf32";
+		}
+		
+		for(int x = 0; x < matcher_md5C.length; x+=2) 
+			if(matcher_md5C[x].find() && matcher_md5C[x+1].find())
+				return crack1(matcher_md5C[x].group(1), matcher_md5C[x+1].group(1).replace(":", "").toUpperCase());
+		for(int x = 0; x < matcher_md5Z.length; x+=2)
+			if(matcher_md5Z[x].find() && matcher_md5Z[x+1].find())
+				return crack4(matcher_md5Z[x].group(1), matcher_md5Z[x+1].group(1).replace(":", "").toUpperCase());
+		for(Matcher match : matcher_hawei) 
+			if(match.find())
+				return crack3(match.group(1).replace(":", ""));
+		for(int x = 0; x < matcher_wlan4xx.length; x+=2)
+			if(matcher_wlan4xx[x].find() && matcher_wlan4xx[x+1].find())
+				return crack2(matcher_wlan4xx[x].group(1),
+						matcher_wlan4xx[x+1].group(1).toUpperCase());
+
+		if(matcher_dlink.find())
+			return crackDLink(mBSSID.replace(":","").toUpperCase());
+
+		//for(int x = 0; x < matcher_wlan2X.length; x+=2)
+		//if(matcher_wlan2X[x].find() && matcher_wlan2X[x+1].find()) {
+			//Log.d("pulWifi","Nos disponemos a usar el algoritmo WLAN2X");
+			//return crack_wlan2X_beta(matcher_wlan2X[x+1].group(1).replace(":", "").toUpperCase());
+		//}
+		// TODO: Thomson algorithm is disabled.
+				//for(Matcher match : matcher_thomson)
+					//if(match.find())
+						//return THOMSON.method1(match.group(1), initial_year, final_year);
+		return null;
+	}
+
 	public static String crack1(String iESSID,String iBSSID){//WLAN_XXXX,JAZZTEL_XXXX
 		String fijo = "bcgbghgg";
     	String ESSID = iESSID.toUpperCase();
@@ -504,75 +573,5 @@ public class CrackNetwork {
 			newkey[i]=hash[index];
 		}
 		return String.valueOf(newkey, 0, 20);
-	}
-
-	public boolean isCrackeable() {
-		if(mCapabilities.equals(WirelessEncryption.OPEN))
-			return true;
-		else if(mCapabilities.equals(WirelessEncryption.WPA))
-		{
-			if(matcher_andared.find())
-				return true;
-		}
-		//for(Matcher match : matcher_thomson)
-			//if(match.find())
-				//return true;
-		for(int x = 0; x < matcher_md5C.length; x+=2)
-			if(matcher_md5C[x].find() && matcher_md5C[x+1].find())
-				return true;
-		for(int x = 0; x < matcher_md5Z.length; x+=2)
-			if(matcher_md5Z[x].find() && matcher_md5Z[x+1].find())
-				return true;
-		for(Matcher match : matcher_hawei)
-			if(match.find() && mCapabilities!=null /*&& mCapabilities.contains("WEP")*/)
-				return true;
-		for(int x = 0; x < matcher_wlan4xx.length; x+=2)
-			if(matcher_wlan4xx[x].find() && matcher_wlan4xx[x+1].find())
-				return true;
-		//for(int x = 0; x < matcher_wlan2X.length; x+=2)			
-			//if(matcher_wlan2X[x].find() && matcher_wlan2X[x+1].find())
-				//return true;
-		
-		if(matcher_dlink.find())
-			return true;
-		return false;
-	}
-
-	public String crackNetwork() {
-		if(mCapabilities.equals(WirelessEncryption.OPEN))
-			return "NOPASSNOPASSNOPASSNOPASS";	// TODO: Change this to empty string.
-		else if(mCapabilities.equals(WirelessEncryption.WPA))
-		{
-			if(matcher_andared.find())
-				return "6b629f4c299371737494c61b5a101693a2d4e9e1f3e1320f3ebf9ae379cecf32";
-		}
-		
-		for(int x = 0; x < matcher_md5C.length; x+=2) 
-			if(matcher_md5C[x].find() && matcher_md5C[x+1].find())
-				return crack1(matcher_md5C[x].group(1), matcher_md5C[x+1].group(1).replace(":", "").toUpperCase());
-		for(int x = 0; x < matcher_md5Z.length; x+=2)
-			if(matcher_md5Z[x].find() && matcher_md5Z[x+1].find())
-				return crack4(matcher_md5Z[x].group(1), matcher_md5Z[x+1].group(1).replace(":", "").toUpperCase());
-		for(Matcher match : matcher_hawei) 
-			if(match.find())
-				return crack3(match.group(1).replace(":", ""));
-		for(int x = 0; x < matcher_wlan4xx.length; x+=2)
-			if(matcher_wlan4xx[x].find() && matcher_wlan4xx[x+1].find())
-				return crack2(matcher_wlan4xx[x].group(1),
-						matcher_wlan4xx[x+1].group(1).toUpperCase());
-
-		if(matcher_dlink.find())
-			return crackDLink(mBSSID.replace(":","").toUpperCase());
-
-		//for(int x = 0; x < matcher_wlan2X.length; x+=2)
-		//if(matcher_wlan2X[x].find() && matcher_wlan2X[x+1].find()) {
-			//Log.d("pulWifi","Nos disponemos a usar el algoritmo WLAN2X");
-			//return crack_wlan2X_beta(matcher_wlan2X[x+1].group(1).replace(":", "").toUpperCase());
-		//}
-		// TODO: Thomson algorithm is disabled.
-				//for(Matcher match : matcher_thomson)
-					//if(match.find())
-						//return THOMSON.method1(match.group(1), initial_year, final_year);
-		return null;
-	}
+	}	
 }
