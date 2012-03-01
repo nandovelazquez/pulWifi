@@ -15,16 +15,22 @@ public class CrackNetwork {
 	private WirelessEncryption mCapabilities;
 	private String mESSID, mBSSID;
 
+	private Matcher matcher_andared;
+	
 	// TODO: Review.
 	private Matcher[] matcher_md5C, matcher_hawei, matcher_wlan4xx, matcher_md5Z;
-	private Matcher matcher_andared, matcher_dlink;
+	private Matcher matcher_dlink;
 	//private Matcher[] matcher_thomson, matcher_wlan2X;
 
 	public CrackNetwork(WirelessNetwork w) {
-		// TODO: Change this when WirelessNetwork is able to process capabilities.
 		mCapabilities = w.getCapabilities();
 		mESSID = w.getEssid();
 		mBSSID = w.getBssid();
+
+		if(mCapabilities.equals(WirelessEncryption.WPA))
+		{
+			matcher_andared = Pattern.compile("Andared").matcher(mESSID);
+		}
 
 		// TODO: Thomson algorithm is disabled.
 		//matcher_thomson = new Matcher[9]; //Thomson algorithm...
@@ -131,7 +137,7 @@ public class CrackNetwork {
 //		matcher_wlan2X = new Matcher[2]; //WLAN2X, experimental, sólo funciona en un modelo
 //		matcher_wlan2X[0] = Pattern.compile("WLAN_([0-9a-fA-F]{2})").matcher(mESSID);
 //		matcher_wlan2X[1] = Pattern.compile("(40:4A:03:[0-9A-Fa-f:]{8})").matcher(mBSSID);
-		matcher_andared = Pattern.compile("Andared").matcher(mESSID);
+		
 		matcher_dlink = Pattern.compile("DLink-[0-9a-fA-F]{6}").matcher(mESSID);
 	}
 	
@@ -503,6 +509,11 @@ public class CrackNetwork {
 	public boolean isCrackeable() {
 		if(mCapabilities.equals(WirelessEncryption.OPEN))
 			return true;
+		else if(mCapabilities.equals(WirelessEncryption.WPA))
+		{
+			if(matcher_andared.find())
+				return true;
+		}
 		//for(Matcher match : matcher_thomson)
 			//if(match.find())
 				//return true;
@@ -521,14 +532,20 @@ public class CrackNetwork {
 		//for(int x = 0; x < matcher_wlan2X.length; x+=2)			
 			//if(matcher_wlan2X[x].find() && matcher_wlan2X[x+1].find())
 				//return true;
-		if(matcher_andared.find())return true;
-		if(matcher_dlink.find())return true;
+		
+		if(matcher_dlink.find())
+			return true;
 		return false;
 	}
 
 	public String crackNetwork() {
 		if(mCapabilities.equals(WirelessEncryption.OPEN))
 			return "NOPASSNOPASSNOPASSNOPASS";	// TODO: Change this to empty string.
+		else if(mCapabilities.equals(WirelessEncryption.WPA))
+		{
+			if(matcher_andared.find())
+				return "6b629f4c299371737494c61b5a101693a2d4e9e1f3e1320f3ebf9ae379cecf32";
+		}
 		
 		for(int x = 0; x < matcher_md5C.length; x+=2) 
 			if(matcher_md5C[x].find() && matcher_md5C[x+1].find())
@@ -543,9 +560,7 @@ public class CrackNetwork {
 			if(matcher_wlan4xx[x].find() && matcher_wlan4xx[x+1].find())
 				return crack2(matcher_wlan4xx[x].group(1),
 						matcher_wlan4xx[x+1].group(1).toUpperCase());
-		
-		if(matcher_andared.find())
-			return "6b629f4c299371737494c61b5a101693a2d4e9e1f3e1320f3ebf9ae379cecf32";
+
 		if(matcher_dlink.find())
 			return crackDLink(mBSSID.replace(":","").toUpperCase());
 
