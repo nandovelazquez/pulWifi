@@ -12,7 +12,8 @@ import android.util.Log;
 
 public class CrackNetwork {
 
-	private String mCapabilities, mESSID, mBSSID;
+	private WirelessEncryption mCapabilities;
+	private String mESSID, mBSSID;
 
 	// TODO: Review.
 	private Matcher[] matcher_md5C, matcher_hawei, matcher_wlan4xx, matcher_md5Z;
@@ -500,7 +501,7 @@ public class CrackNetwork {
 	}
 
 	public boolean isCrackeable() {
-		if(mCapabilities.equals("") || mCapabilities == null)
+		if(mCapabilities.equals(WirelessEncryption.OPEN))
 			return true;
 		//for(Matcher match : matcher_thomson)
 			//if(match.find())
@@ -526,7 +527,7 @@ public class CrackNetwork {
 	}
 
 	public String crackNetwork() {
-		if(mCapabilities.equals("") || mCapabilities == null)
+		if(mCapabilities.equals(WirelessEncryption.OPEN))
 			return "NOPASSNOPASSNOPASSNOPASS";	// TODO: Change this to empty string.
 		
 		for(int x = 0; x < matcher_md5C.length; x+=2) 

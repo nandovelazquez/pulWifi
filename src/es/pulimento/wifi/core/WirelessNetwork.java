@@ -8,21 +8,21 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> {
-	// TODO: Be able of processing capabilities.
 
 	static HashMap<String, Boolean> mDatabase = new HashMap<String, Boolean>();
 
-	private String mEssid, mBssid, mCapabilities;
+	private String mEssid, mBssid;
 	private boolean mCrackeable;
 	private int mSignal;
 	private ArrayList<String> mPasswords;
+	private WirelessEncryption mCapabilities;
 
 	public WirelessNetwork(ScanResult s) {
 		mEssid = s.SSID;
 		mBssid = s.BSSID.toUpperCase();
 		mPasswords = new ArrayList<String>();
 		mSignal = s.level;
-		mCapabilities = s.capabilities;
+		mCapabilities = WirelessEncryption.parseEncription(s.capabilities);
 		if(mDatabase.containsKey(mEssid))
 		{
 			mCrackeable = mDatabase.get(mEssid);
@@ -39,7 +39,7 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 		mBssid = BSSID.toUpperCase();
 		mPasswords = new ArrayList<String>();
 		mSignal = signal;
-		mCapabilities = capabilities;
+		mCapabilities = WirelessEncryption.parseEncription(capabilities);
 		if(mDatabase.containsKey(mEssid))
 		{
 			mCrackeable = mDatabase.get(mEssid);
@@ -62,7 +62,7 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 			mPasswords = new ArrayList<String>();
 		in.readStringList(mPasswords);
 		mSignal = in.readInt();
-		mCapabilities = in.readString();
+		mCapabilities = WirelessEncryption.parseEncription(in.readString());
 	}
 
 	@Override
@@ -74,7 +74,7 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 		dest.writeBooleanArray(new boolean[]{ mCrackeable });
 		dest.writeStringList(mPasswords);
 		dest.writeInt(mSignal);
-		dest.writeString(mCapabilities);
+		dest.writeString(mCapabilities.toString());
 	}
 
 	@Override
@@ -120,7 +120,7 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 		return mCrackeable;
 	}
 
-	public String getCapabilities() {
+	public WirelessEncryption getCapabilities() {
 		return mCapabilities;
 	}
 

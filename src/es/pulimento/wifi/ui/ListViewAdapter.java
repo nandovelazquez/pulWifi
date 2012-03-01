@@ -69,17 +69,9 @@ public class ListViewAdapter extends ArrayAdapter<WirelessNetwork> {
 				signal.setImageDrawable((signalLevel==0) ? mSignalLevel1 : (signalLevel==1) ? mSignalLevel2 : (signalLevel==2) ? mSignalLevel3 : mSignalLevel4);
 			}
 
-			/* TODO: This needs to be implemented in WirelessNetwork.java. */
 			TextView capabilities = (TextView) convertView.findViewById(R.id.layout_selecwireless_listitem_security);
 			if(capabilities != null)
-			{
-				if(item.getCapabilities().contains("WPA"))
-					capabilities.setText(R.string.listadapter_wpa);
-				else if(item.getCapabilities().contains("WEP"))
-					capabilities.setText(R.string.listadapter_wep);
-				if(item.getCapabilities().equals("") || item.getCapabilities() == null)
-					capabilities.setText(R.string.listadapter_open);
-			}
+				capabilities.setText(item.getCapabilities().toString());
 		}
 		return convertView;
 	}
