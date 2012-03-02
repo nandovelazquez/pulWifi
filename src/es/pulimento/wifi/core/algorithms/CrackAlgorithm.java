@@ -12,7 +12,7 @@ public abstract class CrackAlgorithm {
 	private int n_of_patterns;
 	private int working_pattern;
 	
-	public void init(String essid, String bssid) {
+	public CrackAlgorithm(String essid, String bssid) {
 
 		/*
 		 * NOTE: I assume that odd numbers are essid patterns
@@ -35,6 +35,11 @@ public abstract class CrackAlgorithm {
 		}
 	}
 
+	protected void addPattern(String pat, String pat2) {
+		patterns.add(pat);
+		patterns.add(pat2);
+	}
+
 	public boolean isCrackeable() {
 
 		for(int i = 0; i < n_of_patterns; i+=2)
@@ -53,11 +58,6 @@ public abstract class CrackAlgorithm {
 			crack();
 		}
 		return null;
-	}
-
-	protected void addPattern(String pat, String pat2) {
-		patterns.add(pat);
-		patterns.add(pat2);
 	}
 
 	protected abstract void setPatterns();

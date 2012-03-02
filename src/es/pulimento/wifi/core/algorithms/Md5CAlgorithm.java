@@ -14,6 +14,10 @@ public class Md5CAlgorithm extends CrackAlgorithm {
 	 * TODO: Description and supported routers (COMTREND).
 	 */
 
+	public Md5CAlgorithm(String essid, String bssid) {
+		super(essid, bssid);
+	}
+
 	// TODO: Add encryption and clean all up...
 	public static WirelessEncryption[] encryption = {  };
 

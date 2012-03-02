@@ -14,6 +14,10 @@ public class Wlan6XAlgorithm extends CrackAlgorithm {
 	 * TODO: Description and supported routers.
 	 */
 
+	public Wlan6XAlgorithm(String essid, String bssid) {
+		super(essid, bssid);
+	}
+
 	// TODO: Add encryption and clean all up...
 	public static WirelessEncryption[] encryption = {  };
 

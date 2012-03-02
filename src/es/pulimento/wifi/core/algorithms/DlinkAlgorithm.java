@@ -12,6 +12,11 @@ public class DlinkAlgorithm extends CrackAlgorithm {
 	 * TODO: Description and supported routers.
 	 */
 
+	public DlinkAlgorithm(String essid, String bssid) {
+		super(essid, bssid);
+		// TODO Auto-generated constructor stub
+	}
+
 	// TODO: Add encryption and clean all up...
 	public static WirelessEncryption[] encryption = {  };
 

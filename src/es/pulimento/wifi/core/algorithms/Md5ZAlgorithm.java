@@ -14,6 +14,10 @@ public class Md5ZAlgorithm extends CrackAlgorithm {
 	 * TODO: Description and supported routers (ZYXEL).
 	 */
 
+	public Md5ZAlgorithm(String essid, String bssid) {
+		super(essid, bssid);
+	}
+
 	// TODO: Add encryption and clean all up...
 	public static WirelessEncryption[] encryption = {  };
 
