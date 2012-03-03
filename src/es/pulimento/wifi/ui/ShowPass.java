@@ -42,16 +42,9 @@ public class ShowPass extends Activity implements OnClickListener {
 		((Button) findViewById(R.id.layout_showpass_clipboard)).setOnClickListener(this);
 		((Button) findViewById(R.id.layout_showpass_show)).setOnClickListener(this);
 
-		// TODO: "NOPASSNOPASS..." should be ""...
-		/*
-		 * if(mWirelessNetwork.getPasswords().get(0) == null)
-		 * 	error
-		 * if(mWirelessNetwork.getPasswords().get(0).equals("")
-		 * 	no passwd
-		 * else
-		 * 	password
-		 */
-		if (mWirelessNetwork.getPasswords().get(0).equals("NOPASSNOPASSNOPASSNOPASS")) {
+		if(mWirelessNetwork.getPasswords().get(0) == null) {
+			// TODO: Show error dialog...
+		} else if(mWirelessNetwork.getPasswords().get(0).equals("")) {
 			Toast.makeText(mContext, R.string.showpass_nopass, Toast.LENGTH_LONG).show();
 			startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));
 			this.finish();

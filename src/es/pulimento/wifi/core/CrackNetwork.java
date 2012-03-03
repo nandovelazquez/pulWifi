@@ -48,7 +48,7 @@ public class CrackNetwork {
 
 	public String crackNetwork() {
 		if(mCapabilities.equals(WirelessEncryption.OPEN))
-			return "NOPASSNOPASSNOPASSNOPASS";	// TODO: Change this to empty string.
+			return "";
 
 		return algorithms.crack();
 	}	
