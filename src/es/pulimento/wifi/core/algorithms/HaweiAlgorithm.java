@@ -100,6 +100,11 @@ public class HaweiAlgorithm extends CrackAlgorithm {
 	}
 	private static int hexToDec(char s) {//crack3() lo necesita
 		return Integer.parseInt(String.valueOf(s), 16);
+	}
+
+	public static boolean supportsEncryption(WirelessEncryption mCapabilities) {
+		// TODO Auto-generated method stub
+		return false;
 	}	
 
 }

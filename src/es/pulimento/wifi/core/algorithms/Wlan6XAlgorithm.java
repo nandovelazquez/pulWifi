@@ -103,4 +103,9 @@ public class Wlan6XAlgorithm extends CrackAlgorithm {
 		return s.toString();		
 	}
 
+	public static boolean supportsEncryption(WirelessEncryption mCapabilities) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }

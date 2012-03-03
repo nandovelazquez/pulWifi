@@ -92,4 +92,9 @@ public class Md5ZAlgorithm extends CrackAlgorithm {
             throw new RuntimeException(e);
         }
       }
+
+	public static boolean supportsEncryption(WirelessEncryption mCapabilities) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }

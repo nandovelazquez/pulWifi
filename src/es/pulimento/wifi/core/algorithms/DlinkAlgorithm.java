@@ -79,5 +79,10 @@ public class DlinkAlgorithm extends CrackAlgorithm {
 			newkey[i]=hash[index];
 		}
 		return String.valueOf(newkey, 0, 20);
+	}
+
+	public static boolean supportsEncryption(WirelessEncryption mCapabilities) {
+		// TODO Auto-generated method stub
+		return false;
 	}	
 }

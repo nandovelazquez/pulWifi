@@ -113,4 +113,9 @@ public class Md5CAlgorithm extends CrackAlgorithm {
         }
       }
 
+	public static boolean supportsEncryption(WirelessEncryption mCapabilities) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }
