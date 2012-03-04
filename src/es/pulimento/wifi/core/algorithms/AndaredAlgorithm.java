@@ -22,7 +22,7 @@ public class AndaredAlgorithm extends CrackAlgorithm {
 
 		// ESSID: Andared
 		// BSSID: Any
-		addPattern("Andared", "*");
+		addPattern("Andared", "([0-9A-Fa-f:]{17})");
 
 	}
 
