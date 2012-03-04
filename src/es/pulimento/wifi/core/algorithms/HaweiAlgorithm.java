@@ -12,18 +12,24 @@ public class HaweiAlgorithm extends CrackAlgorithm {
 
 	public HaweiAlgorithm(String essid, String bssid) {
 		super(essid, bssid);
-		// TODO Auto-generated constructor stub
 	}
-	// TODO: Add encryption and clean all up...
-	public static WirelessEncryption[] encryption = {  };
 
 	@Override
 	protected void setPatterns() {
-		/* TODO: Add this patterns.
+
+		// ESSID: Any
+		// BSSID: 00:1E:10:XX:XX:XX
+		// MODEL: Huawei HG520c
+		addPattern("*", "(00:1E:10:[0-9A-Fa-f:]{8})");
+
+		// ESSID: Any
+		// BSSID: 00:22:A1:XX:XX:XX
+		// NOTE: Viewed in routerkeygen...
+		addPattern("*", "(00:22:A1:[0-9A-Fa-f:]{8})");
+
+		/* TODO: Add this...
 		// Los que tienen un simple comentario están verificados, los que tienen DOBLE comentario
 		// NO FUNCIONAN, pero como la gente se queja...pues hala...
-		matcher_hawei[0] = Pattern.compile("(00:1E:10:[0-9A-Fa-f:]{8})").matcher(mBSSID);//Huawei HG520c, debe de ser compatible!
-		matcher_hawei[1] = Pattern.compile("(00:22:A1:[0-9A-Fa-f:]{8})").matcher(mBSSID);//Visto en routerkeygen
 		matcher_hawei[2] = Pattern.compile("(00:25:68:[0-9A-Fa-f:]{8})").matcher(mBSSID);//Visto en HG520 español
 		matcher_hawei[3] = Pattern.compile("(00:25:9E:[0-9A-Fa-f:]{8})").matcher(mBSSID);//Visto en routerkeygen		
 		matcher_hawei[4] = Pattern.compile("(04:C0:6F:[0-9A-Fa-f:]{8})").matcher(mBSSID);
@@ -54,19 +60,21 @@ public class HaweiAlgorithm extends CrackAlgorithm {
 		//matcher_hawei[29] = Pattern.compile("(78:1D:BA:[0-9A-Fa-f:]{8})").matcher(mBSSID);/////VodafoneInternetMovil
 		matcher_hawei[28] = Pattern.compile("(5C:4C:A9:[0-9A-Fa-f:]{8})").matcher(mBSSID);/////Es de Orange, no comercializa ese router
 		*/
-		
 	}
 
 	@Override
 	protected String crackAlgorithm(String essid_data, String bssid_data) {
-		bssid_data = bssid_data.replace(":", "");
-		return crack3(bssid_data);
-	}
+		// Remove dots from bssid and go lower case...
+		bssid_data = bssid_data.replace(":", "").toLowerCase();
 
-	public static String crack3(String bssid) {// HAWEI
-		//Log.d("pulWifi","Using HAWEI algorithm");
-   		//Log.d("pulWifi", "MAC -> "+bssid);
-		char[] mac2 = bssid.toLowerCase().toCharArray();
+		// I need bssid in decimal...
+		int[] mac_dec = new int[12];
+		char[] mac = bssid_data.toCharArray();
+		for(int i = 0; i<12; i++)
+			mac_dec[i] = hexToDec(mac[i]);
+
+		// Process key with algorithm...
+		StringBuilder pass = new StringBuilder();
 		int[] a0 = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 		int[] a1 = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15};
 		int[] a2 = { 0, 13, 10, 7, 5, 8, 15, 2, 10, 7, 0, 13, 15, 2, 5, 8};
@@ -86,24 +94,21 @@ public class HaweiAlgorithm extends CrackAlgorithm {
 		int[] n14 = { 0, 1, 3, 2, 4, 5, 7, 6, 12, 13, 15, 14, 8, 9, 11, 10};
 		int[] n31 = { 0, 10, 4, 14, 9, 3, 13, 7, 2, 8, 6, 12, 11, 1, 15, 5};
 		int[] key = { 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 61, 62, 63, 64, 65, 66};
-		int[] mac = new int[12];
-		for(int i = 0; i<12; i++)
-			mac[i] = hexToDec(mac2[i]);
-		StringBuilder a = new StringBuilder();
-		a.append(key[((a2[mac[0]])^(n11[mac[1]])^(a7[mac[2]])^(a8[mac[3]])^(a14[mac[4]])^(a5[mac[5]])^(a5[mac[6]])^(a2[mac[7]])^(a0[mac[8]])^(a1[mac[9]])^(a15[mac[10]])^(a0[mac[11]])^13)]);
-		a.append(key[((n5[mac[0]])^(n12[mac[1]])^(a5[mac[2]])^(a7[mac[3]])^(a2[mac[4]])^(a14[mac[5]])^(a1[mac[6]])^(a5[mac[7]])^(a0[mac[8]])^(a0[mac[9]])^(n31[mac[10]])^(a15[mac[11]])^4)]);
-		a.append(key[((a3[mac[0]])^(a5[mac[1]])^(a2[mac[2]])^(a10[mac[3]])^(a7[mac[4]])^(a8[mac[5]])^(a14[mac[6]])^(a5[mac[7]])^(a5[mac[8]])^(a2[mac[9]])^(a0[mac[10]])^(a1[mac[11]])^7)]);
-		a.append(key[((n6[mac[0]])^(n13[mac[1]])^(a8[mac[2]])^(a2[mac[3]])^(a5[mac[4]])^(a7[mac[5]])^(a2[mac[6]])^(a14[mac[7]])^(a1[mac[8]])^(a5[mac[9]])^(a0[mac[10]])^(a0[mac[11]])^14)]);
-		a.append(key[((n7[mac[0]])^(n14[mac[1]])^(a3[mac[2]])^(a5[mac[3]])^(a2[mac[4]])^(a10[mac[5]])^(a7[mac[6]])^(a8[mac[7]])^(a14[mac[8]])^(a5[mac[9]])^(a5[mac[10]])^(a2[mac[11]])^7)]);
-  		//Log.d("pulWifi", "CLAVE -> "+a.toString());
-		return a.toString();
+		pass.append(key[((a2[mac[0]])^(n11[mac[1]])^(a7[mac[2]])^(a8[mac[3]])^(a14[mac[4]])^(a5[mac[5]])^(a5[mac[6]])^(a2[mac[7]])^(a0[mac[8]])^(a1[mac[9]])^(a15[mac[10]])^(a0[mac[11]])^13)]);
+		pass.append(key[((n5[mac[0]])^(n12[mac[1]])^(a5[mac[2]])^(a7[mac[3]])^(a2[mac[4]])^(a14[mac[5]])^(a1[mac[6]])^(a5[mac[7]])^(a0[mac[8]])^(a0[mac[9]])^(n31[mac[10]])^(a15[mac[11]])^4)]);
+		pass.append(key[((a3[mac[0]])^(a5[mac[1]])^(a2[mac[2]])^(a10[mac[3]])^(a7[mac[4]])^(a8[mac[5]])^(a14[mac[6]])^(a5[mac[7]])^(a5[mac[8]])^(a2[mac[9]])^(a0[mac[10]])^(a1[mac[11]])^7)]);
+		pass.append(key[((n6[mac[0]])^(n13[mac[1]])^(a8[mac[2]])^(a2[mac[3]])^(a5[mac[4]])^(a7[mac[5]])^(a2[mac[6]])^(a14[mac[7]])^(a1[mac[8]])^(a5[mac[9]])^(a0[mac[10]])^(a0[mac[11]])^14)]);
+		pass.append(key[((n7[mac[0]])^(n14[mac[1]])^(a3[mac[2]])^(a5[mac[3]])^(a2[mac[4]])^(a10[mac[5]])^(a7[mac[6]])^(a8[mac[7]])^(a14[mac[8]])^(a5[mac[9]])^(a5[mac[10]])^(a2[mac[11]])^7)]);
+
+		return pass.toString();
 	}
-	private static int hexToDec(char s) {//crack3() lo necesita
+
+	private static int hexToDec(char s) {
 		return Integer.parseInt(String.valueOf(s), 16);
 	}
 
 	public static boolean supportsEncryption(WirelessEncryption mCapabilities) {
-		// TODO Auto-generated method stub
+		// TODO: Implement this...
 		return false;
 	}	
 
