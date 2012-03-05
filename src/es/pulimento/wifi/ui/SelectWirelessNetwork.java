@@ -51,7 +51,7 @@ public class SelectWirelessNetwork extends Activity implements OnItemClickListen
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.layout_selectwireless);
 
-		/* Define objects. */
+		// Define objects.
 		mContext = this;
 		mWirelessNetListView = (ListView) findViewById(R.id.layout_selectwireless_list_id);
 		mWirelessNetList = new ArrayList<WirelessNetwork>();
@@ -62,7 +62,7 @@ public class SelectWirelessNetwork extends Activity implements OnItemClickListen
 		mTimer = new Timer();
 		mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(mContext);
 
-		/* Set object properties. */
+		// Set object properties.
 		mWirelessNetListView.setEmptyView(findViewById(R.id.layout_selectwireless_list_empty));
 		mWirelessNetListView.setAdapter(mListViewAdapter);
 		mWirelessNetListView.setClickable(true);
@@ -83,6 +83,8 @@ public class SelectWirelessNetwork extends Activity implements OnItemClickListen
 					mWirelessNetList.add(new WirelessNetwork(wifi));
 
 				mWirelessNetList.add(new WirelessNetwork("Andared", "FF:FF:FF:FF:FF:FF", -50, "[WPA]"));
+				mWirelessNetList.add(new WirelessNetwork("DLink-AF3258", "FF:FF:FF:FF:FF:FF", -50, "[WPA]"));
+				
 				//mWirelessNetList.add(new WirelessNetwork("WLAN4DC866", "00:22:2D:04:DC:E8", -80, "[WPA]"));
 				//mWirelessNetList.add(new WirelessNetwork("WLAN_1234", "64:68:0c:AA:AA:AA", -100, "[WPA]"));
 				//mWirelessNetList.add(new WirelessNetwork("ThomsonF8A3D0", "AA:AA:AA:AA:AA:AA", -100, "[WEP??"));

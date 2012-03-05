@@ -8,7 +8,9 @@ public class DlinkAlgorithm extends CrackAlgorithm {
 	/*
 	 * D-Link algorithm.
 	 * 
-	 * TODO: Description and supported routers.
+	 * I have no information about this algorithm.
+	 * I also don't know what encryption supports.
+	 *
 	 */
 
 	public DlinkAlgorithm(String essid, String bssid) {
@@ -20,7 +22,7 @@ public class DlinkAlgorithm extends CrackAlgorithm {
 
 		// ESSID: Dlink-XXXXXX
 		// BSSID: Any
-		addPattern("DLink-[0-9a-fA-F]{6}", "([0-9A-Fa-f:]{17})");
+		addPattern("DLink-([0-9a-fA-F]{6})", "([0-9A-Fa-f:]{17})");
 	}
 
 	@Override
