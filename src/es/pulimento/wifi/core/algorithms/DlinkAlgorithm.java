@@ -73,7 +73,6 @@ public class DlinkAlgorithm extends CrackAlgorithm {
 	}
 
 	public static boolean supportsEncryption(WirelessEncryption mCapabilities) {
-		// TODO: Implement this....
 		return true;
 	}
 }
