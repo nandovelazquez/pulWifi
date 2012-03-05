@@ -1,10 +1,7 @@
 package es.pulimento.wifi.core;
 
-import java.util.ArrayList;
-
 import es.pulimento.wifi.core.algorithms.AlgorithmList;
 import es.pulimento.wifi.core.algorithms.AndaredAlgorithm;
-import es.pulimento.wifi.core.algorithms.CrackAlgorithm;
 import es.pulimento.wifi.core.algorithms.DlinkAlgorithm;
 import es.pulimento.wifi.core.algorithms.HaweiAlgorithm;
 import es.pulimento.wifi.core.algorithms.Md5CAlgorithm;
@@ -19,7 +16,7 @@ public class CrackNetwork {
 
 	public CrackNetwork(WirelessNetwork w) {
 
-		algorithms = (AlgorithmList) new ArrayList<CrackAlgorithm>();
+		algorithms = new AlgorithmList();
 		mCapabilities = w.getCapabilities();
 		mESSID = w.getEssid();
 		mBSSID = w.getBssid();
