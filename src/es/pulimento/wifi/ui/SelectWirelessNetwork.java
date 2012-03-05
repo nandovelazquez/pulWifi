@@ -83,8 +83,9 @@ public class SelectWirelessNetwork extends Activity implements OnItemClickListen
 					mWirelessNetList.add(new WirelessNetwork(wifi));
 
 				mWirelessNetList.add(new WirelessNetwork("Andared", "FF:FF:FF:FF:FF:FF", -50, "[WPA]"));
-				mWirelessNetList.add(new WirelessNetwork("DLink-AF3258", "FF:FF:FF:FF:FF:FF", -50, "[WPA]"));
-				
+				mWirelessNetList.add(new WirelessNetwork("Discus--FD2E5C", "FF:FF:FF:FF:FF:FF", -50, "[WPA]"));
+
+				//mWirelessNetList.add(new WirelessNetwork("DLink-AF3258", "FF:FF:FF:FF:FF:FF", -50, "[WPA]"));
 				//mWirelessNetList.add(new WirelessNetwork("WLAN4DC866", "00:22:2D:04:DC:E8", -80, "[WPA]"));
 				//mWirelessNetList.add(new WirelessNetwork("WLAN_1234", "64:68:0c:AA:AA:AA", -100, "[WPA]"));
 				//mWirelessNetList.add(new WirelessNetwork("ThomsonF8A3D0", "AA:AA:AA:AA:AA:AA", -100, "[WEP??"));

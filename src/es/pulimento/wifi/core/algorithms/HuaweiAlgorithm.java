@@ -2,15 +2,15 @@ package es.pulimento.wifi.core.algorithms;
 
 import es.pulimento.wifi.core.WirelessEncryption;
 
-public class HaweiAlgorithm extends CrackAlgorithm {
+public class HuaweiAlgorithm extends CrackAlgorithm {
 
 	/*
-	 * Hawei algorithm.
+	 * Huawei algorithm.
 	 * 
 	 * TODO: Description and supported routers.
 	 */
 
-	public HaweiAlgorithm(String essid, String bssid) {
+	public HuaweiAlgorithm(String essid, String bssid) {
 		super(essid, bssid);
 	}
 
