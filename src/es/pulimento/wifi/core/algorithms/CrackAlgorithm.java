@@ -41,7 +41,6 @@ public abstract class CrackAlgorithm {
 	}
 
 	public boolean isCrackeable() {
-
 		for(int i = 0; i < n_of_patterns; i+=2)
 			if(matchers.get(i).find() && matchers.get(i+1).find()) {
 				working_pattern = i;

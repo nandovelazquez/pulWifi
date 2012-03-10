@@ -40,6 +40,9 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 
 		@Override
 		@Deprecated
+		/**
+		 * @deprecated You sould use toStringId() instead of this method.
+		 */
 		public String toString() {
 			return null;
 		}
