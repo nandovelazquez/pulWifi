@@ -29,13 +29,13 @@
                 android:layout_marginLeft="4dip"
                 android:layout_marginTop="4dip"
                 android:text="@string/manualcrack_header"
-                android:textSize="20dip" />
+                android:textSize="18dip" />
 
             <EditText
                 android:id="@+id/layout_manualcrack_essid"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dip"
+                android:layout_marginBottom="2dip"
                 android:hint="@string/manualcrack_essid_hint"
                 android:singleLine="true" />
 
@@ -43,7 +43,7 @@
                 android:id="@+id/layout_manualcrack_bssid"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="26dip"
+                android:layout_marginBottom="24dip"
                 android:hint="@string/manualcrack_bssid_hint"
                 android:maxLength="17"
                 android:singleLine="true" />
@@ -51,10 +51,8 @@
             <Button
                 android:id="@+id/layout_manualcrack_accept"
                 android:layout_width="120dip"
-                android:layout_height="70dip"
-                android:layout_marginLeft="100dip"
-                android:layout_marginRight="100dip"
-                android:gravity="center"
+                android:layout_height="60dip"
+                android:layout_gravity="center_horizontal"
                 android:text="@string/manualcrack_crackbutton"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -64,7 +62,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="4dip"
                 android:layout_marginRight="4dip"
-                android:layout_marginTop="14dip"
+                android:layout_marginTop="12dip"
                 android:text="@string/manualcrack_bottom"
                 android:textSize="16dip" />
         </LinearLayout>

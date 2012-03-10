@@ -57,12 +57,9 @@
     <string name="mainactivity_ask_dialog_yes_button">Sí</string>
     <string name="mainactivity_ask_dialog_no_button">Non</string>
 
-    <!-- Main tab host activity -->
-    <string name="maintabhost_mode_scan">Modo automático</string>
-    <string name="maintabhost_mode_manual">Modo manual</string>
-
     <!-- Manual crack activity -->
-    <string name="manualcrack_header">Introduce o nome de rede e a dirección MAC máis abaixo. Podes ver unha lista de redes compatibles pulsando o botón menú.</string>
+    <string name="manualcrack_header">Introduce o nome de rede e a dirección MAC máis abaixo</string>
+    <string name="manualcrack_bottom">Podes ver unha lista de redes compatibles pulsando o botón menú</string>
     <string name="manualcrack_essid_hint">Nome de rede</string>
     <string name="manualcrack_bssid_hint">Dirección MAC</string>
     <string name="manualcrack_crackbutton">Crackear</string>

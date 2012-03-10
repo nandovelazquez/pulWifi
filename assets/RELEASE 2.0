@@ -4,23 +4,27 @@
 - Dejar constancia de que se toma código de superuser y de aosp
 - ahora mismo está puesto para que se pueda entrar desde el emulador
 - Revisar strings
-- replace ClipboardManager
-- ManualFragment scroll when keyboard is out
 - Actualizador al inicio (y quitar el actualizador manual)
-- Refrescar manualmente
+- Refrescar manualmente (no está implementado, sólo la interfaz)
 - Menú de ShowPassActivity
 - Layouts de diálogos sin márgenes
 - Crear TAG para la versión v1.6.1
 - Hay una red forzada en el listitem, para probar
 - Move about dialog into preferences
 - Admob está deshabilitado en el manifest para que no muestre anuncios
+- Bug en las preferencias que cuando se entra por primera vez activa automáticamente
+la vibración cada vez que se actualiza
+- Revisar layouts (sobre todo ldpi y mdpi)
 
 Hecho:
 
-- Cambio completamente de la interfaz, para todas las versiones de Android
+- Cambio completo de la interfaz, para todas las versiones de Android
 - Mejor integración con ICS
 - Forzados algunos drawables de ICS
 - Share app menu
 - Arquitectura basada en fragments
 - Añadido ActionBarCompat
-- Añadida librería android-support-v4 
+- Añadida librería android-support-v4
+- replace ClipboardManager (se deja como está, probado y sólo funciona de honeycomb en adelante, y la
+librería de compatibilidad no tiene nada al respecto) 
+- ManualFragment scroll when keyboard is out

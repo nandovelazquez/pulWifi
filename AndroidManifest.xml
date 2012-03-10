@@ -44,7 +44,8 @@
             android:configChanges="orientation|keyboard|keyboardHidden" />
         <activity
             android:name=".ui.HomeActivity"
-            android:configChanges="orientation|keyboard|keyboardHidden" />
+            android:configChanges="orientation|keyboard|keyboardHidden"
+            android:windowSoftInputMode="adjustResize" />
 
         <!--
         <activity

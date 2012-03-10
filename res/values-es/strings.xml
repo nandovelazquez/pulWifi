@@ -21,7 +21,7 @@
     <string name="dialog_changelog_title">Cambios</string>
 
     <!-- Supported networks dialog -->
-    <string name="dialog_supportednetworks_title">Redes soportadas:</string>
+    <string name="dialog_supportednetworks_title">Redes soportadas</string>
     <string name="dialog_supportednetworks_list">- WLAN_XXXX\n- JAZZTEL_XXXX\n- WLANXXXXXX\n- YACOMXXXXXX\n- WIFIXXXXXX\n- Algunos routers D-Link\n- Algunos routers Huawei\n</string>
 
     <!-- Show passwords dialog -->
@@ -62,7 +62,7 @@
     <string name="preferences_updateinterval_slow">Lenta</string>
 
     <!-- Main activity -->
-    <string name="mainactivity_failed_dialog_error">Error:</string>
+    <string name="mainactivity_failed_dialog_error">Error</string>
     <string name="mainactivity_failed_dialog_msg">Ha sido imposible activar el wifi</string>
     <string name="mainactivity_failed_dialog_ok_button">Salir</string>
     <string name="mainactivity_ask_dialog_title">¿Activar wifi?</string>
@@ -70,19 +70,16 @@
     <string name="mainactivity_ask_dialog_yes_button">Si</string>
     <string name="mainactivity_ask_dialog_no_button">No</string>
 
-    <!-- Main tab host activity -->
-    <string name="maintabhost_mode_scan">Buscar redes</string>
-    <string name="maintabhost_mode_manual">Modo manual</string>
-
     <!-- Manual crack activity -->
-    <string name="manualcrack_header">Introduce el nombre y la dirección MAC de la red. Puedes ver la lista de redes soportadas pulsando la tecla MENU</string>
+    <string name="manualcrack_header">Introduce el nombre y la dirección MAC de la red</string>
+    <string name="manualcrack_bottom">Puedes ver la lista de redes soportadas pulsando la tecla MENU</string>
     <string name="manualcrack_essid_hint">Nombre de la red</string>
     <string name="manualcrack_bssid_hint">Dirección MAC</string>
     <string name="manualcrack_crackbutton">OK</string>
-    <string name="manualcrack_inputerror">Red no soportada. Vea la lista completa en el menú.</string>
+    <string name="manualcrack_inputerror">Red no soportada. Vea la lista completa en el menú</string>
 
     <!-- Select wireless network activity -->
-    <string name="selectwireless_unsupported">Red no soportada. Las redes soportadas están indicadas con marcadores verdes.</string>
+    <string name="selectwireless_unsupported">Red no soportada. Las redes soportadas están indicadas con marcadores verdes</string>
     <string name="selectwireless_emptylist">Ninguna red al alcance :(</string>
     <string name="selectwireless_refresh">Refrescar lista</string>
 
@@ -104,7 +101,7 @@
     <string name="menu_share">Compartir</string>
     <string name="menu_share_title">Compartir app</string>
     <string name="menu_share_subject">pulWifi</string>
-    <string name="menu_share_text">Hey! Puedes conseguir pulWifi desde http://pulwifi.github.com .Pruébalo! ;)</string>
+    <string name="menu_share_text">Hey! Puedes conseguir pulWifi desde http://pulwifi.github.com . Pruébalo! ;)</string>
 
     <!-- List view adapter -->
     <string name="listadapter_wpa">WPA/WPA2</string>
