@@ -4,7 +4,7 @@ import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-import es.pulimento.wifi.core.WirelessEncryption;
+import es.pulimento.wifi.core.WirelessNetwork.WirelessEncryption;
 
 public class Md5ZAlgorithm extends CrackAlgorithm {
 

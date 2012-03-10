@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.util.Log;
-import es.pulimento.wifi.core.WirelessEncryption;
+import es.pulimento.wifi.core.WirelessNetwork.WirelessEncryption;
 
 public class Wlan6XAlgorithm extends CrackAlgorithm {
 

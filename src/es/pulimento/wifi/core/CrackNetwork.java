@@ -1,5 +1,6 @@
 package es.pulimento.wifi.core;
 
+import es.pulimento.wifi.core.WirelessNetwork.WirelessEncryption;
 import es.pulimento.wifi.core.algorithms.AlgorithmList;
 import es.pulimento.wifi.core.algorithms.AndaredAlgorithm;
 import es.pulimento.wifi.core.algorithms.DiscusAlgorithm;

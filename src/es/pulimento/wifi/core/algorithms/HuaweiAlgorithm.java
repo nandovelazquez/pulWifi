@@ -1,6 +1,6 @@
 package es.pulimento.wifi.core.algorithms;
 
-import es.pulimento.wifi.core.WirelessEncryption;
+import es.pulimento.wifi.core.WirelessNetwork.WirelessEncryption;
 
 public class HuaweiAlgorithm extends CrackAlgorithm {
 
