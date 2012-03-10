@@ -15,10 +15,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 import es.pulimento.wifi.R;
 import es.pulimento.wifi.core.WirelessNetwork;
-import es.pulimento.wifi.dialogs.AboutDialog;
-import es.pulimento.wifi.dialogs.ClipboardCopyDialog;
-import es.pulimento.wifi.dialogs.ShowPasswordsDialog;
-import es.pulimento.wifi.dialogs.UpdateDialog;
+import es.pulimento.wifi.ui.dialogs.AboutDialog;
+import es.pulimento.wifi.ui.dialogs.ClipboardCopyDialog;
+import es.pulimento.wifi.ui.dialogs.ShowPasswordsDialog;
+import es.pulimento.wifi.ui.dialogs.UpdateDialog;
 
 public class ShowPass extends Activity implements OnClickListener {
 

@@ -1,4 +1,4 @@
-package es.pulimento.wifi.dialogs;
+package es.pulimento.wifi.ui.dialogs;
 
 import java.util.ArrayList;
 
