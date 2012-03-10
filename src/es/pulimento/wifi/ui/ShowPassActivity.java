@@ -16,6 +16,8 @@ import es.pulimento.wifi.dialogs.ClipboardCopyDialog;
 import es.pulimento.wifi.dialogs.ShowPasswordsDialog;
 import es.pulimento.wifi.ui.utils.ActionBarActivity;
 
+//The new interface for ClipboardManager isn't compatible with APIs < 11
+@SuppressWarnings("deprecation")
 public class ShowPassActivity extends ActionBarActivity implements OnClickListener {
 
 	public static final String EXTRA_NETWORK = "EXTRA_WIRELESS_NETWORK";
