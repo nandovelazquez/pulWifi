@@ -10,7 +10,7 @@
     <!-- License dialog -->
     <string name="dialog_license_file_url">file:///android_asset/LICENSE-ES</string>
     <string name="dialog_license_title">Licencia</string>
-    
+
     <!-- Changelog dialog -->
     <string name="dialog_changelog_file_url">file:///android_asset/CHANGELOG-GL</string>
     <string name="dialog_changelog_title">Mudanzas</string>
@@ -31,10 +31,10 @@
     <string name="dialog_updater_latest_version">Última versión:</string>
     <string name="dialog_updater_unknown_version">Descoñecida</string>
     <string name="dialog_updater_check">Comprobar actualizacións</string>
-    <string name="dialog_updater_error">Error conectándose ao internet&#8230;</string>
+    <string name="dialog_updater_error">Error conectándose ao internet…</string>
     <string name="dialog_updater_update">Descargar</string>
     <string name="dialog_udpater_title">Actualizar:</string>
-    <string name="dialog_updater_checking">Comprobando&#8230;</string>
+    <string name="dialog_updater_checking">Comprobando…</string>
 
     <!-- Preferences -->
     <string name="preferences_category_scanmode">Modo automático:</string>
@@ -86,8 +86,12 @@
     <string name="menu_quit">Saír</string>
     <string name="menu_networks">Redes soportadas</string>
     <string name="menu_settings">Axustes</string>
-    <string name="menu_about">Acerca de&#8230;</string>
+    <string name="menu_about">Acerca de…</string>
     <string name="menu_updater">Actualizar</string>
+    <string name="menu_share">Compartir</string>
+    <string name="menu_share_title">Compartir app</string>
+    <string name="menu_share_subject">pulWifi</string>
+    <string name="menu_share_text">Hey! Pode obter app pulWifi de http://pulwifi.github.com. Proba! ;)</string>
 
     <!-- List view adapter -->
     <string name="listadapter_wpa">WPA/WPA2</string>

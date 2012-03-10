@@ -3,14 +3,16 @@
 
     <!-- Application -->
     <string name="app_name">pulWifi</string>
-    <string name="app_version">1.6.1</string>
+    <string name="app_version">2.0.0</string>
+    <string name="page_label_networks_list">Network List</string>
+    <string name="page_label_manual">Manual Mode</string>
 
     <!-- About dialog -->
-    <string name="dialog_about_text">This is a simple application that shows default passwords of some wifi spots.\n\nCopyright 2011&#8211;12, Javier Pulido and Antonio Vázquez Blanco.\nContact: <a href="mailto:pulwifi@gmail.com?subject=pulWifi">pulwifi@gmail.com</a>\n\nLEGAL NOTE : The very only intention of this application is to demonstrate the insecurity of your own routers, and warn of the danger of using default passwords. The author of this application is not responsible for the end user use made of this. When using this application with a wireless network, make sure that is your own or have permission from the owner / administrator of the network. Remember that using the broadband connection of others is a crime. Please do not use this application in an ilegal way. Use below your own responsability.\n\nThis program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.\n\nThis program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.</string>
+    <string name="dialog_about_text">This is a simple application that shows default passwords of some wifi spots.\n\nCopyright 2011–12, Javier Pulido and Antonio Vázquez Blanco.\nContact: <a href="mailto:pulwifi@gmail.com?subject=pulWifi">pulwifi@gmail.com</a>\n\nLEGAL NOTE : The very only intention of this application is to demonstrate the insecurity of your own routers, and warn of the danger of using default passwords. The author of this application is not responsible for the end user use made of this. When using this application with a wireless network, make sure that is your own or have permission from the owner / administrator of the network. Remember that using the broadband connection of others is a crime. Please do not use this application in an ilegal way. Use below your own responsability.\n\nThis program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.\n\nThis program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.</string>
     <string name="dialog_about_gpl">License</string>
     <string name="dialog_about_changelog">Changelog</string>
     <string name="dialog_about_title">About</string>
-    
+
     <!-- Changelog dialog -->
     <string name="dialog_changelog_file_url">file:///android_asset/CHANGELOG-EN</string>
     <string name="dialog_changelog_title">Changelog</string>
@@ -27,18 +29,18 @@
     <string name="dialog_showpass_title_one">This is your password:</string>
     <string name="dialog_showpass_title_many">One of those is your password:</string>
 
-	<!-- Copy to clipboard dialog -->
-	<string name="dialog_cipboardcopy_title">Passwords</string>
+    <!-- Copy to clipboard dialog -->
+    <string name="dialog_cipboardcopy_title">Passwords</string>
 
-	<!-- Updater dialog -->
-	<string name="dialog_updater_current_version">Current version:</string>
-	<string name="dialog_updater_latest_version">Latest version:</string>
-	<string name="dialog_updater_unknown_version">Unknown</string>
-	<string name="dialog_updater_check">Check for updates</string>
-	<string name="dialog_updater_error">Error connecting to the internet&#8230;</string>
-	<string name="dialog_updater_update">Update</string>
-	<string name="dialog_udpater_title">Updater:</string>
-	<string name="dialog_updater_checking">Checking&#8230;</string>
+    <!-- Updater dialog -->
+    <string name="dialog_updater_current_version">Current version:</string>
+    <string name="dialog_updater_latest_version">Latest version:</string>
+    <string name="dialog_updater_unknown_version">Unknown</string>
+    <string name="dialog_updater_check">Check for updates</string>
+    <string name="dialog_updater_error">Error connecting to the internet…</string>
+    <string name="dialog_updater_update">Update</string>
+    <string name="dialog_udpater_title">Updater:</string>
+    <string name="dialog_updater_checking">Checking…</string>
 
     <!-- Preference keys and defaults -->
     <string name="preferences_autoupdate_key">prefs_key_autoupdate</string>
@@ -60,8 +62,8 @@
     <string name="preferences_updateinterval_normal">Normal</string>
     <string name="preferences_updateinterval_slow">Slow</string>
 
-	<!-- Main activity -->
-	<string name="mainactivity_failed_dialog_error">Error:</string>
+    <!-- Main activity -->
+    <string name="mainactivity_failed_dialog_error">Error:</string>
     <string name="mainactivity_failed_dialog_msg">Can\'t turn on wi-fi.</string>
     <string name="mainactivity_failed_dialog_ok_button">Exit</string>
     <string name="mainactivity_ask_dialog_title">Enable wifi?</string>
@@ -69,40 +71,44 @@
     <string name="mainactivity_ask_dialog_yes_button">Yes</string>
     <string name="mainactivity_ask_dialog_no_button">No</string>
 
-	<!-- Main tab host activity -->
-	<string name="maintabhost_mode_scan">Scan mode</string>
+    <!-- Main tab host activity -->
+    <string name="maintabhost_mode_scan">Scan mode</string>
     <string name="maintabhost_mode_manual">Manual mode</string>
 
-	<!-- Manual crack activity -->
-	<string name="manualcrack_header">Enter the network name and MAC Adress below. You can view a list of supported networks by pressing menu key.</string>
+    <!-- Manual crack activity -->
+    <string name="manualcrack_header">Enter the network name and MAC Adress below. You can view a list of supported networks by pressing menu key.</string>
     <string name="manualcrack_essid_hint">Network Name</string>
     <string name="manualcrack_bssid_hint">MAC Adress</string>
     <string name="manualcrack_crackbutton">Crack</string>
     <string name="manualcrack_inputerror">Bad input. Please see a complete list of supported networks pressing menu key.</string>
 
-	<!-- Select wireless network activity -->
-	<string name="selectwireless_unsupported">Unsupported network. Supported networks have got green markers.</string>
+    <!-- Select wireless network activity -->
+    <string name="selectwireless_unsupported">Unsupported network. Supported networks have got green markers.</string>
     <string name="selectwireless_emptylist">Nothing yet :(</string>
     <string name="selectwireless_refresh">Update list</string>
 
-	<!-- Show pass activity -->
-	<string name="showpass_nopass">This network is open. Connect to it!</string>
-	<string name="showpass_network_name">Network name</string>
-	<string name="showpass_network_mac">MAC adress</string>
+    <!-- Show pass activity -->
+    <string name="showpass_nopass">This network is open. Connect to it!</string>
+    <string name="showpass_network_name">Network name</string>
+    <string name="showpass_network_mac">MAC adress</string>
     <string name="showpass_button_showpass">Show password</string>
     <string name="showpass_button_clipboard">Copy password to clipboard</string>
     <string name="showpass_button_back">Back</string>
     <string name="showpass_toclipboard">Password copied to clipboard</string>
 
-	<!-- Menu -->
+    <!-- Menu -->
     <string name="menu_quit">Exit</string>
     <string name="menu_networks">Supported networks</string>
     <string name="menu_settings">Preferences</string>
-    <string name="menu_about">About&#8230;</string>
+    <string name="menu_about">About…</string>
     <string name="menu_updater">Updater</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_share_title">Share app</string>
+    <string name="menu_share_subject">pulWifi</string>
+    <string name="menu_share_text">Hey! You can get pulWifi app from http://pulwifi.github.com . Try it! ;)</string>
 
-	<!-- List view adapter -->
-	<string name="listadapter_wpa">WPA/WPA2</string>
+    <!-- List view adapter -->
+    <string name="listadapter_wpa">WPA/WPA2</string>
     <string name="listadapter_wep">WEP</string>
     <string name="listadapter_open">OPEN</string>
 

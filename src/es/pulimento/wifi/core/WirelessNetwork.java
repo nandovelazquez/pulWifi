@@ -23,12 +23,9 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 		mPasswords = new ArrayList<String>();
 		mSignal = s.level;
 		mCapabilities = s.capabilities;
-		if(mDatabase.containsKey(mEssid))
-		{
+		if (mDatabase.containsKey(mEssid)) {
 			mCrackeable = mDatabase.get(mEssid);
-		}
-		else
-		{
+		} else {
 			mCrackeable = (new CrackNetwork(this)).isCrackeable();
 			mDatabase.put(mEssid, mCrackeable);
 		}
@@ -40,26 +37,23 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 		mPasswords = new ArrayList<String>();
 		mSignal = signal;
 		mCapabilities = capabilities;
-		if(mDatabase.containsKey(mEssid))
-		{
+		if (mDatabase.containsKey(mEssid)) {
 			mCrackeable = mDatabase.get(mEssid);
-		}
-		else
-		{
+		} else {
 			mCrackeable = (new CrackNetwork(this)).isCrackeable();
 			mDatabase.put(mEssid, mCrackeable);
 		}
 	}
 
 	public WirelessNetwork(Parcel in) {
-		// We just need to read back each field in the order that it was written to the parcel.
+		// We just need to read back each field in the order that it was written
+		// to the parcel.
 		mEssid = in.readString();
 		mBssid = in.readString();
 		boolean c[] = new boolean[1];
 		in.readBooleanArray(c);
 		mCrackeable = c[0];
-		if(mPasswords == null)
-			mPasswords = new ArrayList<String>();
+		if (mPasswords == null) mPasswords = new ArrayList<String>();
 		in.readStringList(mPasswords);
 		mSignal = in.readInt();
 		mCapabilities = in.readString();
@@ -71,7 +65,7 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 		// When we read from parcel, they will come back in the same order.
 		dest.writeString(mEssid);
 		dest.writeString(mBssid);
-		dest.writeBooleanArray(new boolean[]{ mCrackeable });
+		dest.writeBooleanArray(new boolean[] { mCrackeable });
 		dest.writeStringList(mPasswords);
 		dest.writeInt(mSignal);
 		dest.writeString(mCapabilities);
@@ -111,12 +105,11 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 	public void crack() {
 		String[] passwds = (new CrackNetwork(this)).crackNetwork().split("\n");
 		mPasswords.clear();
-		for(String tmp : passwds)
-			if(!tmp.contains("null"))
-				mPasswords.add(tmp);
+		for (String tmp : passwds)
+			if (!tmp.contains("null")) mPasswords.add(tmp);
 	}
 
-	public boolean getCrackeable() {
+	public boolean isCrackeable() {
 		return mCrackeable;
 	}
 
@@ -125,14 +118,19 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 	}
 
 	public int compareTo(WirelessNetwork w0) {
-		if(this.getCrackeable()) {
-			if(w0.getCrackeable()) {
+		if (this.isCrackeable()) {
+			if (w0.isCrackeable()) {
 				return w0.getSignal() - this.getSignal();
 			}
 			return -1;
-		}
-		else if(w0.getCrackeable())
-			return 1;
+		} else if (w0.isCrackeable()) return 1;
 		return 0;
 	}
+
+	@Override
+	public String toString() {
+		return "WirelessNetwork [mEssid=" + mEssid + ", mBssid=" + mBssid + ", mCapabilities=" + mCapabilities
+				+ ", mCrackeable=" + mCrackeable + "]";
+	}
+
 }

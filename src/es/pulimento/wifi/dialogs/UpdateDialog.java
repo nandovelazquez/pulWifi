@@ -1,4 +1,5 @@
 package es.pulimento.wifi.dialogs;
+
 import java.io.DataInputStream;
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -52,13 +53,14 @@ public class UpdateDialog extends Dialog implements OnClickListener {
 
 	@Override
 	public void onClick(View v) {
-		switch(v.getId()) {
-		case R.id.layout_updater_check:
-			new GetLatestVersion().execute();
-			break;
-		case R.id.layout_updater_update:
-			mContext.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(String.format(APK_URL, mLatestVersion.getText()))));
-			break;
+		switch (v.getId()) {
+			case R.id.layout_updater_check:
+				new GetLatestVersion().execute();
+				break;
+			case R.id.layout_updater_update:
+				mContext.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(String.format(APK_URL,
+						mLatestVersion.getText()))));
+				break;
 		}
 	}
 
@@ -74,7 +76,7 @@ public class UpdateDialog extends Dialog implements OnClickListener {
 		@Override
 		protected String doInBackground(Void... params) {
 			try {
-				byte [] versionData = new byte[6];
+				byte[] versionData = new byte[6];
 				(new DataInputStream((new URL(VERSION_URL)).openConnection().getInputStream())).read(versionData);
 				return new String(versionData).trim();
 			} catch (MalformedURLException e) {
@@ -91,16 +93,12 @@ public class UpdateDialog extends Dialog implements OnClickListener {
 
 		@Override
 		public void onPostExecute(String res) {
-			if(res == "ERR")
-			{
+			if (res == "ERR") {
 				Toast.makeText(mContext, R.string.dialog_updater_error, Toast.LENGTH_LONG).show();
 				updateButton.setVisibility(View.GONE);
-			}
-			else
-			{
+			} else {
 				mLatestVersion.setText(res);
-				if(!res.equals(mContext.getString(R.string.app_version)))
-					updateButton.setVisibility(View.VISIBLE);
+				if (!res.equals(mContext.getString(R.string.app_version))) updateButton.setVisibility(View.VISIBLE);
 			}
 			dialog.dismiss();
 			return;

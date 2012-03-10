@@ -12,9 +12,10 @@ import android.content.IntentFilter;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import es.pulimento.wifi.R;
+import es.pulimento.wifi.ui.utils.ActionBarActivity;
 
 /* Main activity. */
-public class MainActivity extends Activity {
+public class MainActivity extends ActionBarActivity {
 
 	/* Application context. */
 	private Context mContext;
@@ -36,7 +37,7 @@ public class MainActivity extends Activity {
 
 		/* Define elements. */
 		mContext = getApplicationContext();
-		mWifiManager = (WifiManager)getSystemService(Context.WIFI_SERVICE);
+		mWifiManager = (WifiManager) getSystemService(Context.WIFI_SERVICE);
 		mActivity = this;
 		mIntentFilter = new IntentFilter();
 
@@ -45,7 +46,7 @@ public class MainActivity extends Activity {
 		fDialog.setMessage(R.string.mainactivity_failed_dialog_msg);
 		fDialog.setNeutralButton(R.string.mainactivity_failed_dialog_ok_button, new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int which) {
-				//Exit...
+				// Exit...
 				mActivity.finish();
 			}
 		});
@@ -56,8 +57,7 @@ public class MainActivity extends Activity {
 		aDialog.setMessage(R.string.mainactivity_ask_dialog_msg);
 		aDialog.setPositiveButton(R.string.mainactivity_ask_dialog_yes_button, new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int which) {
-				if(!mWifiManager.setWifiEnabled(true))
-					mFailedDialog.show();
+				if (!mWifiManager.setWifiEnabled(true)) mFailedDialog.show();
 			}
 		});
 		aDialog.setNegativeButton(R.string.mainactivity_ask_dialog_no_button, new DialogInterface.OnClickListener() {
@@ -71,19 +71,26 @@ public class MainActivity extends Activity {
 			@Override
 			public void onReceive(Context c, Intent i) {
 				// Code to execute when WIFI_STATE_CHANGED_ACTION event occurs.
-				switch(i.getIntExtra(WifiManager.EXTRA_WIFI_STATE, -1)) {
-				case WifiManager.WIFI_STATE_UNKNOWN:
-					mFailedDialog.show();
-					break;
-				case WifiManager.WIFI_STATE_ENABLED:
-					Intent intent = new Intent(mContext, MainTabHost.class);
-					intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-					startActivity(intent);
-					mActivity.finish();
-					break;
-				case WifiManager.WIFI_STATE_DISABLED:
-					mAskDialog.show();
-					break;
+				switch (i.getIntExtra(WifiManager.EXTRA_WIFI_STATE, -1)) {
+				// TODO For emulator compatibility, uncomment it for release
+				// case WifiManager.WIFI_STATE_UNKNOWN:
+				// mFailedDialog.show();
+				// break;
+					case WifiManager.WIFI_STATE_ENABLED:
+						Intent intent = new Intent(mContext, HomeActivity.class);
+						intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+						startActivity(intent);
+						mActivity.finish();
+						break;
+					case WifiManager.WIFI_STATE_DISABLED:
+						mAskDialog.show();
+						break;
+					default: // TODO For emulator compatibility, comment it for release
+						Intent i1 = new Intent(mContext, HomeActivity.class);
+						i1.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+						startActivity(i1);
+						mActivity.finish();
+						break;
 				}
 			}
 		};
@@ -97,8 +104,7 @@ public class MainActivity extends Activity {
 		super.onResume();
 
 		/* Check wifi state. */
-		if(mWifiManager.getWifiState() == WifiManager.WIFI_STATE_DISABLED)
-			mAskDialog.show();
+		if (mWifiManager.getWifiState() == WifiManager.WIFI_STATE_DISABLED) mAskDialog.show();
 
 		/* Register receivers. */
 		registerReceiver(mBroadcastReceiver, mIntentFilter);
