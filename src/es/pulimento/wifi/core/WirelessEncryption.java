@@ -1,6 +1,6 @@
 package es.pulimento.wifi.core;
 
-
+import es.pulimento.wifi.R;
 
 public enum WirelessEncryption {
 		OPEN,
@@ -19,9 +19,7 @@ public enum WirelessEncryption {
 			return WirelessEncryption.UNKNOWN;
 	}
 
-	// TODO: Implement...
-	/*
-	public String toString() {
+	public int toStringId() {
 		if(this.equals(OPEN))
 			return R.string.listadapter_open;
 		else if(this.equals(WEP))
@@ -29,8 +27,6 @@ public enum WirelessEncryption {
 		else if(this.equals(WPA))
 			return R.string.listadapter_wpa;
 		else
-			// TODO: Add an string for this.
-			return "Unknown";
+			return R.string.listadapter_unknown;
 	}
-	*/
 }

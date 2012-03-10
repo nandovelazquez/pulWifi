@@ -52,7 +52,8 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 	}
 
 	public WirelessNetwork(Parcel in) {
-		// We just need to read back each field in the order that it was written to the parcel.
+		// We just need to read back each field in the order that it was
+		// written to the parcel.
 		mEssid = in.readString();
 		mBssid = in.readString();
 		boolean c[] = new boolean[1];

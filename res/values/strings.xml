@@ -105,5 +105,6 @@
 	<string name="listadapter_wpa">WPA/WPA2</string>
     <string name="listadapter_wep">WEP</string>
     <string name="listadapter_open">OPEN</string>
+    <string name="listadapter_unknown">UNKNOWN</string>
 
 </resources>
