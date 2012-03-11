@@ -135,11 +135,8 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 		mSignal = signal;
 		mCapabilities = WirelessEncryption.parseEncription(capabilities);
 		if(mDatabase.containsKey(mEssid))
-		{
 			mCrackeable = mDatabase.get(mEssid);
-		}
-		else
-		{
+		else {
 			mCrackeable = (new CrackNetwork(this)).isCrackeable();
 			mDatabase.put(mEssid, mCrackeable);
 		}
@@ -155,8 +152,7 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 		boolean c[] = new boolean[1];
 		in.readBooleanArray(c);
 		mCrackeable = c[0];
-		if(mPasswords == null)
-			mPasswords = new ArrayList<String>();
+		if (mPasswords == null) mPasswords = new ArrayList<String>();
 		in.readStringList(mPasswords);
 		mSignal = in.readInt();
 		mCapabilities = WirelessEncryption.parseStringID(in.readInt());
@@ -169,7 +165,7 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 	public void writeToParcel(Parcel dest, int flags) {
 		dest.writeString(mEssid);
 		dest.writeString(mBssid);
-		dest.writeBooleanArray(new boolean[]{ mCrackeable });
+		dest.writeBooleanArray(new boolean[] { mCrackeable });
 		dest.writeStringList(mPasswords);
 		dest.writeInt(mSignal);
 		dest.writeInt(mCapabilities.toStringId());
@@ -261,14 +257,23 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 	 * Comparator between nets. Gives preference to vulnerable ones and after this criteria gives preference to those with a higher signal level.
 	 */
 	public int compareTo(WirelessNetwork w0) {
-		if(this.getCrackeable()) {
-			if(w0.getCrackeable()) {
+		if (this.getCrackeable()) {
+			if (w0.getCrackeable()) {
 				return w0.getSignal() - this.getSignal();
 			}
 			return -1;
-		}
-		else if(w0.getCrackeable())
+		} else if (w0.getCrackeable())
 			return 1;
 		return 0;
 	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public String toString() {
+		return "WirelessNetwork [mEssid=" + mEssid + ", mBssid=" + mBssid + ", mCapabilities=" + mCapabilities
+				+ ", mCrackeable=" + mCrackeable + "]";
+	}
+
 }

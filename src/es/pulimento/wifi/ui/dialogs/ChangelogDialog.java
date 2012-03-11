@@ -21,6 +21,7 @@ public class ChangelogDialog extends Dialog {
 		this.setContentView(R.layout.dialog_generic);
 		this.setTitle(R.string.dialog_changelog_title);
 
-		((WebView) findViewById(R.id.dialog_generic_webview)).loadUrl(mContext.getString(R.string.dialog_changelog_file_url));
+		((WebView) findViewById(R.id.dialog_generic_webview)).loadUrl(mContext
+				.getString(R.string.dialog_changelog_file_url));
 	}
 }

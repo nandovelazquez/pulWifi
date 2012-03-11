@@ -3,9 +3,11 @@
 
     <!-- Application -->
     <string name="app_name">pulWifi</string>
+    <string name="page_label_networks_list">Lista de redes</string>
+    <string name="page_label_manual">Modo manual</string>
 
     <!-- About dialog -->
-    <string name="dialog_about_text">Aplicación para calcular las claves predefinidas de algunas redes wifi.\n\nCopyright 2011&#8211;12, Javi Pulido y Antonio Vázquez Blanco.\nContacto: <a href="mailto:pulwifi@gmail.com?subject=pulWifi">pulwifi@gmail.com</a>\n\nNOTA LEGAL : La única intención de esta aplicación es poner de manifiesto la inseguridad de sus propios routers, y advertir del peligro de usar contraseñas preestablecidas. El autor de esta aplicación no se hace responsable del uso que el usuario final haga de esta.  Siempre que use esta aplicación con una red inalámbrica, asegúrese de que es la suya propia o de que tiene permiso del propietario/responsable de la red. Recuerde que usar la conexión de banda ancha ajena es un delito. Por favor, no use esta aplicación de forma ilegal. Úsese bajo su propia responsabilidad.\n\nEste programa es software libre: usted puede redistribuirlo y/o modificarlo bajo los términos de la Licencia Pública General GNU publicada por la Fundación para el Software Libre, ya sea la versión 3 de la Licencia, o (a su elección) cualquier versión posterior..\n\nEste programa se distribuye con la esperanza de que sea útil, pero SIN GARANTÍA ALGUNA; ni siquiera la garantía implícita MERCANTIL o de APTITUD PARA UN PROPÓSITO DETERMINADO. Consulte los detalles de la Licencia Pública General GNU para obtener una información más detallada.</string>
+    <string name="dialog_about_text">Aplicación para calcular las claves predefinidas de algunas redes wifi.\n\nCopyright 2011–12, Javi Pulido y Antonio Vázquez Blanco.\nContacto: <a href="mailto:pulwifi@gmail.com?subject=pulWifi">pulwifi@gmail.com</a>\n\nNOTA LEGAL : La única intención de esta aplicación es poner de manifiesto la inseguridad de sus propios routers, y advertir del peligro de usar contraseñas preestablecidas. El autor de esta aplicación no se hace responsable del uso que el usuario final haga de esta.  Siempre que use esta aplicación con una red inalámbrica, asegúrese de que es la suya propia o de que tiene permiso del propietario/responsable de la red. Recuerde que usar la conexión de banda ancha ajena es un delito. Por favor, no use esta aplicación de forma ilegal. Úsese bajo su propia responsabilidad.\n\nEste programa es software libre: usted puede redistribuirlo y/o modificarlo bajo los términos de la Licencia Pública General GNU publicada por la Fundación para el Software Libre, ya sea la versión 3 de la Licencia, o (a su elección) cualquier versión posterior..\n\nEste programa se distribuye con la esperanza de que sea útil, pero SIN GARANTÍA ALGUNA; ni siquiera la garantía implícita MERCANTIL o de APTITUD PARA UN PROPÓSITO DETERMINADO. Consulte los detalles de la Licencia Pública General GNU para obtener una información más detallada.</string>
     <string name="dialog_about_gpl">Licencia</string>
     <string name="dialog_about_title">Acerca de</string>
     <string name="dialog_about_changelog">Cambios</string>
@@ -13,13 +15,13 @@
     <!-- License dialog -->
     <string name="dialog_license_file_url">file:///android_asset/LICENSE-ES</string>
     <string name="dialog_license_title">Licencia GPLv3</string>
-    
+
     <!-- Changelog dialog -->
     <string name="dialog_changelog_file_url">file:///android_asset/CHANGELOG-ES</string>
     <string name="dialog_changelog_title">Cambios</string>
 
     <!-- Supported networks dialog -->
-    <string name="dialog_supportednetworks_title">Redes soportadas:</string>
+    <string name="dialog_supportednetworks_title">Redes soportadas</string>
     <string name="dialog_supportednetworks_list">- WLAN_XXXX\n- JAZZTEL_XXXX\n- WLANXXXXXX\n- YACOMXXXXXX\n- WIFIXXXXXX\n- Algunos routers D-Link\n- Algunos routers Huawei\n</string>
 
     <!-- Show passwords dialog -->
@@ -37,7 +39,7 @@
     <string name="dialog_updater_error">Ha habido un problema conectando a Internet, por favor inténtelo más tarde</string>
     <string name="dialog_updater_update">Actualizar</string>
     <string name="dialog_udpater_title">Actualizador</string>
-    <string name="dialog_updater_checking">Comprobando&#8230;</string>
+    <string name="dialog_updater_checking">Comprobando…</string>
 
     <!-- Preference keys and defaults -->
     <string name="preferences_autoupdate_key">prefs_key_autoupdate</string>
@@ -60,7 +62,7 @@
     <string name="preferences_updateinterval_slow">Lenta</string>
 
     <!-- Main activity -->
-    <string name="mainactivity_failed_dialog_error">Error:</string>
+    <string name="mainactivity_failed_dialog_error">Error</string>
     <string name="mainactivity_failed_dialog_msg">Ha sido imposible activar el wifi</string>
     <string name="mainactivity_failed_dialog_ok_button">Salir</string>
     <string name="mainactivity_ask_dialog_title">¿Activar wifi?</string>
@@ -68,19 +70,16 @@
     <string name="mainactivity_ask_dialog_yes_button">Si</string>
     <string name="mainactivity_ask_dialog_no_button">No</string>
 
-    <!-- Main tab host activity -->
-    <string name="maintabhost_mode_scan">Buscar redes</string>
-    <string name="maintabhost_mode_manual">Modo manual</string>
-
     <!-- Manual crack activity -->
-    <string name="manualcrack_header">Introduce el nombre y la dirección MAC de la red. Puedes ver la lista de redes soportadas pulsando la tecla MENU</string>
+    <string name="manualcrack_header">Introduce el nombre y la dirección MAC de la red</string>
+    <string name="manualcrack_bottom">Puedes ver la lista de redes soportadas pulsando la tecla MENU</string>
     <string name="manualcrack_essid_hint">Nombre de la red</string>
     <string name="manualcrack_bssid_hint">Dirección MAC</string>
     <string name="manualcrack_crackbutton">OK</string>
-    <string name="manualcrack_inputerror">Red no soportada. Vea la lista completa en el menú.</string>
+    <string name="manualcrack_inputerror">Red no soportada. Vea la lista completa en el menú</string>
 
     <!-- Select wireless network activity -->
-    <string name="selectwireless_unsupported">Red no soportada. Las redes soportadas están indicadas con marcadores verdes.</string>
+    <string name="selectwireless_unsupported">Red no soportada. Las redes soportadas están indicadas con marcadores verdes</string>
     <string name="selectwireless_emptylist">Ninguna red al alcance :(</string>
     <string name="selectwireless_refresh">Refrescar lista</string>
 
@@ -97,8 +96,12 @@
     <string name="menu_quit">Salir</string>
     <string name="menu_networks">Redes soportadas</string>
     <string name="menu_settings">Ajustes</string>
-    <string name="menu_about">Acerca de&#8230;</string>
+    <string name="menu_about">Acerca de…</string>
     <string name="menu_updater">Actualizador</string>
+    <string name="menu_share">Compartir</string>
+    <string name="menu_share_title">Compartir app</string>
+    <string name="menu_share_subject">pulWifi</string>
+    <string name="menu_share_text">Hey! Puedes conseguir pulWifi desde http://pulwifi.github.com . Pruébalo! ;)</string>
 
     <!-- List view adapter -->
     <string name="listadapter_wpa">WPA/WPA2</string>

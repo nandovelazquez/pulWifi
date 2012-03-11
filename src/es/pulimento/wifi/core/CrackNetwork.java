@@ -45,7 +45,6 @@ public class CrackNetwork {
 			algorithms.add(new Md5CAlgorithm(mESSID, mBSSID));
 		if(Wlan6XAlgorithm.supportsEncryption(mCapabilities))
 			algorithms.add(new Wlan6XAlgorithm(mESSID, mBSSID));
-		
 	}
 
 	/**
@@ -68,5 +67,5 @@ public class CrackNetwork {
 			return "";
 
 		return algorithms.crack();
-	}	
+	}
 }

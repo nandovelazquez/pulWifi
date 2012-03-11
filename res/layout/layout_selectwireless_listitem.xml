@@ -23,6 +23,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:singleLine="true"
+            android:textColor="@android:color/black"
             android:textSize="18dip"
             android:textStyle="bold"
             android:typeface="sans" />
@@ -31,7 +32,7 @@
             android:id="@+id/layout_selecwireless_listitem_bssid"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:textColor="#B0B0B0"
+            android:textColor="@android:color/black"
             android:textSize="16dp" />
     </LinearLayout>
 
@@ -41,11 +42,11 @@
         android:layout_height="44dip"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:layout_marginRight="4dip"
-        android:layout_weight="0" />
+        android:layout_marginRight="4dip" />
 
     <TextView
         android:id="@+id/layout_selecwireless_listitem_security"
+        android:textColor="#222"
         android:layout_width="90dip"
         android:layout_height="16dip"
         android:layout_alignParentBottom="true"
@@ -53,7 +54,6 @@
         android:layout_marginRight="4dip"
         android:gravity="right"
         android:singleLine="true"
-        android:textColor="#FFF"
         android:textSize="13dip" />
 
 </RelativeLayout>
