@@ -131,8 +131,6 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 	 * @param in {@link android.os.Parcel} from which a {@link es.pulimento.wifi.core.WirelessNetwork} object is created.
 	 */
 	public WirelessNetwork(Parcel in) {
-		// We just need to read back each field in the order that it was
-		// written to the parcel.
 		mEssid = in.readString();
 		mBssid = in.readString();
 		boolean c[] = new boolean[1];
@@ -150,8 +148,6 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 	 */
 	@Override
 	public void writeToParcel(Parcel dest, int flags) {
-		// We just need to write each field into the parcel.
-		// When we read from parcel, they will come back in the same order.
 		dest.writeString(mEssid);
 		dest.writeString(mBssid);
 		dest.writeBooleanArray(new boolean[]{ mCrackeable });
