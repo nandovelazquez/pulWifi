@@ -66,6 +66,25 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 		}
 
 		/**
+		 * Parse a {@link es.pulimento.wifi.core.WirelessNetwork.WirelessEncryption} object from an Android string identifier.
+		 * @param strid Android string identifier.
+		 * @return The string ID {@link es.pulimento.wifi.core.WirelessNetwork.WirelessEncryption} equivalent object.
+		 */
+		public static WirelessEncryption parseStringID(int strid) {
+			switch(strid) {
+			case R.string.listadapter_open:
+				return WirelessEncryption.OPEN;
+			case R.string.listadapter_wep:
+				return WirelessEncryption.WEP;
+			case R.string.listadapter_wpa:
+				return WirelessEncryption.WPA;
+			case R.string.listadapter_unknown:
+			default:
+				return WirelessEncryption.UNKNOWN;
+			}
+		}
+
+		/**
 		 * @deprecated You sould use toStringId() instead of this method.
 		 */
 		@Override
@@ -140,7 +159,7 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 			mPasswords = new ArrayList<String>();
 		in.readStringList(mPasswords);
 		mSignal = in.readInt();
-		mCapabilities = WirelessEncryption.parseEncription(in.readString());
+		mCapabilities = WirelessEncryption.parseStringID(in.readInt());
 	}
 
 	/**
@@ -153,8 +172,7 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 		dest.writeBooleanArray(new boolean[]{ mCrackeable });
 		dest.writeStringList(mPasswords);
 		dest.writeInt(mSignal);
-		// TODO: Replace deprecated method....
-		dest.writeString(mCapabilities.toString());
+		dest.writeInt(mCapabilities.toStringId());
 	}
 
 	/**
