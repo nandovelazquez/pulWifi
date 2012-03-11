@@ -2,18 +2,22 @@ package es.pulimento.wifi.core.algorithms;
 
 import es.pulimento.wifi.core.WirelessNetwork.WirelessEncryption;
 
+/**
+ * Huawei algorithm.
+ * Needs to be finished. Please review.
+ */
 public class HuaweiAlgorithm extends CrackAlgorithm {
 
-	/*
-	 * Huawei algorithm.
-	 * 
-	 * TODO: Description and supported routers.
+	/**
+	 * {@inheritDoc}
 	 */
-
 	public HuaweiAlgorithm(String essid, String bssid) {
 		super(essid, bssid);
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	protected void setPatterns() {
 
@@ -62,6 +66,9 @@ public class HuaweiAlgorithm extends CrackAlgorithm {
 		*/
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	protected String crackAlgorithm(String essid_data, String bssid_data) {
 		// Remove dots from bssid and go lower case...
@@ -107,6 +114,9 @@ public class HuaweiAlgorithm extends CrackAlgorithm {
 		return Integer.parseInt(String.valueOf(s), 16);
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	public static boolean supportsEncryption(WirelessEncryption mCapabilities) {
 		// TODO: Implement this...
 		return false;
