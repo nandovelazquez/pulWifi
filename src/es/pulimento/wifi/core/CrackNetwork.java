@@ -10,12 +10,20 @@ import es.pulimento.wifi.core.algorithms.Md5CAlgorithm;
 import es.pulimento.wifi.core.algorithms.Md5ZAlgorithm;
 import es.pulimento.wifi.core.algorithms.Wlan6XAlgorithm;
 
+/**
+ * This class is a holder for all the wireless cracking algorithms.
+ * It selects the valid algorithms and passes the function calls to any delegated algorithm.
+ */
 public class CrackNetwork {
 
 	private AlgorithmList algorithms;
 	private WirelessEncryption mCapabilities;
 	private String mESSID, mBSSID;
 
+	/**
+	 * Default constructor.
+	 * @param w {@link es.pulimento.wifi.core.WirelessNetwork} representing a detected network.
+	 */
 	public CrackNetwork(WirelessNetwork w) {
 
 		algorithms = new AlgorithmList();
@@ -40,6 +48,10 @@ public class CrackNetwork {
 		
 	}
 
+	/**
+	 * Checks whether a network is vulnerable or not.
+	 * @return Boolean value. True if vulnerable and false if not.
+	 */
 	public boolean isCrackeable() {
 		if(mCapabilities.equals(WirelessEncryption.OPEN))
 			return true;
@@ -47,6 +59,10 @@ public class CrackNetwork {
 		return algorithms.isCrackeable();
 	}
 
+	/**
+	 * Function to break the wireless network security.
+	 * @return A list of passwords separated by newline characters ('\n').
+	 */
 	public String crackNetwork() {
 		if(mCapabilities.equals(WirelessEncryption.OPEN))
 			return "";
