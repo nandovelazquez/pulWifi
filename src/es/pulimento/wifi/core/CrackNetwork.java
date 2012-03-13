@@ -6,7 +6,7 @@ import es.pulimento.wifi.core.algorithms.AndaredAlgorithm;
 import es.pulimento.wifi.core.algorithms.DiscusAlgorithm;
 import es.pulimento.wifi.core.algorithms.DlinkAlgorithm;
 import es.pulimento.wifi.core.algorithms.HuaweiAlgorithm;
-import es.pulimento.wifi.core.algorithms.Md5CAlgorithm;
+import es.pulimento.wifi.core.algorithms.ComtrendAlgorithm;
 import es.pulimento.wifi.core.algorithms.Md5ZAlgorithm;
 import es.pulimento.wifi.core.algorithms.Wlan6XAlgorithm;
 
@@ -39,10 +39,10 @@ public class CrackNetwork {
 			algorithms.add(new DlinkAlgorithm(mESSID, mBSSID));
 		if(HuaweiAlgorithm.supportsEncryption(mCapabilities))
 			algorithms.add(new HuaweiAlgorithm(mESSID, mBSSID));
-		if(Md5CAlgorithm.supportsEncryption(mCapabilities))
-			algorithms.add(new Md5CAlgorithm(mESSID, mBSSID));
+		if(ComtrendAlgorithm.supportsEncryption(mCapabilities))
+			algorithms.add(new ComtrendAlgorithm(mESSID, mBSSID));
 		if(Md5ZAlgorithm.supportsEncryption(mCapabilities))
-			algorithms.add(new Md5CAlgorithm(mESSID, mBSSID));
+			algorithms.add(new ComtrendAlgorithm(mESSID, mBSSID));
 		if(Wlan6XAlgorithm.supportsEncryption(mCapabilities))
 			algorithms.add(new Wlan6XAlgorithm(mESSID, mBSSID));
 	}
