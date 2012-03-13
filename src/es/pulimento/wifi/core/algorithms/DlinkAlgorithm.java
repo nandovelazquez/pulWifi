@@ -4,7 +4,7 @@ import es.pulimento.wifi.core.WirelessNetwork.WirelessEncryption;
 
 /**
  * D-Link cracking algorithm.
- * I have no information about what router models does it crack or even what type of encryption.
+ * Cracks all networks with "Dlink-XXXXXX" as name. I have no information about what type of encryption does it support.
  *
  */
 public class DlinkAlgorithm extends CrackAlgorithm {
