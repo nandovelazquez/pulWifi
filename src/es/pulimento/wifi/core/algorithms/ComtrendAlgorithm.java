@@ -12,7 +12,15 @@ import es.pulimento.wifi.core.WirelessNetwork.WirelessEncryption;
  * COMTREND CT-5365
  * COMTREND AR5381U
  * This routers use an WPA encryption.
- * NOTE: Stills needing a review...
+ * They use WLAN_XXXX or JAZZTEL_XXXX as essid.
+ * The corresponding mac addresses are:
+ * 64:68:0C:XX:XX:XX
+ * 
+ * Unsuported/to be checked mac addresses:
+ * 00:1A:2B:XX:XX:XX (266 keys)
+ * 00:1D:20:XX:XX:XX
+ * 00:1B:20:XX:XX:XX
+ * 38:72:C0:XX:XX:XX
  */
 public class ComtrendAlgorithm extends CrackAlgorithm {
 
@@ -33,44 +41,6 @@ public class ComtrendAlgorithm extends CrackAlgorithm {
 		// ESSID: JAZZTEL_XXXX
 		// BSSID: 64:68:0C:XX:XX:XX
 		addPattern("JAZZTEL_([0-9a-fA-F]{4})", "(64:68:0C:[0-9A-Fa-f:]{8})");
-
-		// ESSID: WLAN_XXXX
-		// BSSID: 00:1D:20:XX:XX:XX
-		addPattern("WLAN_([0-9a-fA-F]{4})", "(00:1D:20:[0-9A-Fa-f:]{8})");
-
-		// ESSID: JAZZTEL_XXXX
-		// BSSID: 00:1D:20:XX:XX:XX
-		addPattern("JAZZTEL_([0-9a-fA-F]{4})", "(00:1D:20:[0-9A-Fa-f:]{8})");
-
-		// ESSID: WLAN_XXXX
-		// BSSID: 00:1B:20:XX:XX:XX
-		// TODO: Check...
-		//addPattern("WLAN_([0-9a-fA-F]{4})", "(00:1B:20:[0-9A-Fa-f:]{8})");
-
-		// ESSID: JAZZTEL_XXXX
-		// BSSID: 00:1B:20:XX:XX:XX
-		// TODO: Check...
-		//addPattern("JAZZTEL_([0-9a-fA-F]{4})", "(00:1B:20:[0-9A-Fa-f:]{8})");
-
-		// ESSID: WLAN_XXXX
-		// BSSID: 00:1A:2B:XX:XX:XX
-		// TODO: Check (266 keys)...
-		//addPattern("WLAN_([0-9a-fA-F]{4})", "(00:1A:2B:[0-9A-Fa-f:]{8})");
-
-		// ESSID: JAZZTEL_XXXX
-		// BSSID: 00:1A:2B:XX:XX:XX
-		// TODO:  Check (266 keys)...
-		//addPattern("JAZZTEL_([0-9a-fA-F]{4})", "(00:1A:2B:[0-9A-Fa-f:]{8})");
-
-		// ESSID: WLAN_XXXX
-		// BSSID: 38:72:C0:XX:XX:XX
-		// TODO: Check...
-		//addPattern("WLAN_([0-9a-fA-F]{4})", "(38:72:C0:[0-9A-Fa-f:]{8})");
-
-		// ESSID: JAZZTEL_XXXX
-		// BSSID: 38:72:C0:XX:XX:XX
-		// TODO: Check...
-		//addPattern("JAZZTEL_([0-9a-fA-F]{4})", "(38:72:C0:[0-9A-Fa-f:]{8})");
 	}
 
 	@Override

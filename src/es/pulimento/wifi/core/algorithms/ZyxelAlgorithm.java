@@ -34,7 +34,8 @@ public class ZyxelAlgorithm extends CrackAlgorithm {
 		
 		
 		// TODO: REVIEW!
-		/*//matcher_md5Z[4] = Pattern.compile("WLAN_([0-9a-fA-F]{4})").matcher(mESSID); //WLAN_XXXX //Son TECOM, no vale
+		/*
+		//matcher_md5Z[4] = Pattern.compile("WLAN_([0-9a-fA-F]{4})").matcher(mESSID); //WLAN_XXXX //Son TECOM, no vale
 		//matcher_md5Z[5] = Pattern.compile("(00:19:15:[0-9A-Fa-f:]{8})").matcher(mBSSID);
 		//matcher_md5Z[6] = Pattern.compile("JAZZTEL_([0-9a-fA-F]{4})").matcher(mESSID); //JAZZTEL_XXXX
 		//matcher_md5Z[7] = Pattern.compile("(00:19:15:[0-9A-Fa-f:]{8})").matcher(mBSSID);

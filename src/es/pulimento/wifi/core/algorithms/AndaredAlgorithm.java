@@ -4,7 +4,7 @@ import es.pulimento.wifi.core.WirelessNetwork.WirelessEncryption;
 
 /**
  * Andared cracking algorithm.
- * This is a series of network access points in public education centers of Andaluc’a, Spain which where set up by the gobernment.
+ * This is a series of network access points in public education centers of Andaluc’a, Spain which where set up by the government.
  */
 public class AndaredAlgorithm extends CrackAlgorithm {
 

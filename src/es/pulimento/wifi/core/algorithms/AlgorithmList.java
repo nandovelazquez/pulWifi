@@ -10,7 +10,7 @@ public class AlgorithmList extends ArrayList<CrackAlgorithm> {
 	private static final long serialVersionUID = 9078810203314526774L;
 
 	/**
-	 * Interacts with its childs in order to know if a crack algorithm can break the security of a network.
+	 * Interacts with its child elements in order to know if a crack algorithm can break the security of a network.
 	 * @return True if vulnerable or false if not.
 	 */
 	public boolean isCrackeable() {
@@ -23,7 +23,7 @@ public class AlgorithmList extends ArrayList<CrackAlgorithm> {
 
 	/**
 	 * Breaks the network and returns the password.
-	 * @return The possible passwords of a net splited by the new line character ('\n').
+	 * @return The possible passwords of a net separated by the new line character ('\n').
 	 */
 	public String crack() {
 		for(int i = 0; i < this.size(); i++)
