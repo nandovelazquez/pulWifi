@@ -10,6 +10,9 @@ import es.pulimento.wifi.core.WirelessNetwork.WirelessEncryption;
  * Zyxel algorithm.
  * This exploits a vulnerability in the following routers:
  * ZYXEL P660HW-B1A
+ * 
+ * Unsuported / to be done:
+ * P660HW-D1
  * NOTE: This stills need to be reviewed...
  */
 public class ZyxelAlgorithm extends CrackAlgorithm {

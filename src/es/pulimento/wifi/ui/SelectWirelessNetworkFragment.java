@@ -137,11 +137,11 @@ public class SelectWirelessNetworkFragment extends ListFragment {
 					mWirelessNetList.add(new WirelessNetwork(wifi));
 
 				// For testing networks...
-				mWirelessNetList.add(new WirelessNetwork("Andared", "AA:AA:AA:AA:AA:AA", 0, "[WPA]"));
+				//mWirelessNetList.add(new WirelessNetwork("Andared", "AA:AA:AA:AA:AA:AA", 0, "[WPA]"));
+				//mWirelessNetList.add(new WirelessNetwork("WLAN_1234", "64:68:0c:AA:AA:AA", 0, "[WPA]"));
 				
 				// mWirelessNetList.add(new WirelessNetwork("WLAN4DC866",
 				// "00:22:2D:04:DC:E8", -80, "[WPA]"));
-				mWirelessNetList.add(new WirelessNetwork("WLAN_1234", "64:68:0c:AA:AA:AA", -100, "[WPA]"));
 				// mWirelessNetList.add(new WirelessNetwork("ThomsonF8A3D0",
 				// "AA:AA:AA:AA:AA:AA", -100, "[WEP??"));
 				// mWirelessNetList.add(new WirelessNetwork("JAZZTEL_E919",
