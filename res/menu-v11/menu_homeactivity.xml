@@ -23,11 +23,13 @@
         android:icon="@android:drawable/ic_menu_rotate"
         android:showAsAction="ifRoom"
         android:title="@string/menu_updater"/>
+    <!--
     <item
         android:id="@+id/menu_about"
         android:icon="@android:drawable/ic_menu_info_details"
         android:showAsAction="ifRoom"
         android:title="@string/menu_about"/>
+    -->
     <item
         android:id="@+id/menu_quit"
         android:icon="@android:drawable/ic_menu_close_clear_cancel"

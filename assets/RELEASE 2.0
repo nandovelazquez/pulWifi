@@ -8,13 +8,11 @@
 - Refrescar manualmente (no está implementado, sólo la interfaz)
 - Menú de ShowPassActivity
 - Layouts de diálogos sin márgenes
-- Crear TAG para la versión v1.6.1
-- Hay una red forzada en el listitem, para probar
-- Move about dialog into preferences
 - Admob está deshabilitado en el manifest para que no muestre anuncios
 - Bug en las preferencias que cuando se entra por primera vez activa automáticamente
-la vibración cada vez que se actualiza
+la vibración cada vez que se actualiza -- CREO QUE LO HE ARREGLADO
 - Revisar layouts (sobre todo ldpi y mdpi)
+- Implementar y revisar algoritmos
 
 Hecho:
 
@@ -28,3 +26,5 @@ Hecho:
 - replace ClipboardManager (se deja como está, probado y sólo funciona de honeycomb en adelante, y la
 librería de compatibilidad no tiene nada al respecto) 
 - ManualFragment scroll when keyboard is out
+- Crear TAG para la versión v1.6.1
+- Move about dialog into preferences

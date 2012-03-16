@@ -16,15 +16,15 @@
     <string name="dialog_changelog_title">Mudanzas</string>
 
     <!-- Supported networks dialog -->
-    <string name="dialog_supportednetworks_title">Redes soportadas:</string>
+    <string name="dialog_supportednetworks_title">Redes soportadas</string>
     <string name="dialog_supportednetworks_list">- WLAN_XXXX\n- JAZZTEL_XXXX\n- WLANXXXXXX\n- YACOMXXXXXX\n- WIFIXXXXXX\n- Algunhos routers D-Link\n- Algunhos routers Huawei\n</string>
 
     <!-- Show passwords dialog -->
-    <string name="dialog_showpass_title_one">Esta é o contrasinal:</string>
-    <string name="dialog_showpass_title_many">Unha de estas e o contrasinal:</string>
+    <string name="dialog_showpass_title_one">Esta é o contrasinal</string>
+    <string name="dialog_showpass_title_many">Unha de estas e o contrasinal</string>
 
     <!-- Copy to clipboard dialog -->
-    <string name="dialog_cipboardcopy_title">Contrasinais:</string>
+    <string name="dialog_cipboardcopy_title">Contrasinais</string>
 
     <!-- Updater dialog -->
     <string name="dialog_updater_current_version">Versión instalada:</string>
@@ -33,11 +33,11 @@
     <string name="dialog_updater_check">Comprobar actualizacións</string>
     <string name="dialog_updater_error">Error conectándose ao internet…</string>
     <string name="dialog_updater_update">Descargar</string>
-    <string name="dialog_udpater_title">Actualizar:</string>
+    <string name="dialog_udpater_title">Actualizar</string>
     <string name="dialog_updater_checking">Comprobando…</string>
 
     <!-- Preferences -->
-    <string name="preferences_category_scanmode">Modo automático:</string>
+    <string name="preferences_category_scanmode">MODO AUTOMÁTICO</string>
     <string name="preferences_autoupdate_title">Auto refrescar</string>
     <string name="preferences_autoupdate_summary">Refrescar automáticamente a lista de redes</string>
     <string name="preferences_vibrateupdate_title">Vibrar ao refrescar</string>
@@ -47,9 +47,12 @@
     <string name="preferences_updateinterval_fast">Rápido</string>
     <string name="preferences_updateinterval_normal">Normal</string>
     <string name="preferences_updateinterval_slow">Lento</string>
+    <string name="preferences_category_info">GENERAL</string>
+    <string name="preferences_about_summary">Sobre este lanzamento</string>
+    <string name="preferences_about_title">pulWifi v%1$s (r%2$d)</string>
 
     <!-- Main activity -->
-    <string name="mainactivity_failed_dialog_error">Error:</string>
+    <string name="mainactivity_failed_dialog_error">Error</string>
     <string name="mainactivity_failed_dialog_msg">Non podo habilitar o wifi.</string>
     <string name="mainactivity_failed_dialog_ok_button">Salir</string>
     <string name="mainactivity_ask_dialog_title">Habilitar o wifi?</string>
@@ -71,7 +74,7 @@
     <string name="selectwireless_refresh">Actualizar a lista</string>
 
     <!-- Show pass activity -->
-    <string name="showpass_nopass">A rede está aberta. Conéctate a ela.</string>
+    <string name="showpass_nopass">A rede está aberta</string>
     <string name="showpass_network_name">Nome da rede</string>
     <string name="showpass_network_mac">Dirección MAC</string>
     <string name="showpass_button_showpass">Mostrar contrasinal</string>

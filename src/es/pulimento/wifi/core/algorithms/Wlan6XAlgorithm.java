@@ -47,11 +47,10 @@ public class Wlan6XAlgorithm extends CrackAlgorithm {
 		String ssidStr = ESSID.substring(ESSID.length() - 6);
 		String macStr = BSSID;
 		Log.e("pulWifi", "Using new WLAN6X algorythm, " + ssidStr + " " + macStr);
-		char[] ssidSubPart = { '1', '2', '3', '4', '5', '6' };/*
-															   * These values
-															   * are not
-															   * revelant.
-															   */
+		char[] ssidSubPart = { '1', '2', '3', '4', '5', '6' };// These values
+															  // are not
+															  // revelant.
+
 		char[] bssidLastByte = { '6', '6' };
 		ssidSubPart[0] = ssidStr.charAt(0);
 		ssidSubPart[1] = ssidStr.charAt(1);

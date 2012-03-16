@@ -46,12 +46,13 @@
     <string name="preferences_autoupdate_key">prefs_key_autoupdate</string>
     <string name="preferences_autoupdate_default">true</string>
     <string name="preferences_vibrateupdate_key">prefs_key_vibrateupdate</string>
-    <string name="preferences_vibrateupdate_default">true</string>
+    <string name="preferences_vibrateupdate_default">false</string>
     <string name="preferences_updateinterval_key">prefs_key_updateinterval</string>
     <string name="preferences_updateinterval_default">2000</string>
+    <string name="preferences_about_key">prefs_key_about</string>
 
     <!-- Preferences -->
-    <string name="preferences_category_scanmode">Scan mode</string>
+    <string name="preferences_category_scanmode">SCAN MODE</string>
     <string name="preferences_autoupdate_title">Auto-refresh</string>
     <string name="preferences_autoupdate_summary">Refresh network\'s list automatically</string>
     <string name="preferences_vibrateupdate_title">Vibrate on refreshing</string>
@@ -61,6 +62,9 @@
     <string name="preferences_updateinterval_fast">Fast</string>
     <string name="preferences_updateinterval_normal">Normal</string>
     <string name="preferences_updateinterval_slow">Slow</string>
+    <string name="preferences_category_info">GENERAL</string>
+    <string name="preferences_about_summary">About this version</string>
+    <string name="preferences_about_title">pulWifi v%1$s (r%2$d)</string>
 
     <!-- Main activity -->
     <string name="mainactivity_failed_dialog_error">Error</string>

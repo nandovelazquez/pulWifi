@@ -42,15 +42,10 @@
     <string name="dialog_updater_checking">Comprobando…</string>
 
     <!-- Preference keys and defaults -->
-    <string name="preferences_autoupdate_key">prefs_key_autoupdate</string>
-    <string name="preferences_autoupdate_default">true</string>
-    <string name="preferences_vibrateupdate_key">prefs_key_vibrateupdate</string>
-    <string name="preferences_vibrateupdate_default">true</string>
-    <string name="preferences_updateinterval_key">prefs_key_updateinterval</string>
-    <string name="preferences_updateinterval_default">2000</string>
+	<!-- Really not neccesary here, they are language-independent -->
 
     <!-- Preferences -->
-    <string name="preferences_category_scanmode">Buscar Redes</string>
+    <string name="preferences_category_scanmode">BUSCAR REDES</string>
     <string name="preferences_autoupdate_title">Actualizar automáticamente</string>
     <string name="preferences_autoupdate_summary">Refresca la lista de redes automáticamente</string>
     <string name="preferences_vibrateupdate_title">Vibrar en cada actualización</string>
@@ -60,6 +55,9 @@
     <string name="preferences_updateinterval_fast">Rápida</string>
     <string name="preferences_updateinterval_normal">Normal</string>
     <string name="preferences_updateinterval_slow">Lenta</string>
+    <string name="preferences_category_info">GENERAL</string>
+    <string name="preferences_about_summary">Acerca de esta versión</string>
+    <string name="preferences_about_title">pulWifi v%1$s (r%2$d)</string>
 
     <!-- Main activity -->
     <string name="mainactivity_failed_dialog_error">Error</string>
