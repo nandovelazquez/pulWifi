@@ -12,7 +12,8 @@ import es.pulimento.wifi.core.algorithms.Wlan6XAlgorithm;
 
 /**
  * This class is a holder for all the wireless cracking algorithms.
- * It selects the valid algorithms and passes the function calls to any delegated algorithm.
+ * It selects the valid algorithms and passes the function calls to any
+ * delegated algorithm.
  */
 public class CrackNetwork {
 
@@ -22,7 +23,10 @@ public class CrackNetwork {
 
 	/**
 	 * Default constructor.
-	 * @param w {@link es.pulimento.wifi.core.WirelessNetwork} representing a detected network.
+	 * 
+	 * @param w
+	 *            {@link es.pulimento.wifi.core.WirelessNetwork} representing a
+	 *            detected network.
 	 */
 	public CrackNetwork(WirelessNetwork w) {
 
@@ -31,40 +35,33 @@ public class CrackNetwork {
 		mESSID = w.getEssid();
 		mBSSID = w.getBssid();
 
-		if(AndaredAlgorithm.supportsEncryption(mCapabilities))
-			algorithms.add(new AndaredAlgorithm(mESSID, mBSSID));
-		if(DiscusAlgorithm.supportsEncryption(mCapabilities))
-			algorithms.add(new DiscusAlgorithm(mESSID, mBSSID));
-		if(DlinkAlgorithm.supportsEncryption(mCapabilities))
-			algorithms.add(new DlinkAlgorithm(mESSID, mBSSID));
-		if(HuaweiAlgorithm.supportsEncryption(mCapabilities))
-			algorithms.add(new HuaweiAlgorithm(mESSID, mBSSID));
-		if(Md5CAlgorithm.supportsEncryption(mCapabilities))
-			algorithms.add(new Md5CAlgorithm(mESSID, mBSSID));
-		if(Md5ZAlgorithm.supportsEncryption(mCapabilities))
-			algorithms.add(new Md5CAlgorithm(mESSID, mBSSID));
-		if(Wlan6XAlgorithm.supportsEncryption(mCapabilities))
-			algorithms.add(new Wlan6XAlgorithm(mESSID, mBSSID));
+		if (AndaredAlgorithm.supportsEncryption(mCapabilities)) algorithms.add(new AndaredAlgorithm(mESSID, mBSSID));
+		if (DiscusAlgorithm.supportsEncryption(mCapabilities)) algorithms.add(new DiscusAlgorithm(mESSID, mBSSID));
+		if (DlinkAlgorithm.supportsEncryption(mCapabilities)) algorithms.add(new DlinkAlgorithm(mESSID, mBSSID));
+		if (HuaweiAlgorithm.supportsEncryption(mCapabilities)) algorithms.add(new HuaweiAlgorithm(mESSID, mBSSID));
+		if (Md5CAlgorithm.supportsEncryption(mCapabilities)) algorithms.add(new Md5CAlgorithm(mESSID, mBSSID));
+		if (Md5ZAlgorithm.supportsEncryption(mCapabilities)) algorithms.add(new Md5CAlgorithm(mESSID, mBSSID));
+		if (Wlan6XAlgorithm.supportsEncryption(mCapabilities)) algorithms.add(new Wlan6XAlgorithm(mESSID, mBSSID));
 	}
 
 	/**
 	 * Checks whether a network is vulnerable or not.
+	 * 
 	 * @return Boolean value. True if vulnerable and false if not.
 	 */
 	public boolean isCrackeable() {
-		if(mCapabilities.equals(WirelessEncryption.OPEN))
-			return true;
+		if (mCapabilities.equals(WirelessEncryption.OPEN)) return true;
 
 		return algorithms.isCrackeable();
 	}
 
 	/**
 	 * Function to break the wireless network security.
+	 * 
 	 * @return A list of passwords separated by newline characters ('\n').
 	 */
 	public String crackNetwork() {
-		if(mCapabilities.equals(WirelessEncryption.OPEN))
-			return "";
+		if (mCapabilities.equals(WirelessEncryption.OPEN)) return "";
 
 		return algorithms.crack();
 	}

@@ -85,7 +85,8 @@ public class MainActivity extends ActionBarActivity {
 					case WifiManager.WIFI_STATE_DISABLED:
 						mAskDialog.show();
 						break;
-					default: // TODO For emulator compatibility, comment it for release
+					default: // TODO For emulator compatibility, comment it for
+							 // release
 						Intent i1 = new Intent(mContext, HomeActivity.class);
 						i1.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 						startActivity(i1);

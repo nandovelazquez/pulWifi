@@ -6,11 +6,8 @@ public class AndaredAlgorithm extends CrackAlgorithm {
 
 	/*
 	 * Andared cracking algorithm.
-	 * 
 	 * This is a series of network access points in
-	 * public education centers of Andaluc’a, Spain
-	 * which where set up by the gobernment.
-	 * 
+	 * public education centers of Andalucía, Spain.
 	 */
 
 	public AndaredAlgorithm(String essid, String bssid) {
@@ -32,7 +29,7 @@ public class AndaredAlgorithm extends CrackAlgorithm {
 	}
 
 	public static boolean supportsEncryption(WirelessEncryption w) {
-		return (w.equals(WirelessEncryption.WPA))? true : false;
+		return (w.equals(WirelessEncryption.WPA)) ? true : false;
 	}
 
 }

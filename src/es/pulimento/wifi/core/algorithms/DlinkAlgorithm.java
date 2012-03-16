@@ -2,15 +2,12 @@ package es.pulimento.wifi.core.algorithms;
 
 import es.pulimento.wifi.core.WirelessNetwork.WirelessEncryption;
 
-
 public class DlinkAlgorithm extends CrackAlgorithm {
 
 	/*
 	 * D-Link algorithm.
-	 * 
-	 * I have no information about this algorithm.
-	 * I also don't know what encryption supports.
-	 *
+	 * Algorythm for some D-Link routers
+	 * I don't know what encryption supports.
 	 */
 
 	public DlinkAlgorithm(String essid, String bssid) {
@@ -28,7 +25,7 @@ public class DlinkAlgorithm extends CrackAlgorithm {
 	@Override
 	protected String crackAlgorithm(String essid_data, String bssid_data) {
 		// Delete dots from bssid and use caps only...
-		bssid_data = bssid_data.replace(":","").toUpperCase();
+		bssid_data = bssid_data.replace(":", "").toUpperCase();
 
 		// Select inportant data from bssid...
 		char[] data = new char[20];
@@ -54,14 +51,14 @@ public class DlinkAlgorithm extends CrackAlgorithm {
 		data[19] = bssid_data.charAt(10);
 
 		// Process key throught the real algorithm...
-		char [] key = new char[20];
+		char[] key = new char[20];
 		char hash[] = { 'X', 'r', 'q', 'a', 'H', 'N', 'p', 'd', 'S', 'Y', 'w', '8', '6', '2', '1', '5' };
 		int index = 0;
-		for(int i = 0; i < 20 ; i++) {
-			if((data[i] >= '0') && (data[i] <= '9'))
-				index = data[i]-'0';
+		for (int i = 0; i < 20; i++) {
+			if ((data[i] >= '0') && (data[i] <= '9'))
+				index = data[i] - '0';
 			else if ((data[i] >= 'A') && (data[i] <= 'F'))
-				index = data[i]-'A'+10;
+				index = data[i] - 'A' + 10;
 			else
 				// There was an error...
 				return null;

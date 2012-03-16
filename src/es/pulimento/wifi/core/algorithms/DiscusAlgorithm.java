@@ -6,10 +6,8 @@ public class DiscusAlgorithm extends CrackAlgorithm {
 
 	/*
 	 * Discus cracking algorithm.
-	 * 
 	 * Pirelli Discuss DRG A225 router default
-	 * WPA2-PSK password cracking algorithm. 
-	 * 
+	 * WPA2-PSK password cracking algorithm.
 	 */
 
 	public DiscusAlgorithm(String essid, String bssid) {
@@ -26,12 +24,11 @@ public class DiscusAlgorithm extends CrackAlgorithm {
 
 	@Override
 	protected String crackAlgorithm(String essid_data, String bssid_data) {
-		return "YW0" + Integer.toString((Integer.parseInt(essid_data, 16)-0xD0EC31)>>2);
+		return "YW0" + Integer.toString((Integer.parseInt(essid_data, 16) - 0xD0EC31) >> 2);
 	}
 
 	public static boolean supportsEncryption(WirelessEncryption mCapabilities) {
-		if(mCapabilities.equals(WirelessEncryption.WPA))
-			return true;
+		if (mCapabilities.equals(WirelessEncryption.WPA)) return true;
 
 		return false;
 	}

@@ -11,14 +11,13 @@ public abstract class CrackAlgorithm {
 	private List<String> patterns;
 	private int n_of_patterns;
 	private int working_pattern;
-	
+
 	public CrackAlgorithm(String essid, String bssid) {
 
 		/*
 		 * NOTE: I assume that odd numbers are essid patterns
 		 * and even numbers are bssid patterns that should
 		 * be checked in pairs.
-		 * 
 		 */
 
 		matchers = new ArrayList<Matcher>();
@@ -28,10 +27,10 @@ public abstract class CrackAlgorithm {
 		setPatterns();
 
 		n_of_patterns = patterns.size();
-		
-		for(int i = 0; i < n_of_patterns; i+=2) {
+
+		for (int i = 0; i < n_of_patterns; i += 2) {
 			matchers.add(Pattern.compile(patterns.get(i)).matcher(essid));
-			matchers.add(Pattern.compile(patterns.get(i+1)).matcher(bssid));
+			matchers.add(Pattern.compile(patterns.get(i + 1)).matcher(bssid));
 		}
 	}
 
@@ -41,8 +40,8 @@ public abstract class CrackAlgorithm {
 	}
 
 	public boolean isCrackeable() {
-		for(int i = 0; i < n_of_patterns; i+=2)
-			if(matchers.get(i).find() && matchers.get(i+1).find()) {
+		for (int i = 0; i < n_of_patterns; i += 2)
+			if (matchers.get(i).find() && matchers.get(i + 1).find()) {
 				working_pattern = i;
 				return true;
 			}
@@ -51,9 +50,9 @@ public abstract class CrackAlgorithm {
 	}
 
 	public String crack() {
-		if(working_pattern != -1) {
-			return crackAlgorithm(matchers.get(working_pattern).group(1), matchers.get(working_pattern+1).group(1));
-		} else if(isCrackeable()) {
+		if (working_pattern != -1) {
+			return crackAlgorithm(matchers.get(working_pattern).group(1), matchers.get(working_pattern + 1).group(1));
+		} else if (isCrackeable()) {
 			crack();
 		}
 		return null;

@@ -41,7 +41,7 @@ public class ManualFragment extends Fragment {
 				mWirelessNetwork = new WirelessNetwork(mEditTextEssid.getText().toString(), mEditTextBssid.getText()
 						.toString(), 0, "[WEP] [WPA]");
 				Log.i("pulWifi", "ManualCrack onClick(), created -> " + mWirelessNetwork.toString());
-				if (!mWirelessNetwork.getCrackeable()) {
+				if (!mWirelessNetwork.isCrackeable()) {
 					Toast.makeText(getActivity().getApplicationContext(), R.string.manualcrack_inputerror,
 							Toast.LENGTH_LONG).show();
 					return;

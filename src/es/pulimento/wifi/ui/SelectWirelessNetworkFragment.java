@@ -55,7 +55,7 @@ public class SelectWirelessNetworkFragment extends ListFragment {
 	public void onListItemClick(ListView l, View v, int position, long id) {
 		super.onListItemClick(l, v, position, id);
 		WirelessNetwork w = (WirelessNetwork) mListAdapter.getItem(position);
-		if (w.getCrackeable()) {
+		if (w.isCrackeable()) {
 			w.crack();
 			Intent i = new Intent(mContext, ShowPassActivity.class);
 			i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -232,7 +232,7 @@ class NetworkListAdapter implements ListAdapter {
 		if (item != null) {
 			TextView crackeable = (TextView) convertView.findViewById(R.id.layout_selecwireless_listitem_crackeable);
 			if (crackeable != null)
-				crackeable.setBackgroundDrawable((item.getCrackeable()) ? mDrawUnlocked : mDrawLocked);
+				crackeable.setBackgroundDrawable((item.isCrackeable()) ? mDrawUnlocked : mDrawLocked);
 
 			TextView essid = (TextView) convertView.findViewById(R.id.layout_selecwireless_listitem_essid);
 			if (essid != null) essid.setText(item.getEssid());
@@ -248,8 +248,7 @@ class NetworkListAdapter implements ListAdapter {
 			}
 
 			TextView capabilities = (TextView) convertView.findViewById(R.id.layout_selecwireless_listitem_security);
-			if (capabilities != null)
-				capabilities.setText(item.getCapabilities().toStringId());
+			if (capabilities != null) capabilities.setText(item.getCapabilities().toStringId());
 		}
 		return convertView;
 	}

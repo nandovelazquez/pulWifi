@@ -31,7 +31,7 @@ public class HomeActivity extends ActionBarActivity {
 		setContentView(R.layout.layout_homeactivity);
 
 		mContext = getApplicationContext();
-		
+
 		/* create a viewpager and add two pages to it */
 		mPager = (ViewPager) findViewById(R.id.pager);
 		mPager.setPageMargin(getResources().getDimensionPixelSize(R.dimen.page_margin));
