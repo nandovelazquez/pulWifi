@@ -31,15 +31,14 @@ public class DiscusAlgorithm extends CrackAlgorithm {
 	 */
 	@Override
 	protected String crackAlgorithm(String essid_data, String bssid_data) {
-		return "YW0" + Integer.toString((Integer.parseInt(essid_data, 16)-0xD0EC31)>>2);
+		return "YW0" + Integer.toString((Integer.parseInt(essid_data, 16) - 0xD0EC31) >> 2);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
 	public static boolean supportsEncryption(WirelessEncryption mCapabilities) {
-		if(mCapabilities.equals(WirelessEncryption.WPA))
-			return true;
+		if (mCapabilities.equals(WirelessEncryption.WPA)) return true;
 
 		return false;
 	}

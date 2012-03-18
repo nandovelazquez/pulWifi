@@ -40,9 +40,9 @@ public class ShowPassActivity extends ActionBarActivity implements OnClickListen
 		((Button) findViewById(R.id.layout_showpass_clipboard)).setOnClickListener(this);
 		((Button) findViewById(R.id.layout_showpass_show)).setOnClickListener(this);
 
-		if(mWirelessNetwork.getPasswords().get(0) == null) {
+		if (mWirelessNetwork.getPasswords().get(0) == null) {
 			// TODO: Show error dialog...
-		} else if(mWirelessNetwork.getPasswords().get(0).equals("")) {
+		} else if (mWirelessNetwork.getPasswords().get(0).equals("")) {
 			Toast.makeText(mContext, R.string.showpass_nopass, Toast.LENGTH_LONG).show();
 			startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));
 			this.finish();
@@ -62,9 +62,13 @@ public class ShowPassActivity extends ActionBarActivity implements OnClickListen
 				if (mWirelessNetwork.getPasswords().size() > 1) {
 					(new ClipboardCopyDialog(mContext, mWirelessNetwork.getPasswords())).show();
 				} else {
-					ClipboardManager mClipboardManager = (ClipboardManager) mContext.getSystemService(Context.CLIPBOARD_SERVICE);
+					ClipboardManager mClipboardManager = (ClipboardManager) mContext
+							.getSystemService(Context.CLIPBOARD_SERVICE);
 					mClipboardManager.setText(mWirelessNetwork.getPasswords().get(0));
-					Toast.makeText(mContext, mContext.getString(R.string.showpass_toclipboard) + " (" + mWirelessNetwork.getPasswords().get(0) + ")", Toast.LENGTH_LONG).show();
+					Toast.makeText(
+							mContext,
+							mContext.getString(R.string.showpass_toclipboard) + " ("
+									+ mWirelessNetwork.getPasswords().get(0) + ")", Toast.LENGTH_LONG).show();
 					Intent i = new Intent(Settings.ACTION_WIFI_SETTINGS);
 					i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 					mContext.startActivity(i);

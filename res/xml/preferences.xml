@@ -2,13 +2,11 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <PreferenceCategory android:title="@string/preferences_category_scanmode" >
-
         <CheckBoxPreference
             android:defaultValue="@string/preferences_autoupdate_default"
             android:key="@string/preferences_autoupdate_key"
             android:summary="@string/preferences_autoupdate_summary"
             android:title="@string/preferences_autoupdate_title" />
-
         <CheckBoxPreference
             android:defaultValue="@string/preferences_vibrateupdate_default"
             android:dependency="@string/preferences_autoupdate_key"
@@ -23,6 +21,12 @@
             android:key="@string/preferences_updateinterval_key"
             android:summary="@string/preferences_updateinterval_summary"
             android:title="@string/preferences_updateinterval_title" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/preferences_category_info" >
+        <Preference
+            android:key="@string/preferences_about_key"
+            android:summary="@string/preferences_about_summary"
+            android:title="@string/preferences_about_title" />
     </PreferenceCategory>
 
 </PreferenceScreen>

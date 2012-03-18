@@ -32,7 +32,7 @@ public abstract class CrackAlgorithm {
 
 		for(int i = 0; i < n_of_patterns; i+=2) {
 			matchers.add(Pattern.compile(patterns.get(i)).matcher(essid));
-			matchers.add(Pattern.compile(patterns.get(i+1)).matcher(bssid));
+			matchers.add(Pattern.compile(patterns.get(i + 1)).matcher(bssid));
 		}
 	}
 
@@ -46,8 +46,8 @@ public abstract class CrackAlgorithm {
 	 * @return True if this algorithm can crack the network or false if not.
 	 */
 	public boolean isCrackeable() {
-		for(int i = 0; i < n_of_patterns; i+=2)
-			if(matchers.get(i).find() && matchers.get(i+1).find()) {
+		for (int i = 0; i < n_of_patterns; i += 2)
+			if (matchers.get(i).find() && matchers.get(i + 1).find()) {
 				working_pattern = i;
 				return true;
 			}

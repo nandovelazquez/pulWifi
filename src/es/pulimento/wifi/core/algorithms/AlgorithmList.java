@@ -14,9 +14,8 @@ public class AlgorithmList extends ArrayList<CrackAlgorithm> {
 	 * @return True if vulnerable or false if not.
 	 */
 	public boolean isCrackeable() {
-		for(int i = 0; i < this.size(); i++)
-			if(this.get(i).isCrackeable())
-				return true;
+		for (int i = 0; i < this.size(); i++)
+			if (this.get(i).isCrackeable()) return true;
 
 		return false;
 	}
@@ -26,9 +25,8 @@ public class AlgorithmList extends ArrayList<CrackAlgorithm> {
 	 * @return The possible passwords of a net separated by the new line character ('\n').
 	 */
 	public String crack() {
-		for(int i = 0; i < this.size(); i++)
-			if(this.get(i).isCrackeable())
-				return this.get(i).crack();
+		for (int i = 0; i < this.size(); i++)
+			if (this.get(i).isCrackeable()) return this.get(i).crack();
 
 		return null;
 	}

@@ -12,7 +12,6 @@ import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
 import es.pulimento.wifi.R;
-import es.pulimento.wifi.ui.dialogs.AboutDialog;
 import es.pulimento.wifi.ui.dialogs.SupportedNetworksDialog;
 import es.pulimento.wifi.ui.dialogs.UpdateDialog;
 import es.pulimento.wifi.ui.utils.ActionBarActivity;
@@ -31,7 +30,7 @@ public class HomeActivity extends ActionBarActivity {
 		setContentView(R.layout.layout_homeactivity);
 
 		mContext = getApplicationContext();
-		
+
 		/* create a viewpager and add two pages to it */
 		mPager = (ViewPager) findViewById(R.id.pager);
 		mPager.setPageMargin(getResources().getDimensionPixelSize(R.dimen.page_margin));
@@ -52,16 +51,18 @@ public class HomeActivity extends ActionBarActivity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 			case R.id.menu_share:
-				/* only applicable HoneyComb & above */
+				/* only applicable to HoneyComb & above */
 				Intent shareIntent = new Intent(android.content.Intent.ACTION_SEND);
 				shareIntent.setType("text/plain");
 				shareIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, getString(R.string.menu_share_subject));
 				shareIntent.putExtra(android.content.Intent.EXTRA_TEXT, getString(R.string.menu_share_text));
 				startActivity(Intent.createChooser(shareIntent, getString(R.string.menu_share_title)));
 				break;
-			case R.id.menu_about:
-				(new AboutDialog(this)).show();
-				break;
+			/*
+			 * case R.id.menu_about:
+			 * (new AboutDialog(this)).show();
+			 * break;
+			 */
 			case R.id.menu_quit:
 				this.finish();
 				break;
