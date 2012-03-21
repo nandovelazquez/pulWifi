@@ -5,14 +5,13 @@
 - ahora mismo está puesto para que se pueda entrar desde el emulador
 - Revisar strings
 - Actualizador al inicio (y quitar el actualizador manual)
-- Refrescar manualmente (no está implementado, sólo la interfaz)
 - Menú de ShowPassActivity
 - Layouts de diálogos sin márgenes
 - Admob está deshabilitado en el manifest para que no muestre anuncios
-- Bug en las preferencias que cuando se entra por primera vez activa automáticamente
-la vibración cada vez que se actualiza -- CREO QUE LO HE ARREGLADO
+- BUG : Al iniciar la aplicación hay un item en el ListViewFragment que si haces clic en él da FC
 - Revisar layouts (sobre todo ldpi y mdpi)
 - Implementar y revisar algoritmos
+- Frenar la actualización de la lista de redes cuando está mostrándose el fragment ManualFragment
 
 Hecho:
 
@@ -28,3 +27,6 @@ librería de compatibilidad no tiene nada al respecto)
 - ManualFragment scroll when keyboard is out
 - Crear TAG para la versión v1.6.1
 - Move about dialog into preferences
+- Refrescar manualmente (no está implementado, sólo la interfaz)
+- BUG : en las opciones, cuando se entra por primera vez activa automáticamente
+la vibración cada vez que se actualiza -- CREO QUE LO HE ARREGLADO
