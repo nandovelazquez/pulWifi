@@ -2,18 +2,23 @@ package es.pulimento.wifi.core.algorithms;
 
 import es.pulimento.wifi.core.WirelessNetwork.WirelessEncryption;
 
+/**
+ * D-Link cracking algorithm.
+ * Cracks all networks with "Dlink-XXXXXX" as name. I have no information about what type of encryption does it support.
+ *
+ */
 public class DlinkAlgorithm extends CrackAlgorithm {
 
-	/*
-	 * D-Link algorithm.
-	 * Algorythm for some D-Link routers
-	 * I don't know what encryption supports.
+	/**
+	 * {@inheritDoc}
 	 */
-
 	public DlinkAlgorithm(String essid, String bssid) {
 		super(essid, bssid);
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	protected void setPatterns() {
 
@@ -22,6 +27,9 @@ public class DlinkAlgorithm extends CrackAlgorithm {
 		addPattern("DLink-([0-9a-fA-F]{6})", "([0-9A-Fa-f:]{17})");
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	protected String crackAlgorithm(String essid_data, String bssid_data) {
 		// Delete dots from bssid and use caps only...
@@ -69,6 +77,9 @@ public class DlinkAlgorithm extends CrackAlgorithm {
 		return String.valueOf(key, 0, 20);
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	public static boolean supportsEncryption(WirelessEncryption mCapabilities) {
 		return true;
 	}

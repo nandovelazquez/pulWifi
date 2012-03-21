@@ -2,14 +2,15 @@ package es.pulimento.wifi.core.algorithms;
 
 import es.pulimento.wifi.core.WirelessNetwork.WirelessEncryption;
 
+/**
+ * Andared cracking algorithm.
+ * This is a series of network access points in public education centers of Andaluc’a, Spain which where set up by the government.
+ */
 public class AndaredAlgorithm extends CrackAlgorithm {
 
-	/*
-	 * Andared cracking algorithm.
-	 * This is a series of network access points in
-	 * public education centers of Andalucía, Spain.
+	/**
+	 * {@inheritDoc}
 	 */
-
 	public AndaredAlgorithm(String essid, String bssid) {
 		super(essid, bssid);
 	}

