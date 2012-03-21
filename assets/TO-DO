@@ -1,4 +1,11 @@
 *** TO-DO for the 2.x release
 
+- Mejorar el auto-actualizador para que se descargue el apk y lo instale, similar al aptoide 
+(http://aptoide.org/trac/browser/aptoide-client/2.5.4/Aptoide/src/cm/aptoide/pt/Aptoide.java)
+- API para recoger los informes de fallos de los usuarios
 - Macs 00:1A:2B tienen dos posibles contraseñas, añadir
 - Posibilidad de escoger el idioma manualmente
+- Mejorar el aspecto del actualizador manual
+- Show changelog on first opening
+- Adaptar traducción al catalán -- ?
+- Implementar Google Analytics -- ?

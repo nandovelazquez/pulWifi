@@ -1,21 +1,25 @@
 *** TO-DO for the v2.0.0 release: (ordenados por importancia)
 
-- Actualizador al inicio (y quitar el actualizador manual)
+- Actualizador automático
 - Implementar y revisar algoritmos
 - Layouts de diálogos sin márgenes
 - BUG : Al iniciar la aplicación hay un item en el ListViewFragment que si haces clic en él da FC
+- Relacionado con el anterior : android:list/empty no se muestra nunca?
 - Dejar constancia de que se toma código de superuser y de aosp
 - Menú de ShowPassActivity (al menos que muestre algo, ya que en versiones pre-honeycomb 
 muestra en el actionBar el botón de mostrar el menú
 - Frenar la actualización de la lista de redes cuando está mostrándose el fragment ManualFragment
 - Drawables AOSP ldpi y hdpi -- ?
+- Mostrar un AlertDialog o un Toast justo al abrir el programa que se muestre siempre, diciendo que es un delito
+usar las redes ajenas y blablabla... -- ?
 
 *** Pre-releasing...
 
 - Admob está deshabilitado en el manifest para que no muestre anuncios
 - ahora mismo está puesto para que se pueda entrar desde el emulador
 - Revisar layouts (sobre todo ldpi y mdpi)
-- Revisar strings
+- Revisar strings (algunas cosas del gallego están con el traductor)
+- Desactivar logging
 - Beta-testing
 
 
