@@ -5,6 +5,8 @@ import es.pulimento.wifi.core.WirelessNetwork.WirelessEncryption;
 /**
  * Discus cracking algorithm.
  * Pirelli Discuss DRG A225 router default WPA2-PSK password cracking algorithm.
+ * Supported MAC addresses:
+ * XX:XX:XX:XX:XX:XX (Discus--XXXXXX)
  */
 public class DiscusAlgorithm extends CrackAlgorithm {
 
@@ -38,9 +40,7 @@ public class DiscusAlgorithm extends CrackAlgorithm {
 	 * {@inheritDoc}
 	 */
 	public static boolean supportsEncryption(WirelessEncryption mCapabilities) {
-		if (mCapabilities.equals(WirelessEncryption.WPA)) return true;
-
-		return false;
+		return mCapabilities.equals(WirelessEncryption.WPA);
 	}
 
 }
