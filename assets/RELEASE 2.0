@@ -1,6 +1,5 @@
 *** TO-DO for the v2.0.0 release: (ordenados por importancia)
 
-- Actualizador automático
 - Implementar y revisar algoritmos
 - Layouts de diálogos sin márgenes
 - BUG : Al iniciar la aplicación hay un item en el ListViewFragment que si haces clic en él da FC
@@ -40,3 +39,4 @@ librería de compatibilidad no tiene nada al respecto)
 - Refrescar manualmente (no está implementado, sólo la interfaz)
 - BUG : en las opciones, cuando se entra por primera vez activa automáticamente
 la vibración cada vez que se actualiza -- CREO QUE LO HE ARREGLADO
+- Actualizador automático
