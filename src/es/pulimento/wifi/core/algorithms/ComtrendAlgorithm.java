@@ -18,13 +18,6 @@ import es.pulimento.wifi.core.WirelessNetwork.WirelessEncryption;
  * 00:1B:20:XX:XX:XX (WLAN_XXXX & JAZZTEL_XXXX)
  * 00:23:F8:XX:XX:XX (WLAN_XXXX & JAZZTEL_XXXX)
  * 00:1F:A4:XX:XX:XX (WLAN_XXXX & JAZZTEL_XXXX)
- *
- * Unsuported/to be checked mac addresses:
- * 00:1A:2B:XX:XX:XX (266 keys...)
- * 38:72:C0:XX:XX:XX
- * F4:3E:61:XX:XX:XX
- * 30:39:F2:XX:XX:XX
- * 00:19:15:XX:XX:XX (TECOM / Telephone numbers? Search...)
  */
 public class ComtrendAlgorithm extends CrackAlgorithm {
 
