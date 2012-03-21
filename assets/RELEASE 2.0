@@ -1,19 +1,25 @@
-2.0.0 release:
+*** TO-DO for the v2.0.0 release: (ordenados por importancia)
 
-- Drawables AOSP ldpi y hdpi
-- Dejar constancia de que se toma código de superuser y de aosp
-- ahora mismo está puesto para que se pueda entrar desde el emulador
-- Revisar strings
 - Actualizador al inicio (y quitar el actualizador manual)
-- Menú de ShowPassActivity
-- Layouts de diálogos sin márgenes
-- Admob está deshabilitado en el manifest para que no muestre anuncios
-- BUG : Al iniciar la aplicación hay un item en el ListViewFragment que si haces clic en él da FC
-- Revisar layouts (sobre todo ldpi y mdpi)
 - Implementar y revisar algoritmos
+- Layouts de diálogos sin márgenes
+- BUG : Al iniciar la aplicación hay un item en el ListViewFragment que si haces clic en él da FC
+- Dejar constancia de que se toma código de superuser y de aosp
+- Menú de ShowPassActivity (al menos que muestre algo, ya que en versiones pre-honeycomb 
+muestra en el actionBar el botón de mostrar el menú
 - Frenar la actualización de la lista de redes cuando está mostrándose el fragment ManualFragment
+- Drawables AOSP ldpi y hdpi -- ?
 
-Hecho:
+*** Pre-releasing...
+
+- Admob está deshabilitado en el manifest para que no muestre anuncios
+- ahora mismo está puesto para que se pueda entrar desde el emulador
+- Revisar layouts (sobre todo ldpi y mdpi)
+- Revisar strings
+- Beta-testing
+
+
+*** Done:
 
 - Cambio completo de la interfaz, para todas las versiones de Android
 - Mejor integración con ICS
