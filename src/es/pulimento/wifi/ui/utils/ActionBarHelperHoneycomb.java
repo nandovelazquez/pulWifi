@@ -16,7 +16,9 @@
 
 package es.pulimento.wifi.ui.utils;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.test.suitebuilder.annotation.LargeTest;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -41,6 +43,7 @@ public class ActionBarHelperHoneycomb extends ActionBarHelper {
 		return super.onCreateOptionsMenu(menu);
 	}
 
+	@SuppressLint("NewApi")
 	@Override
 	public void setRefreshActionItemState(boolean refreshing) {
 		// On Honeycomb, we can set the state of the refresh button by giving it

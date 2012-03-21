@@ -6,6 +6,6 @@
 - Macs 00:1A:2B tienen dos posibles contraseñas, añadir
 - Posibilidad de escoger el idioma manualmente
 - Mejorar el aspecto del actualizador manual
-- Show changelog on first opening
+- Soportar más modelos de routers
+- Show changelog on first opening -- ?
 - Adaptar traducción al catalán -- ?
-- Implementar Google Analytics -- ?
