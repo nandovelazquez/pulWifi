@@ -46,7 +46,7 @@ public class CrackNetwork {
 		if(ComtrendAlgorithm.supportsEncryption(mCapabilities))
 			algorithms.add(new ComtrendAlgorithm(mESSID, mBSSID));
 		if(ZyxelAlgorithm.supportsEncryption(mCapabilities))
-			algorithms.add(new ComtrendAlgorithm(mESSID, mBSSID));
+			algorithms.add(new ZyxelAlgorithm(mESSID, mBSSID));
 		if(Wlan6XAlgorithm.supportsEncryption(mCapabilities))
 			algorithms.add(new Wlan6XAlgorithm(mESSID, mBSSID));
 	}

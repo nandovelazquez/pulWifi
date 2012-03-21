@@ -12,9 +12,8 @@ import es.pulimento.wifi.core.WirelessNetwork.WirelessEncryption;
  * COMTREND CT-5365
  * COMTREND AR5381U
  * This routers use an WPA encryption.
- * They use WLAN_XXXX or JAZZTEL_XXXX as essid.
  * The corresponding mac addresses are:
- * 64:68:0C:XX:XX:XX
+ * 64:68:0C:XX:XX:XX (WLAN_XXXX & JAZZTEL_XXXX)
  * 
  * Unsuported/to be checked mac addresses:
  * 00:1A:2B:XX:XX:XX (266 keys...)

