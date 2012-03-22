@@ -40,7 +40,7 @@ public class ZyxelAlgorithm extends CrackAlgorithm {
 		return MD5Hash(bssid_data.substring(0,8) + essid_data).toLowerCase();
 	}
 
-	private static String MD5Hash(String input) {
+	private String MD5Hash(String input) {
 		try {
 			String hashtext = (new BigInteger(1, MessageDigest.getInstance("MD5").digest(input.getBytes()))).toString(16);
 			while (hashtext.length() < 20)

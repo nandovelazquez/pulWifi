@@ -60,11 +60,10 @@ public abstract class CrackAlgorithm {
 	 * @return All the possible passwords of the network.
 	 */
 	public String crack() {
-		if(working_pattern != -1) {
+		if(working_pattern != -1)
 			return crackAlgorithm(matchers.get(working_pattern).group(1), matchers.get(working_pattern+1).group(1));
-		} else if(isCrackeable()) {
+		else if(isCrackeable())
 			return crack();
-		}
 		return null;
 	}
 
@@ -80,5 +79,4 @@ public abstract class CrackAlgorithm {
 	 * @return The possible passwords of the net or null on error.
 	 */
 	protected abstract String crackAlgorithm(String essid_data, String bssid_data);
-
 }
