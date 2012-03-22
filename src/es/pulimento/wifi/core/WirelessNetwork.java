@@ -38,10 +38,10 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 		/**
 		 * Given a capabilities string returns an encryption representation.
 		 * 
-		 * @param cap
-		 *            {@link android.net.wifi.ScanResult#capabilities} string.
-		 * @return {@link es.pulimento.wifi.core.WirelessNetwork.WirelessEncryption}
-		 *         object representing the passed capabilities.
+		 * @param cap {@link android.net.wifi.ScanResult#capabilities} string.
+		 * @return
+		 * {@link es.pulimento.wifi.core.WirelessNetwork.WirelessEncryption}
+		 * object representing the passed capabilities.
 		 */
 		public static WirelessEncryption parseEncription(String cap) {
 			if (cap == null || cap.equals("OPEN") || cap.equals(""))
@@ -75,11 +75,10 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 		 * {@link es.pulimento.wifi.core.WirelessNetwork.WirelessEncryption}
 		 * object from an Android string identifier.
 		 * 
-		 * @param strid
-		 *            Android string identifier.
+		 * @param strid Android string identifier.
 		 * @return The string ID
-		 *         {@link es.pulimento.wifi.core.WirelessNetwork.WirelessEncryption}
-		 *         equivalent object.
+		 * {@link es.pulimento.wifi.core.WirelessNetwork.WirelessEncryption}
+		 * equivalent object.
 		 */
 		public static WirelessEncryption parseStringID(int strid) {
 			switch (strid) {
@@ -114,12 +113,11 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 	private WirelessEncryption mCapabilities;
 
 	/**
-	 * Build up an {@link es.pulimento.wifi.core.WirelessNetwork} object from an
-	 * {@link android.net.wifi.ScanResult} object.
+	 * Build up an {@link es.pulimento.wifi.core.WirelessNetwork} object from
+	 * an {@link android.net.wifi.ScanResult} object.
 	 * 
-	 * @param s
-	 *            Android {@link android.net.wifi.ScanResult} for building the
-	 *            object.
+	 * @param s Android {@link android.net.wifi.ScanResult} for building the
+	 * object.
 	 */
 	public WirelessNetwork(ScanResult s) {
 		mEssid = s.SSID;
@@ -136,25 +134,12 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 	}
 
 	/**
-<<<<<<< HEAD
-	 * Build up an {@link es.pulimento.wifi.core.WirelessNetwork} object from it's details.
-	 * @param ESSID Represents the network name.
-	 * @param BSSID Access point hardware address.
-	 * @param signal The strength of the signal in decibeles.
-	 * @param capabilities The encryption of the network.
-=======
 	 * Build up an {@link es.pulimento.wifi.core.WirelessNetwork} object from
 	 * it's details.
-	 * 
-	 * @param ESSID
-	 *            Represents the network name.
-	 * @param BSSID
-	 *            Access point hardware address.
-	 * @param signal
-	 *            The strength of the signal in dB.
-	 * @param capabilities
-	 *            The encryption of the network.
->>>>>>> d616fde8c4b0c5fab198fb4efe19160e9f525a47
+	 * @param ESSID Represents the network name.
+	 * @param BSSID Access point hardware address.
+	 * @param signal The strength of the signal in dB.
+	 * @param capabilities The encryption of the network.
 	 */
 	public WirelessNetwork(String ESSID, String BSSID, int signal, String capabilities) {
 		mEssid = ESSID;
@@ -174,10 +159,8 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 	 * Constructor needed for letting this class implement
 	 * {@link android.os.Parcelable}.
 	 * 
-	 * @param in
-	 *            {@link android.os.Parcel} from which a
-	 *            {@link es.pulimento.wifi.core.WirelessNetwork} object is
-	 *            created.
+	 * @param in {@link android.os.Parcel} from which a
+	 * {@link es.pulimento.wifi.core.WirelessNetwork} object is created.
 	 */
 	public WirelessNetwork(Parcel in) {
 		mEssid = in.readString();
@@ -214,7 +197,7 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 
 	/**
 	 * Must be implemented for letting the object be
-	 * {@link android.os.Parcelable}
+	 * {@link android.os.Parcelable}.
 	 */
 	public static final Parcelable.Creator<WirelessNetwork> CREATOR = new Parcelable.Creator<WirelessNetwork>() {
 		public WirelessNetwork createFromParcel(Parcel in) {
@@ -246,10 +229,7 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 
 	/**
 	 * Getter for the hardware address of the access point.
-<<<<<<< HEAD
-=======
-	 * 
->>>>>>> d616fde8c4b0c5fab198fb4efe19160e9f525a47
+	 *
 	 * @return The hardware address of the access point.
 	 */
 	public String getBssid() {
@@ -260,7 +240,7 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 	 * Getter for the possible passwords of the wireless network.
 	 * 
 	 * @return An array containing all possible passwords of the wireless
-	 *         network.
+	 * network.
 	 */
 	public ArrayList<String> getPasswords() {
 		return mPasswords;
@@ -282,10 +262,7 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 
 	/**
 	 * Returns whether this network is vulnerable or not.
-<<<<<<< HEAD
-=======
-	 * 
->>>>>>> d616fde8c4b0c5fab198fb4efe19160e9f525a47
+	 *
 	 * @return True if this network is vulnerable and false if not.
 	 */
 	public boolean isCrackeable() {
@@ -298,8 +275,8 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 	 * representing the encryption of the net.
 	 * 
 	 * @return The encryption of the net in an
-	 *         {@link es.pulimento.wifi.core.WirelessNetwork.WirelessEncryption}
-	 *         object.
+	 * {@link es.pulimento.wifi.core.WirelessNetwork.WirelessEncryption}
+	 * object.
 	 */
 	public WirelessEncryption getCapabilities() {
 		return mCapabilities;

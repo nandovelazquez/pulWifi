@@ -6,19 +6,17 @@ import java.util.List;
 import android.util.Log;
 import es.pulimento.wifi.core.WirelessNetwork.WirelessEncryption;
 
+/**
+ * Wlan 6X algorithm.
+ */
 public class Wlan6XAlgorithm extends CrackAlgorithm {
 
-	/*
-	 * Wlan 6X algorithm.
-	 * TODO: Description and supported routers.
+	/**
+	 * {@inheritDoc}
 	 */
-
 	public Wlan6XAlgorithm(String essid, String bssid) {
 		super(essid, bssid);
 	}
-
-	// TODO: Add encryption and clean all up...
-	public static WirelessEncryption[] encryption = {};
 
 	@Override
 	protected void setPatterns() {
@@ -70,8 +68,7 @@ public class Wlan6XAlgorithm extends CrackAlgorithm {
 		for (int i = 0; i < 10; ++i) {
 			/* Do not change the order of this instructions */
 			int aux = i + (ssidSubPart[3] & 0xf) + (bssidLastByte[0] & 0xf) + (bssidLastByte[1] & 0xf);
-			int aux1 = (ssidSubPart[1] & 0xf) + (ssidSubPart[2] & 0xf) + (ssidSubPart[4] & 0xf)
-					+ (ssidSubPart[5] & 0xf);
+			int aux1 = (ssidSubPart[1] & 0xf) + (ssidSubPart[2] & 0xf) + (ssidSubPart[4] & 0xf) + (ssidSubPart[5] & 0xf);
 			int second = aux ^ (ssidSubPart[5] & 0xf);
 			int sixth = aux ^ (ssidSubPart[4] & 0xf);
 			int tenth = aux ^ (ssidSubPart[3] & 0xf);
@@ -103,7 +100,6 @@ public class Wlan6XAlgorithm extends CrackAlgorithm {
 	}
 
 	public static boolean supportsEncryption(WirelessEncryption mCapabilities) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 

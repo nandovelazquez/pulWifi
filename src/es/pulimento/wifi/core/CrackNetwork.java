@@ -23,10 +23,9 @@ public class CrackNetwork {
 
 	/**
 	 * Default constructor.
-	 * 
-	 * @param w
-	 *            {@link es.pulimento.wifi.core.WirelessNetwork} representing a
-	 *            detected network.
+	 *
+	 * @param w {@link es.pulimento.wifi.core.WirelessNetwork} representing a
+	 * detected network.
 	 */
 	public CrackNetwork(WirelessNetwork w) {
 
@@ -53,22 +52,24 @@ public class CrackNetwork {
 
 	/**
 	 * Checks whether a network is vulnerable or not.
-	 * 
+	 *
 	 * @return Boolean value. True if vulnerable and false if not.
 	 */
 	public boolean isCrackeable() {
-		if (mCapabilities.equals(WirelessEncryption.OPEN)) return true;
+		if (mCapabilities.equals(WirelessEncryption.OPEN))
+			return true;
 
 		return algorithms.isCrackeable();
 	}
 
 	/**
 	 * Function to break the wireless network security.
-	 * 
+	 *
 	 * @return A list of passwords separated by newline characters ('\n').
 	 */
 	public String crackNetwork() {
-		if (mCapabilities.equals(WirelessEncryption.OPEN)) return "";
+		if (mCapabilities.equals(WirelessEncryption.OPEN))
+			return "";
 
 		return algorithms.crack();
 	}
