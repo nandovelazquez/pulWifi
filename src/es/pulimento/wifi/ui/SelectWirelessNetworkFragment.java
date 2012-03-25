@@ -73,12 +73,14 @@ public class SelectWirelessNetworkFragment extends ListFragment {
 		mWirelessNetList = new ArrayList<WirelessNetwork>();
 		// Set custom list adapter
 		mListAdapter = new NetworkListAdapter(mWirelessNetList, getActivity());
+		// if (D) Log.i(TAG, mListAdapter.toString());
 		setListAdapter(mListAdapter);
 
 	}
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+		if (D) Log.d(TAG, "SelectWirelessNetworkFragment onCreateView");
 		return inflater.inflate(R.layout.layout_selectwirelessnetworkfragment, container, false);
 	}
 
@@ -123,7 +125,7 @@ public class SelectWirelessNetworkFragment extends ListFragment {
 				.setOnClickListener(new View.OnClickListener() {
 					@Override
 					public void onClick(View v) {
-						if(D) Log.i(TAG,"Refresh button pressed!");
+						if (D) Log.i(TAG, "Refresh button pressed!");
 						mWifiManager.startScan();
 					}
 				});
@@ -141,13 +143,18 @@ public class SelectWirelessNetworkFragment extends ListFragment {
 
 				mWirelessNetList.clear();
 
+				// if (D) Log.i(TAG, "Scan results size -> " +
+				// mWifiManager.getScanResults().size());
+
 				for (ScanResult wifi : mWifiManager.getScanResults())
 					mWirelessNetList.add(new WirelessNetwork(wifi));
 
 				// For testing networks...
-				//mWirelessNetList.add(new WirelessNetwork("Andared", "AA:AA:AA:AA:AA:AA", 0, "[WPA]"));
-				//mWirelessNetList.add(new WirelessNetwork("WLAN_1234", "64:68:0c:AA:AA:AA", 0, "[WPA]"));
-				
+				// mWirelessNetList.add(new WirelessNetwork("Andared",
+				// "AA:AA:AA:AA:AA:AA", 0, "[WPA]"));
+				// mWirelessNetList.add(new WirelessNetwork("WLAN_1234",
+				// "64:68:0c:AA:AA:AA", 0, "[WPA]"));
+
 				// mWirelessNetList.add(new WirelessNetwork("WLAN4DC866",
 				// "00:22:2D:04:DC:E8", -80, "[WPA]"));
 				// mWirelessNetList.add(new WirelessNetwork("ThomsonF8A3D0",
@@ -204,7 +211,8 @@ class NetworkListAdapter implements ListAdapter {
 		// Testing if this force listview to update
 		mItems = new ArrayList<WirelessNetwork>();
 		mItems = items;
-		mItems.add(null);
+		mItems.add(null);// TODO this is an ugly trick, but without this line it
+						 // won't work
 		if (SelectWirelessNetworkFragment.D) Log.e(TAG, "NetworkListAdapter<init>");
 		mLayoutInflater = (LayoutInflater) act.getApplicationContext()
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
