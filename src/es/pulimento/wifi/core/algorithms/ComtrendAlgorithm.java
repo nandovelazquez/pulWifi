@@ -17,7 +17,6 @@ import es.pulimento.wifi.core.WirelessNetwork.WirelessEncryption;
  * 00:1D:20:XX:XX:XX (WLAN_XXXX & JAZZTEL_XXXX)
  * 00:1B:20:XX:XX:XX (WLAN_XXXX & JAZZTEL_XXXX)
  * 00:23:F8:XX:XX:XX (WLAN_XXXX & JAZZTEL_XXXX)
- * 00:1F:A4:XX:XX:XX (WLAN_XXXX & JAZZTEL_XXXX)
  */
 public class ComtrendAlgorithm extends CrackAlgorithm {
 
@@ -62,14 +61,6 @@ public class ComtrendAlgorithm extends CrackAlgorithm {
 		// ESSID: JAZZTEL_XXXX
 		// BSSID: 00:23:F8:XX:XX:XX
 		addPattern("JAZZTEL_([0-9a-fA-F]{4})", "(00:23:F8:[0-9A-Fa-f:]{8})");
-
-		// ESSID: WLAN_XXXX
-		// BSSID: 00:1F:A4:XX:XX:XX
-		addPattern("WLAN_([0-9a-fA-F]{4})", "(00:1F:A4:[0-9A-Fa-f:]{8})");
-
-		// ESSID: JAZZTEL_XXXX
-		// BSSID: 00:1F:A4:XX:XX:XX
-		addPattern("JAZZTEL_([0-9a-fA-F]{4})", "(00:1F:A4:[0-9A-Fa-f:]{8})");
 	}
 
 	@Override
