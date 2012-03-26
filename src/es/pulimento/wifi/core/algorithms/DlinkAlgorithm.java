@@ -81,6 +81,6 @@ public class DlinkAlgorithm extends CrackAlgorithm {
 	 * {@inheritDoc}
 	 */
 	public static boolean supportsEncryption(WirelessEncryption mCapabilities) {
-		return true;
+		return mCapabilities.equals(WirelessEncryption.WEP) || mCapabilities.equals(WirelessEncryption.WPA);
 	}
 }
