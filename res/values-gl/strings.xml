@@ -35,6 +35,8 @@
     <string name="dialog_updater_update">Descargar</string>
     <string name="dialog_udpater_title">Actualizar</string>
     <string name="dialog_updater_checking">Comprobando…</string>
+    <string name="autoupdater_title">Actualización dispoñible</string>
+    <string name="autoupdater_message">Hai unha nova versión do pulWifi, quere obtê-lo?</string>
 
     <!-- Preferences -->
     <string name="preferences_category_scanmode">MODO AUTOMÁTICO</string>
@@ -97,5 +99,9 @@
     <string name="listadapter_wpa">WPA/WPA2</string>
     <string name="listadapter_wep">WEP</string>
     <string name="listadapter_open">ABERTA</string>
+    
+    <!-- Generic dialogs -->
+    <string name="dialog_yes">Si</string>
+    <string name="dialog_no">Non</string>
 
 </resources>

@@ -41,6 +41,8 @@
     <string name="dialog_updater_update">Update</string>
     <string name="dialog_udpater_title">Updater:</string>
     <string name="dialog_updater_checking">Checking…</string>
+    <string name="autoupdater_title">Update available</string>
+    <string name="autoupdater_message">There is a newer version of pulWifi available, do you want to download it?</string>
 
     <!-- Preference keys and defaults -->
     <string name="preferences_autoupdate_key">prefs_key_autoupdate</string>
@@ -113,5 +115,9 @@
     <string name="listadapter_wep">WEP</string>
     <string name="listadapter_open">OPEN</string>
     <string name="listadapter_unknown">UNKNOWN</string>
+
+    <!-- Generic dialogs -->
+    <string name="dialog_yes">Yes</string>
+    <string name="dialog_no">No</string>
 
 </resources>

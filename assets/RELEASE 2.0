@@ -1,20 +1,29 @@
-2.0.0 release:
+*** TO-DO for the v2.0.0 release: (ordenados por importancia)
 
-- Drawables AOSP ldpi y hdpi
-- Dejar constancia de que se toma código de superuser y de aosp
-- ahora mismo está puesto para que se pueda entrar desde el emulador
-- Revisar strings
-- Actualizador al inicio (y quitar el actualizador manual)
-- Refrescar manualmente (no está implementado, sólo la interfaz)
-- Menú de ShowPassActivity
-- Layouts de diálogos sin márgenes
-- Admob está deshabilitado en el manifest para que no muestre anuncios
-- Bug en las preferencias que cuando se entra por primera vez activa automáticamente
-la vibración cada vez que se actualiza -- CREO QUE LO HE ARREGLADO
-- Revisar layouts (sobre todo ldpi y mdpi)
+- Actualizador automático
 - Implementar y revisar algoritmos
+- Layouts de diálogos sin márgenes
+- BUG : Al iniciar la aplicación hay un item en el ListViewFragment que si haces clic en él da FC
+- Relacionado con el anterior : android:list/empty no se muestra nunca?
+- Dejar constancia de que se toma código de superuser y de aosp
+- Menú de ShowPassActivity (al menos que muestre algo, ya que en versiones pre-honeycomb 
+muestra en el actionBar el botón de mostrar el menú
+- Frenar la actualización de la lista de redes cuando está mostrándose el fragment ManualFragment
+- Drawables AOSP ldpi y hdpi -- ?
+- Mostrar un AlertDialog o un Toast justo al abrir el programa que se muestre siempre, diciendo que es un delito
+usar las redes ajenas y blablabla... -- ?
 
-Hecho:
+*** Pre-releasing...
+
+- Admob está deshabilitado en el manifest para que no muestre anuncios
+- ahora mismo está puesto para que se pueda entrar desde el emulador
+- Revisar layouts (sobre todo ldpi y mdpi)
+- Revisar strings (algunas cosas del gallego están con el traductor)
+- Desactivar logging
+- Beta-testing
+
+
+*** Done:
 
 - Cambio completo de la interfaz, para todas las versiones de Android
 - Mejor integración con ICS
@@ -28,3 +37,6 @@ librería de compatibilidad no tiene nada al respecto)
 - ManualFragment scroll when keyboard is out
 - Crear TAG para la versión v1.6.1
 - Move about dialog into preferences
+- Refrescar manualmente (no está implementado, sólo la interfaz)
+- BUG : en las opciones, cuando se entra por primera vez activa automáticamente
+la vibración cada vez que se actualiza -- CREO QUE LO HE ARREGLADO

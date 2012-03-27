@@ -26,6 +26,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
@@ -115,10 +116,17 @@ public class SelectWirelessNetworkFragment extends ListFragment {
 
 		mWifiManager = (WifiManager) mActivity.getSystemService(Context.WIFI_SERVICE);
 		mVibrator = (Vibrator) mActivity.getSystemService(Context.VIBRATOR_SERVICE);
+		mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(mContext);
 		mRefreshSection = (LinearLayout) mActivity.findViewById(R.id.layout_selectwireless_refresh_section);
 		mTimer = new Timer();
-		mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(mContext);
-
+		((Button) mActivity.findViewById(R.id.layout_selectwireless_refresh_button))
+				.setOnClickListener(new View.OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						if(D) Log.i(TAG,"Refresh button pressed!");
+						mWifiManager.startScan();
+					}
+				});
 		mIntentFilter = new IntentFilter();
 		mIntentFilter.addAction(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION);
 		mBroadcastReceiver = new BroadcastReceiver() {
@@ -129,7 +137,7 @@ public class SelectWirelessNetworkFragment extends ListFragment {
 				// Code to execute when SCAN_RESULTS_AVAILABLE_ACTION event
 				// occurs.
 
-				if (D) Log.i(TAG, "Entramos en el onReceive()");
+				if (D) Log.i(TAG, "Refreshing automatically the list");
 
 				mWirelessNetList.clear();
 

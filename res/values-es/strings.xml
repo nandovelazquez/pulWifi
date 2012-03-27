@@ -40,6 +40,8 @@
     <string name="dialog_updater_update">Actualizar</string>
     <string name="dialog_udpater_title">Actualizador</string>
     <string name="dialog_updater_checking">Comprobando…</string>
+    <string name="autoupdater_title">Actualización disponible</string>
+    <string name="autoupdater_message">Está disponible una nueva versión de pulWifi, ¿deseas obtenerla?</string>
 
     <!-- Preference keys and defaults -->
 	<!-- Really not neccesary here, they are language-independent -->
@@ -99,11 +101,15 @@
     <string name="menu_share">Compartir</string>
     <string name="menu_share_title">Compartir app</string>
     <string name="menu_share_subject">pulWifi</string>
-    <string name="menu_share_text">Hey! Puedes conseguir pulWifi desde http://pulwifi.github.com . Pruébalo! ;)</string>
+    <string name="menu_share_text">¡Hey! Puedes conseguir pulWifi desde http://pulwifi.github.com . ¡Pruébalo! ;)</string>
 
     <!-- List view adapter -->
     <string name="listadapter_wpa">WPA/WPA2</string>
     <string name="listadapter_wep">WEP</string>
     <string name="listadapter_open">ABIERTA</string>
+    
+    <!-- Generic dialogs -->
+    <string name="dialog_yes">Si</string>
+    <string name="dialog_no">No</string>
 
 </resources>

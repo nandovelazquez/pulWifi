@@ -1,14 +1,24 @@
 package es.pulimento.wifi.ui;
 
+import java.io.DataInputStream;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.UnknownHostException;
 import java.util.ArrayList;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import es.pulimento.wifi.R;
@@ -22,6 +32,13 @@ public class HomeActivity extends ActionBarActivity {
 	private ViewPager mPager;
 	private Context mContext;
 
+	/* This is for use it from AsyncTask */
+	private ActionBarActivity homeActivity = this;
+
+	/* Auto-updater stuff */
+	private final String VERSION_URL = "https://raw.github.com/pulWifi/pulWifi/master/version_latest";
+	private final String APK_URL = "https://github.com/downloads/pulWifi/pulWifi/pulWifi_%s_signed.apk";
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -29,6 +46,11 @@ public class HomeActivity extends ActionBarActivity {
 		/* set layout */
 		setContentView(R.layout.layout_homeactivity);
 
+		/* Launch the auto-updater task */
+		GetLatestVersion get = new GetLatestVersion();
+		get.execute();
+
+		/* Setting attributes */
 		mContext = getApplicationContext();
 
 		/* create a viewpager and add two pages to it */
@@ -160,6 +182,69 @@ public class HomeActivity extends ActionBarActivity {
 		@Override
 		public void onHeaderSelected(int position) {
 			mPager.setCurrentItem(position);
+		}
+	}
+
+	/* AsyncTask for check if an update is available, and prompts it to the user */
+	public class GetLatestVersion extends AsyncTask<Void, Void, String> {
+
+		@Override
+		public void onPreExecute() {
+			Log.i("pulWifi", "Checking for updates...");
+		}
+
+		@Override
+		protected String doInBackground(Void... params) {
+			try {
+				byte[] versionData = new byte[6];
+				(new DataInputStream((new URL(VERSION_URL)).openConnection().getInputStream())).read(versionData);
+				return new String(versionData).trim();
+			} catch (MalformedURLException e) {
+				// TODO: This should not be fired. Should be reported.
+				return "ERR";
+			} catch (UnknownHostException e) {
+				// Network error.
+				return "ERR";
+			} catch (IOException e) {
+				// TODO: Check what causes this.
+				return "ERR";
+			}
+		}
+
+		@Override
+		public void onPostExecute(String res) {
+			final String latestVersion = res;
+			String currentVersion = mContext.getString(R.string.app_version);
+			if (res == "ERR") {
+				Log.w("pulWifi", "Error checking updates. Maybe no internet connection?");
+			} else {
+				if (!res.equals(currentVersion)) {
+					Log.i("pulWifi", "Update available, now on " + currentVersion + "new is " + res);
+					AlertDialog.Builder alertBuilder = new AlertDialog.Builder(homeActivity);
+					alertBuilder.setCancelable(false)
+							.setPositiveButton(R.string.dialog_yes, new DialogInterface.OnClickListener() {
+								public void onClick(DialogInterface dialog, int id) {
+									Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(String.format(APK_URL,
+											latestVersion)));
+									intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+									mContext.startActivity(intent);
+									dialog.cancel();
+								}
+							}).setNegativeButton(R.string.dialog_no, new DialogInterface.OnClickListener() {
+								public void onClick(DialogInterface dialog, int id) {
+									dialog.cancel();
+								}
+							}).setMessage(R.string.autoupdater_message);// TODO
+
+					AlertDialog alert = alertBuilder.create();
+
+					alert.setTitle(R.string.autoupdater_title);// TODO
+					alert.setIcon(R.drawable.ic_launcher);
+					alert.show();
+				} else {
+					Log.i("pulWifi", "No updates found, you are in the latest version!");
+				}
+			}
 		}
 	}
 }
