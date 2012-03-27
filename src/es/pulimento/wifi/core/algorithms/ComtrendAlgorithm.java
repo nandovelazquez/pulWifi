@@ -30,37 +30,21 @@ public class ComtrendAlgorithm extends CrackAlgorithm {
 	@Override
 	protected void setPatterns() {
 
-		// ESSID: WLAN_XXXX
+		// ESSID: WLAN_XXXX / JAZZTEL_XXXX
 		// BSSID: 64:68:0C:XX:XX:XX
-		addPattern("WLAN_([0-9a-fA-F]{4})", "(64:68:0C:[0-9A-Fa-f:]{8})");
+		addPattern("(?:WLAN|JAZZTEL)_([0-9a-fA-F]{4})", "(64:68:0C:[0-9A-Fa-f:]{8})");
 
-		// ESSID: JAZZTEL_XXXX
-		// BSSID: 64:68:0C:XX:XX:XX
-		addPattern("JAZZTEL_([0-9a-fA-F]{4})", "(64:68:0C:[0-9A-Fa-f:]{8})");
-
-		// ESSID: WLAN_XXXX
+		// ESSID: WLAN_XXXX / JAZZTEL_XXXX
 		// BSSID: 00:1D:20:XX:XX:XX
-		addPattern("WLAN_([0-9a-fA-F]{4})", "(00:1D:20:[0-9A-Fa-f:]{8})");
+		addPattern("(?:WLAN|JAZZTEL)_([0-9a-fA-F]{4})", "(00:1D:20:[0-9A-Fa-f:]{8})");
 
-		// ESSID: JAZZTEL_XXXX
-		// BSSID: 00:1D:20:XX:XX:XX
-		addPattern("JAZZTEL_([0-9a-fA-F]{4})", "(00:1D:20:[0-9A-Fa-f:]{8})");
-
-		// ESSID: WLAN_XXXX
+		// ESSID: WLAN_XXXX / JAZZTEL_XXXX
 		// BSSID: 00:1B:20:XX:XX:XX
-		addPattern("WLAN_([0-9a-fA-F]{4})", "(00:1B:20:[0-9A-Fa-f:]{8})");
+		addPattern("(?:WLAN|JAZZTEL)_([0-9a-fA-F]{4})", "(00:1B:20:[0-9A-Fa-f:]{8})");
 
-		// ESSID: JAZZTEL_XXXX
-		// BSSID: 00:1B:20:XX:XX:XX
-		addPattern("JAZZTEL_([0-9a-fA-F]{4})", "(00:1B:20:[0-9A-Fa-f:]{8})");
-
-		// ESSID: WLAN_XXXX
+		// ESSID: WLAN_XXXX / JAZZTEL_XXXX
 		// BSSID: 00:23:F8:XX:XX:XX
-		addPattern("WLAN_([0-9a-fA-F]{4})", "(00:23:F8:[0-9A-Fa-f:]{8})");
-
-		// ESSID: JAZZTEL_XXXX
-		// BSSID: 00:23:F8:XX:XX:XX
-		addPattern("JAZZTEL_([0-9a-fA-F]{4})", "(00:23:F8:[0-9A-Fa-f:]{8})");
+		addPattern("(?:WLAN|JAZZTEL)_([0-9a-fA-F]{4})", "(00:23:F8:[0-9A-Fa-f:]{8})");
 	}
 
 	@Override

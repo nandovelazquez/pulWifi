@@ -24,13 +24,10 @@ public class ZyxelAlgorithm extends CrackAlgorithm {
 	@Override
 	protected void setPatterns() {
 
-		// ESSID: WLAN_XXXX
+		// ESSID: WLAN_XXXX / (?:WLAN|JAZZTEL)
 		// BSSID: 00:1F:A4:XX:XX:XX
-		addPattern("WLAN_([0-9a-fA-F]{4})", "(00:1F:A4:[0-9A-Fa-f:]{8})");
+		addPattern("(?:WLAN|JAZZTEL)_([0-9a-fA-F]{4})", "(00:1F:A4:[0-9A-Fa-f:]{8})");
 
-		// ESSID: JAZZTEL_XXXX
-		// BSSID: 00:1F:A4:XX:XX:XX
-		addPattern("JAZZTEL_([0-9a-fA-F]{4})", "(00:1F:A4:[0-9A-Fa-f:]{8})");
 	}
 
 	@Override

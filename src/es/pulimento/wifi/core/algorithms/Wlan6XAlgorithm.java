@@ -7,6 +7,11 @@ import es.pulimento.wifi.core.WirelessNetwork.WirelessEncryption;
 
 /**
  * Wlan 6X algorithm.
+ * 
+ * Supported network names are:
+ * WLANXXXXXX
+ * WIFIXXXXXX
+ * YACOMXXXXXX
  */
 public class Wlan6XAlgorithm extends CrackAlgorithm {
 
@@ -19,7 +24,10 @@ public class Wlan6XAlgorithm extends CrackAlgorithm {
 
 	@Override
 	protected void setPatterns() {
-		
+
+		// ESSID: WLANXXXXXX / WIFIXXXXXX / YACOMXXXXXX
+		// BSSID: Any
+		addPattern("(?:WLAN|WIFI|YACOM)([0-9a-fA-F]{6})", "([0-9A-Fa-f:]{17})");
 	}
 
 	@Override
