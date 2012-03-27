@@ -20,18 +20,7 @@ public class Wlan6XAlgorithm extends CrackAlgorithm {
 
 	@Override
 	protected void setPatterns() {
-
-		// ESSID: WLANXXXXXX
-		// BSSID: Any
-		addPattern("WLAN([0-9a-fA-F]{6})", "([0-9A-Fa-f:]{17})");
-
-		// ESSID: WIFIXXXXXX
-		// BSSID: Any
-		addPattern("WIFI([0-9a-fA-F]{6})", "([0-9A-Fa-f:]{17})");
-
-		// ESSID: YACOMXXXXXX
-		// BSSID: Any
-		addPattern("YACOM([0-9a-fA-F]{6})", "([0-9A-Fa-f:]{17})");
+		
 	}
 
 	@Override
@@ -42,22 +31,12 @@ public class Wlan6XAlgorithm extends CrackAlgorithm {
 	}
 
 	public static String crack2(String ESSID, String BSSID) {
-		String ssidStr = ESSID.substring(ESSID.length() - 6);
-		String macStr = BSSID;
-		Log.e("pulWifi", "Using new WLAN6X algorythm, " + ssidStr + " " + macStr);
-		char[] ssidSubPart = { '1', '2', '3', '4', '5', '6' };// These values
-															  // are not
-															  // revelant.
 
-		char[] bssidLastByte = { '6', '6' };
-		ssidSubPart[0] = ssidStr.charAt(0);
-		ssidSubPart[1] = ssidStr.charAt(1);
-		ssidSubPart[2] = ssidStr.charAt(2);
-		ssidSubPart[3] = ssidStr.charAt(3);
-		ssidSubPart[4] = ssidStr.charAt(4);
-		ssidSubPart[5] = ssidStr.charAt(5);
-		bssidLastByte[0] = macStr.charAt(15);
-		bssidLastByte[1] = macStr.charAt(16);
+		char[] ssidSubPart = ESSID.toCharArray();
+		
+		char[] bssidLastByte = new char[2];
+		bssidLastByte[0] = BSSID.charAt(15);
+		bssidLastByte[1] = BSSID.charAt(16);
 		for (int k = 0; k < 6; ++k)
 			if (ssidSubPart[k] >= 'A') ssidSubPart[k] = (char) (ssidSubPart[k] - 55);
 

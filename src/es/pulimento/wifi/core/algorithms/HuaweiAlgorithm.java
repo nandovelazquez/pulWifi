@@ -4,7 +4,6 @@ import es.pulimento.wifi.core.WirelessNetwork.WirelessEncryption;
 
 /**
  * Huawei algorithm.
- * Needs to be finished. Please review.
  */
 public class HuaweiAlgorithm extends CrackAlgorithm {
 
@@ -20,16 +19,7 @@ public class HuaweiAlgorithm extends CrackAlgorithm {
 	 */
 	@Override
 	protected void setPatterns() {
-
-		// ESSID: Any
-		// BSSID: 00:1E:10:XX:XX:XX
-		// MODEL: Huawei HG520c
-		addPattern("*", "(00:1E:10:[0-9A-Fa-f:]{8})");
-
-		// ESSID: Any
-		// BSSID: 00:22:A1:XX:XX:XX
-		// NOTE: Viewed in routerkeygen...
-		addPattern("*", "(00:22:A1:[0-9A-Fa-f:]{8})");
+		
 	}
 
 	/**
