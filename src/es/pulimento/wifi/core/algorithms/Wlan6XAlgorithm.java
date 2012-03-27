@@ -3,7 +3,6 @@ package es.pulimento.wifi.core.algorithms;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.util.Log;
 import es.pulimento.wifi.core.WirelessNetwork.WirelessEncryption;
 
 /**
@@ -27,54 +26,48 @@ public class Wlan6XAlgorithm extends CrackAlgorithm {
 	protected String crackAlgorithm(String essid_data, String bssid_data) {
 		bssid_data = bssid_data.toUpperCase();
 
-		return crack2(essid_data, bssid_data);
-	}
+		char[] essid_part = essid_data.toCharArray();
+		for(int k = 0; k < 6; ++k)
+			if(essid_part[k] >= 'A')
+				essid_part[k] = (char)(essid_part[k] - 55);
 
-	public static String crack2(String ESSID, String BSSID) {
-
-		char[] ssidSubPart = ESSID.toCharArray();
-		
-		char[] bssidLastByte = new char[2];
-		bssidLastByte[0] = BSSID.charAt(15);
-		bssidLastByte[1] = BSSID.charAt(16);
-		for (int k = 0; k < 6; ++k)
-			if (ssidSubPart[k] >= 'A') ssidSubPart[k] = (char) (ssidSubPart[k] - 55);
-
-		if (bssidLastByte[0] >= 'A') bssidLastByte[0] = (char) (bssidLastByte[0] - 55);
-		if (bssidLastByte[1] >= 'A') bssidLastByte[1] = (char) (bssidLastByte[1] - 55);
+		char[] bssid_part = new char[2];
+		bssid_part[0] = bssid_data.charAt(15);
+		bssid_part[1] = bssid_data.charAt(16);
+		if(bssid_part[0] >= 'A')
+			bssid_part[0] = (char)(bssid_part[0] - 55);
+		if(bssid_part[1] >= 'A')
+			bssid_part[1] = (char)(bssid_part[1] - 55);
 
 		List<String> passList = new ArrayList<String>();
-		for (int i = 0; i < 10; ++i) {
-			/* Do not change the order of this instructions */
-			int aux = i + (ssidSubPart[3] & 0xf) + (bssidLastByte[0] & 0xf) + (bssidLastByte[1] & 0xf);
-			int aux1 = (ssidSubPart[1] & 0xf) + (ssidSubPart[2] & 0xf) + (ssidSubPart[4] & 0xf) + (ssidSubPart[5] & 0xf);
-			int second = aux ^ (ssidSubPart[5] & 0xf);
-			int sixth = aux ^ (ssidSubPart[4] & 0xf);
-			int tenth = aux ^ (ssidSubPart[3] & 0xf);
-			int third = aux1 ^ (ssidSubPart[2] & 0xf);
-			int seventh = aux1 ^ (bssidLastByte[0] & 0xf);
-			int eleventh = aux1 ^ (bssidLastByte[1] & 0xf);
-			int fourth = (bssidLastByte[0] & 0xf) ^ (ssidSubPart[5] & 0xf);
-			int eighth = (bssidLastByte[1] & 0xf) ^ (ssidSubPart[4] & 0xf);
+		for(int i = 0; i < 10; ++i) {
+			int aux = i + (essid_part[3] & 0xf) + (bssid_part[0] & 0xf) + (bssid_part[1] & 0xf);
+			int aux1 = (essid_part[1] & 0xf) + (essid_part[2] & 0xf) + (essid_part[4] & 0xf) + (essid_part[5] & 0xf);
+			int second = aux ^ (essid_part[5] & 0xf);
+			int sixth = aux ^ (essid_part[4] & 0xf);
+			int tenth = aux ^ (essid_part[3] & 0xf);
+			int third = aux1 ^ (essid_part[2] & 0xf);
+			int seventh = aux1 ^ (bssid_part[0] & 0xf);
+			int eleventh = aux1 ^ (bssid_part[1] & 0xf);
+			int fourth = (bssid_part[0] & 0xf) ^ (essid_part[5] & 0xf);
+			int eighth = (bssid_part[1] & 0xf) ^ (essid_part[4] & 0xf);
 			int twelfth = aux ^ aux1;
 			int fifth = second ^ eighth;
 			int ninth = seventh ^ eleventh;
 			int thirteenth = third ^ tenth;
 			int first = twelfth ^ sixth;
-			String key = Integer.toHexString(first & 0xf) + Integer.toHexString(second & 0xf)
+			passList.add((Integer.toHexString(first & 0xf) + Integer.toHexString(second & 0xf)
 					+ Integer.toHexString(third & 0xf) + Integer.toHexString(fourth & 0xf)
 					+ Integer.toHexString(fifth & 0xf) + Integer.toHexString(sixth & 0xf)
 					+ Integer.toHexString(seventh & 0xf) + Integer.toHexString(eighth & 0xf)
 					+ Integer.toHexString(ninth & 0xf) + Integer.toHexString(tenth & 0xf)
 					+ Integer.toHexString(eleventh & 0xf) + Integer.toHexString(twelfth & 0xf)
-					+ Integer.toHexString(thirteenth & 0xf);
-
-			passList.add(key.toUpperCase());
+					+ Integer.toHexString(thirteenth & 0xf)).toUpperCase());
 		}
+
 		StringBuilder s = new StringBuilder();
 		for (String sp : passList)
 			s.append(sp + "\n");
-		Log.d("pulWifi", "CLAVE -> " + s.toString());
 		return s.toString();
 	}
 
