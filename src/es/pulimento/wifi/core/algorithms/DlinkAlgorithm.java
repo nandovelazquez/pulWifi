@@ -19,7 +19,7 @@ public class DlinkAlgorithm extends CrackAlgorithm {
 	@Override
 	protected void setPatterns() {
 
-		// ESSID: Dlink-XXXXXX
+		// ESSID: DLink-XXXXXX
 		// BSSID: Any
 		addPattern("DLink-([0-9a-fA-F]{6})", "([0-9A-Fa-f:]{17})");
 	}

@@ -146,24 +146,18 @@ public class SelectWirelessNetworkFragment extends ListFragment {
 
 				// For testing networks...
 				//mWirelessNetList.add(new WirelessNetwork("Andared", "AA:AA:AA:AA:AA:AA", 0, "[WPA]"));
+				//mWirelessNetList.add(new WirelessNetwork("Discus--DA1CC5", "00:1C:A2:DA:1C:C5", 0, "[WPA]"));
 				//mWirelessNetList.add(new WirelessNetwork("WLAN_1234", "64:68:0c:AA:AA:AA", 0, "[WPA]"));
+				//mWirelessNetList.add(new WirelessNetwork("DLink-AAAAAA", "64:68:0c:64:68:0c", 0, "[WPA]"));
 				
-				// mWirelessNetList.add(new WirelessNetwork("WLAN4DC866",
-				// "00:22:2D:04:DC:E8", -80, "[WPA]"));
-				// mWirelessNetList.add(new WirelessNetwork("ThomsonF8A3D0",
-				// "AA:AA:AA:AA:AA:AA", -100, "[WEP??"));
-				// mWirelessNetList.add(new WirelessNetwork("JAZZTEL_E919",
-				// "64:68:0C:DE:39:48", -100, "[WPA]??"));
-				// mWirelessNetList.add(new WirelessNetwork("HAWEI1",
-				// "00:18:82:32:81:20", -100, "[WPA]??"));
-				// mWirelessNetList.add(new WirelessNetwork("WLAN_E919",
-				// "64:68:0C:96:e9:1c", -100, "[WPA]??"));//dbcd970f0d705754206d
-				// mWirelessNetList.add(new WirelessNetwork("HAWEI2",
-				// "00:22:A1:32:81:20", -100, "[WPA]??"));
-				// mWirelessNetList.add(new WirelessNetwork("YACOMXXXXXX",
-				// "00:22:A1:32:81:20", -100, "[WPA]??"));
-				// mWirelessNetList.add(new WirelessNetwork("bazinga",
-				// "FF:FF:FF:FF:FF:FF", -100, "[WPA]??"));
+				// mWirelessNetList.add(new WirelessNetwork("WLAN4DC866", "00:22:2D:04:DC:E8", -80, "[WPA]"));
+				// mWirelessNetList.add(new WirelessNetwork("ThomsonF8A3D0", "AA:AA:AA:AA:AA:AA", -100, "[WEP??"));
+				// mWirelessNetList.add(new WirelessNetwork("JAZZTEL_E919", "64:68:0C:DE:39:48", -100, "[WPA]??"));
+				// mWirelessNetList.add(new WirelessNetwork("HAWEI1", "00:18:82:32:81:20", -100, "[WPA]??"));
+				// mWirelessNetList.add(new WirelessNetwork("WLAN_E919", "64:68:0C:96:e9:1c", -100, "[WPA]??"));//dbcd970f0d705754206d
+				// mWirelessNetList.add(new WirelessNetwork("HAWEI2", "00:22:A1:32:81:20", -100, "[WPA]??"));
+				// mWirelessNetList.add(new WirelessNetwork("YACOMXXXXXX", "00:22:A1:32:81:20", -100, "[WPA]??"));
+				// mWirelessNetList.add(new WirelessNetwork("bazinga", "FF:FF:FF:FF:FF:FF", -100, "[WPA]??"));
 
 				/* Trick to refresh the ListView */
 				getListView().invalidateViews();
