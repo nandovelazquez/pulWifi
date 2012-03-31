@@ -11,6 +11,7 @@ import es.pulimento.wifi.core.WirelessNetwork.WirelessEncryption;
  * This exploits a vulnerability in ZYXEL P660HW-B1A router.
  * Supported MAC addresses:
  * 00:1F:A4:XX:XX:XX (WLAN_XXXX & JAZZTEL_XXXX)
+ * F4:3E:61:XX:XX:XX (WLAN_XXXX & JAZZTEL_XXXX)
  */
 public class ZyxelAlgorithm extends CrackAlgorithm {
 
@@ -24,9 +25,13 @@ public class ZyxelAlgorithm extends CrackAlgorithm {
 	@Override
 	protected void setPatterns() {
 
-		// ESSID: WLAN_XXXX / (?:WLAN|JAZZTEL)
+		// ESSID: WLAN_XXXX / JAZZTEL_XXXX
 		// BSSID: 00:1F:A4:XX:XX:XX
 		addPattern("(?:WLAN|JAZZTEL)_([0-9a-fA-F]{4})", "(00:1F:A4:[0-9A-Fa-f:]{8})");
+
+		// ESSID: WLAN_XXXX / JAZZTEL_XXXX
+		// BSSID: F4:3E:61:XX:XX:XX
+		addPattern("(?:WLAN|JAZZTEL)_([0-9a-fA-F]{4})", "(F4:3E:61:[0-9A-Fa-f:]{8})");
 
 	}
 
