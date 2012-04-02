@@ -19,7 +19,37 @@ public class HuaweiAlgorithm extends CrackAlgorithm {
 	 */
 	@Override
 	protected void setPatterns() {
-		
+
+		// Added all macs untill version 3 which will be focused on this.
+		addPattern("*", "(F4:C7:14:[0-9A-Fa-f:]{8})");
+		addPattern("*", "(78:1D:BA:[0-9A-Fa-f:]{8})");
+		addPattern("*", "(64:16:F0:[0-9A-Fa-f:]{8})");
+		addPattern("*", "(5C:4C:A9:[0-9A-Fa-f:]{8})");
+		addPattern("*", "(54:A5:1B:[0-9A-Fa-f:]{8})");
+		addPattern("*", "(54:89:98:[0-9A-Fa-f:]{8})");
+		addPattern("*", "(4C:54:99:[0-9A-Fa-f:]{8})");
+		addPattern("*", "(4C:1F:CC:[0-9A-Fa-f:]{8})");
+		addPattern("*", "(40:4D:8E:[0-9A-Fa-f:]{8})");
+		addPattern("*", "(30:87:30:[0-9A-Fa-f:]{8})");
+		addPattern("*", "(28:6E:D4:[0-9A-Fa-f:]{8})");
+		addPattern("*", "(28:5F:DB:[0-9A-Fa-f:]{8})");
+		addPattern("*", "(24:DB:AC:[0-9A-Fa-f:]{8})");
+		addPattern("*", "(20:F3:A3:[0-9A-Fa-f:]{8})");
+		addPattern("*", "(20:2B:C1:[0-9A-Fa-f:]{8})");
+		addPattern("*", "(1C:1D:67:[0-9A-Fa-f:]{8})");
+		addPattern("*", "(10:C6:1F:[0-9A-Fa-f:]{8})");
+		addPattern("*", "(0C:37:DC:[0-9A-Fa-f:]{8})");
+		addPattern("*", "(08:19:A6:[0-9A-Fa-f:]{8})");
+		addPattern("*", "(04:C0:6F:[0-9A-Fa-f:]{8})");
+		addPattern("*", "(00:E0:FC:[0-9A-Fa-f:]{8})");
+		addPattern("*", "(00:25:9E:[0-9A-Fa-f:]{8})");
+		addPattern("*", "(00:25:68:[0-9A-Fa-f:]{8})");
+		addPattern("*", "(00:22:A1:[0-9A-Fa-f:]{8})");
+		addPattern("*", "(00:1E:10:[0-9A-Fa-f:]{8})");
+		addPattern("*", "(00:19:15:[0-9A-Fa-f:]{8})");
+		addPattern("*", "(00:18:82:[0-9A-Fa-f:]{8})");
+		addPattern("*", "(00:11:F5:[0-9A-Fa-f:]{8})");
+		addPattern("*", "(00:0F:E2:[0-9A-Fa-f:]{8})");
 	}
 
 	/**

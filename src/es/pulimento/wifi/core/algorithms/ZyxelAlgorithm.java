@@ -33,6 +33,9 @@ public class ZyxelAlgorithm extends CrackAlgorithm {
 		// BSSID: F4:3E:61:XX:XX:XX
 		addPattern("(?:WLAN|JAZZTEL)_([0-9a-fA-F]{4})", "(F4:3E:61:[0-9A-Fa-f:]{8})");
 
+		// Added all macs untill version 3 which will be focused on this.
+		addPattern("(?:WLAN|JAZZTEL)_([0-9a-fA-F]{4})", "(98:F5:37:[0-9A-Fa-f:]{8})");
+		addPattern("(?:WLAN|JAZZTEL)_([0-9a-fA-F]{4})", "(40:4A:03:[0-9A-Fa-f:]{8})");
 	}
 
 	@Override
