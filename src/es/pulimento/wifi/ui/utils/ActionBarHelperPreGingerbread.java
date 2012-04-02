@@ -47,7 +47,7 @@ import java.util.Set;
 
 /**
  * A class that implements the action bar pattern for pre-Honeycomb devices.
- * Sightly modified by pulimento
+ * Sightly modified by Javier Pulido.
  */
 public class ActionBarHelperPreGingerbread extends ActionBarHelper {
 	private static final String MENU_RES_NAMESPACE = "http://schemas.android.com/apk/res/android";
@@ -73,23 +73,12 @@ public class ActionBarHelperPreGingerbread extends ActionBarHelper {
 	public void onPostCreate(Bundle savedInstanceState) {
 		mActivity.getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.actionbar_compat);
 		setupActionBar();
-
-		/*
-		 * SimpleMenu menu = new SimpleMenu(mActivity);
-		 * mActivity.onCreatePanelMenu(Window.FEATURE_OPTIONS_PANEL, menu);
-		 * mActivity.onPrepareOptionsMenu(menu);
-		 * for (int i = 0; i < menu.size(); i++) {
-		 * MenuItem item = menu.getItem(i);
-		 * if (mActionItemIds.contains(item.getItemId())) {
-		 * addActionItemCompatFromMenuItem(item);
-		 * }
-		 * }
-		 */
 	}
 
 	/**
 	 * Sets up the compatibility action bar with the given title.
 	 */
+	@SuppressWarnings("deprecation")
 	private void setupActionBar() {
 		final ViewGroup actionBarCompat = getActionBarCompat();
 		if (actionBarCompat == null) {
@@ -221,6 +210,7 @@ public class ActionBarHelperPreGingerbread extends ActionBarHelper {
 	 * {@link com.example.android.actionbarcompat.ActionBarHelperBase#setRefreshActionItemState(boolean)}
 	 * .
 	 */
+	@SuppressWarnings("deprecation")
 	private View addActionItemCompatFromMenuItem(final MenuItem item) {
 		final int itemId = item.getItemId();
 
