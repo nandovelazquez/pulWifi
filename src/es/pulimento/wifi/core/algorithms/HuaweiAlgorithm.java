@@ -4,6 +4,7 @@ import es.pulimento.wifi.core.WirelessNetwork.WirelessEncryption;
 
 /**
  * Huawei algorithm.
+ * Needs to be finished. Please review.
  */
 public class HuaweiAlgorithm extends CrackAlgorithm {
 

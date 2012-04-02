@@ -219,7 +219,7 @@ public class HomeActivity extends ActionBarActivity {
 				Log.w("pulWifi", "Error checking updates. Maybe no internet connection?");
 			} else {
 				if (!res.equals(currentVersion)) {
-					Log.i("pulWifi", "Update available, now on " + currentVersion + "new is " + res);
+					Log.i("pulWifi", "Update available, now on v" + currentVersion + " ,new is v" + res);
 					AlertDialog.Builder alertBuilder = new AlertDialog.Builder(homeActivity);
 					alertBuilder.setCancelable(false)
 							.setPositiveButton(R.string.dialog_yes, new DialogInterface.OnClickListener() {

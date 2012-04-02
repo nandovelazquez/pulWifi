@@ -4,7 +4,7 @@ import es.pulimento.wifi.core.WirelessNetwork.WirelessEncryption;
 
 /**
  * D-Link cracking algorithm.
- * Cracks all networks with "Dlink-XXXXXX" as name.
+ * Cracks all networks with "Dlink-XXXXXX" as name. I have no information about what type of encryption does it support.
  *
  */
 public class DlinkAlgorithm extends CrackAlgorithm {
@@ -16,14 +16,20 @@ public class DlinkAlgorithm extends CrackAlgorithm {
 		super(essid, bssid);
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	protected void setPatterns() {
 
-		// ESSID: DLink-XXXXXX
+		// ESSID: Dlink-XXXXXX
 		// BSSID: Any
 		addPattern("DLink-([0-9a-fA-F]{6})", "([0-9A-Fa-f:]{17})");
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	protected String crackAlgorithm(String essid_data, String bssid_data) {
 		// Delete dots from bssid and use caps only...
@@ -71,7 +77,10 @@ public class DlinkAlgorithm extends CrackAlgorithm {
 		return String.valueOf(key, 0, 20);
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	public static boolean supportsEncryption(WirelessEncryption mCapabilities) {
-		return mCapabilities.equals(WirelessEncryption.WEP) || mCapabilities.equals(WirelessEncryption.WPA);
+		return true;
 	}
 }

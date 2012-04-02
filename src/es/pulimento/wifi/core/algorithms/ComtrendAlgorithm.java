@@ -16,8 +16,7 @@ import es.pulimento.wifi.core.WirelessNetwork.WirelessEncryption;
  * 64:68:0C:XX:XX:XX (WLAN_XXXX & JAZZTEL_XXXX)
  * 00:1D:20:XX:XX:XX (WLAN_XXXX & JAZZTEL_XXXX)
  * 00:1B:20:XX:XX:XX (WLAN_XXXX & JAZZTEL_XXXX)
- * 00:23:F8:XX:XX:XX (WLAN_XXXX & JAZZTEL_XXXX)
- */
+ * 00:23:F8:XX:XX:XX (WLAN_XXXX & JAZZTEL_XXXX) */
 public class ComtrendAlgorithm extends CrackAlgorithm {
 
 	/**
@@ -30,9 +29,9 @@ public class ComtrendAlgorithm extends CrackAlgorithm {
 	@Override
 	protected void setPatterns() {
 
-		// ESSID: WLAN_XXXX / JAZZTEL_XXXX
+		// ESSID: WLAN_XXXX
 		// BSSID: 64:68:0C:XX:XX:XX
-		addPattern("(?:WLAN|JAZZTEL)_([0-9a-fA-F]{4})", "(64:68:0C:[0-9A-Fa-f:]{8})");
+		addPattern("WLAN_([0-9a-fA-F]{4})", "(64:68:0C:[0-9A-Fa-f:]{8})");
 
 		// ESSID: WLAN_XXXX / JAZZTEL_XXXX
 		// BSSID: 00:1D:20:XX:XX:XX
@@ -56,10 +55,10 @@ public class ComtrendAlgorithm extends CrackAlgorithm {
 	protected String crackAlgorithm(String essid_data, String bssid_data) {
 		bssid_data = bssid_data.replace(":", "").toUpperCase();
 		essid_data = essid_data.toUpperCase();
-		return MD5Hash("bcgbghgg"+bssid_data.substring(0,8) + essid_data + bssid_data);
+   		return MD5Hash("bcgbghgg"+bssid_data.substring(0,8)+essid_data.substring(essid_data.length()-4,essid_data.length())+bssid_data);
 	}
 
-	private String MD5Hash(String input) {
+	private static String MD5Hash(String input) {
 		try {
 			String hashtext = (new BigInteger(1, MessageDigest.getInstance("MD5").digest(input.getBytes()))).toString(16);
 			while (hashtext.length() < 20)
@@ -74,4 +73,5 @@ public class ComtrendAlgorithm extends CrackAlgorithm {
 	public static boolean supportsEncryption(WirelessEncryption mCapabilities) {
 		return mCapabilities.equals(WirelessEncryption.WPA);
 	}
+
 }

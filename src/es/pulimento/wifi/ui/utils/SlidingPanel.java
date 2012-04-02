@@ -20,6 +20,7 @@ public class SlidingPanel extends ViewGroup {
 	private View mAnchor;
 	private int mContentId;
 	private View mContent;
+	private Toggler mToggler;
 
 	private int mOpenOverlap;
 	private int mClosedLimit;
@@ -31,6 +32,7 @@ public class SlidingPanel extends ViewGroup {
 
 	public SlidingPanel(Context context, AttributeSet attrs) {
 		this(context, attrs, 0);
+		mToggler = new Toggler();
 	}
 
 	public SlidingPanel(Context context, AttributeSet attrs, int defStyle) {
@@ -94,7 +96,7 @@ public class SlidingPanel extends ViewGroup {
 		final View button = mButton;
 		measureChild(button, MeasureSpec.makeMeasureSpec(anchor.getMeasuredWidth(), MeasureSpec.EXACTLY),
 				heightMeasureSpec);
-		button.setOnClickListener(new Toggler());
+		button.setOnClickListener(mToggler);
 
 		final View content = mContent;
 		int contentWidth = width - mClosedLimit;

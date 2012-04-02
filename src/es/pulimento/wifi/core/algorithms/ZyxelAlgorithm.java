@@ -40,12 +40,12 @@ public class ZyxelAlgorithm extends CrackAlgorithm {
 
 	@Override
 	protected String crackAlgorithm(String essid_data, String bssid_data) {
-		essid_data = essid_data.toLowerCase();
-		bssid_data = bssid_data.replace(":", "").toLowerCase();
-		return MD5Hash(bssid_data.substring(0,8) + essid_data).toLowerCase();
+		essid_data = essid_data.toUpperCase();
+		bssid_data = bssid_data.replace(":", "").toUpperCase();
+   		return MD5Hash(bssid_data.substring(0,8).toLowerCase()+essid_data.substring(essid_data.length()-4, essid_data.length()).toLowerCase()).toLowerCase();	
 	}
 
-	private String MD5Hash(String input) {
+	private static String MD5Hash(String input) {
 		try {
 			String hashtext = (new BigInteger(1, MessageDigest.getInstance("MD5").digest(input.getBytes()))).toString(16);
 			while (hashtext.length() < 20)
