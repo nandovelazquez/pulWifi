@@ -2,7 +2,6 @@ package es.pulimento.wifi.ui.dialogs;
 
 import java.io.DataInputStream;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.UnknownHostException;
 
@@ -31,7 +30,6 @@ public class UpdateDialog extends Dialog implements OnClickListener {
 
 	public UpdateDialog(Context context) {
 		super(context);
-
 		mContext = context;
 	}
 
@@ -58,8 +56,7 @@ public class UpdateDialog extends Dialog implements OnClickListener {
 				new GetLatestVersion().execute();
 				break;
 			case R.id.layout_updater_update:
-				mContext.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(String.format(APK_URL,
-						mLatestVersion.getText()))));
+				mContext.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(String.format(APK_URL, mLatestVersion.getText()))));
 				break;
 		}
 	}
@@ -79,14 +76,11 @@ public class UpdateDialog extends Dialog implements OnClickListener {
 				byte[] versionData = new byte[6];
 				(new DataInputStream((new URL(VERSION_URL)).openConnection().getInputStream())).read(versionData);
 				return new String(versionData).trim();
-			} catch (MalformedURLException e) {
-				// TODO: This should not be fired. Should be reported.
-				return "ERR";
 			} catch (UnknownHostException e) {
 				// Network error.
 				return "ERR";
 			} catch (IOException e) {
-				// TODO: Check what causes this.
+				// Network error.
 				return "ERR";
 			}
 		}

@@ -16,7 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import es.pulimento.wifi.R;
 
-//The new interface for ClipboardManager isn't compatible with APIs < 11
+// The new interface for ClipboardManager isn't compatible with APIs under level 11.
 @SuppressWarnings("deprecation")
 public class ClipboardCopyDialog extends Dialog implements OnItemClickListener {
 
@@ -49,8 +49,7 @@ public class ClipboardCopyDialog extends Dialog implements OnItemClickListener {
 	public void onItemClick(AdapterView<?> parent, View view, int pos, long id) {
 		String key = ((TextView) view).getText().toString();
 		mClipboardManager.setText(key);
-		Toast.makeText(mContext, mContext.getString(R.string.showpass_toclipboard) + " (" + key + ")",
-				Toast.LENGTH_LONG).show();
+		Toast.makeText(mContext, mContext.getString(R.string.showpass_toclipboard) + " (" + key + ")", Toast.LENGTH_LONG).show();
 		Intent i = new Intent(Settings.ACTION_WIFI_SETTINGS);
 		i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		mContext.startActivity(i);
