@@ -55,15 +55,17 @@ public class SelectWirelessNetworkFragment extends ListFragment {
 	@Override
 	public void onListItemClick(ListView l, View v, int position, long id) {
 		super.onListItemClick(l, v, position, id);
-		WirelessNetwork w = (WirelessNetwork) mListAdapter.getItem(position);
-		if (w.isCrackeable()) {
-			w.crack();
-			Intent i = new Intent(mContext, ShowPassActivity.class);
-			i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-			i.putExtra(ShowPassActivity.EXTRA_NETWORK, w);
-			startActivity(i);
-		} else {
-			Toast.makeText(mContext, getString(R.string.selectwireless_unsupported), Toast.LENGTH_SHORT).show();
+		if(mListAdapter.getItem(position) != null) {
+			WirelessNetwork w = (WirelessNetwork) mListAdapter.getItem(position);
+			if (w.isCrackeable()) {
+				w.crack();
+				Intent i = new Intent(mContext, ShowPassActivity.class);
+				i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+				i.putExtra(ShowPassActivity.EXTRA_NETWORK, w);
+				startActivity(i);
+			} else {
+				Toast.makeText(mContext, getString(R.string.selectwireless_unsupported), Toast.LENGTH_SHORT).show();
+			}
 		}
 	}
 
