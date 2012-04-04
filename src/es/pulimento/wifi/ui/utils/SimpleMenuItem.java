@@ -96,13 +96,11 @@ public class SimpleMenuItem implements MenuItem {
 	}
 
 	public Drawable getIcon() {
-		if (mIconDrawable != null) {
+		if (mIconDrawable != null)
 			return mIconDrawable;
-		}
 
-		if (mIconResId != 0) {
+		if (mIconResId != 0)
 			return mMenu.getResources().getDrawable(mIconResId);
-		}
 
 		return null;
 	}
@@ -117,7 +115,6 @@ public class SimpleMenuItem implements MenuItem {
 	}
 
 	// No-op operations. We use no-ops to allow inflation from menu XML.
-
 	public int getGroupId() {
 		// Noop
 		return 0;

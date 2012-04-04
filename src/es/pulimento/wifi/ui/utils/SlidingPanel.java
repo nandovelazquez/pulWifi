@@ -40,21 +40,16 @@ public class SlidingPanel extends ViewGroup {
 		TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.SlidingPanel, defStyle, 0);
 
 		int buttonId = a.getResourceId(R.styleable.SlidingPanel_button, 0);
-		if (buttonId == 0) {
-			throw new IllegalArgumentException("The button attribute is required and must refer" + " to a valid child");
-		}
+		if (buttonId == 0)
+			throw new IllegalArgumentException("The button attribute is required and must refer to a valid child");
 
 		int anchorId = a.getResourceId(R.styleable.SlidingPanel_anchor, 0);
-		if (anchorId == buttonId) {
-			throw new IllegalArgumentException("The anchor attribute is required and must refer"
-					+ " to a different child");
-		}
+		if (anchorId == buttonId)
+			throw new IllegalArgumentException("The anchor attribute is required and must refer to a different child");
 
 		int contentId = a.getResourceId(R.styleable.SlidingPanel_content, 0);
-		if (contentId == anchorId || contentId == buttonId) {
-			throw new IllegalArgumentException("The content attribute is required and must refer"
-					+ " to a different child");
-		}
+		if (contentId == anchorId || contentId == buttonId)
+			throw new IllegalArgumentException("The content attribute is required and must refer to a different child");
 
 		mOpenOverlap = a.getDimensionPixelSize(R.styleable.SlidingPanel_openOverlap, 0);
 		mClosedLimit = a.getDimensionPixelSize(R.styleable.SlidingPanel_closedLimit, 0);
@@ -70,19 +65,16 @@ public class SlidingPanel extends ViewGroup {
 	protected void onFinishInflate() {
 		mButton = findViewById(mButtonId);
 		((Button) mButton).setText(">");
-		if (mButton == null) {
+		if (mButton == null)
 			throw new IllegalArgumentException("The handle attribute must refer to a child");
-		}
 
 		mAnchor = findViewById(mAnchorId);
-		if (mAnchor == null) {
+		if (mAnchor == null)
 			throw new IllegalArgumentException("The anchor attribute must refer to a child");
-		}
 
 		mContent = findViewById(mContentId);
-		if (mContent == null) {
+		if (mContent == null)
 			throw new IllegalArgumentException("The content attribute must refer to a child");
-		}
 	}
 
 	@Override
@@ -94,14 +86,12 @@ public class SlidingPanel extends ViewGroup {
 		measureChild(anchor, widthMeasureSpec, heightMeasureSpec);
 
 		final View button = mButton;
-		measureChild(button, MeasureSpec.makeMeasureSpec(anchor.getMeasuredWidth(), MeasureSpec.EXACTLY),
-				heightMeasureSpec);
+		measureChild(button, MeasureSpec.makeMeasureSpec(anchor.getMeasuredWidth(), MeasureSpec.EXACTLY), heightMeasureSpec);
 		button.setOnClickListener(mToggler);
 
 		final View content = mContent;
 		int contentWidth = width - mClosedLimit;
-		content.measure(MeasureSpec.makeMeasureSpec(contentWidth, MeasureSpec.EXACTLY),
-				MeasureSpec.makeMeasureSpec(height, MeasureSpec.EXACTLY));
+		content.measure(MeasureSpec.makeMeasureSpec(contentWidth, MeasureSpec.EXACTLY), MeasureSpec.makeMeasureSpec(height, MeasureSpec.EXACTLY));
 
 		setMeasuredDimension(width, height);
 	}
@@ -112,18 +102,16 @@ public class SlidingPanel extends ViewGroup {
 		button.layout(0, 0, button.getMeasuredWidth(), button.getMeasuredHeight());
 
 		final View anchor = mAnchor;
-		anchor.layout(0, button.getMeasuredHeight(), anchor.getMeasuredWidth(),
-				button.getMeasuredHeight() + anchor.getMeasuredHeight());
+		anchor.layout(0, button.getMeasuredHeight(), anchor.getMeasuredWidth(), button.getMeasuredHeight() + anchor.getMeasuredHeight());
 
 		final View content = mContent;
 		int contentLeft;
-		if (mAnimating) {
+		if (mAnimating)
 			contentLeft = content.getLeft();
-		} else if (mExpanded) {
+		else if (mExpanded)
 			contentLeft = mClosedLimit;
-		} else {
+		else
 			contentLeft = anchor.getRight() - mOpenOverlap;
-		}
 		content.layout(contentLeft, 0, contentLeft + content.getMeasuredWidth(), content.getMeasuredHeight());
 	}
 
@@ -153,9 +141,8 @@ public class SlidingPanel extends ViewGroup {
 
 		@Override
 		public void onClick(View v) {
-			if (!mAnimating) {
+			if (!mAnimating)
 				toggle();
-			}
 		}
 
 	}
@@ -168,11 +155,10 @@ public class SlidingPanel extends ViewGroup {
 			final View content = mContent;
 			content.offsetLeftAndRight(mFillOffset);
 			final Button button = (Button) mButton;
-			if (mExpanded) {
+			if (mExpanded)
 				button.setText(">");
-			} else {
+			else
 				button.setText("<");
-			}
 		}
 
 		@Override

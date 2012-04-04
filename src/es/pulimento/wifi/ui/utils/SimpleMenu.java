@@ -84,9 +84,8 @@ public class SimpleMenu implements Menu {
 	private static int findInsertIndex(ArrayList<? extends MenuItem> items, int order) {
 		for (int i = items.size() - 1; i >= 0; i--) {
 			MenuItem item = items.get(i);
-			if (item.getOrder() <= order) {
+			if (item.getOrder() <= order)
 				return i + 1;
-			}
 		}
 
 		return 0;
@@ -97,9 +96,8 @@ public class SimpleMenu implements Menu {
 
 		for (int i = 0; i < size; i++) {
 			SimpleMenuItem item = mItems.get(i);
-			if (item.getItemId() == id) {
+			if (item.getItemId() == id)
 				return i;
-			}
 		}
 
 		return -1;
@@ -110,9 +108,8 @@ public class SimpleMenu implements Menu {
 	}
 
 	private void removeItemAtInt(int index) {
-		if ((index < 0) || (index >= mItems.size())) {
+		if ((index < 0) || (index >= mItems.size()))
 			return;
-		}
 		mItems.remove(index);
 	}
 
@@ -124,9 +121,8 @@ public class SimpleMenu implements Menu {
 		final int size = size();
 		for (int i = 0; i < size; i++) {
 			SimpleMenuItem item = mItems.get(i);
-			if (item.getItemId() == id) {
+			if (item.getItemId() == id)
 				return item;
-			}
 		}
 
 		return null;
@@ -158,8 +154,7 @@ public class SimpleMenu implements Menu {
 		throw new UnsupportedOperationException("This operation is not supported for SimpleMenu");
 	}
 
-	public int addIntentOptions(int i, int i1, int i2, ComponentName componentName, Intent[] intents, Intent intent,
-			int i3, MenuItem[] menuItems) {
+	public int addIntentOptions(int i, int i1, int i2, ComponentName componentName, Intent[] intents, Intent intent, int i3, MenuItem[] menuItems) {
 		throw new UnsupportedOperationException("This operation is not supported for SimpleMenu");
 	}
 

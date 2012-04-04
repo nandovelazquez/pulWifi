@@ -26,7 +26,6 @@ import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.RectShape;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
@@ -35,7 +34,6 @@ import android.widget.TextView;
 import es.pulimento.wifi.R;
 
 public class PagerHeader extends ViewGroup {
-	private static final String TAG = "pW.PagerHeader";
 
 	private Context mContext;
 	private int mDisplayedPage = 0;
@@ -111,7 +109,6 @@ public class PagerHeader extends ViewGroup {
 		} else if (a.hasValue(R.styleable.PagerHeader_fadingEdgeColorHint)) {
 			fadingEdgeColorHint.setColor(a.getColor(R.styleable.PagerHeader_fadingEdgeColorHint, 0));
 		} else {
-			Log.w(TAG, "Either backgroundColor or fadingEdgeColorHint must be specified to " + "enable fading edges");
 			fadingEdgeColorHint.setColor(0x00000000);
 		}
 
@@ -163,8 +160,7 @@ public class PagerHeader extends ViewGroup {
 		int width = getWidth();
 		int center = width / 2;
 
-		// Move the view at position. This will be the label for the left
-		// of the two fragments that may be on the screen
+		// Move the view at position. This will be the label for the left of the two fragments that may be on the screen
 		if (position >= 0 && position < getChildCount()) {
 			TextView view = (TextView) getChildAt(position);
 			int viewWidth = view.getWidth();
@@ -176,13 +172,10 @@ public class PagerHeader extends ViewGroup {
 			int leftMax = center - (viewWidth / 2);
 			int newLeft = map(positionOffset, 1, 0, leftMin, leftMax);
 			view.layout(newLeft, view.getTop(), newLeft + viewWidth, view.getBottom());
-			view.setTextColor(Color.rgb(map(positionOffset, 1, 0, mInactiveTextColor.red, mActiveTextColor.red),
-					map(positionOffset, 1, 0, mInactiveTextColor.green, mActiveTextColor.green),
-					map(positionOffset, 1, 0, mInactiveTextColor.blue, mActiveTextColor.blue)));
+			view.setTextColor(Color.rgb(map(positionOffset, 1, 0, mInactiveTextColor.red, mActiveTextColor.red), map(positionOffset, 1, 0, mInactiveTextColor.green, mActiveTextColor.green), map(positionOffset, 1, 0, mInactiveTextColor.blue, mActiveTextColor.blue)));
 		}
 
-		// Move the view at position + 1. This will be the label for the
-		// right of the two fragments that may be visible on screen
+		// Move the view at position + 1. This will be the label for the right of the two fragments that may be visible on screen
 		if ((position + 1) < getChildCount()) {
 			TextView view = (TextView) getChildAt(position + 1);
 			int viewWidth = view.getWidth();
@@ -191,13 +184,10 @@ public class PagerHeader extends ViewGroup {
 			int leftMax = Math.max(width - viewWidth, center + (prevViewWidth / 2) + mPaddingPush);
 			int newLeft = map(positionOffset, 1, 0, leftMin, leftMax);
 			view.layout(newLeft, view.getTop(), newLeft + viewWidth, view.getBottom());
-			view.setTextColor(Color.rgb(map(positionOffset, 1, 0, mActiveTextColor.red, mInactiveTextColor.red),
-					map(positionOffset, 1, 0, mActiveTextColor.green, mInactiveTextColor.green),
-					map(positionOffset, 1, 0, mActiveTextColor.blue, mInactiveTextColor.blue)));
+			view.setTextColor(Color.rgb(map(positionOffset, 1, 0, mActiveTextColor.red, mInactiveTextColor.red), map(positionOffset, 1, 0, mActiveTextColor.green, mInactiveTextColor.green), map(positionOffset, 1, 0, mActiveTextColor.blue, mInactiveTextColor.blue)));
 		}
 
-		// Move the view at position - 1. This will be the label for the
-		// fragment that is off the screen to the left, if it exists
+		// Move the view at position - 1. This will be the label for the fragment that is off the screen to the left, if it exists
 		if (position > 0) {
 			TextView view = (TextView) getChildAt(position - 1);
 			int plusOneLeft = getChildAt(position).getLeft();
@@ -211,8 +201,7 @@ public class PagerHeader extends ViewGroup {
 			}
 		}
 
-		// Move the view at position + 2. This will be the label for the
-		// fragment that is off the screen to the right, if it exists
+		// Move the view at position + 2. This will be the label for the fragment that is off the screen to the right, if it exists
 		if ((position + 2) < getChildCount()) {
 			TextView view = (TextView) getChildAt(position + 2);
 			int minusOneRight = getChildAt(position + 1).getRight();
@@ -289,9 +278,12 @@ public class PagerHeader extends ViewGroup {
 
 		mFadingEdgeLeft.draw(canvas);
 		mFadingEdgeRight.draw(canvas);
-		if (mShowTopShadow) mShadow.draw(canvas);
-		if (mShowBottomBar) mBottomBar.draw(canvas);
-		if (mShowTab) mTabDrawable.draw(canvas);
+		if (mShowTopShadow)
+			mShadow.draw(canvas);
+		if (mShowBottomBar)
+			mBottomBar.draw(canvas);
+		if (mShowTab)
+			mTabDrawable.draw(canvas);
 	}
 
 	@Override
@@ -302,9 +294,9 @@ public class PagerHeader extends ViewGroup {
 
 		switch (action) {
 			case MotionEvent.ACTION_DOWN:
-				if (mCurrentDownEvent != null) {
+				if (mCurrentDownEvent != null)
 					mCurrentDownEvent.recycle();
-				}
+
 				mCurrentDownEvent = MotionEvent.obtain(event);
 				mAlwaysInTapRegion = true;
 				showPress(mCurrentDownEvent, true);
@@ -322,9 +314,8 @@ public class PagerHeader extends ViewGroup {
 				break;
 			case MotionEvent.ACTION_UP:
 				showPress(mCurrentDownEvent, false);
-				if (mAlwaysInTapRegion) {
+				if (mAlwaysInTapRegion)
 					onTap(mCurrentDownEvent);
-				}
 		}
 
 		return true;
@@ -340,28 +331,25 @@ public class PagerHeader extends ViewGroup {
 
 	private void onTap(MotionEvent event) {
 		int touchZone = getTouchZone(event);
-		if (mOnHeaderClickListener != null) {
+		if (mOnHeaderClickListener != null)
 			mOnHeaderClickListener.onHeaderClicked(mDisplayedPage + touchZone);
-		}
 
 		if (mChangeOnClick && touchZone != MIDDLE_ZONE) {
 			setDisplayedPage(mDisplayedPage + touchZone);
-			if (mOnHeaderClickListener != null) {
+			if (mOnHeaderClickListener != null)
 				mOnHeaderClickListener.onHeaderSelected(mDisplayedPage);
-			}
 		}
 	}
 
 	private int getTouchZone(MotionEvent event) {
 		if (mTouchZonesAccurate) {
 			int x = (int) event.getX();
-			if (x < mLeftZoneEdge && mDisplayedPage > 0) {
+			if (x < mLeftZoneEdge && mDisplayedPage > 0)
 				return LEFT_ZONE;
-			} else if (x > mLeftZoneEdge && x < mRightZoneEdge) {
+			else if (x > mLeftZoneEdge && x < mRightZoneEdge)
 				return MIDDLE_ZONE;
-			} else if (x > mRightZoneEdge && mDisplayedPage < getChildCount() - 1) {
+			else if (x > mRightZoneEdge && mDisplayedPage < getChildCount() - 1)
 				return RIGHT_ZONE;
-			}
 		} else {
 			View middleChild = getChildAt(mDisplayedPage);
 			int mLeft = middleChild.getLeft();

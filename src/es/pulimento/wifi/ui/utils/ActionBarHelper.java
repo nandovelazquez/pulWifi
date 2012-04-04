@@ -46,13 +46,12 @@ public abstract class ActionBarHelper {
 	 */
 	public static ActionBarHelper createInstance(android.support.v4.app.FragmentActivity activity) {
 
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH)
 			return new ActionBarHelperICS(activity);
-		} else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+		else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB)
 			return new ActionBarHelperHoneycomb(activity);
-		} else {
+		else
 			return new ActionBarHelperPreGingerbread(activity);
-		}
 	}
 
 	protected ActionBarHelper(android.support.v4.app.FragmentActivity activity) {
