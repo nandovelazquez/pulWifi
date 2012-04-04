@@ -9,8 +9,10 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
+import es.pulimento.wifi.BuildConfig;
 import es.pulimento.wifi.R;
 import es.pulimento.wifi.ui.dialogs.EnableWifiDialog;
+import es.pulimento.wifi.ui.dialogs.FailedDialog;
 import es.pulimento.wifi.ui.utils.ActionBarActivity;
 
 /**
@@ -41,10 +43,11 @@ public class MainActivity extends ActionBarActivity {
 				// Code to execute when wifi state changes.
 				switch (i.getIntExtra(WifiManager.EXTRA_WIFI_STATE, -1)) {
 				case WifiManager.WIFI_STATE_UNKNOWN:
-					// TODO: Change this on release.
-					//new FailedDialog(mActivity, new WeakReference<Activity>(mActivity)).show();
-					startActivity(new Intent(mActivity, HomeActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-					mActivity.finish();
+					if(BuildConfig.DEBUG) {
+						startActivity(new Intent(mActivity, HomeActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+						mActivity.finish();
+					} else
+						new FailedDialog(mActivity, new WeakReference<Activity>(mActivity)).show();
 					break;
 				case WifiManager.WIFI_STATE_ENABLED:
 					startActivity(new Intent(mActivity, HomeActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
