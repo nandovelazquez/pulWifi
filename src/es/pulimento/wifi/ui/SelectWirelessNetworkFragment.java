@@ -147,7 +147,7 @@ public class SelectWirelessNetworkFragment extends ListFragment {
 					mWirelessNetList.add(new WirelessNetwork(wifi));
 
 				// For testing networks...
-				//mWirelessNetList.add(new WirelessNetwork("Andared", "AA:AA:AA:AA:AA:AA", 0, "[WPA]"));
+				mWirelessNetList.add(new WirelessNetwork("Andared", "AA:AA:AA:AA:AA:AA", 0, "[WPA]"));
 				//mWirelessNetList.add(new WirelessNetwork("Discus--DA1CC5", "00:1C:A2:DA:1C:C5", 0, "[WPA]"));
 				//mWirelessNetList.add(new WirelessNetwork("WLAN_1234", "64:68:0c:AA:AA:AA", 0, "[WPA]"));
 				//mWirelessNetList.add(new WirelessNetwork("DLink-AAAAAA", "64:68:0c:64:68:0c", 0, "[WPA]"));
@@ -200,7 +200,9 @@ class NetworkListAdapter implements ListAdapter {
 		// Testing if this force listview to update
 		mItems = new ArrayList<WirelessNetwork>();
 		mItems = items;
-		mItems.add(null);
+		//mItems.add(null);
+		mItems.add(new WirelessNetwork("Andared", "AA:AA:AA:AA:AA:AA", 0, "[WPA]"));
+
 		if (SelectWirelessNetworkFragment.D) Log.e(TAG, "NetworkListAdapter<init>");
 		mLayoutInflater = (LayoutInflater) act.getApplicationContext()
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);

@@ -96,7 +96,7 @@
     <string name="showpass_network_mac">MAC adress</string>
     <string name="showpass_button_showpass">Show password</string>
     <string name="showpass_button_clipboard">Copy password to clipboard</string>
-    <string name="showpass_button_back">Back</string>
+    <string name="showpass_menu_back">Back</string>
     <string name="showpass_toclipboard">Password copied to clipboard</string>
 
     <!-- Menu -->

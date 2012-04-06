@@ -80,11 +80,6 @@ public class HomeActivity extends ActionBarActivity {
 				shareIntent.putExtra(android.content.Intent.EXTRA_TEXT, getString(R.string.menu_share_text));
 				startActivity(Intent.createChooser(shareIntent, getString(R.string.menu_share_title)));
 				break;
-			/*
-			 * case R.id.menu_about:
-			 * (new AboutDialog(this)).show();
-			 * break;
-			 */
 			case R.id.menu_quit:
 				this.finish();
 				break;
