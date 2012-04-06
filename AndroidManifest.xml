@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="es.pulimento.wifi"
     android:versionCode="130"
+    android:installLocation="auto"
     android:versionName="@string/app_version" >
 
     <uses-sdk
