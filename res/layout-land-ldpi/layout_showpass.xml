@@ -85,15 +85,6 @@
             android:textSize="16dp"
             android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/layout_showpass_back"
-            android:layout_width="fill_parent"
-            android:layout_height="44dip"
-            android:layout_marginTop="2dip"
-            android:background="@drawable/btn_default_holo_light"
-            android:text="@string/showpass_button_back"
-            android:textSize="16dp"
-            android:textStyle="bold" />
     </LinearLayout>
 
 </RelativeLayout>

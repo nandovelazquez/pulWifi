@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.text.ClipboardManager;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -36,7 +38,6 @@ public class ShowPassActivity extends ActionBarActivity implements OnClickListen
 		((TextView) findViewById(R.id.layout_showpass_essid)).setText(mWirelessNetwork.getEssid());
 		((TextView) findViewById(R.id.layout_showpass_bssid)).setText(mWirelessNetwork.getBssid());
 
-		((Button) findViewById(R.id.layout_showpass_back)).setOnClickListener(this);
 		((Button) findViewById(R.id.layout_showpass_clipboard)).setOnClickListener(this);
 		((Button) findViewById(R.id.layout_showpass_show)).setOnClickListener(this);
 
@@ -52,9 +53,6 @@ public class ShowPassActivity extends ActionBarActivity implements OnClickListen
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
-			case R.id.layout_showpass_back:
-				this.finish();
-				break;
 			case R.id.layout_showpass_show:
 				(new ShowPasswordsDialog(mContext, mWirelessNetwork.getPasswords())).show();
 				break;
@@ -75,5 +73,21 @@ public class ShowPassActivity extends ActionBarActivity implements OnClickListen
 				}
 				break;
 		}
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getMenuInflater().inflate(R.menu.menu_showpassactivity, menu);
+		return super.onCreateOptionsMenu(menu);
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+			case R.id.menu_showpass_back:
+				this.finish();
+				break;
+		}
+		return super.onOptionsItemSelected(item);
 	}
 }

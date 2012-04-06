@@ -61,15 +61,6 @@
             android:text="@string/showpass_button_clipboard"
             android:textSize="21dp"
             android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/layout_showpass_back"
-            android:layout_width="fill_parent"
-            android:layout_height="60dip"
-            android:layout_marginTop="7dip"
-            android:text="@string/showpass_button_back"
-            android:textSize="24dp"
-            android:textStyle="bold" />
     </LinearLayout>
 
     <com.google.ads.AdView
