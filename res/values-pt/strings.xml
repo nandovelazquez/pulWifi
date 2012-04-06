@@ -1,0 +1,114 @@
+<resources>
+
+    <!-- Application -->
+    <string name="app_name">"pulWifi"</string>
+    <string name="page_label_networks_list">"Lista de redes"</string>
+    <string name="page_label_manual">"Modo manual"</string>
+
+    <!-- About dialog -->
+    <string name="dialog_about_text">"Aplicativo para calcular as teclas predefinidas de algumas redes wifi\n\nCopyright 2011-12,Javi Pulido e Antonio Vázquez Blanco.\nContacto: &lt;a href=\"mailto:pulwifi@gmail.com?subject=pulWifi\"&gt;pulwifi@gmail.com&lt;/a&gt;\n\nNOTE LEGAL: O único objetivo desta aplicação é para demonstrar a insegurança de seus próprios routers, e advertem sobre o perigo do uso de senhas padrão. O autor desta aplicação não é responsável por qualquer uso que o usuário final fazer isso. Sempre que você usar este aplicativo com uma rede sem fio, certifique-se que é a sua própria ou tiver permissão do proprietário / gerente da rede. Lembre-se de usar a conexão de banda larga de outras pessoas é um crime. Por favor, não use este aplicativo ilegalmente. Use a seu próprio risco\n\nEste programa é software livre: Você pode redistribuí-lo e / ou modificá-lo sob os termos da GNU General Public License conforme publicada pela Free Software Foundation, tanto a versão 3 da Licença, ou (a seu critério) qualquer versão posterior\n\nEste programa é distribuído na esperança que será útil, mas SEM QUALQUER GARANTIA, sem mesmo a garantia implícita de COMERCIALIZAÇÃO ou ADEQUAÇÃO PARA UM PROPÓSITO PARTICULAR. Veja os detalhes da Licença Pública Geral GNU para obter informações mais detalhadas."</string>
+    <string name="dialog_about_gpl">"Licença"</string>
+    <string name="dialog_about_title">"Sobre"</string>
+    <string name="dialog_about_changelog">"Alterações"</string>
+
+    <!-- License dialog -->
+    <string name="dialog_license_file_url">"file:///android_asset/LICENSE-EN"</string>
+    <string name="dialog_license_title">"Licencia GPLv3"</string>
+
+    <!-- Changelog dialog -->
+    <string name="dialog_changelog_file_url">"file:///android_asset/CHANGELOG-EN"</string>
+    <string name="dialog_changelog_title">"Alterações"</string>
+
+    <!-- Supported networks dialog -->
+    <string name="dialog_supportednetworks_title">"Redes suportadas"</string>
+    <string name="dialog_supportednetworks_list">"- WLAN_XXXX\n- JAZZTEL_XXXX\n- WLANXXXXXX\n- YACOMXXXXXX\n- WIFIXXXXXX\n- Alguns roteadores D-Link\n- Alguns roteadores Huawei"</string>
+
+    <!-- Show passwords dialog -->
+    <string name="dialog_showpass_title_one">"Esta é a sua chave"</string>
+    <string name="dialog_showpass_title_many">"Uma delas é a chave"</string>
+
+    <!-- Copy to clipboard dialog -->
+    <string name="dialog_cipboardcopy_title">"Chaves"</string>
+
+    <!-- Updater dialog -->
+    <string name="dialog_updater_current_version">"Versão atual:"</string>
+    <string name="dialog_updater_latest_version">"Última versão:"</string>
+    <string name="dialog_updater_unknown_version">"N / A"</string>
+    <string name="dialog_updater_check">"Verifique se há atualizações"</string>
+    <string name="dialog_updater_error">"Houve um problema de conexão com a Internet, por favor, tente novamente mais tarde"</string>
+    <string name="dialog_updater_update">"Atualizar"</string>
+    <string name="dialog_udpater_title">"Updater"</string>
+    <string name="dialog_updater_checking">"Verificando ..."</string>
+    <string name="autoupdater_title">"Atualização disponível"</string>
+    <string name="autoupdater_message">"Está disponível uma nova versão do pulWifi, você quer obtê-lo?"</string>
+
+    <!-- Preference keys and defaults -->
+	<!-- Really not neccesary here, they are language-independent -->
+
+    <!-- Preferences -->
+    <string name="preferences_category_scanmode">"Rede de pesquisa"</string>
+    <string name="preferences_autoupdate_title">"Atualizar automaticamente"</string>
+    <string name="preferences_autoupdate_summary">"Atualizar lista de redes automaticamente"</string>
+    <string name="preferences_vibrateupdate_title">"Vibrar com cada atualização"</string>
+    <string name="preferences_vibrateupdate_summary">"O telefone vai vibrar cada vez que você atualizar a lista"</string>
+    <string name="preferences_updateinterval_title">"Taxa de atualização"</string>
+    <string name="preferences_updateinterval_summary">"Selecione a taxa de atualização"</string>
+    <string name="preferences_updateinterval_fast">"Rápido"</string>
+    <string name="preferences_updateinterval_normal">"Normal"</string>
+    <string name="preferences_updateinterval_slow">"Devagar"</string>
+    <string name="preferences_category_info">"General.."</string>
+    <string name="preferences_about_summary">"Sobre este Lançamento"</string>
+    <string name="preferences_about_title">"pulWifi v%1$s (r%2$d)"</string>
+
+    <!-- Main activity -->
+    <string name="mainactivity_failed_dialog_error">"Erro"</string>
+    <string name="mainactivity_failed_dialog_msg">"Era impossível para ativar wi-fi"</string>
+    <string name="mainactivity_failed_dialog_ok_button">"Sair?"</string>
+    <string name="mainactivity_ask_dialog_title">"Ativar wifi?"</string>
+    <string name="mainactivity_ask_dialog_msg">"Este aplicativo precisa executar o habilitado wifi. ¿Ativá-lo?"</string>
+    <string name="mainactivity_ask_dialog_yes_button">"Sim"</string>
+    <string name="mainactivity_ask_dialog_no_button">"Nao"</string>
+
+    <!-- Manual crack activity -->
+    <string name="manualcrack_header">"Digite o nome eo endereço MAC da rede"</string>
+    <string name="manualcrack_bottom">"Você pode ver a lista de redes de apoio, pressionando MENU"</string>
+    <string name="manualcrack_essid_hint">"Nome da rede"</string>
+    <string name="manualcrack_bssid_hint">"Endereço MAC"</string>
+    <string name="manualcrack_crackbutton">"OK"</string>
+    <string name="manualcrack_inputerror">"Rede não é suportada. Veja a lista completa no menu"</string>
+
+    <!-- Select wireless network activity -->
+    <string name="selectwireless_unsupported">"Rede não é suportada. As redes suportadas são indicadas com marcadores verdes"</string>
+    <string name="selectwireless_emptylist">"Sem rede para chegar: ("</string>
+    <string name="selectwireless_refresh">"Atualizar lista"</string>
+
+    <!-- Show pass activity -->
+    <string name="showpass_nopass">"Esta rede não é considerada segura, por isso a sua privacidade não está garantida, considerar a definição de uma senha."</string>
+    <string name="showpass_network_name">"Nome da rede"</string>
+    <string name="showpass_network_mac">"Endereço MAC"</string>
+    <string name="showpass_button_showpass">"Mostrar senha"</string>
+    <string name="showpass_button_clipboard">"Copiar chave à prancheta"</string>
+    <string name="showpass_menu_back">"Atrás"</string>
+    <string name="showpass_toclipboard">"Senha copiados para o clipboard"</string>
+
+    <!-- Menu -->
+    <string name="menu_quit">"Sair?"</string>
+    <string name="menu_networks">"Redes suportadas"</string>
+    <string name="menu_settings">"Ajustes"</string>
+    <string name="menu_about">"Sobre..."</string>
+    <string name="menu_updater">"Updater"</string>
+    <string name="menu_share">"Ação"</string>
+    <string name="menu_share_title">"App Compartilhar"</string>
+    <string name="menu_share_subject">"pulWifi"</string>
+    <string name="menu_share_text">"Hey! Você pode obter pulWifi de http://pulwifi.github.com. Experimente! ;)"</string>
+
+    <!-- List view adapter -->
+    <string name="listadapter_wpa">"WPA/WPA2"</string>
+    <string name="listadapter_wep">"WEP"</string>
+    <string name="listadapter_open">"OPEN"</string>
+    
+    <!-- Generic dialogs -->
+    <string name="dialog_yes">"Sim"</string>
+    <string name="dialog_no">"Nao"</string>
+
+</resources>

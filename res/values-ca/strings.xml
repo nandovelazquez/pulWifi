@@ -1,100 +1,120 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- TODO parse to the new format -->
-<resources>
+<resources tools:ignore="MissingTranslation" xmlns:tools="http://schemas.android.com/tools">
 
-    <string name="app_name">pulWifi</string>
-    <string name="scanMode">Buscar Xarxes</string>
-    <string name="manualMode">Mode manual</string>
+    <!-- Application -->
+    <string name="page_label_networks_list">"Buscar Xarxes"</string>
+    <string name="page_label_manual">"Mode Manual"</string>
 
-    <!-- Manual Mode -->
+    <!-- About dialog -->
+    <string name="dialog_about_text">"Aquesta és una senzilla aplicació que mostra les contrasenyes per defecte d'alguns punts wifi \ n \ nCopyright 2011-12, Polit i Javier Antonio Vázquez Blanc \ n Contacti a: .. href = \"mailto: pulwifi@gmail.com? Subject = pulWifi\"&gt; &lt;a pulwifi@gmail.com &lt;/ a&gt; \ n \ NOTA nLEGAL: La mateixa intenció única d'aquesta aplicació és per demostrar la inseguretat dels seus propis routers, i adverteixen sobre el perill de l'ús de contrasenyes per defecte. L'autor d'aquesta sol · licitud no és responsable de la utilització de l'usuari final d'aquest fet. En utilitzar aquesta aplicació amb una xarxa sense fils, assegureu-vos que és seu propi compte o tenir el permís del propietari / administrador de la xarxa. Recordeu que l'ús de la connexió de banda ampla dels altres és un delicte. Si us plau, no utilitzi aquesta aplicació de forma il · legal. . L'ús per sota de la seva pròpia responsabilitat \ n \ nEl programa és programari lliure, podeu redistribuir i / o modificar sota els termes de la Llicència Pública General de GNU com és publicada per la Free Software Foundation, ja sigui la versió 3 de la Llicència, o ( si ho preferiu) qualsevol versió posterior \ n \ nEl programa es distribueix amb l'esperança que serà útil, però sense cap garantia;. sense la garantia implícita de COMERCIALITZACIÓ o ADEQUACIÓ PER A PROPÒSITS DETERMINATS. Vegeu la Llicència general pública de GNU per a més detalls."</string>
+    <string name="dialog_about_gpl">"Llicència"</string>
+    <string name="dialog_about_changelog">"Registre de canvis"</string>
+    <string name="dialog_about_title">"Quant a"</string>
 
-    <string name="hello">Generador de claus JAZZTEL_XXXX i WLAN_XXXX, per Javi Pulido</string>
-    <string name="mm_OK">Acceptar</string>
-    <string name="IntrodueixNom">Introdueix el nom de la xarxa</string>
-    <string name="IntrodueixMAC">Introdueix la MAC</string>
-    <string name="manualHeader">Introdueix el nom i la direcció MAC de la xarxa. Pots veure la llista de xarxes suportades polsant la tecla MENÚ</string>
-    <string name="manual_ESSID_hint">Nom de la xarxa</string>
-    <string name="manual_BSSID_hint">Direcció MAC</string>
-    <string name="manual_inputerror">Xarxa no suportada . Vegi la llista completa en el menú</string>
+    <!-- Changelog dialog -->
+    <string name="dialog_changelog_file_url">"file:///android_asset/CHANGELOG-EN"</string>
+    <string name="dialog_changelog_title">"Changelog"</string>
 
-    <!-- Wi-Fi State checker (at init) -->
+    <!-- License dialog -->
+    <string name="dialog_license_file_url">"file:///android_asset/LICENSE-EN"</string>
+    <string name="dialog_license_title">"Llicència"</string>
 
-    <string name="splash_loading">Carregant…</string>
-    <string name="splash_failed_dialog_error">Error…</string>
-    <string name="splash_failed_dialog_msg">No se ha pogut habilitar el wifi. Sortint…</string>
-    <string name="splash_failed_dialog_ok_button">Acceptar</string>
-    <string name="splash_ask_dialog_title">Habilitar wifi?</string>
-    <string name="splash_ask_dialog_msg">Aquesta aplicació requereix tenir el wifi habilitat.T\'agradaria habilitar-lo ara?</string>
-    <string name="splash_ask_dialog_yes_button">Si</string>
-    <string name="splash_ask_dialog_no_button">No</string>
-    <string name="splash_ask_dialog_ok_button">OK</string>
+    <!-- Supported networks dialog -->
+    <string name="dialog_supportednetworks_title">"Les xarxes de suport"</string>
+    <string name="dialog_supportednetworks_list">"- WLAN_XXXX \ n-JAZZTEL_XXXX \ n-WLANXXXXXX \ n-YACOMXXXXXX \ n \ n-WIFIXXXXXX Alguns routers D-Link \ n-Alguns routers de Huawei \ n"</string>
 
-    <!-- Select Wireless Network -->
-    <string name="select_wireless_network_dialog_show_pass">Mostrar contrasenya</string>
-    <string name="select_wireless_network_dialog_copy_clipboard">Copiar clau al portapapers</string>
-    <string name="select_wireless_network_dialog_reject">No</string>
-    <string name="select_wireless_network_dialog_not_valid">xarxa no suportada. Les xarxes suportades estan marcades amb un indicador verd.</string>
-    <string name="select_wireless_network_update">Refrescar llista</string>
-    <string name="network_wpawpa2">WPA/WPA2</string>
-    <string name="network_wep">WEP</string>
-    <string name="network_open">OBERTA</string>
-    <string name="select_wireless_network_list_empty">Cap xarxa a l\'abast :(</string>
+    <!-- Show passwords dialog -->
+    <string name="dialog_showpass_title_one">"Aquesta és la teva contrasenya"</string>
+    <string name="dialog_showpass_title_many">"Un d'ells és la contrasenya"</string>
 
-    <!-- Menu -->
-    <string name="menu_quit">Sortir</string>
-    <string name="menu_settings">Paràmetres</string>
-    <string name="menu_networks">Xarxes suportades</string>
-    <string name="menu_preferences">Paràmetres</string>
-    <string name="menu_about">Quant a…</string>
-    <string name="acerca_de">Aplicació per calcular les claus predefinides de algunes xarxes.
-				"\n\nCopyright 2011, Javi Pulido\nMail: pulimento@gmail.com
-				\nTrad. al catalá : Roger Mon\nPer favor,accedeix al Llegeix-me de més avall per
-				 a més informació\n\nVersió 1.5.5</string>
+    <!-- Copy to clipboard dialog -->
+    <string name="dialog_cipboardcopy_title">"Contrasenyes"</string>
 
-    <!-- Show pass -->
-    <string name="showpass_network_name">Nom de la xarxa </string>
-    <string name="showpass_network_mac">Direcció MAC</string>
-    <string name="showpass_button_showpass">Mostrar la clau</string>
-    <string name="showpass_button_clipboard">Copiar clau al portapapers</string>
-    <string name="showpass_button_back">Enrere</string>
-    <string name="showpass_network_nopass_toast">Aquesta xarxa esta oberta</string>
-    <string name="showpass_null_password">Oops! Alguna cosa no ha anat bé. Si us plau-ho a provar</string>
-    <string name="showpass_multiple_passwords">Premeu en una de les claus per copiar al portapapers</string>
+    <!-- Updater dialog -->
+    <string name="dialog_updater_current_version">"Versió actual"</string>
+    <string name="dialog_updater_latest_version">"Darrera versió:"</string>
+    <string name="dialog_updater_unknown_version">"Desconegut"</string>
+    <string name="dialog_updater_check">"Comprova si hi ha actualitzacions"</string>
+    <string name="dialog_updater_error">"Error de connexió a Internet ..."</string>
+    <string name="dialog_updater_update">"Actualitza "</string>
+    <string name="dialog_udpater_title">"Updater:"</string>
+    <string name="dialog_updater_checking">"S'està comprovant"</string>
+    <string name="autoupdater_title">"Actualització disponible"</string>
+    <string name="autoupdater_message">"Hi ha una versió més recent de pulWifi disponible, vols descarregar-lo?"</string>
+
+    <!-- Preference keys and defaults -->
+    <string name="preferences_autoupdate_key">"prefs_key_autoupdate"</string>
+    <string name="preferences_autoupdate_default">"true"</string>
+    <string name="preferences_vibrateupdate_key">"prefs_key_vibrateupdate"</string>
+    <string name="preferences_vibrateupdate_default">"false"</string>
+    <string name="preferences_updateinterval_key">"prefs_key_updateinterval"</string>
+    <string name="preferences_updateinterval_default">"2000"</string>
+    <string name="preferences_about_key">"prefs_key_about"</string>
 
     <!-- Preferences -->
-    <string name="preferences_autoupdate_title">Actualització automàtica</string>
-    <string name="preferences_autoupdate_summary">Actualitzar la llista de xarxes automàticament</string>
-    <string name="preferences_vibrateupdate_title">Avís de actualització</string>
-    <string name="preferences_vibrateupdate_summary">Vibrar cada vegada que es refresquin la llista de xarxes</string>
-    <string name="preferences_vibratefound_title">Avís de xarxa suportada</string>
-    <string name="preferences_vibratefound_summary">Vibrar quan hagi una xarxa suportada al abast</string>
-    <string name="preferences_updateinterval_title">Velocitat de refresc</string>
-    <string name="preferences_updateinterval_summary">Actualitzar llista cada …</string>
-    <string name="preferences_updateinterval_fast">Ràpid</string>
-    <string name="preferences_updateinterval_normal">Normal</string>
-    <string name="preferences_updateinterval_slow">Lent</string>
+    <string name="preferences_category_scanmode">"MANERA D'EXPLORACIÓ"</string>
+    <string name="preferences_autoupdate_title">"Actualització automàtica"</string>
+    <string name="preferences_autoupdate_summary">"Actualitza la llista de xarxes de forma automàtica"</string>
+    <string name="preferences_vibrateupdate_title">"Vibrar en la restauració"</string>
+    <string name="preferences_vibrateupdate_summary">"Vibrar cada vegada que s'actualitza la llista"</string>
+    <string name="preferences_updateinterval_title">"Freqüència d'actualització"</string>
+    <string name="preferences_updateinterval_summary">"Seleccioneu la freqüència d'actualització de la llista"</string>
+    <string name="preferences_updateinterval_fast">"Ràpida"</string>
+    <string name="preferences_updateinterval_normal">"Normal"</string>
+    <string name="preferences_updateinterval_slow">"Lenta"</string>
+    <string name="preferences_category_info">"General"</string>
+    <string name="preferences_about_summary">"Quant a aquesta versió"</string>
+    <string name="preferences_about_title">"pulWifi v%1$s (r%2$d)"</string>
 
-    <!-- Information -->
-    <string name="showpass_popup_title">Aquesta és la teva clau</string>
-    <string name="showpass_popup_title_many">Una d\'aquestes és la teva clau</string>
-    <string name="showpass_toclipboard">Contrasenya copiada al portapapers\n</string>
+    <!-- Main activity -->
+    <string name="mainactivity_failed_dialog_error">"S'ha produït un error"</string>
+    <string name="mainactivity_failed_dialog_msg">"No es pot encendre wifi"</string>
+    <string name="mainactivity_failed_dialog_ok_button">"Surt"</string>
+    <string name="mainactivity_ask_dialog_title">"Habilitar wifi?"</string>
+    <string name="mainactivity_ask_dialog_msg">"Aquesta aplicació necessita wifi habilitat per treballar. Enceneu ara?"</string>
+    <string name="mainactivity_ask_dialog_yes_button">"Sí"</string>
+    <string name="mainactivity_ask_dialog_no_button">"No"</string>
 
-    <!-- About -->
-    <string name="about_title">Quant a pulWifi</string>
-    <string name="about_readme">Llegeix-me</string>
-    <string name="about_gpl">Llicència GPLv3</string>
-    <string name="about_readme_url">"file:///android_asset/README.htm"</string>
-    <string name="supported_networks_title">Xarxes suportades:</string>
-    <string name="supported_networks">\n - WLAN_XXXX \n
-	- JAZZTEL_XXXX \n
-	- WLANXXXXXX \n
-	- YACOMXXXXXX \n
-	- WIFIXXXXXX \n
-	- Alguns routers D-Link \n
-	- Alguns routers Huawei \n</string>
+    <!-- Manual crack activity -->
+    <string name="manualcrack_header">"Introduïu el nom de la xarxa i MAC Adress a continuació"</string>
+    <string name="manualcrack_essid_hint">"Nom de la xarxa"</string>
+    <string name="manualcrack_bottom">"Podeu veure una llista de les xarxes de suport amb la tecla de menú"</string>
+    <string name="manualcrack_bssid_hint">"MAC Adress"</string>
+    <string name="manualcrack_crackbutton">"Crack"</string>
+    <string name="manualcrack_inputerror">"Una mala entrada. Si us plau, mireu una llista completa de les xarxes de suport amb la tecla de menú."</string>
+
+    <!-- Select wireless network activity -->
+    <string name="selectwireless_unsupported">"La xarxa no compatible. Les xarxes de suport tenen marcadors de color verd."</string>
+    <string name="selectwireless_emptylist">"No hi ha res encara: ("</string>
+    <string name="selectwireless_refresh">"Actualitzar la llista"</string>
+
+    <!-- Show pass activity -->
+    <string name="showpass_nopass">"Aquesta xarxa està oberta"</string>
+    <string name="showpass_network_name">"Nom de la xarxa:"</string>
+    <string name="showpass_network_mac">"MAC direcció"</string>
+    <string name="showpass_button_showpass">"Mostra la contrasenya"</string>
+    <string name="showpass_button_clipboard">"Copiar la contrasenya al portapapers"</string>
+    <string name="showpass_menu_back">"Enrere"</string>
+    <string name="showpass_toclipboard">"Contrasenya copiat al porta-retalls"</string>
+
+    <!-- Menu -->
+    <string name="menu_quit">"Surt"</string>
+    <string name="menu_networks">"Les xarxes de suport"</string>
+    <string name="menu_settings">"Preferències "</string>
+    <string name="menu_about">"Quant a"</string>
+    <string name="menu_updater">"Updater"</string>
+    <string name="menu_share">"Compartit"</string>
+    <string name="menu_share_title">"Compartir aplicació"</string>
+    <string name="menu_share_subject">"pulWifi"</string>
+    <string name="menu_share_text">"Hey! Vostè pot obtenir pulWifi aplicació de http://pulwifi.github.com. Proveu! ;)"</string>
+
+    <!-- List view adapter -->
+    <string name="listadapter_wpa">"WPA/WPA2"</string>
+    <string name="listadapter_wep">"WEP"</string>
+    <string name="listadapter_open">"OPEN"</string>
+    <string name="listadapter_unknown">"UNKNOWN"</string>
 
     <!-- Generic dialogs -->
-    <string name="dialog_yes">Sí</string>
-    <string name="dialog_no">No</string>
+    <string name="dialog_yes">"Sí"</string>
+    <string name="dialog_no">"No"</string>
 
 </resources>
