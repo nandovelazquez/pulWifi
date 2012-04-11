@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    
+    <!--  Disclaimer -->
+    
 
     <!-- About dialog -->
     <string name="dialog_about_text">Esta é unha aplicación que che permite calcular as contraseñas por defecto de algunhas redes wifi.\n\nCopyright 2011, Javier Pulido e Antonio Vázquez Blanco.\nContacto: <a href="mailto:pulwifi@gmail.com?subject=pulWifi">pulwifi@gmail.com</a>\n\nNOTA LEGAL: A única intención desta aplicación é demostrar a inseguridade dos teus propios routers ademáis de advertir do perigo de usar contrasinais por defecto. O autor desta aplicación non é responsable do uso final que o usuario lle da a esta. Cando uses esta aplicación cerciórate de que o fas na túa ou de que tes permiso do dono/administrador da mesma. Recorda que aprovitarse do ancho de banda ou conexión de outros é un crime. Por favor, non faga un uso ilegal de esta aplicación. Úseo baixo a súa propia responsabilidade.\n\nEste programa é software libre; podes redistribuilo e/ou modificalo baixo os térmos da Licencia Xeral Pública GNU acotada por a Free Software Foundation (Fundación de Software Libre); xa ben sexa baixo a versión 3 da licencia, ou (na tua opinión) calquera versión posterior.\n\nEste programa e distribuido coa esperanza de que resulte util, pero SEN NINGUNHA GARANTÍA; sen nin sequera a garantía implícita MERCANTIL ou de APTITUDE PARA UN PROPÓSITO DETERMINADO. Podes mirar a Licencia Xeral Pública de GNU para máis detalle.</string>

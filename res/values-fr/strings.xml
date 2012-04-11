@@ -1,8 +1,9 @@
-<resources tools:ignore="MissingTranslation" xmlns:tools="http://schemas.android.com/tools">
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
     <!-- Application -->
     <string name="page_label_networks_list">"Liste des réseaux"</string>
     <string name="page_label_manual">"Mode manuel"</string>
+    <string name="toast_disclaimer_text">Rappelez-vous, ne pas utiliser les réseaux qui ne sont pas le vôtre</string>
 
     <!-- About dialog -->
     <string name="dialog_about_text">Il s\'agit d\'une application simple qui montre les mots de passe par défaut de certaines taches wifi\n\nCopyright 2011-12, Javier Pulido et Antonio Vázquez Blanco.\nContact: <a href="mailto:pulwifi@gmail.com?subject=pulWifi">pulwifi@gmail.com</a>\n\nNOTE LEGAL: L\'intention très seule de cette application est de démontrer l\'insécurité de vos propres routeurs, et mettent en garde contre le danger de l\'utilisation de mots de passe par défaut. L\'auteur de cette demande n\'est pas responsable de l\'utilisation utilisateur final fait de cette. Lorsque vous utilisez cette application avec un réseau sans fil, assurez-vous que c\'est vous-même ou avoir l\'autorisation du propriétaire/l\'administrateur du réseau. Rappelez-vous que l\'utilisation de la connexion haut débit des autres est un crime. S\'il vous plaît ne pas utiliser cette application de manière ilegal. Utilisez-dessous de votre propre responsabilité\n\nCe programme est un logiciel libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la Licence Publique Générale GNU publiée par la Free Software Foundation, soit la version 3 de la Licence, ou (à votre choix) toute version ultérieure\n\nCe programme est distribué dans l\'espoir qu\'il sera utile, mais SANS AUCUNE GARANTIE, sans même la garantie implicite de COMMERCIALISATION ou D\'ADAPTATION A UN OBJET PARTICULIER. Voir la licence GNU General Public pour plus de détails.</string>

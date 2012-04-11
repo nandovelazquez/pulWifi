@@ -4,6 +4,7 @@
     <string name="app_name">"pulWifi"</string>
     <string name="page_label_networks_list">"Lista de redes"</string>
     <string name="page_label_manual">"Modo manual"</string>
+    <string name="toast_disclaimer_text">Lembre-se, não use as redes que não são seus</string>
 
     <!-- About dialog -->
     <string name="dialog_about_text">"Aplicativo para calcular as teclas predefinidas de algumas redes wifi\n\nCopyright 2011-12,Javi Pulido e Antonio Vázquez Blanco.\nContacto: <a href="mailto:pulwifi@gmail.com?subject=pulWifi">pulwifi@gmail.com</a>\n\nNOTE LEGAL: O único objetivo desta aplicação é para demonstrar a insegurança de seus próprios routers, e advertem sobre o perigo do uso de senhas padrão. O autor desta aplicação não é responsável por qualquer uso que o usuário final fazer isso. Sempre que você usar este aplicativo com uma rede sem fio, certifique-se que é a sua própria ou tiver permissão do proprietário/gerente da rede. Lembre-se de usar a conexão de banda larga de outras pessoas é um crime. Por favor, não use este aplicativo ilegalmente. Use a seu próprio risco\n\nEste programa é software livre: Você pode redistribuí-lo e / ou modificá-lo sob os termos da GNU General Public License conforme publicada pela Free Software Foundation, tanto a versão 3 da Licença, ou (a seu critério) qualquer versão posterior\n\nEste programa é distribuído na esperança que será útil, mas SEM QUALQUER GARANTIA, sem mesmo a garantia implícita de COMERCIALIZAÇÃO ou ADEQUAÇÃO PARA UM PROPÓSITO PARTICULAR. Veja os detalhes da Licença Pública Geral GNU para obter informações mais detalhadas."</string>
@@ -43,7 +44,8 @@
     <string name="autoupdater_message">"Está disponível uma nova versão do pulWifi, você quer obtê-lo?"</string>
 
     <!-- Preference keys and defaults -->
-	<!-- Really not neccesary here, they are language-independent -->
+    <!-- Really not neccesary here, they are language-independent -->
+
 
     <!-- Preferences -->
     <string name="preferences_category_scanmode">"Rede de pesquisa"</string>
@@ -106,7 +108,7 @@
     <string name="listadapter_wpa">"WPA/WPA2"</string>
     <string name="listadapter_wep">"WEP"</string>
     <string name="listadapter_open">"OPEN"</string>
-    
+
     <!-- Generic dialogs -->
     <string name="dialog_yes">"Sim"</string>
     <string name="dialog_no">"Nao"</string>

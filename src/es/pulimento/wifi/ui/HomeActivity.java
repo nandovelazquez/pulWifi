@@ -21,6 +21,7 @@ import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 import es.pulimento.wifi.R;
 import es.pulimento.wifi.ui.dialogs.SupportedNetworksDialog;
 import es.pulimento.wifi.ui.dialogs.UpdateDialog;
@@ -45,6 +46,8 @@ public class HomeActivity extends ActionBarActivity {
 
 		/* set layout */
 		setContentView(R.layout.layout_homeactivity);
+		
+		showDisclaimerToast();
 
 		/* Launch the auto-updater task */
 		GetLatestVersion get = new GetLatestVersion();
@@ -61,6 +64,11 @@ public class HomeActivity extends ActionBarActivity {
 
 		pagerAdapter.addPage(SelectWirelessNetworkFragment.class, R.string.page_label_networks_list);
 		pagerAdapter.addPage(ManualFragment.class, R.string.page_label_manual);
+	}
+	
+	
+	private void showDisclaimerToast(){
+		Toast.makeText(HomeActivity.this, R.string.toast_disclaimer_text, Toast.LENGTH_LONG).show();
 	}
 
 	@Override
@@ -229,11 +237,11 @@ public class HomeActivity extends ActionBarActivity {
 								public void onClick(DialogInterface dialog, int id) {
 									dialog.cancel();
 								}
-							}).setMessage(R.string.autoupdater_message);// TODO
+							}).setMessage(R.string.autoupdater_message);
 
 					AlertDialog alert = alertBuilder.create();
 
-					alert.setTitle(R.string.autoupdater_title);// TODO
+					alert.setTitle(R.string.autoupdater_title);
 					alert.setIcon(R.drawable.ic_launcher);
 					alert.show();
 				} else {
