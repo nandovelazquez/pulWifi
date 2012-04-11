@@ -38,6 +38,7 @@ public class HomeActivity extends ActionBarActivity {
 	/* Auto-updater stuff */
 	private final String VERSION_URL = "https://raw.github.com/pulWifi/pulWifi/master/version_latest";
 	private final String APK_URL = "https://github.com/downloads/pulWifi/pulWifi/pulWifi_%s_signed.apk";
+	private static boolean mFirstInit = true;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -45,12 +46,15 @@ public class HomeActivity extends ActionBarActivity {
 
 		/* set layout */
 		setContentView(R.layout.layout_homeactivity);
-		
-		showDisclaimerToast();
 
-		/* Launch the auto-updater task */
-		GetLatestVersion get = new GetLatestVersion();
-		get.execute();
+		/* Prevents the app to show same toast and dialogs multiple times */
+		if (mFirstInit) {
+			showDisclaimerToast();
+
+			/* Launch the auto-updater task */
+			new UpdaterTask().execute();
+			mFirstInit = false;
+		}
 
 		/* Setting attributes */
 		mContext = getApplicationContext();
@@ -64,9 +68,8 @@ public class HomeActivity extends ActionBarActivity {
 		pagerAdapter.addPage(SelectWirelessNetworkFragment.class, R.string.page_label_networks_list);
 		pagerAdapter.addPage(ManualFragment.class, R.string.page_label_manual);
 	}
-	
-	
-	private void showDisclaimerToast(){
+
+	private void showDisclaimerToast() {
 		Toast.makeText(HomeActivity.this, R.string.toast_disclaimer_text, Toast.LENGTH_LONG).show();
 	}
 
@@ -185,7 +188,7 @@ public class HomeActivity extends ActionBarActivity {
 	}
 
 	/* AsyncTask for check if an update is available, and prompts it to the user */
-	public class GetLatestVersion extends AsyncTask<Void, Void, String> {
+	public class UpdaterTask extends AsyncTask<Void, Void, String> {
 
 		@Override
 		public void onPreExecute() {
