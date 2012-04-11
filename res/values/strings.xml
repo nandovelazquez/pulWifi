@@ -54,6 +54,7 @@
     <string name="preferences_updateinterval_key">prefs_key_updateinterval</string>
     <string name="preferences_updateinterval_default">2000</string>
     <string name="preferences_about_key">prefs_key_about</string>
+    <string name="preferences_updater_key">prefs_key_manualupdate</string>
 
     <!-- Preferences -->
     <string name="preferences_category_scanmode">SCAN MODE</string>
@@ -69,6 +70,8 @@
     <string name="preferences_category_info">GENERAL</string>
     <string name="preferences_about_summary">About this version</string>
     <string name="preferences_about_title">pulWifi v%1$s (r%2$d)</string>
+    <string name="preferences_updater_summary">Search updates manually</string>
+    <string name="preferences_updater_title">Updater</string>
 
     <!-- Main activity -->
     <string name="mainactivity_failed_dialog_error">Error</string>
@@ -106,7 +109,6 @@
     <string name="menu_networks">Supported networks</string>
     <string name="menu_settings">Preferences</string>
     <string name="menu_about">About…</string>
-    <string name="menu_updater">Updater</string>
     <string name="menu_share">Share</string>
     <string name="menu_share_title">Share app</string>
     <string name="menu_share_subject">pulWifi</string>

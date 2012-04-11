@@ -12,11 +12,6 @@
         android:showAsAction="never"
         android:title="@string/menu_networks"/>
     <item
-        android:id="@+id/menu_updater"
-        android:icon="@android:drawable/ic_menu_rotate"
-        android:showAsAction="never"
-        android:title="@string/menu_updater"/>
-    <item
         android:id="@+id/menu_quit"
         android:icon="@android:drawable/ic_menu_close_clear_cancel"
         android:showAsAction="never"

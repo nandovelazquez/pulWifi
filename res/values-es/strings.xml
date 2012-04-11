@@ -61,6 +61,8 @@
     <string name="preferences_category_info">GENERAL</string>
     <string name="preferences_about_summary">Acerca de esta versión</string>
     <string name="preferences_about_title">pulWifi v%1$s (r%2$d)</string>
+    <string name="preferences_updater_summary">Buscar actualizaciones manualmente</string>
+    <string name="preferences_updater_title">Actualizador</string>
 
     <!-- Main activity -->
     <string name="mainactivity_failed_dialog_error">Error</string>
@@ -98,7 +100,6 @@
     <string name="menu_networks">Redes soportadas</string>
     <string name="menu_settings">Ajustes</string>
     <string name="menu_about">Acerca de…</string>
-    <string name="menu_updater">Actualizador</string>
     <string name="menu_share">Compartir</string>
     <string name="menu_share_title">Compartir app</string>
     <string name="menu_share_subject">pulWifi</string>

@@ -24,7 +24,6 @@ import android.view.MenuItem;
 import android.widget.Toast;
 import es.pulimento.wifi.R;
 import es.pulimento.wifi.ui.dialogs.SupportedNetworksDialog;
-import es.pulimento.wifi.ui.dialogs.UpdateDialog;
 import es.pulimento.wifi.ui.utils.ActionBarActivity;
 import es.pulimento.wifi.ui.utils.PagerHeader;
 
@@ -96,9 +95,6 @@ public class HomeActivity extends ActionBarActivity {
 				break;
 			case R.id.menu_settings:
 				startActivity(new Intent(mContext, Preferences.class));
-				break;
-			case R.id.menu_updater:
-				(new UpdateDialog(this)).show();
 				break;
 		}
 		return super.onOptionsItemSelected(item);

@@ -65,6 +65,8 @@
     <string name="preferences_category_info">"General"</string>
     <string name="preferences_about_summary">"Quant a aquesta versió"</string>
     <string name="preferences_about_title">"pulWifi v%1$s (r%2$d)"</string>
+    <string name="preferences_updater_summary">Cercar actualitzacions manualment</string>
+    <string name="preferences_updater_title">Updater</string>
 
     <!-- Main activity -->
     <string name="mainactivity_failed_dialog_error">"S'ha produït un error"</string>
@@ -102,7 +104,6 @@
     <string name="menu_networks">"Les xarxes de suport"</string>
     <string name="menu_settings">"Preferències "</string>
     <string name="menu_about">"Quant a"</string>
-    <string name="menu_updater">"Updater"</string>
     <string name="menu_share">"Compartit"</string>
     <string name="menu_share_title">"Compartir aplicació"</string>
     <string name="menu_share_subject">"pulWifi"</string>

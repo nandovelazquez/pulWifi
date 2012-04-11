@@ -24,6 +24,10 @@
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/preferences_category_info" >
         <Preference
+            android:key="@string/preferences_updater_key"
+            android:summary="@string/preferences_updater_summary"
+            android:title="@string/preferences_updater_title" />
+        <Preference
             android:key="@string/preferences_about_key"
             android:summary="@string/preferences_about_summary"
             android:title="@string/preferences_about_title" />
