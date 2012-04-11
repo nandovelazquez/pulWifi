@@ -158,7 +158,7 @@ public class SelectWirelessNetworkFragment extends ListFragment {
 				// mWirelessNetList.add(new WirelessNetwork("HAWEI1", "00:18:82:32:81:20", -100, "[WPA]??"));
 				// mWirelessNetList.add(new WirelessNetwork("WLAN_E919", "64:68:0C:96:e9:1c", -100, "[WPA]??"));//dbcd970f0d705754206d
 				// mWirelessNetList.add(new WirelessNetwork("HAWEI2", "00:22:A1:32:81:20", -100, "[WPA]??"));
-				// mWirelessNetList.add(new WirelessNetwork("YACOMXXXXXX", "00:22:A1:32:81:20", -100, "[WPA]??"));
+				 mWirelessNetList.add(new WirelessNetwork("YACOMXXXXXX", "00:22:A1:32:81:20", -100, "[WPA]??"));
 				// mWirelessNetList.add(new WirelessNetwork("bazinga", "FF:FF:FF:FF:FF:FF", -100, "[WPA]??"));
 
 				/* Trick to refresh the ListView */
@@ -200,8 +200,8 @@ class NetworkListAdapter implements ListAdapter {
 		// Testing if this force listview to update
 		mItems = new ArrayList<WirelessNetwork>();
 		mItems = items;
-		mItems.add(null);
-		//mItems.add(new WirelessNetwork("Andared", "AA:AA:AA:AA:AA:AA", 0, "[WPA]"));
+		//mItems.add(null);
+		mItems.add(new WirelessNetwork("Andared", "AA:AA:AA:AA:AA:AA", 0, "[WPA]"));
 
 		if (SelectWirelessNetworkFragment.D) Log.e(TAG, "NetworkListAdapter<init>");
 		mLayoutInflater = (LayoutInflater) act.getApplicationContext()

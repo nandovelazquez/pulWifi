@@ -6,7 +6,7 @@
     <string name="page_label_manual">"Modo manual"</string>
 
     <!-- About dialog -->
-    <string name="dialog_about_text">"Aplicativo para calcular as teclas predefinidas de algumas redes wifi\n\nCopyright 2011-12,Javi Pulido e Antonio Vázquez Blanco.\nContacto: &lt;a href=\"mailto:pulwifi@gmail.com?subject=pulWifi\"&gt;pulwifi@gmail.com&lt;/a&gt;\n\nNOTE LEGAL: O único objetivo desta aplicação é para demonstrar a insegurança de seus próprios routers, e advertem sobre o perigo do uso de senhas padrão. O autor desta aplicação não é responsável por qualquer uso que o usuário final fazer isso. Sempre que você usar este aplicativo com uma rede sem fio, certifique-se que é a sua própria ou tiver permissão do proprietário / gerente da rede. Lembre-se de usar a conexão de banda larga de outras pessoas é um crime. Por favor, não use este aplicativo ilegalmente. Use a seu próprio risco\n\nEste programa é software livre: Você pode redistribuí-lo e / ou modificá-lo sob os termos da GNU General Public License conforme publicada pela Free Software Foundation, tanto a versão 3 da Licença, ou (a seu critério) qualquer versão posterior\n\nEste programa é distribuído na esperança que será útil, mas SEM QUALQUER GARANTIA, sem mesmo a garantia implícita de COMERCIALIZAÇÃO ou ADEQUAÇÃO PARA UM PROPÓSITO PARTICULAR. Veja os detalhes da Licença Pública Geral GNU para obter informações mais detalhadas."</string>
+    <string name="dialog_about_text">"Aplicativo para calcular as teclas predefinidas de algumas redes wifi\n\nCopyright 2011-12,Javi Pulido e Antonio Vázquez Blanco.\nContacto: <a href="mailto:pulwifi@gmail.com?subject=pulWifi">pulwifi@gmail.com</a>\n\nNOTE LEGAL: O único objetivo desta aplicação é para demonstrar a insegurança de seus próprios routers, e advertem sobre o perigo do uso de senhas padrão. O autor desta aplicação não é responsável por qualquer uso que o usuário final fazer isso. Sempre que você usar este aplicativo com uma rede sem fio, certifique-se que é a sua própria ou tiver permissão do proprietário/gerente da rede. Lembre-se de usar a conexão de banda larga de outras pessoas é um crime. Por favor, não use este aplicativo ilegalmente. Use a seu próprio risco\n\nEste programa é software livre: Você pode redistribuí-lo e / ou modificá-lo sob os termos da GNU General Public License conforme publicada pela Free Software Foundation, tanto a versão 3 da Licença, ou (a seu critério) qualquer versão posterior\n\nEste programa é distribuído na esperança que será útil, mas SEM QUALQUER GARANTIA, sem mesmo a garantia implícita de COMERCIALIZAÇÃO ou ADEQUAÇÃO PARA UM PROPÓSITO PARTICULAR. Veja os detalhes da Licença Pública Geral GNU para obter informações mais detalhadas."</string>
     <string name="dialog_about_gpl">"Licença"</string>
     <string name="dialog_about_title">"Sobre"</string>
     <string name="dialog_about_changelog">"Alterações"</string>
@@ -21,7 +21,7 @@
 
     <!-- Supported networks dialog -->
     <string name="dialog_supportednetworks_title">"Redes suportadas"</string>
-    <string name="dialog_supportednetworks_list">"- WLAN_XXXX\n- JAZZTEL_XXXX\n- WLANXXXXXX\n- YACOMXXXXXX\n- WIFIXXXXXX\n- Alguns roteadores D-Link\n- Alguns roteadores Huawei"</string>
+    <string name="dialog_supportednetworks_list">" - WLAN_XXXX\n - JAZZTEL_XXXX\n - WLANXXXXXX\n - YACOMXXXXXX\n - WIFIXXXXXX\n - Alguns roteadores D-Link\n - Alguns roteadores Huawei"</string>
 
     <!-- Show passwords dialog -->
     <string name="dialog_showpass_title_one">"Esta é a sua chave"</string>
