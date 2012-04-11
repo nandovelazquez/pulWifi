@@ -3,10 +3,15 @@
 <body>
 	
 	
-	<h3>- v???</h3>
+	<h3>- v2.0.0</h3>
 	<ul>
-		<li>Fixed some Galician translation</li>
+		<li>MANY internal changes</li>
+		<li>Revamped user interface, ICS style</li>
+		<li>Added an action bar</li>
+		<li>Added "Share" option</li>		
+		<li>Added portuguese, french and catalan translations</li>
 		<li>Fixed some broken characters in Spanish and Galician translations</li>
+		<li>Other minor changes</li>
 	</ul>
 
 	<h3>- v1.6.1</h3>

@@ -2,6 +2,16 @@
 <html lang="es">
 <body>
 	
+	<h3>- v2.0.0</h3>
+	<ul>
+		<li>Muchos cambios a nivel interno</li>
+		<li>Nueva interfaz de usuario</li>
+		<li>Añadida la opción de compartir</li>		
+		<li>Idiomas añadidos : francés, portugués, catalán</li>
+		<li>Cambios menores en las traducciones al castellano y al gallego</li>
+		<li>Otros cambios menores</li>
+	</ul>
+	
 	<h3>- v1.6.1</h3>
 	<ul>
 		<li>Arreglado fallo al copiar la clave al portapapeles</li>
