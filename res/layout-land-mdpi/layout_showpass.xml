@@ -91,7 +91,6 @@
             android:text="@string/showpass_button_clipboard"
             android:textSize="22dp"
             android:textStyle="bold" />
-
     </LinearLayout>
 
 </RelativeLayout>

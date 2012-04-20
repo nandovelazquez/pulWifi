@@ -61,9 +61,9 @@
         android:id="@+id/layout_showpass_linearlayout_buttons"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/relativeLayout1"
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"
-        android:layout_below="@+id/relativeLayout1"
         android:orientation="vertical" >
 
         <Button
@@ -84,7 +84,6 @@
             android:text="@string/showpass_button_clipboard"
             android:textSize="16dp"
             android:textStyle="bold" />
-
     </LinearLayout>
 
 </RelativeLayout>

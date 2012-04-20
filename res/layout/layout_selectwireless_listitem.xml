@@ -46,7 +46,6 @@
 
     <TextView
         android:id="@+id/layout_selecwireless_listitem_security"
-        android:textColor="#222"
         android:layout_width="90dip"
         android:layout_height="16dip"
         android:layout_alignParentBottom="true"
@@ -54,6 +53,7 @@
         android:layout_marginRight="4dip"
         android:gravity="right"
         android:singleLine="true"
+        android:textColor="#222"
         android:textSize="13dip" />
 
 </RelativeLayout>

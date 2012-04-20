@@ -69,7 +69,6 @@
             android:text="@string/showpass_button_clipboard"
             android:textSize="20dp"
             android:textStyle="bold" />
-
     </LinearLayout>
 
     <com.google.ads.AdView

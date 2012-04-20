@@ -71,7 +71,6 @@
                     android:text="@string/manualcrack_crackbutton"
                     android:textSize="20dp"
                     android:textStyle="bold" />
-
             </LinearLayout>
 
             <TextView
@@ -83,9 +82,7 @@
                 android:layout_weight="1"
                 android:text="@string/manualcrack_bottom"
                 android:textSize="16dip" />
-
         </LinearLayout>
-
     </ScrollView>
 
 </RelativeLayout>
