@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 import es.pulimento.wifi.R;
 import es.pulimento.wifi.core.WirelessNetwork;
 
@@ -18,14 +19,22 @@ public class ManualFragment extends Fragment {
 	private EditText mEditTextBssid;
 	private EditText mEditTextEssid;
 	private Button mButtonAccept;
+	private ToggleButton mToggleButton;
 
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
 		/* create view and return it */
-		View inflatedView = inflater.inflate(R.layout.layout_manualfragment, container, false);
-		mEditTextEssid = (EditText) inflatedView.findViewById(R.id.layout_manualcrack_essid);
-		mEditTextBssid = (EditText) inflatedView.findViewById(R.id.layout_manualcrack_bssid);
-		mButtonAccept = (Button) inflatedView.findViewById(R.id.layout_manualcrack_accept);
+		View inflatedView = inflater.inflate(R.layout.layout_manualfragment,
+				container, false);
+		mEditTextEssid = (EditText) inflatedView
+				.findViewById(R.id.layout_manualcrack_essid);
+		mEditTextBssid = (EditText) inflatedView
+				.findViewById(R.id.layout_manualcrack_bssid);
+		mButtonAccept = (Button) inflatedView
+				.findViewById(R.id.layout_manualcrack_accept);
+		mToggleButton = (ToggleButton) inflatedView
+				.findViewById(R.id.layout_manualcrack_togglebutton);
 		return inflatedView;
 	}
 
@@ -38,16 +47,22 @@ public class ManualFragment extends Fragment {
 
 			@Override
 			public void onClick(View v) {
-				mWirelessNetwork = new WirelessNetwork(mEditTextEssid.getText().toString(), mEditTextBssid.getText()
-						.toString(), 0, "[WEP] [WPA]");
-				Log.i("pulWifi", "ManualCrack onClick(), created -> " + mWirelessNetwork.toString());
+				String capabilities = (String) (mToggleButton.isChecked() ? mToggleButton
+						.getTextOn() : mToggleButton.getTextOff());
+				mWirelessNetwork = new WirelessNetwork(mEditTextEssid.getText()
+						.toString(), mEditTextBssid.getText().toString(), 1,
+						capabilities);
+				Log.i("pulWifi", "ManualCrack onClick(), created -> "
+						+ mWirelessNetwork.toString());
 				if (!mWirelessNetwork.isCrackeable()) {
-					Toast.makeText(getActivity().getApplicationContext(), R.string.manualcrack_inputerror,
-							Toast.LENGTH_LONG).show();
+					Toast.makeText(getActivity().getApplicationContext(),
+							R.string.manualcrack_inputerror, Toast.LENGTH_LONG)
+							.show();
 					return;
 				}
 				mWirelessNetwork.crack();
-				Intent i = new Intent(getActivity().getApplicationContext(), ShowPassActivity.class);
+				Intent i = new Intent(getActivity().getApplicationContext(),
+						ShowPassActivity.class);
 				i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 				i.putExtra(ShowPassActivity.EXTRA_NETWORK, mWirelessNetwork);
 				startActivity(i);
