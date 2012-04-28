@@ -16,7 +16,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 import es.pulimento.wifi.R;
 
-// The new interface for ClipboardManager isn't compatible with APIs under level 11.
 @SuppressWarnings("deprecation")
 public class ClipboardCopyDialog extends Dialog implements OnItemClickListener {
 

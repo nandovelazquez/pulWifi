@@ -16,10 +16,12 @@
 
 package es.pulimento.wifi.ui.utils;
 
+import java.io.IOException;
+import java.util.HashSet;
+import java.util.Set;
+
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
-
-import es.pulimento.wifi.R;
 
 import android.app.Activity;
 import android.content.Context;
@@ -40,10 +42,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
-import java.io.IOException;
-import java.util.HashSet;
-import java.util.Set;
+import es.pulimento.wifi.R;
 
 /**
  * A class that implements the action bar pattern for pre-Honeycomb devices.
@@ -78,13 +77,12 @@ public class ActionBarHelperPreGingerbread extends ActionBarHelper {
 	/**
 	 * Sets up the compatibility action bar with the given title.
 	 */
-	@SuppressWarnings("deprecation")
 	private void setupActionBar() {
 		final ViewGroup actionBarCompat = getActionBarCompat();
 		if (actionBarCompat == null)
 			return;
 
-		LinearLayout.LayoutParams springLayoutParams = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.FILL_PARENT);
+		LinearLayout.LayoutParams springLayoutParams = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT);
 		springLayoutParams.weight = 1;
 
 		// Add Home button
@@ -107,7 +105,7 @@ public class ActionBarHelperPreGingerbread extends ActionBarHelper {
 
 			// Adding Share action button
 			actionButton = new ImageButton(mActivity, null, R.attr.actionbarCompatItemStyle);
-			actionButton.setLayoutParams(new ViewGroup.LayoutParams((int) mActivity.getResources().getDimension(R.dimen.actionbar_compat_button_width), ViewGroup.LayoutParams.FILL_PARENT));
+			actionButton.setLayoutParams(new ViewGroup.LayoutParams((int) mActivity.getResources().getDimension(R.dimen.actionbar_compat_button_width), ViewGroup.LayoutParams.MATCH_PARENT));
 			actionButton.setImageDrawable(res.getDrawable(R.drawable.ic_menu_share));
 			actionButton.setScaleType(ImageView.ScaleType.CENTER);
 			actionButton.setContentDescription("Compartir");
@@ -124,7 +122,7 @@ public class ActionBarHelperPreGingerbread extends ActionBarHelper {
 		
 			// Adding Open Options action button
 			actionButton = new ImageButton(mActivity, null, R.attr.actionbarCompatItemStyle);
-			actionButton.setLayoutParams(new ViewGroup.LayoutParams((int) mActivity.getResources().getDimension(R.dimen.actionbar_compat_button_width), ViewGroup.LayoutParams.FILL_PARENT));
+			actionButton.setLayoutParams(new ViewGroup.LayoutParams((int) mActivity.getResources().getDimension(R.dimen.actionbar_compat_button_width), ViewGroup.LayoutParams.MATCH_PARENT));
 			actionButton.setImageDrawable(res.getDrawable(R.drawable.ic_menu_moreoverflow));
 			actionButton.setScaleType(ImageView.ScaleType.CENTER);
 			actionButton.setContentDescription("Menu");
@@ -198,7 +196,6 @@ public class ActionBarHelperPreGingerbread extends ActionBarHelper {
 	 * {@link com.example.android.actionbarcompat.ActionBarHelperBase#setRefreshActionItemState(boolean)}
 	 * .
 	 */
-	@SuppressWarnings("deprecation")
 	private View addActionItemCompatFromMenuItem(final MenuItem item) {
 		final int itemId = item.getItemId();
 
@@ -208,7 +205,7 @@ public class ActionBarHelperPreGingerbread extends ActionBarHelper {
 
 		// Create the button
 		ImageButton actionButton = new ImageButton(mActivity, null, itemId == android.R.id.home ? R.attr.actionbarCompatItemHomeStyle : R.attr.actionbarCompatItemStyle);
-		actionButton.setLayoutParams(new ViewGroup.LayoutParams((int) mActivity.getResources().getDimension(itemId == android.R.id.home ? R.dimen.actionbar_compat_button_home_width : R.dimen.actionbar_compat_button_width), ViewGroup.LayoutParams.FILL_PARENT));
+		actionButton.setLayoutParams(new ViewGroup.LayoutParams((int) mActivity.getResources().getDimension(itemId == android.R.id.home ? R.dimen.actionbar_compat_button_home_width : R.dimen.actionbar_compat_button_width), ViewGroup.LayoutParams.MATCH_PARENT));
 		if (itemId == R.id.menu_refresh)
 			actionButton.setId(R.id.actionbar_compat_item_refresh);
 		actionButton.setImageDrawable(item.getIcon());

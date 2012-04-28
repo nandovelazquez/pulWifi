@@ -16,7 +16,6 @@
 
 package es.pulimento.wifi.ui.utils;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.view.ActionProvider;
@@ -33,7 +32,6 @@ import android.view.View;
  * complete
  * implementation.
  */
-@SuppressLint("NewApi")
 public class SimpleMenuItem implements MenuItem {
 
 	private SimpleMenu mMenu;

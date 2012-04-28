@@ -16,7 +16,6 @@
 
 package es.pulimento.wifi.ui.utils;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 
 /**
@@ -30,7 +29,6 @@ public class ActionBarHelperICS extends ActionBarHelperHoneycomb {
 		super(activity);
 	}
 
-	@SuppressLint("NewApi")
 	@Override
 	protected Context getActionBarThemedContext() {
 		return mActivity.getActionBar().getThemedContext();
