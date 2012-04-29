@@ -59,7 +59,7 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="0.5"
-            android:clickable="false"
+            android:clickable="true"
             android:longClickable="false"
             android:text="@string/dialog_about_text"
             android:textSize="18dip" />

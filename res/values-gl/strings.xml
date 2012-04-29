@@ -20,7 +20,7 @@
 
     <!-- Supported networks dialog -->
     <string name="dialog_supportednetworks_title">Redes soportadas</string>
-    <string name="dialog_supportednetworks_list">" - WLAN_XXXX\n - JAZZTEL_XXXX\n - WLANXXXXXX\n - YACOMXXXXXX\n - WIFIXXXXXX\n - Algunhos routers D-Link\n - Algunhos routers Huawei"</string>
+    <string name="dialog_supportednetworks_file_url">file:///android_asset/SUPPORTED-GL</string>
 
     <!-- Show passwords dialog -->
     <string name="dialog_showpass_title_one">Esta é o contrasinal</string>

@@ -1,3 +1,22 @@
+/*
+ *  pulWifi , Copyright (C) 2011-2012 Javi Pulido / Antonio Vázquez
+ *  
+ *  This file is part of "pulWifi"
+ *
+ *  "pulWifi" is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  "pulWifi" is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with "pulWifi".  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package es.pulimento.wifi.ui.dialogs;
 
 import android.app.Dialog;
@@ -31,7 +50,8 @@ public class AboutDialog extends Dialog implements OnClickListener {
 		((TextView) findViewById(R.id.dialog_about_text)).setMovementMethod(LinkMovementMethod.getInstance());
 		
 		//Add the notice part of the about text
-		((TextView) findViewById(R.id.dialog_about_text)).setText(getContext().getString(R.string.dialog_about_text) + getContext().getString(R.string.dialog_about_text_notice));
+		// TODO doing this, links aren't clickable
+		// ((TextView) findViewById(R.id.dialog_about_text)).setText(getContext().getString(R.string.dialog_about_text) + getContext().getString(R.string.dialog_about_text_notice));
 		
 		// Set click listeners...
 		((Button) findViewById(R.id.dialog_about_license_button)).setOnClickListener(this);

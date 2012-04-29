@@ -1,10 +1,29 @@
+/*
+ *  pulWifi , Copyright (C) 2011-2012 Javi Pulido / Antonio VÃ¡zquez
+ *  
+ *  This file is part of "pulWifi"
+ *
+ *  "pulWifi" is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  "pulWifi" is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with "pulWifi".  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package es.pulimento.wifi.core.algorithms;
 
 import es.pulimento.wifi.core.WirelessNetwork.WirelessEncryption;
 
 /**
  * Andared cracking algorithm.
- * This is a series of network access points in public education centers of Andaluc’a, Spain which where set up by the government.
+ * This is a series of network access points in public education centers of Andalucï¿½a, Spain which where set up by the government.
  */
 public class AndaredAlgorithm extends CrackAlgorithm {
 
