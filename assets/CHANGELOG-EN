@@ -6,6 +6,7 @@
 	<h3>- v2.0.0</h3>
 	<ul>
 		<li>MANY internal changes</li>
+		<li>Added auto-updater</li>
 		<li>Revamped user interface, ICS style</li>
 		<li>Added an action bar</li>
 		<li>Added "Share" option</li>		
