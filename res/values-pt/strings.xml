@@ -22,7 +22,7 @@
 
     <!-- Supported networks dialog -->
     <string name="dialog_supportednetworks_title">"Redes suportadas"</string>
-    <string name="dialog_supportednetworks_list">" - WLAN_XXXX\n - JAZZTEL_XXXX\n - WLANXXXXXX\n - YACOMXXXXXX\n - WIFIXXXXXX\n - Alguns roteadores D-Link\n - Alguns roteadores Huawei"</string>
+    <string name="dialog_supportednetworks_file_url">file:///android_asset/SUPPORTED-EN</string>
 
     <!-- Show passwords dialog -->
     <string name="dialog_showpass_title_one">"Esta é a sua chave"</string>

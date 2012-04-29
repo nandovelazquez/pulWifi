@@ -23,7 +23,7 @@
 
     <!-- Supported networks dialog -->
     <string name="dialog_supportednetworks_title">Redes soportadas</string>
-    <string name="dialog_supportednetworks_list">" - WLAN_XXXX\n - JAZZTEL_XXXX\n - WLANXXXXXX\n - YACOMXXXXXX\n - WIFIXXXXXX\n - Algunos routers D-Link\n - Algunos routers Huawei"</string>
+    <string name="dialog_supportednetworks_file_url">file:///android_asset/SUPPORTED-ES</string>
 
     <!-- Show passwords dialog -->
     <string name="dialog_showpass_title_one">Esta es tu clave</string>
@@ -45,7 +45,8 @@
     <string name="autoupdater_message">Está disponible una nueva versión de pulWifi, ¿deseas obtenerla?</string>
 
     <!-- Preference keys and defaults -->
-	<!-- Really not neccesary here, they are language-independent -->
+    <!-- Really not neccesary here, they are language-independent -->
+
 
     <!-- Preferences -->
     <string name="preferences_category_scanmode">BUSCAR REDES</string>
@@ -109,7 +110,7 @@
     <string name="listadapter_wpa">WPA/WPA2</string>
     <string name="listadapter_wep">WEP</string>
     <string name="listadapter_open">ABIERTA</string>
-    
+
     <!-- Generic dialogs -->
     <string name="dialog_yes">Si</string>
     <string name="dialog_no">No</string>

@@ -25,7 +25,7 @@
 
     <!-- Supported networks dialog -->
     <string name="dialog_supportednetworks_title">Supported networks</string>
-    <string name="dialog_supportednetworks_list">" - WLAN_XXXX\n - JAZZTEL_XXXX\n - WLANXXXXXX\n - YACOMXXXXXX\n - WIFIXXXXXX\n - Some D-Link routers\n - Some Huawei routers"</string>
+    <string name="dialog_supportednetworks_file_url">file:///android_asset/SUPPORTED-EN</string>
 
     <!-- Show passwords dialog -->
     <string name="dialog_showpass_title_one">This is your password</string>

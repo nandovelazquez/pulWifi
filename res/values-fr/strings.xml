@@ -21,7 +21,7 @@
 
     <!-- Supported networks dialog -->
     <string name="dialog_supportednetworks_title">"Réseaux pris en charge"</string>
-    <string name="dialog_supportednetworks_list">" - WLAN_XXXX\n - JAZZTEL_XXXX\n - WLANXXXXXX\n - YACOMXXXXXX\n - WIFIXXXXXX\n - Certains routeurs D-Link\n - Certains routeurs Huawei"</string>
+    <string name="dialog_supportednetworks_file_url">file:///android_asset/SUPPORTED-EN</string>
 
     <!-- Show passwords dialog -->
     <string name="dialog_showpass_title_one">"Ceci est votre mot de passe"</string>

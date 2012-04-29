@@ -20,8 +20,8 @@
     <string name="dialog_license_title">"Llicència"</string>
 
     <!-- Supported networks dialog -->
-    <string name="dialog_supportednetworks_title">"Les xarxes de suport"</string>
-    <string name="dialog_supportednetworks_list">" - WLAN_XXXX\n - JAZZTEL_XXXX\n - WLANXXXXXX\n - YACOMXXXXXX\n - WIFIXXXXXX\n - Alguns routers D-Link\n - Alguns routers Huawei"</string>
+    <string name="dialog_supportednetworks_title">"Xarxes suportades"</string>
+    <string name="dialog_supportednetworks_file_url">file:///android_asset/SUPPORTED-CA</string>
 
     <!-- Show passwords dialog -->
     <string name="dialog_showpass_title_one">"Aquesta és la teva contrasenya"</string>
