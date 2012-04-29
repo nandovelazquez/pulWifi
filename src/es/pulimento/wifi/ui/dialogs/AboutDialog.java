@@ -50,7 +50,8 @@ public class AboutDialog extends Dialog implements OnClickListener {
 		((TextView) findViewById(R.id.dialog_about_text)).setMovementMethod(LinkMovementMethod.getInstance());
 		
 		//Add the notice part of the about text
-		((TextView) findViewById(R.id.dialog_about_text)).setText(getContext().getString(R.string.dialog_about_text) + getContext().getString(R.string.dialog_about_text_notice));
+		// TODO doing this, links aren't clickable
+		// ((TextView) findViewById(R.id.dialog_about_text)).setText(getContext().getString(R.string.dialog_about_text) + getContext().getString(R.string.dialog_about_text_notice));
 		
 		// Set click listeners...
 		((Button) findViewById(R.id.dialog_about_license_button)).setOnClickListener(this);
