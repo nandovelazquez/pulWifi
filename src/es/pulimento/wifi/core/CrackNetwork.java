@@ -1,3 +1,22 @@
+/*
+ *  pulWifi , Copyright (C) 2011-2012 Javi Pulido / Antonio Vázquez
+ *  
+ *  This file is part of "pulWifi"
+ *
+ *  "pulWifi" is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  "pulWifi" is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with "pulWifi".  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package es.pulimento.wifi.core;
 
 import es.pulimento.wifi.core.WirelessNetwork.WirelessEncryption;
@@ -11,9 +30,9 @@ import es.pulimento.wifi.core.algorithms.ZyxelAlgorithm;
 import es.pulimento.wifi.core.algorithms.Wlan6XAlgorithm;
 
 /**
- * This class is a holder for all the wireless cracking algorithms.
- * It selects the valid algorithms and passes the function calls to any
- * delegated algorithm.
+ * This class is a holder for all the wireless cracking algorithms. It selects
+ * the valid algorithms and passes the function calls to any delegated
+ * algorithm.
  */
 public class CrackNetwork {
 
@@ -35,19 +54,19 @@ public class CrackNetwork {
 		mESSID = w.getEssid();
 		mBSSID = w.getBssid();
 
-		if(AndaredAlgorithm.supportsEncryption(mCapabilities))
+		if (AndaredAlgorithm.supportsEncryption(mCapabilities))
 			algorithms.add(new AndaredAlgorithm(mESSID, mBSSID));
-		if(DiscusAlgorithm.supportsEncryption(mCapabilities))
+		if (DiscusAlgorithm.supportsEncryption(mCapabilities))
 			algorithms.add(new DiscusAlgorithm(mESSID, mBSSID));
-		if(DlinkAlgorithm.supportsEncryption(mCapabilities))
+		if (DlinkAlgorithm.supportsEncryption(mCapabilities))
 			algorithms.add(new DlinkAlgorithm(mESSID, mBSSID));
-		if(HuaweiAlgorithm.supportsEncryption(mCapabilities))
+		if (HuaweiAlgorithm.supportsEncryption(mCapabilities))
 			algorithms.add(new HuaweiAlgorithm(mESSID, mBSSID));
-		if(ComtrendAlgorithm.supportsEncryption(mCapabilities))
+		if (ComtrendAlgorithm.supportsEncryption(mCapabilities))
 			algorithms.add(new ComtrendAlgorithm(mESSID, mBSSID));
-		if(ZyxelAlgorithm.supportsEncryption(mCapabilities))
+		if (ZyxelAlgorithm.supportsEncryption(mCapabilities))
 			algorithms.add(new ComtrendAlgorithm(mESSID, mBSSID));
-		if(Wlan6XAlgorithm.supportsEncryption(mCapabilities))
+		if (Wlan6XAlgorithm.supportsEncryption(mCapabilities))
 			algorithms.add(new Wlan6XAlgorithm(mESSID, mBSSID));
 	}
 
@@ -57,7 +76,8 @@ public class CrackNetwork {
 	 * @return Boolean value. True if vulnerable and false if not.
 	 */
 	public boolean isCrackeable() {
-		if (mCapabilities.equals(WirelessEncryption.OPEN)) return true;
+		if (mCapabilities.equals(WirelessEncryption.OPEN))
+			return true;
 
 		return algorithms.isCrackeable();
 	}
@@ -68,7 +88,8 @@ public class CrackNetwork {
 	 * @return A list of passwords separated by newline characters ('\n').
 	 */
 	public String crackNetwork() {
-		if (mCapabilities.equals(WirelessEncryption.OPEN)) return "";
+		if (mCapabilities.equals(WirelessEncryption.OPEN))
+			return "";
 
 		return algorithms.crack();
 	}
