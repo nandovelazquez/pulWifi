@@ -64,10 +64,13 @@ public class ComtrendAlgorithm extends CrackAlgorithm {
 		// BSSID: 00:23:F8:XX:XX:XX
 		addPattern("(?:WLAN|JAZZTEL)_([0-9a-fA-F]{4})", "(00:23:F8:[0-9A-Fa-f:]{8})");
 		
-		// Added all macs untill version 3 which will be focused on this.
-		addPattern("(?:WLAN|JAZZTEL)_([0-9a-fA-F]{4})", "(38:72:C0:[0-9A-Fa-f:]{8})");
+		// ESSID : WLAN_XXXX
+		// BSSID : 38:72:C0:XX:XX:XX
+		addPattern("WLAN_([0-9a-fA-F]{4})", "(38:72:C0:[0-9A-Fa-f:]{8})");
+		
+		// Added all macs until version 3 which will be focused on this.
 		addPattern("(?:WLAN|JAZZTEL)_([0-9a-fA-F]{4})", "(30:39:F2:[0-9A-Fa-f:]{8})");
-		addPattern("(?:WLAN|JAZZTEL)_([0-9a-fA-F]{4})", "(00:1A:2B:[0-9A-Fa-f:]{8})");
+		//addPattern("(?:WLAN|JAZZTEL)_([0-9a-fA-F]{4})", "(00:1A:2B:[0-9A-Fa-f:]{8})");//256 keys!!
 	}
 
 	@Override
