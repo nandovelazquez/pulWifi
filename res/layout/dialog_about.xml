@@ -1,64 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical" >
 
     <RelativeLayout
-        android:layout_width="fill_parent"
+        android:id="@+id/dialog_about_top"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:layout_marginBottom="4dip"
-        android:layout_marginTop="4dip"
-        android:layout_weight="0" >
+        android:layout_marginTop="4dip" >
+
+        <ImageView
+            android:id="@+id/dialog_about_logo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:contentDescription="@string/dialog_about_logo_content_description"
+            android:src="@drawable/ic_launcher" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
+            android:layout_below="@id/dialog_about_logo"
             android:layout_centerHorizontal="true"
-            android:orientation="vertical" >
+            android:orientation="horizontal" >
 
-            <ImageView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:src="@drawable/ic_launcher" />
-
-            <LinearLayout
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal" >
+                android:layout_weight="0"
+                android:text="@string/app_name"
+                android:textSize="20dip" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0"
-                    android:text="@string/app_name"
-                    android:textSize="20dip" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0"
-                    android:paddingLeft="5dip"
-                    android:text="@string/app_version"
-                    android:textSize="20dip" />
-            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:paddingLeft="5dip"
+                android:text="@string/app_version"
+                android:textSize="20dip" />
         </LinearLayout>
     </RelativeLayout>
 
     <ScrollView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_marginBottom="12dp"
+        android:id="@+id/dialog_about_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/dialog_about_bottom"
+        android:layout_below="@id/dialog_about_top"
         android:layout_marginLeft="8dip"
         android:layout_marginRight="8dip" >
 
         <TextView
             android:id="@+id/dialog_about_text"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_weight="0.5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:clickable="true"
             android:longClickable="false"
             android:text="@string/dialog_about_text"
@@ -66,23 +65,25 @@
     </ScrollView>
 
     <LinearLayout
-        android:layout_width="fill_parent"
+        android:id="@+id/dialog_about_bottom"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0" >
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/dialog_about_logo" >
 
         <Button
             android:id="@+id/dialog_about_license_button"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/dialog_about_gpl" />
 
         <Button
             android:id="@+id/dialog_about_changelog_button"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/dialog_about_changelog" />
     </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>
