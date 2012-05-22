@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package es.pulimento.wifi.ui.utils;
+package es.pulimento.wifi.ui.views;
 
 import android.os.Bundle;
 import android.view.Menu;

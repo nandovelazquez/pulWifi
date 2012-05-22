@@ -36,16 +36,11 @@
     <string name="dialog_cipboardcopy_title">Passwords</string>
 
     <!-- Updater dialog -->
-    <string name="dialog_updater_current_version">Current version:</string>
-    <string name="dialog_updater_latest_version">Latest version:</string>
-    <string name="dialog_updater_unknown_version">Unknown</string>
-    <string name="dialog_updater_check">Check for updates</string>
-    <string name="dialog_updater_error">Error connecting to the internet…</string>
-    <string name="dialog_updater_update">Update</string>
     <string name="dialog_udpater_title">Updater:</string>
+    <string name="dialog_udpater_message">There is a newer version of pulWifi available, do you want to download it?</string>
+    <string name="dialog_updater_positive">Yes</string>
+    <string name="dialog_updater_negative">No</string>
     <string name="dialog_updater_checking">Checking…</string>
-    <string name="autoupdater_title">Update available</string>
-    <string name="autoupdater_message">There is a newer version of pulWifi available, do you want to download it?</string>
 
     <!-- Preference keys and defaults -->
     <string name="preferences_autoupdate_key">prefs_key_autoupdate</string>

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <es.pulimento.wifi.ui.utils.PagerHeader
+    <es.pulimento.wifi.ui.views.PagerHeader
         android:id="@+id/pager_header"
         android:layout_width="match_parent"
         android:layout_height="@dimen/pager_header_height"

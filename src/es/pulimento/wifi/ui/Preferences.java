@@ -30,7 +30,7 @@ import android.preference.PreferenceScreen;
 import android.util.Log;
 import es.pulimento.wifi.R;
 import es.pulimento.wifi.ui.dialogs.AboutDialog;
-import es.pulimento.wifi.ui.dialogs.UpdateDialog;
+import es.pulimento.wifi.ui.utils.UpdateChecker;
 
 public class Preferences extends PreferenceActivity {
 
@@ -69,7 +69,7 @@ public class Preferences extends PreferenceActivity {
 	public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
 		String pref = preference.getKey();
 		if (pref.equals(getString(R.string.preferences_updater_key))) {
-			(new UpdateDialog(this)).show();
+			new UpdateChecker(this, null).work();
 			return true;
 		}		
 		if (pref.equals(getString(R.string.preferences_about_key))) {

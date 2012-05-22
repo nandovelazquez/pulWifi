@@ -1,6 +1,6 @@
 /*
  *  pulWifi , Copyright (C) 2011-2012 Javi Pulido / Antonio Vázquez
- *  
+ *
  *  This file is part of "pulWifi"
  *
  *  "pulWifi" is free software: you can redistribute it and/or modify
@@ -43,8 +43,8 @@ import android.view.MenuItem;
 import android.widget.Toast;
 import es.pulimento.wifi.R;
 import es.pulimento.wifi.ui.dialogs.SupportedNetworksDialog;
-import es.pulimento.wifi.ui.utils.ActionBarActivity;
-import es.pulimento.wifi.ui.utils.PagerHeader;
+import es.pulimento.wifi.ui.views.ActionBarActivity;
+import es.pulimento.wifi.ui.views.PagerHeader;
 
 public class HomeActivity extends ActionBarActivity {
 

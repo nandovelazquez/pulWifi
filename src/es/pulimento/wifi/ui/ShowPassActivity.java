@@ -35,7 +35,7 @@ import es.pulimento.wifi.R;
 import es.pulimento.wifi.core.WirelessNetwork;
 import es.pulimento.wifi.ui.dialogs.ClipboardCopyDialog;
 import es.pulimento.wifi.ui.dialogs.ShowPasswordsDialog;
-import es.pulimento.wifi.ui.utils.ActionBarActivity;
+import es.pulimento.wifi.ui.views.ActionBarActivity;
 
 @SuppressWarnings("deprecation")
 public class ShowPassActivity extends ActionBarActivity implements OnClickListener {

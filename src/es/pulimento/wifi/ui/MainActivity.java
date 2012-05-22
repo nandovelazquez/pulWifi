@@ -19,90 +19,78 @@
 
 package es.pulimento.wifi.ui;
 
-import java.lang.ref.WeakReference;
-
 import android.app.Activity;
-import android.content.BroadcastReceiver;
-import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
-import android.net.wifi.WifiManager;
 import android.os.Bundle;
-import es.pulimento.wifi.BuildConfig;
+import android.os.Handler;
+import android.os.Message;
 import es.pulimento.wifi.R;
-import es.pulimento.wifi.ui.dialogs.EnableWifiDialog;
-import es.pulimento.wifi.ui.dialogs.FailedDialog;
-import es.pulimento.wifi.ui.utils.ActionBarActivity;
+import es.pulimento.wifi.ui.utils.UpdateChecker;
+import es.pulimento.wifi.ui.utils.WifiEnabler;
+import es.pulimento.wifi.ui.views.ActionBarActivity;
 
 /**
  * Simple splash screen that is used to check some pre-requisites before running.
  */
 public class MainActivity extends ActionBarActivity {
 
-	private WifiManager mWifiManager;
+	private Handler mHandler;
 	private Activity mActivity;
-	private BroadcastReceiver mBroadcastReceiver;
-	private IntentFilter mIntentFilter;
-	private EnableWifiDialog mEnableWifiDialog;
+	private Boolean mWifiDone;
+	private Boolean mUpdatesDone;
+	private WifiEnabler mWifiEnabler;
+	private UpdateChecker mUpdateChecker;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.layout_mainactivity);
 
-		/* Define elements. */
-		mWifiManager = (WifiManager) getSystemService(Context.WIFI_SERVICE);
 		mActivity = this;
-		mIntentFilter = new IntentFilter();
-		mEnableWifiDialog = new EnableWifiDialog(mActivity, new WeakReference<Activity>(mActivity));
-
-		mBroadcastReceiver = new BroadcastReceiver() {
+		mWifiDone = false;
+		mUpdatesDone = false;
+		mHandler = new Handler() {
 			@Override
-			public void onReceive(Context c, Intent i) {
-				// Code to execute when wifi state changes.
-				switch (i.getIntExtra(WifiManager.EXTRA_WIFI_STATE, -1)) {
-				case WifiManager.WIFI_STATE_UNKNOWN:
-					if(BuildConfig.DEBUG) {
-						startActivity(new Intent(mActivity, HomeActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-						mActivity.finish();
-					} else
-						new FailedDialog(mActivity, new WeakReference<Activity>(mActivity)).show();
+			public void handleMessage(Message msg) {
+				super.handleMessage(msg);
+				switch(msg.what) {
+				case WifiEnabler.MSG_WIFI_ENABLED:
+					mWifiDone = true;
 					break;
-				case WifiManager.WIFI_STATE_ENABLED:
-					startActivity(new Intent(mActivity, HomeActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+				case UpdateChecker.MSG_UPDATE_DONE:
+					mUpdatesDone = true;
+				}
+
+				if(mWifiDone && mUpdatesDone) {
+					mActivity.startActivity(new Intent(mActivity, HomeActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
 					mActivity.finish();
-					break;
-				case WifiManager.WIFI_STATE_DISABLED:
-					new EnableWifiDialog(mActivity, new WeakReference<Activity>(mActivity));
-					break;
 				}
 			}
 		};
-
-		// Set properties.
-		mIntentFilter.addAction(WifiManager.WIFI_STATE_CHANGED_ACTION);
+		mWifiEnabler = new WifiEnabler(mActivity, mHandler);
+		mUpdateChecker = new UpdateChecker(mActivity, mHandler);
 	}
+
 
 	@Override
 	public void onResume() {
 		super.onResume();
 
-		// Check wifi state.
-		if (mWifiManager.getWifiState() == WifiManager.WIFI_STATE_DISABLED)
-			mEnableWifiDialog.show();
-
-		// Register receivers.
-		registerReceiver(mBroadcastReceiver, mIntentFilter);
+		/*
+		 * Do checks.
+		 */
+		mWifiEnabler.work();
+		mUpdateChecker.work();
 	}
 
 	@Override
 	public void onPause() {
 		super.onPause();
 
-		// Dismiss dialogs.
-		mEnableWifiDialog.dismiss();
-
-		// Unregister receivers.
-		unregisterReceiver(mBroadcastReceiver);
+		/*
+		 * Clean it all.
+		 */
+		mWifiEnabler.clean();
+		mUpdateChecker.clean();
 	}
 }

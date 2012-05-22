@@ -1,4 +1,4 @@
-package es.pulimento.wifi.ui.utils;
+package es.pulimento.wifi.ui.views;
 
 import android.content.Context;
 import android.content.res.TypedArray;
