@@ -1,5 +1,5 @@
 /*
- *  pulWifi , Copyright (C) 2011-2012 Javi Pulido / Antonio VÃ¡zquez
+ *  pulWifi , Copyright (C) 2011-2012 Javi Pulido / Antonio V‡zquez
  *
  *  This file is part of "pulWifi"
  *

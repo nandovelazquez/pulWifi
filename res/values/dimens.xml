@@ -7,20 +7,6 @@
     <dimen name="text_size_medium">18sp</dimen>
     <dimen name="page_margin">10dp</dimen>
 
-    <!-- Dimensions for an app list item -->
-    <!--
-    <dimen name="list_item_perferred_height">64dip</dimen>
-    <dimen name="list_item_padding_top">4dip</dimen>
-    <dimen name="list_item_padding_right">4dip</dimen>
-    <dimen name="list_item_padding_bottom">4dip</dimen>
-    <dimen name="list_item_padding_left">4dip</dimen>
-    <dimen name="list_item_icon_size">48dip</dimen>
-    <dimen name="list_item_status_button_padding">14dip</dimen>
-    <dimen name="list_item_header_padding_left">15dip</dimen>
-    <dimen name="list_item_header_height">24dip</dimen>
-    -->
-
-
     <!-- Dimensions for a log item -->
     <dimen name="log_item_perferred_height">30dip</dimen>
     <dimen name="log_item_padding_top">4dip</dimen>

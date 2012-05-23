@@ -43,28 +43,8 @@
         <item name="android:textColor">@color/actionbar_title_color</item>
     </style>
 
-    <style name="ActionBarCompatItem" parent="style/ActionBarCompatItemBase"></style>
+    <style name="ActionBarCompatItem" parent="style/ActionBarCompatItemBase" />
 
-    <style name="ActionBarCompatHomeItem" parent="style/ActionBarCompatItemBase"></style>
-
-    <!--
-    <style name="AppDetailsLayout">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:paddingLeft">15dp</item>
-        <item name="android:paddingTop">15dp</item>
-        <item name="android:paddingRight">15dp</item>
-        <item name="android:orientation">vertical</item>
-    </style>
-
-
-
-    <style name="DetailsInfo">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:paddingLeft">20dp</item>
-        <item name="android:textStyle">bold</item>
-    </style>
-    -->
+    <style name="ActionBarCompatHomeItem" parent="style/ActionBarCompatItemBase" />
 
 </resources>
