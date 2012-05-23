@@ -90,6 +90,7 @@
     <string name="selectwireless_unsupported">Unsupported network. Supported networks have got green markers.</string>
     <string name="selectwireless_emptylist">Nothing yet :(</string>
     <string name="selectwireless_refresh">Update list</string>
+    <string name="selectwireless_item_strength">Signal strength</string>
 
     <!-- Show pass activity -->
     <string name="showpass_nopass">This network is open</string>
