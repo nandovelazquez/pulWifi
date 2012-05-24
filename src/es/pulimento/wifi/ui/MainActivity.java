@@ -47,7 +47,7 @@ public class MainActivity extends ActionBarActivity {
 		super.onCreate(savedInstanceState);
 
 		/* Set exception handler... */
-		Thread.setDefaultUncaughtExceptionHandler(new ExceptionHandler(this));
+		Thread.setDefaultUncaughtExceptionHandler(new ExceptionHandler(mActivity));
 
 		/* Set view content... */
 		setContentView(R.layout.layout_mainactivity);
