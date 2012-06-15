@@ -54,20 +54,13 @@ public class CrackNetwork {
 		mESSID = w.getEssid();
 		mBSSID = w.getBssid();
 
-		if (AndaredAlgorithm.supportsEncryption(mCapabilities))
-			algorithms.add(new AndaredAlgorithm(mESSID, mBSSID));
-		if (DiscusAlgorithm.supportsEncryption(mCapabilities))
-			algorithms.add(new DiscusAlgorithm(mESSID, mBSSID));
-		if (DlinkAlgorithm.supportsEncryption(mCapabilities))
-			algorithms.add(new DlinkAlgorithm(mESSID, mBSSID));
-		if (HuaweiAlgorithm.supportsEncryption(mCapabilities))
-			algorithms.add(new HuaweiAlgorithm(mESSID, mBSSID));
-		if (ComtrendAlgorithm.supportsEncryption(mCapabilities))
-			algorithms.add(new ComtrendAlgorithm(mESSID, mBSSID));
-		if (ZyxelAlgorithm.supportsEncryption(mCapabilities))
-			algorithms.add(new ComtrendAlgorithm(mESSID, mBSSID));
-		if (Wlan6XAlgorithm.supportsEncryption(mCapabilities))
-			algorithms.add(new Wlan6XAlgorithm(mESSID, mBSSID));
+		if (AndaredAlgorithm.supportsEncryption(mCapabilities)) algorithms.add(new AndaredAlgorithm(mESSID, mBSSID));
+		if (DiscusAlgorithm.supportsEncryption(mCapabilities)) algorithms.add(new DiscusAlgorithm(mESSID, mBSSID));
+		if (DlinkAlgorithm.supportsEncryption(mCapabilities)) algorithms.add(new DlinkAlgorithm(mESSID, mBSSID));
+		if (HuaweiAlgorithm.supportsEncryption(mCapabilities)) algorithms.add(new HuaweiAlgorithm(mESSID, mBSSID));
+		if (ComtrendAlgorithm.supportsEncryption(mCapabilities)) algorithms.add(new ComtrendAlgorithm(mESSID, mBSSID));
+		if (ZyxelAlgorithm.supportsEncryption(mCapabilities)) algorithms.add(new ZyxelAlgorithm(mESSID, mBSSID));
+		if (Wlan6XAlgorithm.supportsEncryption(mCapabilities)) algorithms.add(new Wlan6XAlgorithm(mESSID, mBSSID));
 	}
 
 	/**
@@ -76,8 +69,7 @@ public class CrackNetwork {
 	 * @return Boolean value. True if vulnerable and false if not.
 	 */
 	public boolean isCrackeable() {
-		if (mCapabilities.equals(WirelessEncryption.OPEN))
-			return true;
+		if (mCapabilities.equals(WirelessEncryption.OPEN)) return true;
 
 		return algorithms.isCrackeable();
 	}
@@ -88,8 +80,7 @@ public class CrackNetwork {
 	 * @return A list of passwords separated by newline characters ('\n').
 	 */
 	public String crackNetwork() {
-		if (mCapabilities.equals(WirelessEncryption.OPEN))
-			return "";
+		if (mCapabilities.equals(WirelessEncryption.OPEN)) return "";
 
 		return algorithms.crack();
 	}

@@ -155,13 +155,6 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 	}
 
 	/**
-<<<<<<< HEAD
-	 * Build up an {@link es.pulimento.wifi.core.WirelessNetwork} object from it's details.
-	 * @param ESSID Represents the network name.
-	 * @param BSSID Access point hardware address.
-	 * @param signal The strength of the signal in decibeles.
-	 * @param capabilities The encryption of the network.
-=======
 	 * Build up an {@link es.pulimento.wifi.core.WirelessNetwork} object from
 	 * it's details.
 	 * 
@@ -170,10 +163,20 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 	 * @param BSSID
 	 *            Access point hardware address.
 	 * @param signal
+	 *            The strength of the signal in decibeles.
+	 * @param capabilities
+	 *            The encryption of the network.
+	 *            Build up an {@link es.pulimento.wifi.core.WirelessNetwork}
+	 *            object from
+	 *            it's details.
+	 * @param ESSID
+	 *            Represents the network name.
+	 * @param BSSID
+	 *            Access point hardware address.
+	 * @param signal
 	 *            The strength of the signal in dB.
 	 * @param capabilities
 	 *            The encryption of the network.
->>>>>>> d616fde8c4b0c5fab198fb4efe19160e9f525a47
 	 */
 	public WirelessNetwork(String ESSID, String BSSID, int signal, String capabilities) {
 		mEssid = ESSID;
@@ -265,10 +268,11 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 
 	/**
 	 * Getter for the hardware address of the access point.
-<<<<<<< HEAD
-=======
+	 * <<<<<<< HEAD
+	 * =======
 	 * 
->>>>>>> d616fde8c4b0c5fab198fb4efe19160e9f525a47
+	 >>>>>>> d616fde8c4b0c5fab198fb4efe19160e9f525a47
+	 * 
 	 * @return The hardware address of the access point.
 	 */
 	public String getBssid() {
@@ -301,10 +305,11 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 
 	/**
 	 * Returns whether this network is vulnerable or not.
-<<<<<<< HEAD
-=======
+	 * <<<<<<< HEAD
+	 * =======
 	 * 
->>>>>>> d616fde8c4b0c5fab198fb4efe19160e9f525a47
+	 >>>>>>> d616fde8c4b0c5fab198fb4efe19160e9f525a47
+	 * 
 	 * @return True if this network is vulnerable and false if not.
 	 */
 	public boolean isCrackeable() {
@@ -343,7 +348,8 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 	 */
 	@Override
 	public String toString() {
-		return "WirelessNetwork [mEssid=" + mEssid + ", mBssid=" + mBssid + ", mCapabilities=" + mCapabilities + ", mCrackeable=" + mCrackeable + "]";
+		return "WirelessNetwork [mEssid=" + mEssid + ", mBssid=" + mBssid + ", mCapabilities=" + mCapabilities
+				+ ", mCrackeable=" + mCrackeable + "]";
 	}
 
 }
