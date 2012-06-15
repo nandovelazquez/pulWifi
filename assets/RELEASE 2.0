@@ -1,42 +1,5 @@
 *** TO-DO for the v2.0.0 release: (ordenados por importancia)
 
-- Implementar y revisar algoritmos
-- Layouts de diálogos sin márgenes
-- BUG : Al iniciar la aplicación hay un item en el ListViewFragment que si haces clic en él da FC
-- Relacionado con el anterior : android:list/empty no se muestra nunca?
-- Dejar constancia de que se toma código de superuser y de aosp
-- Menú de ShowPassActivity (al menos que muestre algo, ya que en versiones pre-honeycomb 
-muestra en el actionBar el botón de mostrar el menú
+ android:list/empty no se muestra nunca?
+- Dejar constancia de que se toma cï¿½digo de superuser y de aosp
 - Ordenar lista de redes
-- Drawables AOSP ldpi y hdpi -- ?
-- Mostrar un AlertDialog o un Toast justo al abrir el programa que se muestre siempre, diciendo que es un delito
-usar las redes ajenas y blablabla... -- ?
-
-*** Pre-releasing...
-
-- Admob está deshabilitado en el manifest para que no muestre anuncios
-- ahora mismo está puesto para que se pueda entrar desde el emulador
-- Revisar layouts (sobre todo ldpi y mdpi)
-- Revisar strings (algunas cosas del gallego están con el traductor)
-- Desactivar logging
-- Beta-testing
-
-
-*** Done:
-
-- Cambio completo de la interfaz, para todas las versiones de Android
-- Mejor integración con ICS
-- Forzados algunos drawables de ICS
-- Share app menu
-- Arquitectura basada en fragments
-- Añadido ActionBarCompat
-- Añadida librería android-support-v4
-- replace ClipboardManager (se deja como está, probado y sólo funciona de honeycomb en adelante, y la
-librería de compatibilidad no tiene nada al respecto) 
-- ManualFragment scroll when keyboard is out
-- Crear TAG para la versión v1.6.1
-- Move about dialog into preferences
-- Refrescar manualmente (no está implementado, sólo la interfaz)
-- BUG : en las opciones, cuando se entra por primera vez activa automáticamente
-la vibración cada vez que se actualiza -- CREO QUE LO HE ARREGLADO
-- Actualizador automático

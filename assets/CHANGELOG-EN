@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <body>
+
+	<h3>- v2.0.1</h3>
+	<ul>
+		<li>Added support for Infostrada routers</li>
+		<li>Little changes in WLAN_XXXX</li>
+	<ul>
 	
 	
 	<h3>- v2.0.0</h3>
