@@ -25,6 +25,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import es.pulimento.wifi.R;
+import es.pulimento.wifi.ui.utils.ExceptionHandler;
 import es.pulimento.wifi.ui.utils.UpdateChecker;
 import es.pulimento.wifi.ui.utils.WifiEnabler;
 import es.pulimento.wifi.ui.views.ActionBarActivity;
@@ -44,29 +45,18 @@ public class MainActivity extends ActionBarActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+
+		/* Set exception handler... */
+		Thread.setDefaultUncaughtExceptionHandler(new ExceptionHandler(mActivity));
+
+		/* Set view content... */
 		setContentView(R.layout.layout_mainactivity);
 
+		/* Initialize variables... */
 		mActivity = this;
 		mWifiDone = false;
 		mUpdatesDone = false;
-		mHandler = new Handler() {
-			@Override
-			public void handleMessage(Message msg) {
-				super.handleMessage(msg);
-				switch(msg.what) {
-				case WifiEnabler.MSG_WIFI_ENABLED:
-					mWifiDone = true;
-					break;
-				case UpdateChecker.MSG_UPDATE_DONE:
-					mUpdatesDone = true;
-				}
-
-				if(mWifiDone && mUpdatesDone) {
-					mActivity.startActivity(new Intent(mActivity, HomeActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-					mActivity.finish();
-				}
-			}
-		};
+		mHandler = new EventHandler();
 		mWifiEnabler = new WifiEnabler(mActivity, mHandler);
 		mUpdateChecker = new UpdateChecker(mActivity, mHandler);
 	}
@@ -92,5 +82,27 @@ public class MainActivity extends ActionBarActivity {
 		 */
 		mWifiEnabler.clean();
 		mUpdateChecker.clean();
+	}
+
+	/*
+	 * Class that holds all event handling...
+	 */
+	public class EventHandler extends Handler {
+		@Override
+		public void handleMessage(Message msg) {
+			super.handleMessage(msg);
+			switch(msg.what) {
+			case WifiEnabler.MSG_WIFI_ENABLED:
+				mWifiDone = true;
+				break;
+			case UpdateChecker.MSG_UPDATE_DONE:
+				mUpdatesDone = true;
+			}
+
+			if(mWifiDone && mUpdatesDone) {
+				mActivity.startActivity(new Intent(mActivity, HomeActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+				mActivity.finish();
+			}
+		}
 	}
 }

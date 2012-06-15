@@ -27,6 +27,7 @@ import java.net.UnknownHostException;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.os.Handler;
+import android.os.Message;
 import es.pulimento.wifi.R;
 import es.pulimento.wifi.ui.dialogs.UpdateDialog;
 
@@ -78,18 +79,27 @@ public class UpdateChecker implements Runnable {
 			(new DataInputStream((new URL(VERSION_URL)).openConnection().getInputStream())).read(versionData);
 			String latestVersion = new String(versionData).trim();
 			if(!latestVersion.equals(mActivity.getString(R.string.app_version))) {
-				mUpdateDialog = new UpdateDialog(mActivity, String.format(APK_URL, latestVersion));
+				mUpdateDialog = new UpdateDialog(mActivity, String.format(APK_URL, latestVersion), new EventHandler());
 				mUpdateDialog.show();
+			} else {
+				if(mHandler != null)
+					mHandler.sendEmptyMessage(MSG_UPDATE_DONE);
+				else
+					mActivity.runOnUiThread(new Runnable(){@Override public void run() {mProgressDialog.dismiss();}});
 			}
 		} catch (UnknownHostException e) {
 			// Network error.
+			if(mHandler != null)
+				mHandler.sendEmptyMessage(MSG_UPDATE_DONE);
+			else
+				mActivity.runOnUiThread(new Runnable(){@Override public void run() {mProgressDialog.dismiss();}});
 		} catch (IOException e) {
 			// Network error.
+			if(mHandler != null)
+				mHandler.sendEmptyMessage(MSG_UPDATE_DONE);
+			else
+				mActivity.runOnUiThread(new Runnable(){@Override public void run() {mProgressDialog.dismiss();}});
 		}
-		if(mHandler != null)
-			mHandler.sendEmptyMessage(MSG_UPDATE_DONE);
-		else
-			mActivity.runOnUiThread(new Runnable(){@Override public void run() {mProgressDialog.dismiss();}});
 	}
 
 	public void work() {
@@ -109,5 +119,20 @@ public class UpdateChecker implements Runnable {
 			mUpdateDialog.dismiss();
 		if(mProgressDialog != null)
 			mProgressDialog.dismiss();
+	}
+
+	/*
+	 * Class that holds all event handling...
+	 */
+	public class EventHandler extends Handler {
+		@Override
+		public void handleMessage(Message msg) {
+			super.handleMessage(msg);
+			/* There's just one event to handle so no switch... */
+			if(mHandler != null)
+				mHandler.sendEmptyMessage(MSG_UPDATE_DONE);
+			else
+				mActivity.runOnUiThread(new Runnable(){@Override public void run() {mProgressDialog.dismiss();}});
+		}
 	}
 }

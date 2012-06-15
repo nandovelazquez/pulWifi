@@ -25,18 +25,21 @@ import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Handler;
 import es.pulimento.wifi.R;
 
 public class UpdateDialog extends AlertDialog implements OnClickListener {
 
 	private String mUri;
 	private Context mContext;
+	private Handler mHandler;
 
-	public UpdateDialog(Context context, String uri) {
+	public UpdateDialog(Context context, String uri, Handler handler) {
 		super(context);
 
 		mUri = uri;
 		mContext = context;
+		mHandler = handler;
 
 		this.setCancelable(false);
 		this.setTitle(R.string.dialog_udpater_title);
@@ -56,5 +59,6 @@ public class UpdateDialog extends AlertDialog implements OnClickListener {
 			this.dismiss();
 			break;
 		}
+		mHandler.sendEmptyMessage(0);
 	}
 }
