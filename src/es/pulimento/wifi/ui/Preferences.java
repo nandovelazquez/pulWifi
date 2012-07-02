@@ -51,6 +51,7 @@ public class Preferences extends PreferenceActivity {
 	private Preference mApkVersion = null;
 
 	@Override
+	@SuppressWarnings("deprecation")
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		addPreferencesFromResource(R.xml.preferences);
