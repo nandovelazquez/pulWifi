@@ -5,14 +5,14 @@
 	<h3>- v2.0.1</h3>
 	<ul>
 		<li>Añadido soporte para routers InfoStrada</li>
-				<li>Pequeños cambios en WLAN_XXXX</li>
-	<ul>
+		<li>Pequeños cambios en WLAN_XXXX</li>
+	</ul>
 	
 	<h3>- v2.0.0</h3>
 	<ul>
-		<li>Nova interface de usuario</li>
-		<li>Automatic updater</li>
-		<li>Aadida a opci�n de compartir</li>		
+		<li>Nueva interfaz de usuario</li>
+		<li>Actualizador autom�tico</li>
+		<li>A�adida la opci�n de compartir</li>		
 		<li>Idiomas aadidos : franc�s, portugu�s, catal�n</li>
 		<li>Outras pequenas modificacións</li>
 	</ul>
