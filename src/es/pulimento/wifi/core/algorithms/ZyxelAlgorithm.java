@@ -44,19 +44,17 @@ public class ZyxelAlgorithm extends CrackAlgorithm {
 
 		// ESSID: WLAN_XXXX / JAZZTEL_XXXX
 		// BSSID: 00:1F:A4:XX:XX:XX
-		addPattern("(?:WLAN|JAZZTEL)_([0-9a-fA-F]{4})",
-				"(00:1F:A4:[0-9A-Fa-f:]{8})");
+		addPattern("(?:WLAN|JAZZTEL)_([0-9a-fA-F]{4})", "(00:1F:A4:[0-9A-Fa-f:]{8})");
 
 		// ESSID: WLAN_XXXX / JAZZTEL_XXXX
 		// BSSID: F4:3E:61:XX:XX:XX
-		addPattern("(?:WLAN|JAZZTEL)_([0-9a-fA-F]{4})",
-				"(F4:3E:61:[0-9A-Fa-f:]{8})");
+		addPattern("(?:WLAN|JAZZTEL)_([0-9a-fA-F]{4})", "(F4:3E:61:[0-9A-Fa-f:]{8})");
 
 		// Added all macs until version 3 which will be focused on this.
-		
-		//addPattern("(?:WLAN|JAZZTEL)_([0-9a-fA-F]{4})","(98:F5:37:[0-9A-Fa-f:]{8})");//ZTE routers!!!
-		addPattern("(?:WLAN|JAZZTEL)_([0-9a-fA-F]{4})",
-				"(40:4A:03:[0-9A-Fa-f:]{8})");
+
+		// addPattern("(?:WLAN|JAZZTEL)_([0-9a-fA-F]{4})","(98:F5:37:[0-9A-Fa-f:]{8})");
+		// //ZTE routers!!!
+		addPattern("(?:WLAN|JAZZTEL)_([0-9a-fA-F]{4})", "(40:4A:03:[0-9A-Fa-f:]{8})");
 	}
 
 	@Override
@@ -65,15 +63,14 @@ public class ZyxelAlgorithm extends CrackAlgorithm {
 		bssid_data = bssid_data.replace(":", "").toUpperCase();
 		return MD5Hash(
 				bssid_data.substring(0, 8).toLowerCase()
-						+ essid_data.substring(essid_data.length() - 4,
-								essid_data.length()).toLowerCase())
-				.toLowerCase();
+						+ essid_data.substring(essid_data.length() - 4, essid_data.length()).toLowerCase())
+				.toUpperCase();
 	}
 
 	private static String MD5Hash(String input) {
 		try {
-			String hashtext = (new BigInteger(1, MessageDigest.getInstance(
-					"MD5").digest(input.getBytes()))).toString(16);
+			String hashtext = (new BigInteger(1, MessageDigest.getInstance("MD5").digest(input.getBytes())))
+					.toString(16);
 			while (hashtext.length() < 20)
 				hashtext = "0" + hashtext;
 			return hashtext.substring(0, 20);
