@@ -47,7 +47,6 @@
     <!-- Preference keys and defaults -->
     <!-- Really not neccesary here, they are language-independent -->
 
-
     <!-- Preferences -->
     <string name="preferences_category_scanmode">BUSCAR REDES</string>
     <string name="preferences_autoupdate_title">Actualizar automáticamente</string>
@@ -70,9 +69,9 @@
     <string name="mainactivity_failed_dialog_msg">Ha sido imposible activar el wifi</string>
     <string name="mainactivity_failed_dialog_ok_button">Salir</string>
     <string name="mainactivity_ask_dialog_title">¿Activar wifi?</string>
-    <string name="mainactivity_ask_dialog_msg">Esta aplicación requiere tener el wifi activado para funcionar. ¿activarlo?</string>
-    <string name="mainactivity_ask_dialog_yes_button">Si</string>
-    <string name="mainactivity_ask_dialog_no_button">No</string>
+    <string name="mainactivity_ask_dialog_msg">Esta aplicación requiere tener el wifi activado para funcionar</string>
+    <string name="mainactivity_ask_dialog_yes_button">Activar wifi</string>
+    <string name="mainactivity_ask_dialog_no_button">Salir</string>
 
     <!-- Manual crack activity -->
     <string name="manualcrack_header">Introduce el nombre y la dirección MAC de la red</string>
