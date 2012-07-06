@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.net.UnknownHostException;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.os.Handler;
@@ -77,10 +78,15 @@ public class UpdateChecker implements Runnable {
 		try {
 			byte[] versionData = new byte[6];
 			(new DataInputStream((new URL(VERSION_URL)).openConnection().getInputStream())).read(versionData);
-			String latestVersion = new String(versionData).trim();
+			final String latestVersion = new String(versionData).trim();
 			if(!latestVersion.equals(mActivity.getString(R.string.app_version))) {
-				mUpdateDialog = new UpdateDialog(mActivity, String.format(APK_URL, latestVersion), new EventHandler());
-				mUpdateDialog.show();
+				mActivity.runOnUiThread(new Runnable() {
+					@Override
+					public void run() {
+						mUpdateDialog = new UpdateDialog(mActivity, String.format(APK_URL, latestVersion), new EventHandler());
+						mUpdateDialog.show();
+					}
+				});
 			} else {
 				if(mHandler != null)
 					mHandler.sendEmptyMessage(MSG_UPDATE_DONE);
@@ -124,6 +130,7 @@ public class UpdateChecker implements Runnable {
 	/*
 	 * Class that holds all event handling...
 	 */
+	@SuppressLint("HandlerLeak")
 	public class EventHandler extends Handler {
 		@Override
 		public void handleMessage(Message msg) {

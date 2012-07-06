@@ -92,7 +92,7 @@ public class WifiEnabler extends BroadcastReceiver {
 		/*
 		 * Is wifi enabled? If not ask for it...
 		 */
-		if (mWifiManager.getWifiState() == WifiManager.WIFI_STATE_DISABLED)
+		if (mWifiManager.getWifiState() != WifiManager.WIFI_STATE_ENABLED)
 			mEnableWifiDialog.show();
 	}
 
