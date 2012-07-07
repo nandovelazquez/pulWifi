@@ -35,6 +35,7 @@ import es.pulimento.wifi.R;
 import es.pulimento.wifi.core.WirelessNetwork;
 import es.pulimento.wifi.ui.dialogs.ClipboardCopyDialog;
 import es.pulimento.wifi.ui.dialogs.ShowPasswordsDialog;
+import es.pulimento.wifi.ui.utils.ExceptionHandler;
 import es.pulimento.wifi.ui.views.ActionBarActivity;
 
 @SuppressWarnings("deprecation")
@@ -47,6 +48,10 @@ public class ShowPassActivity extends ActionBarActivity implements OnClickListen
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+
+		/* Set exception handler... */
+		Thread.setDefaultUncaughtExceptionHandler(new ExceptionHandler());
+
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.layout_showpass);
 

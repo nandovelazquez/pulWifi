@@ -30,6 +30,7 @@ import android.preference.PreferenceScreen;
 import android.util.Log;
 import es.pulimento.wifi.R;
 import es.pulimento.wifi.ui.dialogs.AboutDialog;
+import es.pulimento.wifi.ui.utils.ExceptionHandler;
 import es.pulimento.wifi.ui.utils.UpdateChecker;
 
 public class Preferences extends PreferenceActivity {
@@ -53,6 +54,10 @@ public class Preferences extends PreferenceActivity {
 	@Override
 	@SuppressWarnings("deprecation")
 	protected void onCreate(Bundle savedInstanceState) {
+
+		/* Set exception handler... */
+		Thread.setDefaultUncaughtExceptionHandler(new ExceptionHandler());
+
 		super.onCreate(savedInstanceState);
 		addPreferencesFromResource(R.xml.preferences);
 
