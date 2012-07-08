@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="gl">
 <body>
-
 	<h3>- v2.0.1</h3>
 	<ul>
 		<li>Engadido soporte para routers Infostrada</li>
 		<li>Algunhos cambios en WLAN_XXXX</li>
 	</ul>
-
 	<h3>- v2.0.0</h3>
 	<ul>
-		<!-- TODO -->
+		<li>Nova interfaz de usuario</li>
+		<li>Actualizador automático</li>
+		<li>Engadida a opción de compartir</li>
+		<li>Idiomas engadidos : francï¿½s, portuguï¿½s, catalï¿½n</li>
+		<li>Outras pequenas modificaciÃ³ns</li>
 	</ul>
-	
 	<h3>- v1.6.1</h3>
 	<ul>
 		<li>Arranxado o erro ao copiar a clave para o portapapeis</li>
 		<li>Pequenos cambios nalgï¿½ns diï¿½logos</li>
 	</ul>
-
 	<h3>- v1.6.0</h3>
 	<ul>
 		<li>Engadido un actualizador</li>
@@ -27,6 +27,5 @@
 		<li>Actualizada a librerï¿½a de AdMob</li>
 		<li>Traduciï¿½n ao Galego</li>
 	</ul>
-
 </body>
 </html>

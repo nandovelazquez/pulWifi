@@ -1,32 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <body>
-
 	<h3>- v2.0.1</h3>
 	<ul>
 		<li>Added support for Infostrada routers</li>
 		<li>Little changes in WLAN_XXXX</li>
 	</ul>
-	
-	
 	<h3>- v2.0.0</h3>
 	<ul>
 		<li>MANY internal changes</li>
 		<li>Added auto-updater</li>
 		<li>Revamped user interface, ICS style</li>
 		<li>Added an action bar</li>
-		<li>Added "Share" option</li>		
+		<li>Added "Share" option</li>
 		<li>Added portuguese, french and catalan translations</li>
 		<li>Fixed some broken characters in Spanish and Galician translations</li>
 		<li>Other minor changes</li>
 	</ul>
-
 	<h3>- v1.6.1</h3>
 	<ul>
 		<li>Fixed bug when copying password to the clipboard</li>
 		<li>Small changes in some dialogs</li>
 	</ul>
-
 	<h3>- v1.6.0</h3>
 	<ul>
 		<li>Added auto-updater</li>
@@ -35,6 +30,5 @@
 		<li>Updated AdMob library</li>
 		<li>Gallegan translation</li>
 	</ul>
-
 </body>
 </html>

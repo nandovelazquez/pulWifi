@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html lang="gl">
 <body>
-	
 	<ul>
 		<li>WLAN_XXXX</li>
 		<li>JAZZTEL_XXXX</li>
 		<li>WLANXXXXXX</li>
-		<li>YACOMXXXXXX</li>		
+		<li>YACOMXXXXXX</li>
 		<li>WIFIXXXXXX</li>
 		<li>Algunhos routers D-Link</li>
 		<li>Algunhos routers Huawei</li>
 		<li>Algunhos routers Infostrada</li>
 	</ul>
-
 </body>
 </html>
