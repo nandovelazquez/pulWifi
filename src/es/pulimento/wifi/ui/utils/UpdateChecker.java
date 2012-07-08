@@ -75,6 +75,10 @@ public class UpdateChecker implements Runnable {
 	 */
 	@Override
 	public void run() {
+		/*
+		 * TODO:
+		 * Substitute this code whith one that checks Github download links for a newer version.
+		 */
 		try {
 			byte[] versionData = new byte[6];
 			(new DataInputStream((new URL(VERSION_URL)).openConnection().getInputStream())).read(versionData);

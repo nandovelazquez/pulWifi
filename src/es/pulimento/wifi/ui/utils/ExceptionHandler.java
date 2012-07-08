@@ -15,7 +15,7 @@ public class ExceptionHandler implements UncaughtExceptionHandler {
 
 		/*
 		 * TODO:
-		 * Report error to our server or mail.
+		 * Report to Github project issues through API v3.
 		 */
 
 		/* Let Android manage the exception... */
