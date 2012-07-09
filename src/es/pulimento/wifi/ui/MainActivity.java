@@ -60,8 +60,6 @@ public class MainActivity extends ActionBarActivity {
 		mHandler = new EventHandler();
 		mWifiEnabler = new WifiEnabler(mActivity, mHandler);
 		mUpdateChecker = new UpdateChecker(mActivity, mHandler);
-
-		throw new NullPointerException();
 	}
 
 
