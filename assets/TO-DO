@@ -2,18 +2,16 @@
 
 - android:list/empty no se muestra nunca?
 - Dejar constancia de que se toma cï¿½digo de superuser y de aosp
-- Ordenar lista de redes
-
+- Ordenar lista de redes -- DONE
 
 *** TO-DO for further releases
 
 - Mejorar el auto-actualizador para que se descargue el apk y lo instale, similar al aptoide 
 (http://aptoide.org/trac/browser/aptoide-client/2.5.4/Aptoide/src/cm/aptoide/pt/Aptoide.java)
-- API para recoger los informes de fallos de los usuarios
+- API para recoger los informes de fallos de los usuarios (Github Issues API)
 - Macs 00:1A:2B tienen 256 posibles passwords
 - Mejorar el aspecto del actualizador manual
 - Show changelog on first opening -- ?
 - AÃ±adir de nuevo soporte nativo a Thomson -- ?
 - Cambiar icono -- ?
 - Cambiar drawables de candados
-- Añadir Google Analytics
