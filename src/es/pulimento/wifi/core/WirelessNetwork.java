@@ -268,10 +268,6 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 
 	/**
 	 * Getter for the hardware address of the access point.
-	 * <<<<<<< HEAD
-	 * =======
-	 * 
-	 >>>>>>> d616fde8c4b0c5fab198fb4efe19160e9f525a47
 	 * 
 	 * @return The hardware address of the access point.
 	 */
@@ -305,11 +301,7 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 
 	/**
 	 * Returns whether this network is vulnerable or not.
-	 * <<<<<<< HEAD
-	 * =======
-	 * 
-	 >>>>>>> d616fde8c4b0c5fab198fb4efe19160e9f525a47
-	 * 
+	 *  
 	 * @return True if this network is vulnerable and false if not.
 	 */
 	public boolean isCrackeable() {
@@ -339,7 +331,7 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 				return w0.getSignal() - this.getSignal();
 			}
 			return -1;
-		} else if (w0.isCrackeable()) return 1;
+		} else if (!w0.isCrackeable()) return w0.getSignal() - this.getSignal();
 		return 0;
 	}
 
