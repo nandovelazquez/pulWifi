@@ -19,11 +19,6 @@
 
 package es.pulimento.wifi.ui.utils;
 
-import java.io.DataInputStream;
-import java.io.IOException;
-import java.net.URL;
-import java.net.UnknownHostException;
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -31,6 +26,8 @@ import android.os.Handler;
 import android.os.Message;
 import es.pulimento.wifi.R;
 import es.pulimento.wifi.ui.dialogs.UpdateDialog;
+import es.pulimento.wifi.ui.utils.github.Download;
+import es.pulimento.wifi.ui.utils.github.GithubApi;
 
 public class UpdateChecker implements Runnable {
 
@@ -38,12 +35,6 @@ public class UpdateChecker implements Runnable {
 	 * Public constants.
 	 */
 	final public static int MSG_UPDATE_DONE = 2;
-
-	/*
-	 * Private constants.
-	 */
-	private final String VERSION_URL = "https://raw.github.com/pulWifi/pulWifi/master/version_latest";
-	private final String APK_URL = "https://github.com/downloads/pulWifi/pulWifi/pulWifi_%s_signed.apk";
 
 	/*
 	 * Global variables.
@@ -75,36 +66,16 @@ public class UpdateChecker implements Runnable {
 	 */
 	@Override
 	public void run() {
-		/*
-		 * TODO:
-		 * Substitute this code whith one that checks Github download links for a newer version.
-		 */
-		try {
-			byte[] versionData = new byte[6];
-			(new DataInputStream((new URL(VERSION_URL)).openConnection().getInputStream())).read(versionData);
-			final String latestVersion = new String(versionData).trim();
-			if(!latestVersion.equals(mActivity.getString(R.string.app_version))) {
-				mActivity.runOnUiThread(new Runnable() {
-					@Override
-					public void run() {
-						mUpdateDialog = new UpdateDialog(mActivity, String.format(APK_URL, latestVersion), new EventHandler());
-						mUpdateDialog.show();
-					}
-				});
-			} else {
-				if(mHandler != null)
-					mHandler.sendEmptyMessage(MSG_UPDATE_DONE);
-				else
-					mActivity.runOnUiThread(new Runnable(){@Override public void run() {mProgressDialog.dismiss();}});
-			}
-		} catch (UnknownHostException e) {
-			// Network error.
-			if(mHandler != null)
-				mHandler.sendEmptyMessage(MSG_UPDATE_DONE);
-			else
-				mActivity.runOnUiThread(new Runnable(){@Override public void run() {mProgressDialog.dismiss();}});
-		} catch (IOException e) {
-			// Network error.
+		final Download d = (new GithubApi()).getLastDownload();
+		if(!d.getVersion().equals(mActivity.getString(R.string.app_version))) {
+			mActivity.runOnUiThread(new Runnable() {
+				@Override
+				public void run() {
+					mUpdateDialog = new UpdateDialog(mActivity, d.getUrl(), new EventHandler());
+					mUpdateDialog.show();
+				}
+			});
+		} else {
 			if(mHandler != null)
 				mHandler.sendEmptyMessage(MSG_UPDATE_DONE);
 			else
