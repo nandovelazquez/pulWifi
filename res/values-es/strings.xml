@@ -33,16 +33,11 @@
     <string name="dialog_cipboardcopy_title">Claves</string>
 
     <!-- Updater dialog -->
-    <string name="dialog_updater_current_version">Versión actual:</string>
-    <string name="dialog_updater_latest_version">Última versión:</string>
-    <string name="dialog_updater_unknown_version">N/A</string>
-    <string name="dialog_updater_check">Buscar actualizaciones</string>
-    <string name="dialog_updater_error">Ha habido un problema conectando a Internet, por favor inténtelo más tarde</string>
-    <string name="dialog_updater_update">Actualizar</string>
     <string name="dialog_udpater_title">Actualizador</string>
+    <string name="dialog_udpater_message">Está disponible una nueva versión de pulWifi, ¿deseas obtenerla?</string>
+    <string name="dialog_updater_positive">Si</string>
+    <string name="dialog_updater_negative">No</string>
     <string name="dialog_updater_checking">Comprobando…</string>
-    <string name="autoupdater_title">Actualización disponible</string>
-    <string name="autoupdater_message">Está disponible una nueva versión de pulWifi, ¿deseas obtenerla?</string>
 
     <!-- Preference keys and defaults -->
     <!-- Really not neccesary here, they are language-independent -->
