@@ -15,6 +15,8 @@
     <string name="dialog_about_changelog">Changelog</string>
     <string name="dialog_about_title">About</string>
     <string name="dialog_about_logo_content_description">Logo</string>
+    <string name="dialog_about_open_source_licenses">Third party licenses</string>
+    <string name="dialog_about_open_source_licenses_url">file:///android_asset/TPL-EN</string>
 
     <!-- Changelog dialog -->
     <string name="dialog_changelog_file_url">file:///android_asset/CHANGELOG-EN</string>

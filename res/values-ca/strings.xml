@@ -10,6 +10,7 @@
     <string name="dialog_about_gpl">"Llicència"</string>
     <string name="dialog_about_changelog">"Registre de canvis"</string>
     <string name="dialog_about_title">"Quant a"</string>
+    <string name="dialog_about_open_source_licenses">Llicències de sw lliure</string>
 
     <!-- Changelog dialog -->
     <string name="dialog_changelog_file_url">"file:///android_asset/CHANGELOG-EN"</string>
