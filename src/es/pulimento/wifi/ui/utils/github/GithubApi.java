@@ -6,22 +6,14 @@ import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 
 import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
 import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.message.BasicNameValuePair;
-import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
-
-import android.util.Log;
 
 public class GithubApi {
 
@@ -30,9 +22,15 @@ public class GithubApi {
 
 	// Variables...
 	private Boolean mAuthed;
+	private String mToken;
 
 	public GithubApi() {
 		mAuthed = false;
+	}
+
+	public GithubApi(String token) {
+		mAuthed = true;
+		mToken = token;
 	}
 
 	public Download getLastDownload() {
@@ -63,26 +61,20 @@ public class GithubApi {
 	public void reportIssue(Issue i) {
 		if(!mAuthed)
 			return;
-		List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
-		nameValuePairs.add(new BasicNameValuePair("title", i.getTitle()));
-		nameValuePairs.add(new BasicNameValuePair("body", i.getBody()));
-		nameValuePairs.add(new BasicNameValuePair("labels", i.getLabels().toString()));
 
-		HttpClient httpClient = new DefaultHttpClient();
 		HttpPost httpPost = new HttpPost(BASEURL+"issues");
+		httpPost.setHeader("Authorization", "token "+mToken);
+		httpPost.setHeader("Content-Type", "application/json");
 		try {
-			httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
-			HttpResponse response = httpClient.execute(httpPost);
-			Log.v("ASD", EntityUtils.getContentCharSet(response.getEntity()));
-		} catch (UnsupportedEncodingException e1) {
-			// Nothing to be done...
-			Log.v("ASD", "EX");
-		} catch (ClientProtocolException e1) {
-			// Nothing to be done...
-			Log.v("ASD", "EX");
-		} catch (IOException e1) {
-			// Nothing to be done...
-			Log.v("ASD", "EX");
+			httpPost.setEntity(new StringEntity(i.toJSONString(), "UTF-8"));
+			HttpResponse response = (new DefaultHttpClient()).execute(httpPost);
+			//Log.v("ASD", EntityUtils.toString(response.getEntity()));
+		} catch (UnsupportedEncodingException e) {
+			// TODO Review
+		} catch (ClientProtocolException e) {
+			// TODO Review
+		} catch (IOException e) {
+			// TODO Review
 		}
 	}
 }

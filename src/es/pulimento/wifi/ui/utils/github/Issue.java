@@ -1,6 +1,8 @@
 package es.pulimento.wifi.ui.utils.github;
 
 import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONStringer;
 
 public class Issue {
 
@@ -41,5 +43,25 @@ public class Issue {
 
 	public void addLabel(String l) {
 		mLabels.put(l);
-	}	
+	}
+
+	public String toJSONString() {
+		//return "{ \"title\": \""+mTitle+"\", \"body\": \""+mBody+"\", \"labels\": "+mLabels.toString()+"}";
+		try {
+			return
+				new JSONStringer()
+					.object()
+						.key("title")
+						.value(mTitle)
+						.key("body")
+						.value(mBody)
+						.key("labels")
+						.value(mLabels)
+					.endObject()
+				.toString();
+		} catch (JSONException e) {
+			// Sould not happen...
+		}
+		return null;
+	}
 }
