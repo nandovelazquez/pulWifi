@@ -4,10 +4,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
-import java.net.MalformedURLException;
 import java.net.URL;
 
-import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
@@ -43,12 +41,10 @@ public class GithubApi {
 				sb.append(s);
 			in.close();
 			return new Download((new JSONArray(sb.toString())).getJSONObject(0));
-		} catch (MalformedURLException e) {
-			// Never going to happen...
 		} catch (IOException e) {
 			// No internet...
 		} catch (JSONException e) {
-			// Error in JSON...
+			// Should not happen...
 		}
 		
 		return null;
@@ -67,14 +63,15 @@ public class GithubApi {
 		httpPost.setHeader("Content-Type", "application/json");
 		try {
 			httpPost.setEntity(new StringEntity(i.toJSONString(), "UTF-8"));
-			HttpResponse response = (new DefaultHttpClient()).execute(httpPost);
-			//Log.v("ASD", EntityUtils.toString(response.getEntity()));
-		} catch (UnsupportedEncodingException e) {
-			// TODO Review
+		} catch (UnsupportedEncodingException e1) {
+			// Should never happen...
+		}
+		try {
+			(new DefaultHttpClient()).execute(httpPost);
 		} catch (ClientProtocolException e) {
-			// TODO Review
+			// Should not happen
 		} catch (IOException e) {
-			// TODO Review
+			// No internet...
 		}
 	}
 }
