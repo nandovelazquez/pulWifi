@@ -217,8 +217,6 @@ class NetworkListAdapter implements ListAdapter {
 		// Testing if this force listview to update
 		mItems = new ArrayList<WirelessNetwork>();
 		mItems = items;
-		mItems.add(null);
-		//mItems.add(new WirelessNetwork("Andared", "AA:AA:AA:AA:AA:AA", 0, "[WPA]"));
 
 		if (SelectWirelessNetworkFragment.D) Log.e(TAG, "NetworkListAdapter<init>");
 		mLayoutInflater = (LayoutInflater) act.getApplicationContext()
