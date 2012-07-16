@@ -52,6 +52,7 @@ public class AboutDialog extends Dialog implements OnClickListener {
 		// Set click listeners...
 		((Button) findViewById(R.id.dialog_about_license_button)).setOnClickListener(this);
 		((Button) findViewById(R.id.dialog_about_changelog_button)).setOnClickListener(this);
+		((Button) findViewById(R.id.dialog_about_open_source_licenses)).setOnClickListener(this);
 	}
 
 	@Override
@@ -62,6 +63,9 @@ public class AboutDialog extends Dialog implements OnClickListener {
 				break;
 			case R.id.dialog_about_changelog_button:
 				(new ChangelogDialog(mContext)).show();
+				break;
+			case R.id.dialog_about_open_source_licenses:
+				(new ThirdPartyLicensesDialog(mContext)).show();
 				break;
 		}
 	}

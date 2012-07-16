@@ -13,21 +13,22 @@
         ads:loadAdOnCreate="true" />
 
     <ListView
-        android:id="@+id/android:list"
+        android:id="@id/android:list"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_weight="1"
         android:clickable="true" />
 
     <TextView
-        android:id="@+id/android:empty"
+        android:id="@id/android:empty"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_gravity="center"
         android:layout_weight="1"
         android:gravity="center"
         android:text="@string/selectwireless_emptylist"
-        android:textSize="16dip"
+        android:textColor="@color/selectwireless_emptylist"
+        android:textSize="16dp"
         android:textStyle="bold" />
 
     <LinearLayout

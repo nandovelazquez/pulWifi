@@ -15,6 +15,8 @@
     <string name="dialog_about_changelog">Changelog</string>
     <string name="dialog_about_title">About</string>
     <string name="dialog_about_logo_content_description">Logo</string>
+    <string name="dialog_about_open_source_licenses">Third party licenses</string>
+    <string name="dialog_about_open_source_licenses_url">file:///android_asset/TPL-EN</string>
 
     <!-- Changelog dialog -->
     <string name="dialog_changelog_file_url">file:///android_asset/CHANGELOG-EN</string>
@@ -36,7 +38,7 @@
     <string name="dialog_cipboardcopy_title">Passwords</string>
 
     <!-- Updater dialog -->
-    <string name="dialog_udpater_title">Updater:</string>
+    <string name="dialog_udpater_title">Updater</string>
     <string name="dialog_udpater_message">There is a newer version of pulWifi available, do you want to download it?</string>
     <string name="dialog_updater_positive">Yes</string>
     <string name="dialog_updater_negative">No</string>
@@ -75,8 +77,8 @@
     <string name="mainactivity_failed_dialog_ok_button">Exit</string>
     <string name="mainactivity_ask_dialog_title">Enable wifi?</string>
     <string name="mainactivity_ask_dialog_msg">This app needs wifi enabled to work. Turn on now?</string>
-    <string name="mainactivity_ask_dialog_yes_button">Yes</string>
-    <string name="mainactivity_ask_dialog_no_button">No</string>
+    <string name="mainactivity_ask_dialog_yes_button">Enable wifi</string>
+    <string name="mainactivity_ask_dialog_no_button">Exit</string>
 
     <!-- Manual crack activity -->
     <string name="manualcrack_header">Enter network name and MAC Adress below</string>

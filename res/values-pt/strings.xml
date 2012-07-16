@@ -11,6 +11,7 @@
     <string name="dialog_about_gpl">"Licença"</string>
     <string name="dialog_about_title">"Sobre"</string>
     <string name="dialog_about_changelog">"Alterações"</string>
+    <string name="dialog_about_open_source_licenses">Licenças de sw livre</string>
 
     <!-- License dialog -->
     <string name="dialog_license_file_url">"file:///android_asset/LICENSE-EN"</string>

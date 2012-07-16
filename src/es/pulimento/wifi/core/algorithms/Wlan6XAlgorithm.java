@@ -122,8 +122,8 @@ public class Wlan6XAlgorithm extends CrackAlgorithm {
 	}
 
 	public static boolean supportsEncryption(WirelessEncryption mCapabilities) {
-		// TODO Auto-generated method stub
-		return false;
+		// TODO Check this...
+		return true;
 	}
 
 }

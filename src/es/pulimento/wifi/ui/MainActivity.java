@@ -29,12 +29,11 @@ import es.pulimento.wifi.R;
 import es.pulimento.wifi.ui.utils.ExceptionHandler;
 import es.pulimento.wifi.ui.utils.UpdateChecker;
 import es.pulimento.wifi.ui.utils.WifiEnabler;
-import es.pulimento.wifi.ui.views.ActionBarActivity;
 
 /**
  * Simple splash screen that is used to check some pre-requisites before running.
  */
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
 
 	private Handler mHandler;
 	private Activity mActivity;

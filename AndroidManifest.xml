@@ -30,7 +30,8 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".ui.MainActivity"
-            android:configChanges="keyboardHidden|orientation" >
+            android:configChanges="keyboardHidden|orientation"
+            android:theme="@android:style/Theme.Holo.Light.Dialog.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

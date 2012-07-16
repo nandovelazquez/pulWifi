@@ -57,9 +57,7 @@ public class DiscusAlgorithm extends CrackAlgorithm {
 	 * {@inheritDoc}
 	 */
 	public static boolean supportsEncryption(WirelessEncryption mCapabilities) {
-		if (mCapabilities.equals(WirelessEncryption.WPA)) return true;
-
-		return false;
+		return mCapabilities.equals(WirelessEncryption.WPA);
 	}
 
 }
