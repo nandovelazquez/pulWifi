@@ -40,6 +40,8 @@
         </activity>
         <activity
             android:name=".ui.Preferences"
+            android:label="@string/menu_settings"
+            android:theme="@android:style/Theme.Light"
             android:configChanges="orientation|keyboard|keyboardHidden" />
         <activity
             android:name=".ui.ShowPassActivity"
