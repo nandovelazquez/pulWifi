@@ -2,7 +2,7 @@ pulWifi
 =======
  
 pulWifi shows the default password of some wireless networks.
-Copyright (C) 2011 Javi Pulido and Antonio VÃ¡zquez Blanco.
+Copyright (C) 2011 Javi Pulido and Antonio Vázquez Blanco.
 
 LEGAL NOTE
 ----------
