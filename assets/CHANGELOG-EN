@@ -3,8 +3,15 @@
 <body>
 	<h3>- v2.0.1</h3>
 	<ul>
+		<li>Fixed errors in networks detection</li>
+		<li>Introducing BETA report testing</li>
 		<li>Added support for Infostrada routers</li>
-		<li>Little changes in WLAN_XXXX</li>
+		<li>Improve updater system</li>
+		<li>Change splashcreen (for ICS and above)</li>
+		<li>Fixed networks list order</li>
+		<li>Some changes in dialogs</li>
+		<li>Some changes in translations</li>
+		<li>Other minor improvements</li>
 	</ul>
 	<h3>- v2.0.0</h3>
 	<ul>
@@ -24,11 +31,11 @@
 	</ul>
 	<h3>- v1.6.0</h3>
 	<ul>
-		<li>Added auto-updater</li>
+		<li>Added manual updater</li>
 		<li>Code refactoring</li>
 		<li>Some menus revamped</li>
 		<li>Updated AdMob library</li>
-		<li>Gallegan translation</li>
+		<li>Galician translation</li>
 	</ul>
 </body>
 </html>

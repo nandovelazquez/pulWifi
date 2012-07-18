@@ -4,8 +4,15 @@
 
 	<h3>- v2.0.1</h3>
 	<ul>
-		<li>AÃ±adido soporte para routers InfoStrada</li>
-		<li>PequeÃ±os cambios en WLAN_XXXX</li>
+		<li>Arreglados algunos fallos en detección de redes</li>
+		<li>Añadido sistema de reporte de errores (en pruebas)</li>
+		<li>Añadido soporte para routers Infostrada</li>
+		<li>Mejoras en el actualizador</li>
+		<li>Cambios en el splashcreen (ICS en adelante)</li>
+		<li>Arreglada la ordenación de redes</li>
+		<li>Algunos cambios en diálogos</li>
+		<li>Algunos cambios en la interfaz</li>
+		<li>Otras modificaciones menores</li>
 	</ul>
 	
 	<h3>- v2.0.0</h3>
@@ -13,23 +20,23 @@
 		<li>Nueva interfaz de usuario</li>
 		<li>Actualizador automático</li>
 		<li>Añadida la opción de compartir</li>		
-		<li>Idiomas aadidos : francï¿½s, portuguï¿½s, catalï¿½n</li>
-		<li>Outras pequenas modificaciÃ³ns</li>
+		<li>Idiomas aadidos : francés, portugués, catalán</li>
+		<li>Otras modificaciones menores</li>
 	</ul>
 	
 	<h3>- v1.6.1</h3>
 	<ul>
 		<li>Arreglado fallo al copiar la clave al portapapeles</li>
-		<li>Pequeï¿½os cambios en algunos diï¿½logos</li>
+		<li>Pequeños cambios en algunos diálogos</li>
 	</ul>
 
 	<h3>- v1.6.0</h3>
 	<ul>
-		<li>Aï¿½adido un actualizador</li>
+		<li>Añadido un actualizador</li>
 		<li>Grandes cambios internos</li>
-		<li>Algunos menï¿½s renovados</li>
-		<li>Actualizada la librerï¿½a de AdMob</li>
-		<li>Traducciï¿½n al Gallego</li>
+		<li>Algunos menús renovados</li>
+		<li>Actualizada la librería de AdMob</li>
+		<li>Traducción al Gallego</li>
 	</ul>
 
 </body>

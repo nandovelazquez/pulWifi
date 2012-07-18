@@ -3,29 +3,37 @@
 <body>
 	<h3>- v2.0.1</h3>
 	<ul>
-		<li>Engadido soporte para routers Infostrada</li>
-		<li>Algunhos cambios en WLAN_XXXX</li>
+		<!-- TODO translate -->
+		<li>Fixed errors in networks detection</li>
+		<li>Introducing BETA report testing</li>
+		<li>Added support for Infostrada routers</li>
+		<li>Improve updater system</li>
+		<li>Change splashcreen (for ICS and above)</li>
+		<li>Fixed networks list order</li>
+		<li>Some changes in dialogs</li>
+		<li>Some changes in translations</li>
+		<li>Other minor improvements</li>
 	</ul>
 	<h3>- v2.0.0</h3>
 	<ul>
 		<li>Nova interfaz de usuario</li>
 		<li>Actualizador automático</li>
 		<li>Engadida a opción de compartir</li>
-		<li>Idiomas engadidos : francï¿½s, portuguï¿½s, catalï¿½n</li>
-		<li>Outras pequenas modificaciÃ³ns</li>
+		<li>Idiomas engadidos : francés, portugués, catalán</li>
+		<li>Outras pequenas modificacions</li>
 	</ul>
 	<h3>- v1.6.1</h3>
 	<ul>
 		<li>Arranxado o erro ao copiar a clave para o portapapeis</li>
-		<li>Pequenos cambios nalgï¿½ns diï¿½logos</li>
+		<li>Pequenos cambios nalgúns diálogos</li>
 	</ul>
 	<h3>- v1.6.0</h3>
 	<ul>
 		<li>Engadido un actualizador</li>
 		<li>Programa reescrito case por completo</li>
-		<li>Algï¿½ns menï¿½s renovados</li>
-		<li>Actualizada a librerï¿½a de AdMob</li>
-		<li>Traduciï¿½n ao Galego</li>
+		<li>Algúns menús renovados</li>
+		<li>Actualizada a librería de AdMob</li>
+		<li>Tradución ao Galego</li>
 	</ul>
 </body>
 </html>
