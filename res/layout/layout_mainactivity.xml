@@ -9,8 +9,9 @@
         android:layout_width="wrap_content"
         android:layout_height="0dip"
         android:layout_gravity="center"
-        android:layout_margin="25dip"
+        android:layout_margin="15dip"
         android:layout_weight="1"
+        android:contentDescription="@string/dialog_about_logo_content_description"
         android:src="@drawable/ic_splashscreen" />
 
 </LinearLayout>

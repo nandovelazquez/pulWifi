@@ -25,21 +25,24 @@
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="0dp"
-                android:layout_marginBottom="2dip"
-                android:layout_marginLeft="8dip"
-                android:layout_marginRight="4dip"
-                android:layout_marginTop="2dip"
+                android:layout_marginBottom="20dip"
+                android:layout_marginLeft="20dip"
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="20dip"
                 android:layout_weight="1"
                 android:text="@string/manualcrack_header"
-                android:textSize="18dip" />
+                android:textSize="32dp" />
 
             <LinearLayout
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:baselineAligned="false" >
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
                     android:layout_weight="1"
                     android:orientation="vertical" >
 
@@ -48,6 +51,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
+                        android:textSize="24dp"
                         android:hint="@string/manualcrack_essid_hint"
                         android:singleLine="true" />
 
@@ -56,6 +60,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
+                        android:textSize="24dp"
                         android:hint="@string/manualcrack_bssid_hint"
                         android:maxLength="17"
                         android:singleLine="true" />
@@ -63,25 +68,27 @@
 
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent" >
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp" >
 
                     <ToggleButton
                         android:id="@+id/layout_manualcrack_togglebutton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="120dp"
+                        android:layout_height="80dp"
                         android:layout_gravity="center"
+                        android:textSize="24dp"
                         android:textOff="WEP"
                         android:textOn="WPA" />
 
                     <Button
                         android:id="@+id/layout_manualcrack_accept"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="120dp"
+                        android:layout_height="80dp"
                         android:layout_gravity="center"
                         android:layout_marginLeft="6dip"
-                        android:layout_marginRight="6dip"
                         android:text="@string/manualcrack_crackbutton"
-                        android:textSize="20dp"
+                        android:textSize="24dp"
                         android:textStyle="bold" />
                 </LinearLayout>
             </LinearLayout>
@@ -89,12 +96,12 @@
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="0dp"
-                android:layout_marginLeft="8dip"
-                android:layout_marginRight="4dip"
-                android:layout_marginTop="4dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginTop="20dp"
                 android:layout_weight="1"
                 android:text="@string/manualcrack_bottom"
-                android:textSize="16dip" />
+                android:textSize="26dip" />
         </LinearLayout>
     </ScrollView>
 

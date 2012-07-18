@@ -25,16 +25,17 @@
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="14dip"
-                android:layout_marginLeft="8dip"
-                android:layout_marginTop="4dip"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
                 android:text="@string/manualcrack_header"
-                android:textSize="20dip" />
+                android:textSize="24dip" />
 
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="30dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="4dp"
                 android:baselineAligned="false" >
@@ -50,6 +51,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
+                        android:textSize="24dp"
                         android:hint="@string/manualcrack_essid_hint"
                         android:singleLine="true" />
 
@@ -58,6 +60,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
+                        android:textSize="24dp"
                         android:hint="@string/manualcrack_bssid_hint"
                         android:maxLength="17"
                         android:singleLine="true" />
@@ -70,9 +73,10 @@
 
                     <ToggleButton
                         android:id="@+id/layout_manualcrack_togglebutton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="100dp"
+                        android:layout_height="70dp"
                         android:layout_gravity="center"
+                        android:textSize="24dp"
                         android:textOff="WEP"
                         android:textOn="WPA" />
                 </LinearLayout>
@@ -85,17 +89,17 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:text="@string/manualcrack_crackbutton"
-                android:textSize="20dp"
+                android:textSize="24dp"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dip"
-                android:layout_marginRight="4dip"
-                android:layout_marginTop="10dip"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="50dp"
                 android:text="@string/manualcrack_bottom"
-                android:textSize="16dip" />
+                android:textSize="20dp" />
         </LinearLayout>
     </ScrollView>
 
