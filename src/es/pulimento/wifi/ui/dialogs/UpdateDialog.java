@@ -42,8 +42,8 @@ public class UpdateDialog extends AlertDialog implements OnClickListener {
 		mHandler = handler;
 
 		this.setCancelable(false);
-		this.setTitle(R.string.dialog_udpater_title);
-		this.setMessage(mContext.getText(R.string.dialog_udpater_message));
+		this.setTitle(R.string.dialog_updater_title);
+		this.setMessage(mContext.getText(R.string.dialog_updater_message));
 		this.setButton(BUTTON_POSITIVE, mContext.getText(R.string.dialog_updater_positive), this);
 		this.setButton(BUTTON_NEGATIVE, mContext.getText(R.string.dialog_updater_negative), this);
 	}

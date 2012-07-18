@@ -6,7 +6,7 @@
     <string name="toast_disclaimer_text">Rappelez-vous, ne pas utiliser les réseaux qui ne sont pas le vôtre</string>
 
     <!-- About dialog -->
-    <string name="dialog_about_text">Il s\'agit d\'une application simple qui montre les mots de passe par défaut de certaines taches wifi\n\nCopyright 2011-12, Javier Pulido et Antonio Vázquez Blanco.\nContact: <a href="mailto:pulwifi@gmail.com?subject=pulWifi">pulwifi@gmail.com</a>\n\nNOTE LEGAL: L\'intention très seule de cette application est de démontrer l\'insécurité de vos propres routeurs, et mettent en garde contre le danger de l\'utilisation de mots de passe par défaut. L\'auteur de cette demande n\'est pas responsable de l\'utilisation utilisateur final fait de cette. Lorsque vous utilisez cette application avec un réseau sans fil, assurez-vous que c\'est vous-même ou avoir l\'autorisation du propriétaire/l\'administrateur du réseau. Rappelez-vous que l\'utilisation de la connexion haut débit des autres est un crime. S\'il vous plaît ne pas utiliser cette application de manière ilegal. Utilisez-dessous de votre propre responsabilité\n\nCe programme est un logiciel libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la Licence Publique Générale GNU publiée par la Free Software Foundation, soit la version 3 de la Licence, ou (à votre choix) toute version ultérieure\n\nCe programme est distribué dans l\'espoir qu\'il sera utile, mais SANS AUCUNE GARANTIE, sans même la garantie implicite de COMMERCIALISATION ou D\'ADAPTATION A UN OBJET PARTICULIER. Voir la licence GNU General Public pour plus de détails.</string>
+    <string name="dialog_about_text">Il s\'agit d\'une application simple qui montre les mots de passe par défaut de certaines taches wifi\n\nCopyright 2011/12, Javier Pulido et Antonio Vázquez Blanco.\nContact: <a href="mailto:pulwifi@gmail.com?subject=pulWifi">pulwifi@gmail.com</a>\n\nNOTE LEGAL: L\'intention très seule de cette application est de démontrer l\'insécurité de vos propres routeurs, et mettent en garde contre le danger de l\'utilisation de mots de passe par défaut. L\'auteur de cette demande n\'est pas responsable de l\'utilisation utilisateur final fait de cette. Lorsque vous utilisez cette application avec un réseau sans fil, assurez-vous que c\'est vous-même ou avoir l\'autorisation du propriétaire/l\'administrateur du réseau. Rappelez-vous que l\'utilisation de la connexion haut débit des autres est un crime. S\'il vous plaît ne pas utiliser cette application de manière ilegal. Utilisez-dessous de votre propre responsabilité\n\nCe programme est un logiciel libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la Licence Publique Générale GNU publiée par la Free Software Foundation, soit la version 3 de la Licence, ou (à votre choix) toute version ultérieure\n\nCe programme est distribué dans l\'espoir qu\'il sera utile, mais SANS AUCUNE GARANTIE, sans même la garantie implicite de COMMERCIALISATION ou D\'ADAPTATION A UN OBJET PARTICULIER. Voir la licence GNU General Public pour plus de détails.</string>
     <string name="dialog_about_gpl">"Licence"</string>
     <string name="dialog_about_changelog">"Modifications"</string>
     <string name="dialog_about_title">"About"</string>
@@ -32,25 +32,15 @@
     <string name="dialog_cipboardcopy_title">"Mots de passe"</string>
 
     <!-- Updater dialog -->
-    <string name="dialog_updater_current_version">"La version actuelle:"</string>
-    <string name="dialog_updater_latest_version">"Dernière version:"</string>
-    <string name="dialog_updater_unknown_version">"Inconnu"</string>
-    <string name="dialog_updater_check">"Rechercher les mises à jour"</string>
-    <string name="dialog_updater_error">"Erreur de connexion à l'Internet ..."</string>
-    <string name="dialog_updater_update">"Mettre à jour"</string>
-    <string name="dialog_udpater_title">"Updater:"</string>
-    <string name="dialog_updater_checking">"Compte chèque"</string>
-    <string name="autoupdater_title">"Mise à jour disponible"</string>
-    <string name="autoupdater_message">"Il ya une version plus récente de pulWifi disponible, voulez-vous pour le télécharger?"</string>
+    <string name="dialog_updater_title">"Updater"</string>
+    <string name="dialog_updater_message">"Il ya une version plus récente de pulWifi disponible, voulez-vous pour le télécharger?"</string>
+    <string name="dialog_updater_positive">"Oui"</string>
+    <string name="dialog_updater_negative">"Non"</string>
+    <string name="dialog_updater_checking">"Compte chèque…"</string>
 
     <!-- Preference keys and defaults -->
-    <string name="preferences_autoupdate_key">"prefs_key_autoupdate"</string>
-    <string name="preferences_autoupdate_default">"true"</string>
-    <string name="preferences_vibrateupdate_key">"prefs_key_vibrateupdate"</string>
-    <string name="preferences_vibrateupdate_default">"false"</string>
-    <string name="preferences_updateinterval_key">"prefs_key_updateinterval"</string>
-    <string name="preferences_updateinterval_default">"2000 "</string>
-    <string name="preferences_about_key">"prefs_key_about"</string>
+    <!-- Really not neccesary here, they are language-independent -->
+
 
     <!-- Preferences -->
     <string name="preferences_category_scanmode">"MODE SCAN"</string>
@@ -65,7 +55,6 @@
     <string name="preferences_updateinterval_slow">"Lent"</string>
     <string name="preferences_category_info">"GÉNÉRAL"</string>
     <string name="preferences_about_summary">"À propos de cette version"</string>
-    <string name="preferences_about_title">"pulWifi v%1$s (r%2$d)"</string>
     <string name="preferences_updater_summary">Les mises à jour manuellement</string>
     <string name="preferences_updater_title">Updater</string>
 

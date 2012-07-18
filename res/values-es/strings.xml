@@ -8,7 +8,7 @@
     <string name="toast_disclaimer_text">Recuerda, no uses las redes ajenas</string>
 
     <!-- About dialog -->
-    <string name="dialog_about_text">Aplicación para calcular las claves predefinidas de algunas redes wifi.\n\nCopyright 2011–12, Javi Pulido y Antonio Vázquez Blanco.\nContacto: <a href="mailto:pulwifi@gmail.com?subject=pulWifi">pulwifi@gmail.com</a>\n\nNOTA LEGAL : La única intención de esta aplicación es poner de manifiesto la inseguridad de sus propios routers, y advertir del peligro de usar contraseñas preestablecidas. El autor de esta aplicación no se hace responsable del uso que el usuario final haga de esta.  Siempre que use esta aplicación con una red inalámbrica, asegúrese de que es la suya propia o de que tiene permiso del propietario/responsable de la red. Recuerde que usar la conexión de banda ancha ajena es un delito. Por favor, no use esta aplicación de forma ilegal. Úsese bajo su propia responsabilidad.\n\nEste programa es software libre: usted puede redistribuirlo y/o modificarlo bajo los términos de la Licencia Pública General GNU publicada por la Fundación para el Software Libre, ya sea la versión 3 de la Licencia, o (a su elección) cualquier versión posterior..\n\nEste programa se distribuye con la esperanza de que sea útil, pero SIN GARANTÍA ALGUNA; ni siquiera la garantía implícita MERCANTIL o de APTITUD PARA UN PROPÓSITO DETERMINADO. Consulte los detalles de la Licencia Pública General GNU para obtener una información más detallada.</string>
+    <string name="dialog_about_text">Aplicación para calcular las claves predefinidas de algunas redes wifi.\n\nCopyright 2011/12, Javi Pulido y Antonio Vázquez Blanco.\nContacto: <a href="mailto:pulwifi@gmail.com?subject=pulWifi">pulwifi@gmail.com</a>\n\nNOTA LEGAL : La única intención de esta aplicación es poner de manifiesto la inseguridad de sus propios routers, y advertir del peligro de usar contraseñas preestablecidas. El autor de esta aplicación no se hace responsable del uso que el usuario final haga de esta.  Siempre que use esta aplicación con una red inalámbrica, asegúrese de que es la suya propia o de que tiene permiso del propietario/responsable de la red. Recuerde que usar la conexión de banda ancha ajena es un delito. Por favor, no use esta aplicación de forma ilegal. Úsese bajo su propia responsabilidad.\n\nEste programa es software libre: usted puede redistribuirlo y/o modificarlo bajo los términos de la Licencia Pública General GNU publicada por la Fundación para el Software Libre, ya sea la versión 3 de la Licencia, o (a su elección) cualquier versión posterior..\n\nEste programa se distribuye con la esperanza de que sea útil, pero SIN GARANTÍA ALGUNA; ni siquiera la garantía implícita MERCANTIL o de APTITUD PARA UN PROPÓSITO DETERMINADO. Consulte los detalles de la Licencia Pública General GNU para obtener una información más detallada.</string>
     <string name="dialog_about_gpl">Licencia</string>
     <string name="dialog_about_title">Acerca de</string>
     <string name="dialog_about_changelog">Cambios</string>
@@ -34,8 +34,8 @@
     <string name="dialog_cipboardcopy_title">Claves</string>
 
     <!-- Updater dialog -->
-    <string name="dialog_udpater_title">Actualizador</string>
-    <string name="dialog_udpater_message">Está disponible una nueva versión de pulWifi, ¿deseas obtenerla?</string>
+    <string name="dialog_updater_title">Actualizador</string>
+    <string name="dialog_updater_message">Está disponible una nueva versión de pulWifi, ¿deseas obtenerla?</string>
     <string name="dialog_updater_positive">Si</string>
     <string name="dialog_updater_negative">No</string>
     <string name="dialog_updater_checking">Comprobando…</string>
@@ -56,7 +56,6 @@
     <string name="preferences_updateinterval_slow">Lenta</string>
     <string name="preferences_category_info">GENERAL</string>
     <string name="preferences_about_summary">Acerca de esta versión</string>
-    <string name="preferences_about_title">pulWifi v%1$s (r%2$d)</string>
     <string name="preferences_updater_summary">Buscar actualizaciones manualmente</string>
     <string name="preferences_updater_title">Actualizador</string>
 
