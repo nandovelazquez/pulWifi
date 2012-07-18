@@ -3,23 +3,22 @@
 <body>
 	<h3>- v2.0.1</h3>
 	<ul>
-		<!-- TODO translate -->
-		<li>Fixed errors in networks detection</li>
-		<li>Introducing BETA report testing</li>
-		<li>Added support for Infostrada routers</li>
-		<li>Improve updater system</li>
-		<li>Change splashcreen (for ICS and above)</li>
-		<li>Fixed networks list order</li>
-		<li>Some changes in dialogs</li>
-		<li>Some changes in translations</li>
-		<li>Other minor improvements</li>
+		<li>Correxidos algœns erros na detecci—n de redes</li>
+		<li>Engadido sistema de informes de erros en fase BETA</li>
+		<li>Engadido soporte para routers Infostrada</li>
+		<li>Mellorado o sistema de actualizaci—ns</li>
+		<li>Cambiada a pantalla de inicio en ICS e posteriores</li>
+		<li>Correxido a orde das redes</li>
+		<li>Algœns cambios en di‡logos</li>
+		<li>Algœns cambios nas traducci—ns</li>
+		<li>Outros cambios menores</li>
 	</ul>
 	<h3>- v2.0.0</h3>
 	<ul>
 		<li>Nova interfaz de usuario</li>
 		<li>Actualizador automático</li>
 		<li>Engadida a opción de compartir</li>
-		<li>Idiomas engadidos : francés, portugués, catalán</li>
+		<li>Idiomas engadidos: francés, portugués, catalán</li>
 		<li>Outras pequenas modificacions</li>
 	</ul>
 	<h3>- v1.6.1</h3>
