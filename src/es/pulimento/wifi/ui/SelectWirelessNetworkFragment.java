@@ -159,6 +159,7 @@ public class SelectWirelessNetworkFragment extends ListFragment {
 				// occurs.
 
 				if (D) Log.i(TAG, "Refreshing automatically the list");
+				if (D) Log.i(TAG, "Networks list size -> "+ mWirelessNetList.size());
 
 				mWirelessNetList.clear();
 

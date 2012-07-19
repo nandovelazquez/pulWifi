@@ -15,10 +15,11 @@
     <ListView
         android:id="@id/android:list"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="0dip"
         android:layout_weight="1"
         android:clickable="true" />
 
+    <!-- 
     <TextView
         android:id="@id/android:empty"
         android:layout_width="fill_parent"
@@ -30,6 +31,7 @@
         android:textColor="@color/selectwireless_emptylist"
         android:textSize="16dp"
         android:textStyle="bold" />
+    -->
 
     <LinearLayout
         android:id="@+id/layout_selectwireless_refresh_section"
