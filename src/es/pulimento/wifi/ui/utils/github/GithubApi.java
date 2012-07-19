@@ -43,11 +43,11 @@ public class GithubApi {
 			return new Download((new JSONArray(sb.toString())).getJSONObject(0));
 		} catch (IOException e) {
 			// No internet...
+			return null;
 		} catch (JSONException e) {
 			// Should not happen...
+			return null;
 		}
-		
-		return null;
 	}
 
 	/**

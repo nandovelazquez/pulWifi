@@ -53,7 +53,7 @@ public class UpdateChecker implements Runnable {
 		mUpdateDialog = null;
 		mProgressDialog = null;
 
-		if(mHandler == null) {
+		if (mHandler == null) {
 			mProgressDialog = new ProgressDialog(mActivity);
 			mProgressDialog.setTitle("");
 			mProgressDialog.setMessage(mActivity.getString(R.string.dialog_updater_checking));
@@ -67,19 +67,36 @@ public class UpdateChecker implements Runnable {
 	@Override
 	public void run() {
 		final Download d = (new GithubApi()).getLastDownload();
-		if(!d.getVersion().equals(mActivity.getString(R.string.app_version))) {
-			mActivity.runOnUiThread(new Runnable() {
-				@Override
-				public void run() {
-					mUpdateDialog = new UpdateDialog(mActivity, d.getUrl(), new EventHandler());
-					mUpdateDialog.show();
-				}
-			});
-		} else {
-			if(mHandler != null)
+		if (d != null) {
+			if (!d.getVersion().equals(mActivity.getString(R.string.app_version))) {
+				mActivity.runOnUiThread(new Runnable() {
+					@Override
+					public void run() {
+						mUpdateDialog = new UpdateDialog(mActivity, d.getUrl(), new EventHandler());
+						mUpdateDialog.show();
+					}
+				});
+			} else {
+				if (mHandler != null)
+					mHandler.sendEmptyMessage(MSG_UPDATE_DONE);
+				else
+					mActivity.runOnUiThread(new Runnable() {
+						@Override
+						public void run() {
+							mProgressDialog.dismiss();
+						}
+					});
+			}
+		} else { // Error getting last version available, continue
+			if (mHandler != null)
 				mHandler.sendEmptyMessage(MSG_UPDATE_DONE);
 			else
-				mActivity.runOnUiThread(new Runnable(){@Override public void run() {mProgressDialog.dismiss();}});
+				mActivity.runOnUiThread(new Runnable() {
+					@Override
+					public void run() {
+						mProgressDialog.dismiss();
+					}
+				});
 		}
 	}
 
@@ -88,18 +105,15 @@ public class UpdateChecker implements Runnable {
 		 * Do check.
 		 */
 		new Thread(this).start();
-		if(mProgressDialog != null)
-			mProgressDialog.show();
+		if (mProgressDialog != null) mProgressDialog.show();
 	}
 
 	public void clean() {
 		/*
 		 * Clean.
 		 */
-		if(mUpdateDialog != null)
-			mUpdateDialog.dismiss();
-		if(mProgressDialog != null)
-			mProgressDialog.dismiss();
+		if (mUpdateDialog != null) mUpdateDialog.dismiss();
+		if (mProgressDialog != null) mProgressDialog.dismiss();
 	}
 
 	/*
@@ -111,10 +125,15 @@ public class UpdateChecker implements Runnable {
 		public void handleMessage(Message msg) {
 			super.handleMessage(msg);
 			/* There's just one event to handle so no switch... */
-			if(mHandler != null)
+			if (mHandler != null)
 				mHandler.sendEmptyMessage(MSG_UPDATE_DONE);
 			else
-				mActivity.runOnUiThread(new Runnable(){@Override public void run() {mProgressDialog.dismiss();}});
+				mActivity.runOnUiThread(new Runnable() {
+					@Override
+					public void run() {
+						mProgressDialog.dismiss();
+					}
+				});
 		}
 	}
 }
