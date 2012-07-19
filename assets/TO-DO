@@ -1,16 +1,15 @@
-*** TO-DO for next release (v2.0.1) ***
+*** TO-DO for next release (v2.0.2) ***
 
-- android:list/empty no se muestra nunca? -- IN PROGRESS
-- Dejar constancia de que se toma c�digo de superuser y de aosp -- DONE
-- Ordenar lista de redes -- DONE
+- android:list/empty no se muestra nunca? -- NOT DONE; DUE TO BUG IN COMPATIBILITY LIBRARY
+- Mejorar el auto-actualizador para que se descargue el apk y lo instale, similar al aptoide 
+(http://aptoide.org/trac/browser/aptoide-client/2.5.4/Aptoide/src/cm/aptoide/pt/Aptoide.java)
 
 *** TO-DO for further releases
 
-- Mejorar el auto-actualizador para que se descargue el apk y lo instale, similar al aptoide 
-(http://aptoide.org/trac/browser/aptoide-client/2.5.4/Aptoide/src/cm/aptoide/pt/Aptoide.java)
-- API para recoger los informes de fallos de los usuarios (Github Issues API) -- IN PROGRESS
-- Macs 00:1A:2B tienen 256 posibles passwords
 - Mejorar el aspecto del actualizador manual -- DONE
+- API para recoger los informes de fallos de los usuarios (Github Issues API) -- DONE
+- Macs 00:1A:2B tienen 256 posibles passwords
+- Tablet layout with panels
 - Show changelog on first opening -- ?
 - Añadir de nuevo soporte nativo a Thomson -- ?
 - Cambiar icono -- ?
