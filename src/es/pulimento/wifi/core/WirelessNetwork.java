@@ -63,11 +63,11 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 		 *         object representing the passed capabilities.
 		 */
 		public static WirelessEncryption parseEncription(String cap) {
-			if (cap == null || cap.equals("OPEN") || cap.equals(""))
+			if(cap == null || cap.equals("OPEN") || cap.equals(""))
 				return WirelessEncryption.OPEN;
-			else if (cap.contains("WEP"))
+			else if(cap.contains("WEP"))
 				return WirelessEncryption.WEP;
-			else if (cap.contains("WPA"))
+			else if(cap.contains("WPA"))
 				return WirelessEncryption.WPA;
 			else
 				return WirelessEncryption.UNKNOWN;
@@ -79,11 +79,11 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 		 * @return Android string ID.
 		 */
 		public int toStringId() {
-			if (this.equals(OPEN))
+			if(this.equals(OPEN))
 				return R.string.listadapter_open;
-			else if (this.equals(WEP))
+			else if(this.equals(WEP))
 				return R.string.listadapter_wep;
-			else if (this.equals(WPA))
+			else if(this.equals(WPA))
 				return R.string.listadapter_wpa;
 			else
 				return R.string.listadapter_unknown;
@@ -101,7 +101,7 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 		 *         equivalent object.
 		 */
 		public static WirelessEncryption parseStringID(int strid) {
-			switch (strid) {
+			switch(strid) {
 				case R.string.listadapter_open:
 					return WirelessEncryption.OPEN;
 				case R.string.listadapter_wep:
@@ -146,7 +146,7 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 		mPasswords = new ArrayList<String>();
 		mSignal = s.level;
 		mCapabilities = WirelessEncryption.parseEncription(s.capabilities);
-		if (mDatabase.containsKey(mEssid))
+		if(mDatabase.containsKey(mEssid))
 			mCrackeable = mDatabase.get(mEssid);
 		else {
 			mCrackeable = (new CrackNetwork(this)).isCrackeable();
@@ -184,7 +184,7 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 		mPasswords = new ArrayList<String>();
 		mSignal = signal;
 		mCapabilities = WirelessEncryption.parseEncription(capabilities);
-		if (mDatabase.containsKey(mEssid))
+		if(mDatabase.containsKey(mEssid))
 			mCrackeable = mDatabase.get(mEssid);
 		else {
 			mCrackeable = (new CrackNetwork(this)).isCrackeable();
@@ -207,7 +207,8 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 		boolean c[] = new boolean[1];
 		in.readBooleanArray(c);
 		mCrackeable = c[0];
-		if (mPasswords == null) mPasswords = new ArrayList<String>();
+		if (mPasswords == null)
+			mPasswords = new ArrayList<String>();
 		in.readStringList(mPasswords);
 		mSignal = in.readInt();
 		mCapabilities = WirelessEncryption.parseStringID(in.readInt());
@@ -291,11 +292,11 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 	 * {@link es.pulimento.wifi.core.WirelessNetwork#getPasswords}.
 	 */
 	public void crack() {
-		if (mCrackeable) {
+		if(mCrackeable) {
 			String[] passwds = (new CrackNetwork(this)).crackNetwork().split("\n");
 			mPasswords.clear();
-			for (String tmp : passwds)
-				if (!tmp.contains("null")) mPasswords.add(tmp);
+			for(String tmp : passwds)
+				if(!tmp.contains("null")) mPasswords.add(tmp);
 		}
 	}
 
@@ -326,12 +327,12 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 	 * this criteria gives preference to those with a higher signal level.
 	 */
 	public int compareTo(WirelessNetwork w0) {
-		if (this.isCrackeable()) {
-			if (w0.isCrackeable()) {
+		if(this.isCrackeable()) {
+			if(w0.isCrackeable()) {
 				return w0.getSignal() - this.getSignal();
 			}
 			return -1;
-		} else if (!w0.isCrackeable()) return w0.getSignal() - this.getSignal();
+		} else if(!w0.isCrackeable()) return w0.getSignal() - this.getSignal();
 		return 0;
 	}
 
@@ -340,8 +341,7 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 	 */
 	@Override
 	public String toString() {
-		return "WirelessNetwork [mEssid=" + mEssid + ", mBssid=" + mBssid + ", mCapabilities=" + mCapabilities
-				+ ", mCrackeable=" + mCrackeable + "]";
+		return "WirelessNetwork [mEssid=" + mEssid + ", mBssid=" + mBssid + ", mCapabilities=" + mCapabilities + ", mCrackeable=" + mCrackeable + "]";
 	}
 
 }
