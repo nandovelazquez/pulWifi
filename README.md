@@ -32,7 +32,7 @@ public WirelessNetwork(String ESSID, String BSSID, int signal, String capabiliti
 	mPasswords = new ArrayList<String>();
 	mSignal = signal;
 	mCapabilities = WirelessEncryption.parseEncription(capabilities);
-	if (mDatabase.containsKey(mEssid))
+	if(mDatabase.containsKey(mEssid))
 		mCrackeable = mDatabase.get(mEssid);
 	else {
 		mCrackeable = (new CrackNetwork(this)).isCrackeable();
