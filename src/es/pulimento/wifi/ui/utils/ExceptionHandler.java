@@ -24,25 +24,31 @@ public class ExceptionHandler implements UncaughtExceptionHandler {
 
 	@Override
 	public void uncaughtException(Thread t, Throwable e) {
-		Issue i = new Issue("Exception in "+getFileName(e), "TRACE:\n"+getStackTrace(e)+"\n\nCAUSE TRACE:\n"+getStackTrace(e.getCause()), "Automated Report");
+		Issue i = new Issue("Exception in " + getFileName(e), "TRACE:\n" + getStackTrace(e) + "\n\nCAUSE TRACE:\n"
+				+ getStackTrace(e.getCause()), "Automated Report");
 		new ReportTask().execute(new ReportItem(i, t, e));
 	}
 
 	public String getFileName(Throwable e) {
-		for(StackTraceElement s : e.getCause().getStackTrace())
-			if(PACKAGE.equals(s.getClassName().substring(0, PACKAGE.length())))
-				return s.getClassName().substring(s.getClassName().lastIndexOf('.')+1);
-		return "Unknown";
+		// Sometimes stack trace are null in passed exception, why??
+		if (e.getStackTrace() != null) {
+			for (StackTraceElement s : e.getStackTrace())
+				if (PACKAGE.equals(s.getClassName().substring(0, PACKAGE.length())))
+					return s.getClassName().substring(s.getClassName().lastIndexOf('.') + 1);
+		}
+		return "<Unknown>";
 	}
 
-	public String getStackTrace(Throwable t)
-	{
-		StringWriter sw = new StringWriter();
-		PrintWriter pw = new PrintWriter(sw, true);
-		t.printStackTrace(pw);
-		pw.flush();
-		sw.flush();
-		return sw.toString();
+	public String getStackTrace(Throwable t) {
+		if (t != null) {
+			StringWriter sw = new StringWriter();
+			PrintWriter pw = new PrintWriter(sw, true);
+			t.printStackTrace(pw);
+			pw.flush();
+			sw.flush();
+			return sw.toString();
+		}
+		return "<No stack trace>";
 	}
 
 	class ReportItem {
