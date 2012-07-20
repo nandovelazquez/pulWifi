@@ -25,6 +25,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import es.pulimento.wifi.BuildConfig;
 import es.pulimento.wifi.R;
 import es.pulimento.wifi.ui.utils.ExceptionHandler;
 import es.pulimento.wifi.ui.utils.UpdateChecker;
@@ -47,7 +48,8 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 
 		/* Set exception handler... */
-		Thread.setDefaultUncaughtExceptionHandler(new ExceptionHandler());
+		if(!BuildConfig.DEBUG)
+			Thread.setDefaultUncaughtExceptionHandler(new ExceptionHandler());
 
 		/* Set view content... */
 		setContentView(R.layout.layout_mainactivity);
