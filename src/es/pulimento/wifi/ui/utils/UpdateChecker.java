@@ -53,7 +53,7 @@ public class UpdateChecker implements Runnable {
 		mUpdateDialog = null;
 		mProgressDialog = null;
 
-		if (mHandler == null) {
+		if(mHandler == null) {
 			mProgressDialog = new ProgressDialog(mActivity);
 			mProgressDialog.setTitle("");
 			mProgressDialog.setMessage(mActivity.getString(R.string.dialog_updater_checking));
@@ -105,15 +105,18 @@ public class UpdateChecker implements Runnable {
 		 * Do check.
 		 */
 		new Thread(this).start();
-		if (mProgressDialog != null) mProgressDialog.show();
+		if(mProgressDialog != null)
+			mProgressDialog.show();
 	}
 
 	public void clean() {
 		/*
 		 * Clean.
 		 */
-		if (mUpdateDialog != null) mUpdateDialog.dismiss();
-		if (mProgressDialog != null) mProgressDialog.dismiss();
+		if(mUpdateDialog != null)
+			mUpdateDialog.dismiss();
+		if(mProgressDialog != null)
+			mProgressDialog.dismiss();
 	}
 
 	/*

@@ -22,12 +22,11 @@ package es.pulimento.wifi.core;
 import es.pulimento.wifi.core.WirelessNetwork.WirelessEncryption;
 import es.pulimento.wifi.core.algorithms.AlgorithmList;
 import es.pulimento.wifi.core.algorithms.AndaredAlgorithm;
+import es.pulimento.wifi.core.algorithms.ComtrendAlgorithm;
 import es.pulimento.wifi.core.algorithms.DiscusAlgorithm;
 import es.pulimento.wifi.core.algorithms.DlinkAlgorithm;
-import es.pulimento.wifi.core.algorithms.HuaweiAlgorithm;
-import es.pulimento.wifi.core.algorithms.ComtrendAlgorithm;
-import es.pulimento.wifi.core.algorithms.ZyxelAlgorithm;
 import es.pulimento.wifi.core.algorithms.Wlan6XAlgorithm;
+import es.pulimento.wifi.core.algorithms.ZyxelAlgorithm;
 
 /**
  * This class is a holder for all the wireless cracking algorithms. It selects
