@@ -49,7 +49,7 @@ public class AndaredAlgorithm extends CrackAlgorithm {
 	}
 
 	public static boolean supportsEncryption(WirelessEncryption w) {
-		return (w.equals(WirelessEncryption.WPA)) ? true : false;
+		return w.equals(WirelessEncryption.WPA);
 	}
 
 }

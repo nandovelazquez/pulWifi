@@ -31,6 +31,7 @@ import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
+import es.pulimento.wifi.BuildConfig;
 import es.pulimento.wifi.R;
 import es.pulimento.wifi.ui.dialogs.SupportedNetworksDialog;
 import es.pulimento.wifi.ui.utils.ExceptionHandler;
@@ -47,7 +48,8 @@ public class HomeActivity extends ActionBarActivity {
 		super.onCreate(savedInstanceState);
 
 		/* Set exception handler... */
-		Thread.setDefaultUncaughtExceptionHandler(new ExceptionHandler());
+		if(!BuildConfig.DEBUG)
+			Thread.setDefaultUncaughtExceptionHandler(new ExceptionHandler());
 
 		/* Set layout... */
 		setContentView(R.layout.layout_homeactivity);

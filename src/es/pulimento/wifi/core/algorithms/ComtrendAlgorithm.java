@@ -35,7 +35,9 @@ import es.pulimento.wifi.core.WirelessNetwork.WirelessEncryption;
  * 64:68:0C:XX:XX:XX (WLAN_XXXX & JAZZTEL_XXXX)
  * 00:1D:20:XX:XX:XX (WLAN_XXXX & JAZZTEL_XXXX)
  * 00:1B:20:XX:XX:XX (WLAN_XXXX & JAZZTEL_XXXX)
- * 00:23:F8:XX:XX:XX (WLAN_XXXX & JAZZTEL_XXXX) */
+ * 00:23:F8:XX:XX:XX (WLAN_XXXX & JAZZTEL_XXXX)
+ *
+ */
 public class ComtrendAlgorithm extends CrackAlgorithm {
 
 	/**
@@ -87,7 +89,7 @@ public class ComtrendAlgorithm extends CrackAlgorithm {
 				hashtext = "0" + hashtext;
 			return hashtext.substring(0, 20);
 		}
-		catch (NoSuchAlgorithmException e) {
+		catch(NoSuchAlgorithmException e) {
 			throw new RuntimeException(e);
 		}
 	}
