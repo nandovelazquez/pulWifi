@@ -25,6 +25,7 @@ import es.pulimento.wifi.core.algorithms.AndaredAlgorithm;
 import es.pulimento.wifi.core.algorithms.ComtrendAlgorithm;
 import es.pulimento.wifi.core.algorithms.DiscusAlgorithm;
 import es.pulimento.wifi.core.algorithms.DlinkAlgorithm;
+import es.pulimento.wifi.core.algorithms.HuaweiAlgorithm;
 import es.pulimento.wifi.core.algorithms.Wlan6XAlgorithm;
 import es.pulimento.wifi.core.algorithms.ZyxelAlgorithm;
 
@@ -59,8 +60,8 @@ public class CrackNetwork {
 			algorithms.add(new DiscusAlgorithm(mESSID, mBSSID));
 		if(DlinkAlgorithm.supportsEncryption(mCapabilities))
 			algorithms.add(new DlinkAlgorithm(mESSID, mBSSID));
-		//if(HuaweiAlgorithm.supportsEncryption(mCapabilities))
-			//algorithms.add(new HuaweiAlgorithm(mESSID, mBSSID));
+		if(HuaweiAlgorithm.supportsEncryption(mCapabilities))
+			algorithms.add(new HuaweiAlgorithm(mESSID, mBSSID));
 		if(ComtrendAlgorithm.supportsEncryption(mCapabilities))
 			algorithms.add(new ComtrendAlgorithm(mESSID, mBSSID));
 		if(ZyxelAlgorithm.supportsEncryption(mCapabilities))
