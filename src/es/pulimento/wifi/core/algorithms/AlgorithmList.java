@@ -1,6 +1,6 @@
 /*
  *  pulWifi , Copyright (C) 2011-2012 Javi Pulido / Antonio Vázquez
- *  
+ *
  *  This file is part of "pulWifi"
  *
  *  "pulWifi" is free software: you can redistribute it and/or modify
@@ -30,6 +30,7 @@ public class AlgorithmList extends ArrayList<CrackAlgorithm> {
 
 	/**
 	 * Interacts with its child elements in order to know if a crack algorithm can break the security of a network.
+	 *
 	 * @return True if vulnerable or false if not.
 	 */
 	public boolean isCrackeable() {
@@ -42,6 +43,7 @@ public class AlgorithmList extends ArrayList<CrackAlgorithm> {
 
 	/**
 	 * Breaks the network and returns the password.
+	 *
 	 * @return The possible passwords of a net separated by the new line character ('\n').
 	 */
 	public String crack() {
