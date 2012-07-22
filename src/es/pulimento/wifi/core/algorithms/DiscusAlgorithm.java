@@ -1,6 +1,6 @@
 /*
  *  pulWifi , Copyright (C) 2011-2012 Javi Pulido / Antonio Vázquez
- *  
+ *
  *  This file is part of "pulWifi"
  *
  *  "pulWifi" is free software: you can redistribute it and/or modify
@@ -59,5 +59,4 @@ public class DiscusAlgorithm extends CrackAlgorithm {
 	public static boolean supportsEncryption(WirelessEncryption mCapabilities) {
 		return mCapabilities.equals(WirelessEncryption.WPA);
 	}
-
 }

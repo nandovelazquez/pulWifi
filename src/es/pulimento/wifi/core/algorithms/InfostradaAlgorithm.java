@@ -43,7 +43,7 @@ public class InfostradaAlgorithm extends CrackAlgorithm {
 
 		// ESSID: InfostradaWiFi-XXXXXX
 		// BSSID: Any
-		addPattern("InfostradaWiFi-[0-9a-zA-Z]{6})", "([0-9A-Fa-f:]{17})");
+		addPattern("InfostradaWiFi-([0-9a-zA-Z]{6})", "([0-9A-Fa-f:]{17})");
 	}
 
 	/**

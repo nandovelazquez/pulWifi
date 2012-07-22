@@ -1,6 +1,6 @@
 /*
  *  pulWifi , Copyright (C) 2011-2012 Javi Pulido / Antonio Vázquez
- *  
+ *
  *  This file is part of "pulWifi"
  *
  *  "pulWifi" is free software: you can redistribute it and/or modify
@@ -23,8 +23,8 @@ import es.pulimento.wifi.core.WirelessNetwork.WirelessEncryption;
 
 /**
  * D-Link cracking algorithm.
- * Cracks all networks with "Dlink-XXXXXX" as name. I have no information about what type of encryption does it support.
- *
+ * Cracks all networks with "Dlink-XXXXXX" as name.
+ * I have no information about what type of encryption does it support.
  */
 public class DlinkAlgorithm extends CrackAlgorithm {
 
@@ -81,10 +81,10 @@ public class DlinkAlgorithm extends CrackAlgorithm {
 		char[] key = new char[20];
 		char hash[] = { 'X', 'r', 'q', 'a', 'H', 'N', 'p', 'd', 'S', 'Y', 'w', '8', '6', '2', '1', '5' };
 		int index = 0;
-		for (int i = 0; i < 20; i++) {
-			if ((data[i] >= '0') && (data[i] <= '9'))
+		for(int i = 0; i < 20; i++) {
+			if((data[i] >= '0') && (data[i] <= '9'))
 				index = data[i] - '0';
-			else if ((data[i] >= 'A') && (data[i] <= 'F'))
+			else if((data[i] >= 'A') && (data[i] <= 'F'))
 				index = data[i] - 'A' + 10;
 			else
 				// There was an error...
