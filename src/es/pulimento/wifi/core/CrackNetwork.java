@@ -26,6 +26,7 @@ import es.pulimento.wifi.core.algorithms.ComtrendAlgorithm;
 import es.pulimento.wifi.core.algorithms.DiscusAlgorithm;
 import es.pulimento.wifi.core.algorithms.DlinkAlgorithm;
 import es.pulimento.wifi.core.algorithms.HuaweiAlgorithm;
+import es.pulimento.wifi.core.algorithms.InfostradaAlgorithm;
 import es.pulimento.wifi.core.algorithms.Wlan6XAlgorithm;
 import es.pulimento.wifi.core.algorithms.ZyxelAlgorithm;
 
@@ -54,18 +55,20 @@ public class CrackNetwork {
 
 		if(AndaredAlgorithm.supportsEncryption(mCapabilities))
 			algorithms.add(new AndaredAlgorithm(mESSID, mBSSID));
+		if(ComtrendAlgorithm.supportsEncryption(mCapabilities))
+			algorithms.add(new ComtrendAlgorithm(mESSID, mBSSID));
 		if(DiscusAlgorithm.supportsEncryption(mCapabilities))
 			algorithms.add(new DiscusAlgorithm(mESSID, mBSSID));
 		if(DlinkAlgorithm.supportsEncryption(mCapabilities))
 			algorithms.add(new DlinkAlgorithm(mESSID, mBSSID));
 		if(HuaweiAlgorithm.supportsEncryption(mCapabilities))
 			algorithms.add(new HuaweiAlgorithm(mESSID, mBSSID));
-		if(ComtrendAlgorithm.supportsEncryption(mCapabilities))
-			algorithms.add(new ComtrendAlgorithm(mESSID, mBSSID));
-		if(ZyxelAlgorithm.supportsEncryption(mCapabilities))
-			algorithms.add(new ZyxelAlgorithm(mESSID, mBSSID));
+		if(InfostradaAlgorithm.supportsEncryption(mCapabilities))
+			algorithms.add(new InfostradaAlgorithm(mESSID, mBSSID));
 		if(Wlan6XAlgorithm.supportsEncryption(mCapabilities))
 			algorithms.add(new Wlan6XAlgorithm(mESSID, mBSSID));
+		if(ZyxelAlgorithm.supportsEncryption(mCapabilities))
+			algorithms.add(new ZyxelAlgorithm(mESSID, mBSSID));
 	}
 
 	/**
