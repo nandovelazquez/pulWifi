@@ -23,8 +23,12 @@ import es.pulimento.wifi.core.WirelessNetwork.WirelessEncryption;
 
 /**
  * Huawei algorithm.
+<<<<<<< HEAD
  * Java adaptation of mac2wepkey.py from
  * http://websec.ca/blog/view/mac2wepkey_huawei
+=======
+ * Java adaptation of mac2wepkey.py from http://websec.ca/blog/view/mac2wepkey_huawei
+>>>>>>> 0757caca386b99e6ed176cdabfe5034f22d8c2fa
  * Most MACs aren't confirmed.
  */
 public class HuaweiAlgorithm extends CrackAlgorithm {
@@ -125,7 +129,11 @@ public class HuaweiAlgorithm extends CrackAlgorithm {
 	final int[] n33 = { 0, 4, 9, 13, 3, 7, 10, 14, 7, 3, 14, 10, 4, 0, 13, 9 };
 	final int[] key = { 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 61, 62, 63, 64, 65, 66 };
 	final char[] ssid = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> 0757caca386b99e6ed176cdabfe5034f22d8c2fa
 	/**
 	 * {@inheritDoc}
 	 */
@@ -135,22 +143,20 @@ public class HuaweiAlgorithm extends CrackAlgorithm {
 		bssid_data = bssid_data.replace(":", "").toLowerCase();
 
 		int[] mac = new int[12];
+<<<<<<< HEAD
 		for (int i = 0; i < 12; ++i)
+=======
+		for(int i = 0; i < 12; ++i)
+>>>>>>> 0757caca386b99e6ed176cdabfe5034f22d8c2fa
 			mac[i] = Integer.parseInt(bssid_data.substring(i, i + 1), 16);
 
-		int ya = (a2[mac[0]]) ^ (n11[mac[1]]) ^ (a7[mac[2]]) ^ (a8[mac[3]]) ^ (a14[mac[4]]) ^ (a5[mac[5]])
-				^ (a5[mac[6]]) ^ (a2[mac[7]]) ^ (a0[mac[8]]) ^ (a1[mac[9]]) ^ (a15[mac[10]]) ^ (a0[mac[11]]) ^ 13;
-		int yb = (n5[mac[0]]) ^ (n12[mac[1]]) ^ (a5[mac[2]]) ^ (a7[mac[3]]) ^ (a2[mac[4]]) ^ (a14[mac[5]])
-				^ (a1[mac[6]]) ^ (a5[mac[7]]) ^ (a0[mac[8]]) ^ (a0[mac[9]]) ^ (n31[mac[10]]) ^ (a15[mac[11]]) ^ 4;
-		int yc = (a3[mac[0]]) ^ (a5[mac[1]]) ^ (a2[mac[2]]) ^ (a10[mac[3]]) ^ (a7[mac[4]]) ^ (a8[mac[5]])
-				^ (a14[mac[6]]) ^ (a5[mac[7]]) ^ (a5[mac[8]]) ^ (a2[mac[9]]) ^ (a0[mac[10]]) ^ (a1[mac[11]]) ^ 7;
-		int yd = (n6[mac[0]]) ^ (n13[mac[1]]) ^ (a8[mac[2]]) ^ (a2[mac[3]]) ^ (a5[mac[4]]) ^ (a7[mac[5]])
-				^ (a2[mac[6]]) ^ (a14[mac[7]]) ^ (a1[mac[8]]) ^ (a5[mac[9]]) ^ (a0[mac[10]]) ^ (a0[mac[11]]) ^ 14;
-		int ye = (n7[mac[0]]) ^ (n14[mac[1]]) ^ (a3[mac[2]]) ^ (a5[mac[3]]) ^ (a2[mac[4]]) ^ (a10[mac[5]])
-				^ (a7[mac[6]]) ^ (a8[mac[7]]) ^ (a14[mac[8]]) ^ (a5[mac[9]]) ^ (a5[mac[10]]) ^ (a2[mac[11]]) ^ 7;
+		int ya = (a2[mac[0]]) ^ (n11[mac[1]]) ^ (a7[mac[2]]) ^ (a8[mac[3]]) ^ (a14[mac[4]]) ^ (a5[mac[5]]) ^ (a5[mac[6]]) ^ (a2[mac[7]]) ^ (a0[mac[8]]) ^ (a1[mac[9]]) ^ (a15[mac[10]]) ^ (a0[mac[11]]) ^ 13;
+		int yb = (n5[mac[0]]) ^ (n12[mac[1]]) ^ (a5[mac[2]]) ^ (a7[mac[3]]) ^ (a2[mac[4]]) ^ (a14[mac[5]]) ^ (a1[mac[6]]) ^ (a5[mac[7]]) ^ (a0[mac[8]]) ^ (a0[mac[9]]) ^ (n31[mac[10]]) ^ (a15[mac[11]]) ^ 4;
+		int yc = (a3[mac[0]]) ^ (a5[mac[1]]) ^ (a2[mac[2]]) ^ (a10[mac[3]]) ^ (a7[mac[4]]) ^ (a8[mac[5]]) ^ (a14[mac[6]]) ^ (a5[mac[7]]) ^ (a5[mac[8]]) ^ (a2[mac[9]]) ^ (a0[mac[10]]) ^ (a1[mac[11]]) ^ 7;
+		int yd = (n6[mac[0]]) ^ (n13[mac[1]]) ^ (a8[mac[2]]) ^ (a2[mac[3]]) ^ (a5[mac[4]]) ^ (a7[mac[5]]) ^ (a2[mac[6]]) ^ (a14[mac[7]]) ^ (a1[mac[8]]) ^ (a5[mac[9]]) ^ (a0[mac[10]]) ^ (a0[mac[11]]) ^ 14;
+		int ye = (n7[mac[0]]) ^ (n14[mac[1]]) ^ (a3[mac[2]]) ^ (a5[mac[3]]) ^ (a2[mac[4]]) ^ (a10[mac[5]]) ^ (a7[mac[6]]) ^ (a8[mac[7]]) ^ (a14[mac[8]]) ^ (a5[mac[9]]) ^ (a5[mac[10]]) ^ (a2[mac[11]]) ^ 7;
 
-		return Integer.toString(key[ya]) + Integer.toString(key[yb]) + Integer.toString(key[yc])
-				+ Integer.toString(key[yd]) + Integer.toString(key[ye]);
+		return Integer.toString(key[ya]) + Integer.toString(key[yb]) + Integer.toString(key[yc]) + Integer.toString(key[yd]) + Integer.toString(key[ye]);
 	}
 
 	/**
