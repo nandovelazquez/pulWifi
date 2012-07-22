@@ -1,6 +1,6 @@
 /*
  *  pulWifi , Copyright (C) 2011-2012 Javi Pulido / Antonio Vázquez
- *  
+ *
  *  This file is part of "pulWifi"
  *
  *  "pulWifi" is free software: you can redistribute it and/or modify
@@ -23,7 +23,7 @@ import es.pulimento.wifi.core.WirelessNetwork.WirelessEncryption;
 
 /**
  * Andared cracking algorithm.
- * This is a series of network access points in public education centers of Andalucï¿½a, Spain which where set up by the government.
+ * This is a series of network access points in public education centers of Andaluc’a, Spain which where set up by the government.
  */
 public class AndaredAlgorithm extends CrackAlgorithm {
 
@@ -40,7 +40,6 @@ public class AndaredAlgorithm extends CrackAlgorithm {
 		// ESSID: Andared
 		// BSSID: Any
 		addPattern("(Andared)", "([0-9A-Fa-f:]{17})");
-
 	}
 
 	@Override
@@ -51,5 +50,4 @@ public class AndaredAlgorithm extends CrackAlgorithm {
 	public static boolean supportsEncryption(WirelessEncryption w) {
 		return w.equals(WirelessEncryption.WPA);
 	}
-
 }
