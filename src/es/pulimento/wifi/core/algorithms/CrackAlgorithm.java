@@ -1,6 +1,6 @@
 /*
  *  pulWifi , Copyright (C) 2011-2012 Javi Pulido / Antonio Vázquez
- *  
+ *
  *  This file is part of "pulWifi"
  *
  *  "pulWifi" is free software: you can redistribute it and/or modify
@@ -36,6 +36,7 @@ public abstract class CrackAlgorithm {
 
 	/**
 	 * Default constructor.
+	 *
 	 * @param essid The network name.
 	 * @param bssid The access point hardware address.
 	 */
@@ -62,11 +63,12 @@ public abstract class CrackAlgorithm {
 
 	/**
 	 * Checks if the algorithm supports the passed network.
+	 *
 	 * @return True if this algorithm can crack the network or false if not.
 	 */
 	public boolean isCrackeable() {
-		for (int i = 0; i < n_of_patterns; i += 2)
-			if (matchers.get(i).find() && matchers.get(i + 1).find()) {
+		for(int i = 0; i < n_of_patterns; i += 2)
+			if(matchers.get(i).find() && matchers.get(i + 1).find()) {
 				working_pattern = i;
 				return true;
 			}
@@ -76,6 +78,7 @@ public abstract class CrackAlgorithm {
 
 	/**
 	 * Cracks the network if possible.
+	 *
 	 * @return All the possible passwords of the network.
 	 */
 	public String crack() {
@@ -94,6 +97,7 @@ public abstract class CrackAlgorithm {
 
 	/**
 	 * Function that should implement the algorithm for cracking a network.
+	 *
 	 * @param essid_data Matched data in network name.
 	 * @param bssid_data Matched data in hardware address.
 	 * @return The possible passwords of the net or null on error.
