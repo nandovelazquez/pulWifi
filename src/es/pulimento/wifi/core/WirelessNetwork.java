@@ -292,7 +292,7 @@ public class WirelessNetwork implements Parcelable, Comparable<WirelessNetwork> 
 		if(this.isCrackeable() == w0.isCrackeable())
 			return w0.getSignal() - this.getSignal();
 		else
-			return -1;
+			return 1;
 	}
 
 	/**
