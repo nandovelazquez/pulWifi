@@ -4,7 +4,10 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
+import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.HttpPost;
@@ -51,11 +54,45 @@ public class GithubApi {
 	}
 
 	/**
-	 * TODO Still needing an authentication system.
+	 * Returns a list of issues of the project.
+	 * @return Issues list.
+	 */
+	public List<Issue> getIssues() {
+		List<Issue> issues = new ArrayList<Issue>();
+
+		// Get the list of issues...
+		try {
+			URL url = new URL(BASEURL+"issues");
+			BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
+			StringBuilder sb = new StringBuilder();
+			String s;
+			while ((s = in.readLine()) != null)
+				sb.append(s);
+			in.close();
+			JSONArray a = new JSONArray(sb.toString());
+			for(int i = 0; i < a.length(); i++)
+				issues.add(new Issue(a.getJSONObject(i)));
+		} catch (MalformedURLException e) {
+			// Will never happen...
+		} catch (IOException e) {
+			// No internet...
+		} catch (JSONException e) {
+			// Should not happen...
+		}
+
+		return issues;
+	}
+
+	/**
+	 * Reports a new issue.
 	 * @param i Issue to post in Github.
 	 */
 	public void reportIssue(Issue i) {
 		if(!mAuthed)
+			return;
+
+		// If issue was already reported do nothing.
+		if(getIssues().contains(i))
 			return;
 
 		HttpPost httpPost = new HttpPost(BASEURL+"issues");

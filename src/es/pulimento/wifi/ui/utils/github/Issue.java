@@ -2,6 +2,7 @@ package es.pulimento.wifi.ui.utils.github;
 
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 import org.json.JSONStringer;
 
 public class Issue {
@@ -12,6 +13,17 @@ public class Issue {
 
 	public Issue() {
 		mLabels = new JSONArray();
+	}
+
+	public Issue(JSONObject o) {
+		try {
+			mTitle = o.getString("title");
+			mBody = o.getString("body");
+			JSONArray l = o.getJSONArray("labels");
+			for(int i = 0; i < l.length(); i++)
+				mLabels.put(l.getJSONObject(i).getString("name"));
+		} catch (JSONException e) {
+		}
 	}
 
 	public Issue(String title, String body, String label) {
@@ -46,7 +58,6 @@ public class Issue {
 	}
 
 	public String toJSONString() {
-		//return "{ \"title\": \""+mTitle+"\", \"body\": \""+mBody+"\", \"labels\": "+mLabels.toString()+"}";
 		try {
 			return
 				new JSONStringer()
