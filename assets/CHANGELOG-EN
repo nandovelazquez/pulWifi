@@ -3,6 +3,10 @@
 <body>
 	<h3>- v2.0.1</h3>
 	<ul>
+		<li>Better error reporting</li>
+	</ul>
+	<h3>- v2.0.1</h3>
+	<ul>
 		<li>Fixed errors in networks detection</li>
 		<li>Introducing BETA report testing</li>
 		<li>Added support for Infostrada routers</li>

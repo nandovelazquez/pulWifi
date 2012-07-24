@@ -40,7 +40,6 @@ import android.os.Vibrator;
 import android.preference.PreferenceManager;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.ListFragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -67,7 +66,6 @@ public class SelectWirelessNetworkFragment extends ListFragment implements OnCli
 	private FragmentActivity mActivity;
 	private IntentFilter mIntentFilter;
 	private MBroadcastReceiver mBroadcastReceiver;
-	private final String TAG = "pw.NetworkListFragment";
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -139,17 +137,17 @@ public class SelectWirelessNetworkFragment extends ListFragment implements OnCli
 		}
 	}
 
-	private class MBroadcastReceiver extends BroadcastReceiver {
+	private class MBroadcastReceiver extends BroadcastReceiver implements Runnable {
 
 		@Override
 		public void onReceive(Context context, Intent intent) {
 
 			// Code to execute when SCAN_RESULTS_AVAILABLE_ACTION event occurs.
-			if(BuildConfig.DEBUG) {
-				Log.i(TAG, "Refreshing automatically the list");
-				Log.i(TAG, "Networks list size -> "+ mWirelessNetList.size());
-			}
+			mActivity.runOnUiThread(this);
+		}
 
+		@Override
+		public void run() {
 			mWirelessNetList.clear();
 
 			for (ScanResult wifi : mWifiManager.getScanResults())
@@ -175,10 +173,10 @@ public class SelectWirelessNetworkFragment extends ListFragment implements OnCli
 			// Refresh list...
 			getListView().invalidateViews();
 
-			if (mSharedPreferences.getBoolean(Preferences.PREFERENCES_VIBRATEUPDATE_KEY, Preferences.PREFERENCES_VIBRATEUPDATE_DEFAULT))
+			if(mSharedPreferences.getBoolean(Preferences.PREFERENCES_VIBRATEUPDATE_KEY, Preferences.PREFERENCES_VIBRATEUPDATE_DEFAULT))
 				mVibrator.vibrate(150);
 
-			if (mSharedPreferences.getBoolean(Preferences.PREFERENCES_AUTOUPDATE_KEY, Preferences.PREFERENCES_AUTOUPDATE_DEFAULT))
+			if(mSharedPreferences.getBoolean(Preferences.PREFERENCES_AUTOUPDATE_KEY, Preferences.PREFERENCES_AUTOUPDATE_DEFAULT))
 				mTimer.schedule(new ScanTask(), Integer.parseInt(mSharedPreferences.getString(Preferences.PREFERENCES_UPDATEINTERVAL_KEY, Preferences.PREFERENCES_UPDATEINTERVAL_DEFAULT)));
 		}
 
