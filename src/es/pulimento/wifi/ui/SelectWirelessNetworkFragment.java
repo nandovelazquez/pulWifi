@@ -124,8 +124,8 @@ public class SelectWirelessNetworkFragment extends ListFragment implements OnCli
 	@Override
 	public void onListItemClick(ListView l, View v, int position, long id) {
 		super.onListItemClick(l, v, position, id);
-		if(this.getListAdapter().getItem(position) != null) {
-			WirelessNetwork w = (WirelessNetwork) this.getListAdapter().getItem(position);
+		WirelessNetwork w = (WirelessNetwork) this.getListAdapter().getItem(position);
+		if(w != null) {
 			if (w.isCrackeable()) {
 				w.crack();
 				Intent i = new Intent(mActivity, ShowPassActivity.class);
