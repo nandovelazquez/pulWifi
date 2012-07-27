@@ -2066,9 +2066,59 @@ es.pulimento.wifi.core.algorithms.DlinkAlgorithm -> es.pulimento.wifi.core.a.f:
     java.lang.String crackAlgorithm(java.lang.String,java.lang.String) -> a
     boolean supportsEncryption(es.pulimento.wifi.core.WirelessNetwork$WirelessEncryption) -> a
 es.pulimento.wifi.core.algorithms.HuaweiAlgorithm -> es.pulimento.wifi.core.a.g:
+    int[] a0 -> a
+    int[] a1 -> b
+    int[] a2 -> c
+    int[] a3 -> d
+    int[] a4 -> e
+    int[] a5 -> f
+    int[] a6 -> g
+    int[] a7 -> h
+    int[] a8 -> i
+    int[] a9 -> j
+    int[] a10 -> k
+    int[] a11 -> l
+    int[] a12 -> m
+    int[] a13 -> n
+    int[] a14 -> o
+    int[] a15 -> p
+    int[] n1 -> q
+    int[] n2 -> r
+    int[] n3 -> s
+    int[] n4 -> t
+    int[] n5 -> u
+    int[] n6 -> v
+    int[] n7 -> w
+    int[] n8 -> x
+    int[] n9 -> y
+    int[] n10 -> z
+    int[] n11 -> A
+    int[] n12 -> B
+    int[] n13 -> C
+    int[] n14 -> D
+    int[] n15 -> E
+    int[] n16 -> F
+    int[] n17 -> G
+    int[] n18 -> H
+    int[] n19 -> I
+    int[] n20 -> J
+    int[] n21 -> K
+    int[] n22 -> L
+    int[] n23 -> M
+    int[] n24 -> N
+    int[] n25 -> O
+    int[] n26 -> P
+    int[] n27 -> Q
+    int[] n28 -> R
+    int[] n29 -> S
+    int[] n30 -> T
+    int[] n31 -> U
+    int[] n32 -> V
+    int[] n33 -> W
+    int[] key -> X
+    char[] ssid -> Y
     void setPatterns() -> a
     java.lang.String crackAlgorithm(java.lang.String,java.lang.String) -> a
-    int hexToDec(char) -> a
     boolean supportsEncryption(es.pulimento.wifi.core.WirelessNetwork$WirelessEncryption) -> a
 es.pulimento.wifi.core.algorithms.Wlan6XAlgorithm -> es.pulimento.wifi.core.a.h:
     es.pulimento.wifi.core.WirelessNetwork$WirelessEncryption[] encryption -> a

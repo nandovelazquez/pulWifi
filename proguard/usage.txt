@@ -1067,7 +1067,7 @@ es.pulimento.wifi.core.algorithms.AlgorithmList:
     private static final long serialVersionUID
 es.pulimento.wifi.core.algorithms.InfostradaAlgorithm
 es.pulimento.wifi.ui.HomeActivity$PagerAdapter:
-    135:136:public void addPage(java.lang.Class,java.lang.String)
+    137:138:public void addPage(java.lang.Class,java.lang.String)
 es.pulimento.wifi.ui.Preferences:
     public static final java.lang.String PREFERENCES_NAME
     public static final java.lang.String PREFERENCES_AUTOUPDATE_KEY
