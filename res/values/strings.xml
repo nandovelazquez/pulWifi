@@ -3,7 +3,7 @@
 
     <!-- Application -->
     <string name="app_name">pulWifi</string>
-    <string name="app_version">Release 2.0.1</string>
+    <string name="app_version">Release 2.0.2</string>
     <string name="page_label_networks_list">Network List</string>
     <string name="page_label_manual">Manual Mode</string>
     <string name="toast_disclaimer_text">Remember, don\'t use it with other network than yours</string>
