@@ -55,6 +55,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginTop="40dp"
+            android:background="@drawable/btn_default_holo_light"
             android:text="@string/showpass_button_showpass"
             android:textSize="24dp"
             android:textStyle="bold" />
@@ -65,10 +66,10 @@
             android:layout_height="60dip"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
+            android:background="@drawable/btn_default_holo_light"
             android:text="@string/showpass_button_clipboard"
             android:textSize="21dp"
             android:textStyle="bold" />
-
     </LinearLayout>
 
     <com.google.ads.AdView

@@ -49,8 +49,8 @@
         android:id="@+id/dialog_about_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/dialog_about_top"
         android:layout_above="@+id/dialog_about_bottom"
+        android:layout_below="@+id/dialog_about_top"
         android:layout_marginLeft="8dip"
         android:layout_marginRight="8dip" >
 
@@ -82,6 +82,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/btn_default_holo_light"
                 android:text="@string/dialog_about_gpl" />
 
             <Button
@@ -89,6 +90,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/btn_default_holo_light"
                 android:text="@string/dialog_about_changelog" />
         </LinearLayout>
 
@@ -96,6 +98,7 @@
             android:id="@+id/dialog_about_open_source_licenses"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/btn_default_holo_light"
             android:text="@string/dialog_about_open_source_licenses" />
     </LinearLayout>
 

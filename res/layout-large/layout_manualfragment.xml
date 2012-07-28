@@ -51,19 +51,19 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:textSize="24dp"
                         android:hint="@string/manualcrack_essid_hint"
-                        android:singleLine="true" />
+                        android:singleLine="true"
+                        android:textSize="24dp" />
 
                     <EditText
                         android:id="@+id/layout_manualcrack_bssid"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:textSize="24dp"
                         android:hint="@string/manualcrack_bssid_hint"
                         android:maxLength="17"
-                        android:singleLine="true" />
+                        android:singleLine="true"
+                        android:textSize="24dp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -76,9 +76,9 @@
                         android:layout_width="100dp"
                         android:layout_height="70dp"
                         android:layout_gravity="center"
-                        android:textSize="24dp"
                         android:textOff="WEP"
-                        android:textOn="WPA" />
+                        android:textOn="WPA"
+                        android:textSize="24dp" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -87,6 +87,7 @@
                 android:layout_width="120dip"
                 android:layout_height="80dip"
                 android:layout_gravity="center"
+                android:background="@drawable/btn_default_holo_light"
                 android:gravity="center"
                 android:text="@string/manualcrack_crackbutton"
                 android:textSize="24dp"

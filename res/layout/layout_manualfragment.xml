@@ -83,6 +83,7 @@
                 android:layout_width="120dip"
                 android:layout_height="80dip"
                 android:layout_gravity="center"
+                android:background="@drawable/btn_default_holo_light"
                 android:gravity="center"
                 android:text="@string/manualcrack_crackbutton"
                 android:textSize="20dp"
