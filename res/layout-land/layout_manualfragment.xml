@@ -49,6 +49,7 @@
                         android:id="@+id/layout_manualcrack_essid"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="@drawable/edit_text_holo_light"
                         android:ems="10"
                         android:hint="@string/manualcrack_essid_hint"
                         android:singleLine="true" />
@@ -57,6 +58,7 @@
                         android:id="@+id/layout_manualcrack_bssid"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="@drawable/edit_text_holo_light"
                         android:ems="10"
                         android:hint="@string/manualcrack_bssid_hint"
                         android:maxLength="17"
