@@ -6,6 +6,7 @@
             android:defaultValue="@string/preferences_autoupdate_default"
             android:key="@string/preferences_autoupdate_key"
             android:summary="@string/preferences_autoupdate_summary"
+            android:
             android:title="@string/preferences_autoupdate_title" />
         <CheckBoxPreference
             android:defaultValue="@string/preferences_vibrateupdate_default"
