@@ -71,7 +71,7 @@ public class Issue {
 					.endObject()
 				.toString();
 		} catch (JSONException e) {
-			// Sould not happen...
+			// Should not happen...
 		}
 		return null;
 	}
