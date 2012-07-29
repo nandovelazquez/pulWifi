@@ -51,6 +51,10 @@
             android:configChanges="orientation|keyboard|keyboardHidden|screenLayout"
             android:windowSoftInputMode="adjustResize" />
         <activity
+            android:name=".ui.AboutActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden|screenLayout"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
             android:name="com.google.ads.AdActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
     </application>

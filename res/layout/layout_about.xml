@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#D8D8D8"
     android:orientation="vertical" >
 
     <RelativeLayout
@@ -9,17 +10,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginBottom="4dip"
-        android:layout_marginTop="4dip" >
+        android:layout_marginBottom="12dip"
+        android:layout_marginTop="20dip" >
 
         <ImageView
             android:id="@+id/dialog_about_logo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:contentDescription="@string/dialog_about_logo_content_description"
-            android:src="@drawable/ic_launcher" />
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_splashscreen" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -33,7 +35,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0"
                 android:text="@string/app_name"
-                android:textSize="20dip" />
+                android:textSize="22dip" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -41,7 +43,7 @@
                 android:layout_weight="0"
                 android:paddingLeft="5dip"
                 android:text="@string/app_version"
-                android:textSize="20dip" />
+                android:textSize="22dip" />
         </LinearLayout>
     </RelativeLayout>
 
@@ -51,17 +53,19 @@
         android:layout_height="match_parent"
         android:layout_above="@+id/dialog_about_bottom"
         android:layout_below="@+id/dialog_about_top"
-        android:layout_marginLeft="8dip"
-        android:layout_marginRight="8dip" >
+        android:background="#DFDFDF"
+        android:layout_marginLeft="4dip"
+        android:layout_marginRight="4dip" >
 
         <TextView
-            android:id="@+id/dialog_about_text"
+            android:id="@+id/act_about_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clickable="true"
+            android:padding="4dip"
             android:longClickable="false"
             android:text="@string/dialog_about_text"
-            android:textSize="18dip" />
+            android:textSize="16dip" />
     </ScrollView>
 
     <LinearLayout
@@ -69,37 +73,43 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_marginBottom="8dip"
+        android:layout_marginTop="4dip"
         android:orientation="vertical" >
 
         <LinearLayout
             android:id="@+id/dialog_about_bottom_buttonscontainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dip"
             android:orientation="horizontal" >
 
             <Button
-                android:id="@+id/dialog_about_license_button"
+                android:id="@+id/act_about_license_button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@drawable/btn_default_holo_light"
-                android:text="@string/dialog_about_gpl" />
+                android:background="#000F"
+                android:text="@string/dialog_about_gpl"
+                android:textColor="#00F" />
 
             <Button
-                android:id="@+id/dialog_about_changelog_button"
+                android:id="@+id/act_about_changelog_button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@drawable/btn_default_holo_light"
-                android:text="@string/dialog_about_changelog" />
+                android:background="#000F"
+                android:text="@string/dialog_about_changelog"
+                android:textColor="#00F" />
         </LinearLayout>
 
         <Button
-            android:id="@+id/dialog_about_open_source_licenses"
+            android:id="@+id/act_about_open_source_licenses"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/btn_default_holo_light"
-            android:text="@string/dialog_about_open_source_licenses" />
+            android:background="#000F"
+            android:text="@string/dialog_about_open_source_licenses"
+            android:textColor="#00F" />
     </LinearLayout>
 
 </RelativeLayout>

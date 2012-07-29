@@ -19,6 +19,7 @@
 
 package es.pulimento.wifi.ui;
 
+import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
@@ -29,7 +30,6 @@ import android.preference.PreferenceActivity;
 import android.preference.PreferenceScreen;
 import android.util.Log;
 import es.pulimento.wifi.R;
-import es.pulimento.wifi.ui.dialogs.AboutDialog;
 import es.pulimento.wifi.ui.utils.ExceptionHandler;
 import es.pulimento.wifi.ui.utils.UpdateChecker;
 
@@ -77,9 +77,11 @@ public class Preferences extends PreferenceActivity {
 		if (pref.equals(getString(R.string.preferences_updater_key))) {
 			new UpdateChecker(this, null).work();
 			return true;
-		}		
+		}
 		if (pref.equals(getString(R.string.preferences_about_key))) {
-			(new AboutDialog(this)).show();
+			Intent intent = new Intent(Preferences.this, AboutActivity.class);
+			intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+			startActivity(intent);
 			return true;
 		}
 		return false;
