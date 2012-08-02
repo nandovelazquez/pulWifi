@@ -28,17 +28,19 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.Toast;
+
+import com.actionbarsherlock.app.SherlockFragmentActivity;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuItem;
+
 import es.pulimento.wifi.BuildConfig;
 import es.pulimento.wifi.R;
 import es.pulimento.wifi.ui.dialogs.SupportedNetworksDialog;
 import es.pulimento.wifi.ui.utils.ExceptionHandler;
-import es.pulimento.wifi.ui.views.ActionBarActivity;
 import es.pulimento.wifi.ui.views.PagerHeader;
 
-public class HomeActivity extends ActionBarActivity {
+public class HomeActivity extends SherlockFragmentActivity {
 
 	private ViewPager mPager;
 	private Context mContext;
@@ -72,7 +74,7 @@ public class HomeActivity extends ActionBarActivity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.menu_homeactivity, menu);
+		getSupportMenuInflater().inflate(R.menu.menu_homeactivity, menu);
 		return super.onCreateOptionsMenu(menu);
 	}
 
@@ -86,9 +88,6 @@ public class HomeActivity extends ActionBarActivity {
 				shareIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, getString(R.string.menu_share_subject));
 				shareIntent.putExtra(android.content.Intent.EXTRA_TEXT, getString(R.string.menu_share_text));
 				startActivity(Intent.createChooser(shareIntent, getString(R.string.menu_share_title)));
-				break;
-			case R.id.menu_quit:
-				this.finish();
 				break;
 			case R.id.menu_networks:
 				(new SupportedNetworksDialog(this)).show();

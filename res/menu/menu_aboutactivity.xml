@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <item
-        android:id="@+id/menu_showpass_back"
+        android:id="@+id/menu_about_back"
         android:icon="@drawable/ic_menu_back"
         android:showAsAction="always"
         android:title="@string/showpass_menu_back"/>

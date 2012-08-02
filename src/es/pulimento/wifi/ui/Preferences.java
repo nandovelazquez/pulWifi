@@ -26,14 +26,20 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.Preference;
-import android.preference.PreferenceActivity;
 import android.preference.PreferenceScreen;
 import android.util.Log;
+
+import com.actionbarsherlock.app.SherlockPreferenceActivity;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuItem;
+
 import es.pulimento.wifi.R;
 import es.pulimento.wifi.ui.utils.ExceptionHandler;
 import es.pulimento.wifi.ui.utils.UpdateChecker;
 
-public class Preferences extends PreferenceActivity {
+
+
+public class Preferences extends SherlockPreferenceActivity {
 
 	/* Constants. */
 	public final static String PREFERENCES_NAME = "preferences";
@@ -107,5 +113,21 @@ public class Preferences extends PreferenceActivity {
 		protected void onPostExecute(Integer result) {
 			mApkVersion.setTitle(getString(R.string.preferences_about_title, apkVersion, apkVersionCode));
 		}
+	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getSupportMenuInflater().inflate(R.menu.menu_preferences, menu);
+		return super.onCreateOptionsMenu(menu);
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+			case R.id.menu_preferences_back:
+				this.finish();
+				break;
+		}
+		return super.onOptionsItemSelected(item);
 	}
 }

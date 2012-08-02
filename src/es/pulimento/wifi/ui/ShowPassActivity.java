@@ -24,22 +24,26 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.text.ClipboardManager;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.actionbarsherlock.app.SherlockActivity;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuItem;
+
 import es.pulimento.wifi.R;
 import es.pulimento.wifi.core.WirelessNetwork;
 import es.pulimento.wifi.ui.dialogs.ClipboardCopyDialog;
 import es.pulimento.wifi.ui.dialogs.ShowPasswordsDialog;
 import es.pulimento.wifi.ui.utils.ExceptionHandler;
-import es.pulimento.wifi.ui.views.ActionBarActivity;
+
+
 
 @SuppressWarnings("deprecation")
-public class ShowPassActivity extends ActionBarActivity implements OnClickListener {
+public class ShowPassActivity extends SherlockActivity implements OnClickListener {
 
 	public static final String EXTRA_NETWORK = "EXTRA_WIRELESS_NETWORK";
 
@@ -100,7 +104,7 @@ public class ShowPassActivity extends ActionBarActivity implements OnClickListen
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.menu_showpassactivity, menu);
+		getSupportMenuInflater().inflate(R.menu.menu_showpassactivity, menu);
 		return super.onCreateOptionsMenu(menu);
 	}
 

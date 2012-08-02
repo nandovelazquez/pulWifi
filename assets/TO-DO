@@ -7,11 +7,12 @@
 - Mejorar el auto-actualizador para que se descargue el apk y lo instale, similar al aptoide 
 (http://aptoide.org/trac/browser/aptoide-client/2.5.4/Aptoide/src/cm/aptoide/pt/Aptoide.java)
 - Let users make manual issues report --- ?
+- indicar que se usa un reporte anónimo de issues, y dar la posibilidad de desactivarlo
 
 *** TO-DO for further releases ***
 
 - Macs 00:1A:2B tienen 256 posibles passwords -- Keep an eye on it
-- Tablet layout with panels
+- Tablet layout with panels -- RibbonBar?
 - Show changelog on first opening -- ?
 - Añadir de nuevo soporte nativo a Thomson -- ?
 - Cambiar icono -- IN PROGRESS

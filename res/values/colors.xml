@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- Pager Header -->
     <color name="pager_header_background_color">#FFF</color>
     <color name="pager_header_active_text_color">#34B4E3</color>
     <color name="pager_header_inactive_text_color">#000</color>
-    <color name="actionbar_title_color">#224894</color>
+
+    <!--  Own stuff -->
     <color name="selectwireless_emptylist">#444</color>
+    
+    <!-- Action Bar -->
+    <color name="actionbar_background">#EEE</color>
+    <color name="actionbar_title_color">#224894</color>
 
 </resources>

@@ -41,8 +41,7 @@
         <activity
             android:name=".ui.Preferences"
             android:configChanges="orientation|keyboard|keyboardHidden|screenLayout"
-            android:label="@string/menu_settings"
-            android:theme="@android:style/Theme.Light" />
+            android:label="@string/menu_settings" />
         <activity
             android:name=".ui.ShowPassActivity"
             android:configChanges="orientation|keyboard|keyboardHidden|screenLayout" />
@@ -53,7 +52,7 @@
         <activity
             android:name=".ui.AboutActivity"
             android:configChanges="orientation|keyboard|keyboardHidden|screenLayout"
-            android:theme="@android:style/Theme.Light.NoTitleBar" />
+            android:label="@string/menu_about" />
         <activity
             android:name="com.google.ads.AdActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />

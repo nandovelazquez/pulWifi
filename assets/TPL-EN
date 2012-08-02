@@ -1,8 +1,11 @@
-<h4>- This software contains parts from "Superuser" app, &#169; ChainsDD<h4>
-<h4>- This sofware contains resources from The Android Open Source Project<h4>
-<h4>- Notice for files : android.support.v4.jar</h4>
+<h4>- This software contains parts from "Superuser" app, &#169; ChainsDD, licensed under GPL v3<h4>
+<h4>- Notice for :</h4>
+<ul>
+	<li>android.support.v4.jar, Copyright (c) 2005-2008, The Android Open Source Project</li>
+	<li>Jelly Bean Drawables, Copyright (c) 2011-2012, The Android Open Source Project</li>
+	<li>Action Bar Sherlock, Copyright (c) Jake Wharton</li>
+</ul>
 <div style="background: #DDD; font-size: 90%; margin: 2%; padding: 1%">
-<p>Copyright (c) 2005-2008, The Android Open Source Project</p>
 
    <p>Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.</p>

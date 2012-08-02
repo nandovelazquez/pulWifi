@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
 <body>
-
+	<h3>- v2.0.2</h3>
+	<ul>
+		<li>Mejorado el sistema de reporte de errores</li>
+		<li>Cambios en la interfaz de usuario (action bars, pantalla de "acerca de"...)</li>
+		<li>Cambios menores, y arreglos de pequeños fallos</li>
+	</ul>
 	<h3>- v2.0.1</h3>
 	<ul>
 		<li>Arreglados algunos fallos en detección de redes</li>
